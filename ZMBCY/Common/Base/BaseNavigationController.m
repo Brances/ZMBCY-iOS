@@ -26,7 +26,7 @@
     [super viewDidLoad];
     //藏旧
     [self hideBorderInView:self.navigationBar];
-//    //添新
+    //添新
     [self.navigationBar addSubview:self.bottomNavLine];
     
 }
@@ -52,10 +52,6 @@
     }
 }
 
-
-
-
-
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController{
     self = [super initWithRootViewController:rootViewController];
     if (self) {
@@ -68,17 +64,15 @@
     return self.statusBarStyle;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.viewControllers.count > 0) {
         viewController.hidesBottomBarWhenPushed = YES;//隐藏二级页面的tabbar
     }
-    
     [super pushViewController:viewController animated:animated];
     
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
 @end

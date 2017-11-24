@@ -6,9 +6,8 @@
 //  Copyright © 2016年 ZOMAKE. All rights reserved.
 //  自定义导航
 
-#import "ZMView.h"
 
-@interface ZMNavView : ZMView
+@interface ZMNavView : UIView
 
 @property (nonatomic, strong) UIButton *leftButton;
 
@@ -25,6 +24,6 @@
 @property (nonatomic, assign) BOOL isWhite;
 
 /** 中间按钮文字 */
-@property (nonatomic, strong) ZMLabel *centerLabel;
+@property (nonatomic, strong) YYLabel *centerLabel;
 
 @end

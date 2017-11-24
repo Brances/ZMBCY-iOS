@@ -15,7 +15,36 @@
 #import <Foundation/Foundation.h>
 #import "ZMColor.h"
 #import <YYKit/YYKit.h>
+#import <AFNetworking.h>
+#import <Masonry.h>
+#import <MJRefresh.h>
+#import <POP.h>
+#import <SDImageCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <FBShimmeringView.h>
+#import <MBProgressHUD.h>
+
+#import "UIView+extension.h"
+#import "MBProgressHUD+MJ.h"
+#import "YYTableView.h"
+#import "YYTableViewCell.h"
+#import "NSArray+ZMAdd.h"
 
 #endif
 
-#endif /* PrefixHeader_pch */
+
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+
+#define placeholderFailImage [UIImage imageNamed:@"商品-首页.png"]
+
+#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define KStatusBarHeight (kDevice_Is_iPhoneX ? 24.f:0.f)
+#define KStatusBarMargin (kDevice_Is_iPhoneX ? 22.f:0.f)
+#define KTabBarHeight    (kDevice_Is_iPhoneX ? 34.f:0.f)
+
+#endif

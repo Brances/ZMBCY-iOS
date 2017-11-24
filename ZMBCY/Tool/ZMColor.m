@@ -2,8 +2,8 @@
 //  ZMColor.m
 //  Zomake
 //
-//  Created by uzhengxiang on 16/6/12.
-//  Copyright © 2016年 ZOMAKE. All rights reserved.
+//  Created by Brance on 17/11/24.
+//  Copyright © 2017年 ZOMAKE. All rights reserved.
 //
 
 #import "ZMColor.h"
@@ -14,8 +14,7 @@
     return [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];
 }
 
-+ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha
-{
++ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha{
     //删除字符串中的空格
     NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     // String should be 6 or 8 characters
@@ -61,8 +60,7 @@
 }
 
 //默认alpha值为1
-+ (UIColor *)colorWithHexString:(NSString *)color
-{
++ (UIColor *)colorWithHexString:(NSString *)color{
     return [self colorWithHexString:color alpha:1.0f];
 }
 
@@ -78,20 +76,12 @@
     return [UIColor blackColor];
 }
 
-+ (UIColor *)appMainTextColor
-{
-    return [UIColor colorWithRed:253/255.0 green:206/255.0 blue:41/255.0 alpha:1];
++ (UIColor *)appMainColor{
+    return [self colorWithHexString:@"#00DA8C"];
 }
+
 + (UIColor *)appNavTitleGrayColor{
     return [UIColor colorWithRed:113/255.0 green:113/255.0 blue:113/255.0 alpha:1];
-}
-
-+ (UIColor *)appMainColor{
-    return [UIColor colorWithRed:253/255.0 green:206/255.0 blue:41/255.0 alpha:1];
-}
-
-+ (UIColor *)shopCartRedSpot{
-    return [UIColor colorWithRed:255/255.0 green:94/255.0 blue:87/255.0 alpha:1];
 }
 
 + (UIColor *)appGraySpaceColor{

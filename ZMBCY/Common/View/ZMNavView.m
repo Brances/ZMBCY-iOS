@@ -39,9 +39,8 @@
     UIColor *textColor = [ZMColor blackColor];
     
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftButton.size = CGSizeMake(DefaultSpace * 2, self.height - 20);
-    leftButton.titleLabel.font = [ZMFont iconOutlineFontWithSize:18];
-    leftButton.x = 0;
+    leftButton.size = CGSizeMake(26 * 2, self.height - 20);
+    leftButton.left = 0;
     leftButton.centerY = self.centerY + KStatusBarMargin;
     [leftButton setTitleColor:textColor forState:UIControlStateNormal];
     [mainView addSubview:leftButton];
@@ -49,12 +48,11 @@
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     rightButton.size = CGSizeMake(88, self.height - 20);
-    rightButton.titleLabel.font = [ZMFont iconOutlineFontWithSize:18];
-    rightButton.x = UISCREENWIDTH - rightButton.width;
+    rightButton.x = kScreenWidth - rightButton.width;
     //rightButton.y = 20;
     rightButton.centerY = self.centerY + KStatusBarMargin;
-    rightButton.titleEdgeInsets = UIEdgeInsetsMake(0, DefaultSpace, 0, 0);
-    rightButton.imageEdgeInsets = UIEdgeInsetsMake(0, DefaultSpace, 0, 0);
+    rightButton.titleEdgeInsets = UIEdgeInsetsMake(0, 26, 0, 0);
+    rightButton.imageEdgeInsets = UIEdgeInsetsMake(0, 26, 0, 0);
     
     [rightButton setTitleColor:textColor forState:UIControlStateNormal];
     [mainView addSubview:rightButton];
@@ -64,24 +62,22 @@
 //    self.leftTwoButton = leftTwoButton;
     
     //中间文本
-    ZMLabel *centerLabel = [[ZMLabel alloc]init];
-    centerLabel.size = CGSizeMake(UISCREENWIDTH - rightButton.width * 2, self.height - 20);
-    //centerLabel.y = 20;
+    YYLabel *centerLabel = [[YYLabel alloc]init];
+    centerLabel.size = CGSizeMake(kScreenWidth - rightButton.width * 2, self.height - 20);
     centerLabel.centerY = self.centerY + KStatusBarMargin;
-    centerLabel.centerX = UISCREENWIDTH/2.f;
+    centerLabel.centerX = kScreenWidth/2.f;
     centerLabel.textAlignment = NSTextAlignmentCenter;
-    centerLabel.font = [ZMFont defaultZOMAKEFontWithSize:18 * FIT_WIDTH];
+    centerLabel.font = [UIFont systemFontOfSize:16];
     centerLabel.textColor = [ZMColor appNavTitleGrayColor];
     self.centerLabel = centerLabel;
     [mainView addSubview:centerLabel];
     
     //中间按钮
     UIButton *centerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    centerButton.size = CGSizeMake(UISCREENWIDTH - rightButton.width * 2, self.height - 20);
-    //centerButton.y = 20;
+    centerButton.size = CGSizeMake(kScreenWidth - rightButton.width * 2, self.height - 20);
     centerButton.centerY = self.centerY + KStatusBarMargin;
-    centerButton.centerX = UISCREENWIDTH/2.f;
-    centerButton.titleLabel.font = [ZMFont defaultZOMAKEFontWithSize:18];
+    centerButton.centerX = kScreenWidth / 2.f;
+    centerButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [centerButton setTitleColor:textColor forState:UIControlStateNormal];
     self.centerButton = centerButton;
     
@@ -90,9 +86,9 @@
     //右边文字
     UILabel *rightLabel = [[UILabel alloc] init];
     rightLabel.frame = rightButton.frame;
-    rightLabel.width = rightButton.width - DefaultSpace;
+    rightLabel.width = rightButton.width - 26;
     rightLabel.textColor = textColor;
-    rightLabel.font = [ZMFont defaultZOMAKEFontWithSize:15 * FIT_WIDTH];
+    rightLabel.font = [UIFont systemFontOfSize:16];
     rightLabel.textAlignment = NSTextAlignmentRight;
     
     [mainView addSubview:rightLabel];
@@ -101,7 +97,7 @@
  
     //底部分割线
     UILabel *lineLabel = [[UILabel alloc] init];
-    lineLabel.frame = CGRectMake(0, self.height - 0.5, UISCREENWIDTH, 0.5);
+    lineLabel.frame = CGRectMake(0, self.height - 0.5, kScreenWidth, 0.5);
     lineLabel.backgroundColor = [ZMColor colorWithRed:155 withGreen:155 withBlue:155 withAlpha:1];
     self.lineLabel = lineLabel;
     [mainView addSubview:lineLabel];

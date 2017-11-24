@@ -2,8 +2,8 @@
 //  ZMColor.h
 //  Zomake
 //
-//  Created by uzhengxiang on 16/6/12.
-//  Copyright © 2016年 ZOMAKE. All rights reserved.
+//  Created by Brance on 17/11/24.
+//  Copyright © 2017年 ZOMAKE. All rights reserved.
 //  颜色
 
 #import <Foundation/Foundation.h>
@@ -24,17 +24,11 @@
 + (UIColor *)blackColor;
 
 
-/** app新主题颜色 */
-+ (UIColor *)appMainTextColor;
+/** app主题颜色 */
++ (UIColor *)appMainColor;
 
 /** 文本灰色 （导航标题颜色） */
 + (UIColor *)appNavTitleGrayColor;
-
-/** 新主题背景蓝色 */
-+ (UIColor *)appMainColor;
-
-/** 购物车颜色 */
-+ (UIColor *)shopCartRedSpot;
 
 /** 灰色间距 #f4f4f4*/
 + (UIColor *)appGraySpaceColor;
