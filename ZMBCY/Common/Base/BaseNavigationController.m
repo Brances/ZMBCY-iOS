@@ -2,7 +2,7 @@
 //  BaseNavigationController.m
 //  Timeshutter
 //
-//  Created by ZOMAKE on 2017/5/4.
+//  Created by Brance on 2017/11/24.
 //  Copyright © 2017年 292692700@qq.com. All rights reserved.
 //
 

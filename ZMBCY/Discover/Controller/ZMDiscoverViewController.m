@@ -2,7 +2,7 @@
 //  ZMDiscoverViewController.m
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/11/24.
+//  Created by Brance on 2017/11/24.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
@@ -10,6 +10,7 @@
 #import "SPPageMenu.h"
 #import "ViewController.h"
 #import "ZMDiscoverRecommendView.h"
+
 
 #define pageMenuH 40
 #define NaviH (kScreenHeight == 812 ? 88 : 64) // 812是iPhoneX的高度
@@ -20,6 +21,8 @@
 @property (nonatomic, weak) SPPageMenu         *pageMenu;
 @property (nonatomic, weak) UIScrollView       *scrollView;
 @property (nonatomic, strong) NSMutableArray   *myChildViewControllers;
+
+
 
 @end
 
@@ -50,7 +53,7 @@
     }
     
     //滚动容器
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NaviH+pageMenuH, kScreenWidth, kScreenHeight - NaviH - pageMenuH)];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NaviH+pageMenuH, kScreenWidth, kScreenHeight - NaviH - pageMenuH - self.tabBarController.tabBar.height)];
     scrollView.delegate = self;
     scrollView.pagingEnabled = YES;
     scrollView.showsHorizontalScrollIndicator = NO;

@@ -1,9 +1,9 @@
 //
 //  ZMNavView.m
-//  Zomake
 //
-//  Created by uzhengxiang on 16/6/20.
-//  Copyright © 2016年 ZOMAKE. All rights reserved.
+//
+//  Created by Brance on 17/11/24.
+//  Copyright © 2016年 Brance. All rights reserved.
 //
 
 #import "ZMNavView.h"

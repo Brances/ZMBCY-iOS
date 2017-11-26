@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3505E3291FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3505E3281FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.m */; };
+		3505E32D1FCAC31300B9BF72 /* ZMDiscoverRecommendHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3505E32C1FCAC31300B9BF72 /* ZMDiscoverRecommendHeadView.m */; };
+		3505E3301FCACBCB00B9BF72 /* ZMDiscoverRecommendHotTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3505E32F1FCACBCB00B9BF72 /* ZMDiscoverRecommendHotTopicCell.m */; };
 		352592F71FC7051F008165D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 352592F61FC7051F008165D7 /* main.m */; };
 		352592FA1FC7051F008165D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 352592F91FC7051F008165D7 /* AppDelegate.m */; };
 		352592FD1FC7051F008165D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 352592FC1FC7051F008165D7 /* ViewController.m */; };
@@ -14,6 +17,7 @@
 		352593021FC7051F008165D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352593011FC7051F008165D7 /* Assets.xcassets */; };
 		352593101FC70520008165D7 /* ZMBCYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3525930F1FC70520008165D7 /* ZMBCYTests.m */; };
 		3525931B1FC70520008165D7 /* ZMBCYUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3525931A1FC70520008165D7 /* ZMBCYUITests.m */; };
+		354505FD1FCA85CF00F68D34 /* ZMNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 354505FC1FCA85CF00F68D34 /* ZMNetworkHelper.m */; };
 		35D04AAE1FC70C5900CE082F /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D04AAD1FC70C5900CE082F /* Foundation+Log.m */; };
 		35D04ABE1FC717B700CE082F /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D04ABC1FC717B700CE082F /* BaseNavigationController.m */; };
 		35D04AC31FC717F400CE082F /* ZMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D04AC21FC717F400CE082F /* ZMColor.m */; };
@@ -62,6 +66,12 @@
 
 /* Begin PBXFileReference section */
 		145093B9279C04AD454CDE5E /* Pods-ZMBCY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZMBCY.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZMBCY/Pods-ZMBCY.release.xcconfig"; sourceTree = "<group>"; };
+		3505E3271FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverRecommendBannerCell.h; sourceTree = "<group>"; };
+		3505E3281FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverRecommendBannerCell.m; sourceTree = "<group>"; };
+		3505E32B1FCAC31300B9BF72 /* ZMDiscoverRecommendHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverRecommendHeadView.h; sourceTree = "<group>"; };
+		3505E32C1FCAC31300B9BF72 /* ZMDiscoverRecommendHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverRecommendHeadView.m; sourceTree = "<group>"; };
+		3505E32E1FCACBCB00B9BF72 /* ZMDiscoverRecommendHotTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverRecommendHotTopicCell.h; sourceTree = "<group>"; };
+		3505E32F1FCACBCB00B9BF72 /* ZMDiscoverRecommendHotTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverRecommendHotTopicCell.m; sourceTree = "<group>"; };
 		352592F21FC7051F008165D7 /* ZMBCY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMBCY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		352592F61FC7051F008165D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		352592F81FC7051F008165D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +87,8 @@
 		352593161FC70520008165D7 /* ZMBCYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZMBCYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3525931A1FC70520008165D7 /* ZMBCYUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMBCYUITests.m; sourceTree = "<group>"; };
 		3525931C1FC70520008165D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		354505FB1FCA85CF00F68D34 /* ZMNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMNetworkHelper.h; sourceTree = "<group>"; };
+		354505FC1FCA85CF00F68D34 /* ZMNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMNetworkHelper.m; sourceTree = "<group>"; };
 		35D04AAA1FC706C300CE082F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		35D04AAD1FC70C5900CE082F /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		35D04ABB1FC717B700CE082F /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -183,6 +195,7 @@
 		352592F41FC7051F008165D7 /* ZMBCY */ = {
 			isa = PBXGroup;
 			children = (
+				35D04AAD1FC70C5900CE082F /* Foundation+Log.m */,
 				407B3DBC1FC8011D00E422E2 /* Resources */,
 				35D04AB91FC717B700CE082F /* Common */,
 				35D04ABF1FC717C000CE082F /* Tool */,
@@ -212,7 +225,6 @@
 				352593061FC7051F008165D7 /* Info.plist */,
 				352592F61FC7051F008165D7 /* main.m */,
 				35D04AAA1FC706C300CE082F /* PrefixHeader.pch */,
-				35D04AAD1FC70C5900CE082F /* Foundation+Log.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -278,6 +290,8 @@
 			children = (
 				35D04AC11FC717F400CE082F /* ZMColor.h */,
 				35D04AC21FC717F400CE082F /* ZMColor.m */,
+				354505FB1FCA85CF00F68D34 /* ZMNetworkHelper.h */,
+				354505FC1FCA85CF00F68D34 /* ZMNetworkHelper.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -369,6 +383,12 @@
 			children = (
 				407B3DC71FC81C9B00E422E2 /* ZMDiscoverRecommendView.h */,
 				407B3DC81FC81C9B00E422E2 /* ZMDiscoverRecommendView.m */,
+				3505E3271FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.h */,
+				3505E3281FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.m */,
+				3505E32B1FCAC31300B9BF72 /* ZMDiscoverRecommendHeadView.h */,
+				3505E32C1FCAC31300B9BF72 /* ZMDiscoverRecommendHeadView.m */,
+				3505E32E1FCACBCB00B9BF72 /* ZMDiscoverRecommendHotTopicCell.h */,
+				3505E32F1FCACBCB00B9BF72 /* ZMDiscoverRecommendHotTopicCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -712,6 +732,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				407B3D881FC7BA0800E422E2 /* ZMHomeViewController.m in Sources */,
+				3505E3291FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.m in Sources */,
 				407B3D821FC7B55D00E422E2 /* UIView+extension.m in Sources */,
 				35D04AC61FC718F000CE082F /* ZMMainViewController.m in Sources */,
 				400FA4D81FC7AFD20015335E /* YYTableViewCell.m in Sources */,
@@ -727,7 +748,10 @@
 				352592FD1FC7051F008165D7 /* ViewController.m in Sources */,
 				407B3DC61FC814F600E422E2 /* SPPageMenu.m in Sources */,
 				407B3DA31FC7C4CC00E422E2 /* NSArray+ZMAdd.m in Sources */,
+				3505E32D1FCAC31300B9BF72 /* ZMDiscoverRecommendHeadView.m in Sources */,
+				3505E3301FCACBCB00B9BF72 /* ZMDiscoverRecommendHotTopicCell.m in Sources */,
 				407B3DB71FC800B000E422E2 /* ZMTopicViewController.m in Sources */,
+				354505FD1FCA85CF00F68D34 /* ZMNetworkHelper.m in Sources */,
 				407B3DBA1FC800BD00E422E2 /* ZMMessageViewController.m in Sources */,
 				407B3DAC1FC7EC7B00E422E2 /* ZMPostDetailModel.m in Sources */,
 				407B3DA01FC7C48700E422E2 /* ZMBaseModel.m in Sources */,
@@ -825,9 +849,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -867,7 +892,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -883,11 +908,41 @@
 				ASSETCATALOG_WARNINGS = NO;
 				DEVELOPMENT_TEAM = P94N2NJ7G4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = ZMBCY/PrefixHeader.pch;
 				IBSC_WARNINGS = YES;
 				INFOPLIST_FILE = ZMBCY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Bugly\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/FLEX\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDCycleScrollView\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Shimmer\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell_Bell\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/pop\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zomake.ZMBCY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -902,6 +957,7 @@
 				ASSETCATALOG_WARNINGS = NO;
 				DEVELOPMENT_TEAM = P94N2NJ7G4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = ZMBCY/PrefixHeader.pch;
 				IBSC_WARNINGS = YES;
 				INFOPLIST_FILE = ZMBCY/Info.plist;
@@ -972,7 +1028,7 @@
 				3525931E1FC70520008165D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		3525931F1FC70520008165D7 /* Build configuration list for PBXNativeTarget "ZMBCY" */ = {
 			isa = XCConfigurationList;
@@ -981,7 +1037,7 @@
 				352593211FC70520008165D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		352593221FC70520008165D7 /* Build configuration list for PBXNativeTarget "ZMBCYTests" */ = {
 			isa = XCConfigurationList;
@@ -990,7 +1046,7 @@
 				352593241FC70520008165D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		352593251FC70520008165D7 /* Build configuration list for PBXNativeTarget "ZMBCYUITests" */ = {
 			isa = XCConfigurationList;
@@ -999,7 +1055,7 @@
 				352593271FC70520008165D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
