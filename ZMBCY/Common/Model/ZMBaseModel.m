@@ -32,3 +32,22 @@
 }
 
 @end
+
+@implementation NSString(ZMJsonConvert)
+
+- (id)toArrayOrNSDictionary{
+    if (![self isKindOfClass:[NSString class]]) {
+        NSParameterAssert(@"self is not NSString!");
+    }
+    NSData *jsonData=[self dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                    options:NSJSONReadingAllowFragments
+                                                      error:&error];
+    if (jsonObject != nil && error == nil){
+        return jsonObject;
+    }
+    return nil;
+}
+
+@end

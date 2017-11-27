@@ -10,10 +10,13 @@
 #import "ZMDiscoverRecommendBannerCell.h"
 #import "ZMDiscoverRecommendHeadView.h"
 #import "ZMDiscoverRecommendHotTopicCell.h"
+#import "ZMTopicModel.h"
 
 @interface ZMDiscoverRecommendView()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) ZMDiscoverRecommendHeadView   *hotHeadView;
+@property (nonatomic, strong) ZMTopicModel                  *hotTopicModel;
+
 
 @end
 
@@ -104,6 +107,9 @@
         if (!cell) {
             cell = [[ZMDiscoverRecommendHotTopicCell alloc] initWithStyle:0 reuseIdentifier:identfier];
         }
+        if (self.hotTopicModel) {
+            cell.model = self.hotTopicModel;
+        }
         return cell;
     }
     
@@ -130,22 +136,21 @@
             
             for (NSDictionary *dic in discoverInfos) {
                 NSString *type = dic[@"itemType"];
+                //热门专题
                 if ([type isEqualToString:@"hotGList"]) {
                     //尝试转换为NSString
-                    
-                    NSString *str= dic[@"data"];
-                    id childArray=[self toArrayOrNSDictionary:str];
+                    id str = dic[@"data"];
+                    id childArray = [str toArrayOrNSDictionary];
                     for (NSDictionary *hot in childArray) {
-                        id s = hot[@"isPrivate"];
-                        NSLog(@"是否私有=%@",s);
+                        ZMTopicModel *topicModel = [ZMTopicModel modelWithJSON:hot];
+                        self.hotTopicModel = topicModel;
+                        [self.tableView reloadData];
+                        NSLog(@"是否私有=%@",topicModel);
                     }
-//                    NSDictionary *resultDic = [self dictionaryWithJsonString:dic[@"data"]];
-//                    id s = resultDic[@"isPrivate"];
-                    NSLog(@"字符串 = %@",childArray);
+                    //NSLog(@"字符串 = %@",childArray);
                 }
                 
             }
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView.mj_header endRefreshing];
                 [self.tableView reloadData];
@@ -161,35 +166,17 @@
 }
 
 #pragma mark - json 字符串转字典或数组
--  (id)toArrayOrNSDictionary:(NSString *)jsonString{
-    NSData *jsonData=[jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error = nil;
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                    options:NSJSONReadingAllowFragments
-                                                      error:nil];
-    if (jsonObject != nil && error == nil){
-        return jsonObject;
-    }
-    return nil;
-}
-
-/**
- *  json转字符串
- */
-- (NSString *)jsonToString:(NSDictionary *)dic{
-    if(!dic){
-        return nil;
-    }
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
-    
-    NSString *jsonStr = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
-    jsonStr = [jsonStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]; //去除掉首尾的空白字符和换行字符
-    jsonStr = [jsonStr stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-    jsonStr = [jsonStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    jsonStr = [jsonStr stringByReplacingOccurrencesOfString:@"\\" withString:@""];
-    return jsonStr;
-}
+//-  (id)toArrayOrNSDictionary:(NSString *)jsonString{
+//    NSData *jsonData=[jsonString dataUsingEncoding:NSUTF8StringEncoding];
+//    NSError *error = nil;
+//    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
+//                                                    options:NSJSONReadingAllowFragments
+//                                                      error:nil];
+//    if (jsonObject != nil && error == nil){
+//        return jsonObject;
+//    }
+//    return nil;
+//}
 
 //json格式字符串转字典：
 

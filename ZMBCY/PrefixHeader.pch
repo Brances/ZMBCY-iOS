@@ -24,6 +24,7 @@
 #import <FBShimmeringView.h>
 #import <MBProgressHUD.h>
 
+#import "ZMBaseModel.h"
 #import "UIView+extension.h"
 #import "MBProgressHUD+MJ.h"
 #import "YYTableView.h"
@@ -58,7 +59,8 @@
 /** API */
 /** 发现-推荐 */
 #define HttpImageURLPre                    @"http://gacha.nosdn.127.net/"
-#define HttpImageURLSuffix                 @"?imageView&thumbnail=1150y366&type=png&enlarge=1&quality=100&axis=0"
+#define HttpImageURLSuffixSquare(format)   @"?imageView&enlarge=1&quality=75&thumbnail=750y750&type="format
+#define HttpImageURLSuffixScanle(width,height,format)           @"?imageView&enlarge=1&quality=75&thumbnail="width@"y"height@"type="format
 
 #define BaseURL                            @"https://api.gacha.163.com/api/v1"
 #define DiscoveryRecommendInfo             BaseURL@"/discovery"

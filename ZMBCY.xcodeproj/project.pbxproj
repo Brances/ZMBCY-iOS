@@ -13,7 +13,6 @@
 		352592F71FC7051F008165D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 352592F61FC7051F008165D7 /* main.m */; };
 		352592FA1FC7051F008165D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 352592F91FC7051F008165D7 /* AppDelegate.m */; };
 		352592FD1FC7051F008165D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 352592FC1FC7051F008165D7 /* ViewController.m */; };
-		352593001FC7051F008165D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352592FE1FC7051F008165D7 /* Main.storyboard */; };
 		352593021FC7051F008165D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352593011FC7051F008165D7 /* Assets.xcassets */; };
 		352593101FC70520008165D7 /* ZMBCYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3525930F1FC70520008165D7 /* ZMBCYTests.m */; };
 		3525931B1FC70520008165D7 /* ZMBCYUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3525931A1FC70520008165D7 /* ZMBCYUITests.m */; };
@@ -24,6 +23,7 @@
 		35D04AC61FC718F000CE082F /* ZMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D04AC51FC718F000CE082F /* ZMMainViewController.m */; };
 		35D04ACD1FC7193E00CE082F /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D04AC81FC7193E00CE082F /* YYFPSLabel.m */; };
 		35D04ACE1FC7193E00CE082F /* ZMNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D04ACA1FC7193E00CE082F /* ZMNavView.m */; };
+		400CB3581FCBB5A00094F1FE /* ZMTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 400CB3571FCBB5A00094F1FE /* ZMTopicModel.m */; };
 		400FA4D21FC7AFAB0015335E /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 400FA4D11FC7AFAB0015335E /* MBProgressHUD+MJ.m */; };
 		400FA4D71FC7AFD20015335E /* YYTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 400FA4D41FC7AFD20015335E /* YYTableView.m */; };
 		400FA4D81FC7AFD20015335E /* YYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 400FA4D61FC7AFD20015335E /* YYTableViewCell.m */; };
@@ -78,7 +78,6 @@
 		352592F91FC7051F008165D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		352592FB1FC7051F008165D7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		352592FC1FC7051F008165D7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		352592FF1FC7051F008165D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		352593011FC7051F008165D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		352593061FC7051F008165D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3525930B1FC70520008165D7 /* ZMBCYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZMBCYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +100,8 @@
 		35D04AC81FC7193E00CE082F /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		35D04AC91FC7193E00CE082F /* ZMNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMNavView.h; sourceTree = "<group>"; };
 		35D04ACA1FC7193E00CE082F /* ZMNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMNavView.m; sourceTree = "<group>"; };
+		400CB3561FCBB5A00094F1FE /* ZMTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicModel.h; sourceTree = "<group>"; };
+		400CB3571FCBB5A00094F1FE /* ZMTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicModel.m; sourceTree = "<group>"; };
 		400FA4CD1FC7AF660015335E /* UIView+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extension.h"; sourceTree = "<group>"; };
 		400FA4CE1FC7AF660015335E /* UIView+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+extension.m"; sourceTree = "<group>"; };
 		400FA4D01FC7AFAB0015335E /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
@@ -221,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				352593011FC7051F008165D7 /* Assets.xcassets */,
-				352592FE1FC7051F008165D7 /* Main.storyboard */,
 				352593061FC7051F008165D7 /* Info.plist */,
 				352592F61FC7051F008165D7 /* main.m */,
 				35D04AAA1FC706C300CE082F /* PrefixHeader.pch */,
@@ -374,6 +374,8 @@
 		400FA4DF1FC7B0B40015335E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				400CB3561FCBB5A00094F1FE /* ZMTopicModel.h */,
+				400CB3571FCBB5A00094F1FE /* ZMTopicModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -652,7 +654,6 @@
 			files = (
 				407B3DBE1FC8011D00E422E2 /* like.caf in Resources */,
 				352593021FC7051F008165D7 /* Assets.xcassets in Resources */,
-				352593001FC7051F008165D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400CB3581FCBB5A00094F1FE /* ZMTopicModel.m in Sources */,
 				407B3D881FC7BA0800E422E2 /* ZMHomeViewController.m in Sources */,
 				3505E3291FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.m in Sources */,
 				407B3D821FC7B55D00E422E2 /* UIView+extension.m in Sources */,
@@ -795,17 +797,6 @@
 			targetProxy = 352593171FC70520008165D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		352592FE1FC7051F008165D7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				352592FF1FC7051F008165D7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3525931D1FC70520008165D7 /* Debug */ = {

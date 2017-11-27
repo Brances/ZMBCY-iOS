@@ -56,4 +56,11 @@
     
 }
 
+- (void)setModel:(ZMTopicModel *)model{
+    if (!model) return;
+    _model = model;
+    [self.bigImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",HttpImageURLPre,model.cover,HttpImageURLSuffixSquare(@"jpge")]] placeholder:placeholderFailImage];
+    
+}
+
 @end

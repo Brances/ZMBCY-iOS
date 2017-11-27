@@ -21,3 +21,9 @@ typedef NS_ENUM(NSInteger,otypeData){
 - (NSDictionary *)dicDispose:(id)data;
 
 @end
+
+@interface NSString (ZMJsonConvert)
+
+- (id)toArrayOrNSDictionary;
+
+@end
