@@ -50,4 +50,20 @@
     return nil;
 }
 
+- (NSString *)componentSeparatedByString:(NSString *)string{
+    if (![self isKindOfClass:[NSString class]]) {
+        NSParameterAssert(@"self is not NSString!");
+    }
+    string = [string lowercaseString];
+    NSArray *result=[self componentsSeparatedByString:@"."];
+    if ([result.lastObject isEqualToString:@"jpeg"]) {
+        return @"jpeg";
+    }else if ([result.lastObject isEqualToString:@"png"]){
+        return @"png";
+    }else if ([result.lastObject isEqualToString:@"webp"]){
+        return @"webp";
+    }
+    return @"png";
+}
+
 @end

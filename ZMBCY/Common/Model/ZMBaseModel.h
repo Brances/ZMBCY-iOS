@@ -14,6 +14,12 @@ typedef NS_ENUM(NSInteger,otypeData){
     otypeDataGoods,
 };
 
+typedef NS_ENUM(NSInteger,imageType){
+    imageTypePng = 0,
+    imageTypeJpeg,
+    imageTypeWebp,
+};
+
 @interface ZMBaseModel : NSObject
 
 - (NSString *)dispose:(id)data;
@@ -25,5 +31,6 @@ typedef NS_ENUM(NSInteger,otypeData){
 @interface NSString (ZMJsonConvert)
 
 - (id)toArrayOrNSDictionary;
-
+#pragma mark - 返回图片格式
+- (NSString *)componentSeparatedByString:(NSString *)string;
 @end

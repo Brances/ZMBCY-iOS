@@ -34,6 +34,19 @@
     [self addChildVc:[ZMMessageViewController new] title:@"消息" image:@"tabbar_icon_message" selectedImage:@"tabbar_icon_message_s"];
     //我的
     [self addChildVc:[ZMMineViewController new] title:@"我的" image:@"tabbar_icon3" selectedImage:@"tabbar_icon3_s"];
+    
+#if DEBUG
+    //显示当前帧率
+    [self setupFPSLabel];
+#endif
+    
+}
+
+#pragma mark -    FPS Label 显示当前帧率
+- (void)setupFPSLabel{
+    YYFPSLabel *label = [[YYFPSLabel alloc] init];
+    label.frame = CGRectMake(10, kScreenHeight - 49 - 30 - 10, 60, 30);
+    [self.view addSubview:label];
 }
 
 /**

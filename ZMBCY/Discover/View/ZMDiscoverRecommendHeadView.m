@@ -41,7 +41,7 @@
 - (UIImageView *)iconImageView{
     if (!_iconImageView) {
         _iconImageView = [UIImageView new];
-        _iconImageView.image = [YYImage imageWithColor:[ZMColor appSubColor]];
+        _iconImageView.image = placeholderFailImage;
         [self.mainView addSubview:_iconImageView];
         [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(20, 20));

@@ -2,7 +2,7 @@
 //  ZMTopicModel.h
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/11/27.
+//  Created by Brance on 2017/11/27.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString *name;
 /** 封面图 */
 @property (nonatomic, copy) NSString *cover;
+/** 封面图后缀 */
+@property (nonatomic, copy) NSString *imageSuffix;
 /** 描述 */
 @property (nonatomic, copy) NSString *desc;
 /** 数量 */

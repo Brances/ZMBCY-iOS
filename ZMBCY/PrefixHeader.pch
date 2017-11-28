@@ -24,6 +24,7 @@
 #import <FBShimmeringView.h>
 #import <MBProgressHUD.h>
 
+#import "ZMImageView.h"
 #import "ZMBaseModel.h"
 #import "UIView+extension.h"
 #import "MBProgressHUD+MJ.h"
@@ -31,6 +32,7 @@
 #import "YYTableViewCell.h"
 #import "NSArray+ZMAdd.h"
 #import "ZMNetworkHelper.h"
+
 
 #endif
 
@@ -43,7 +45,7 @@
 
 #define FIT_WIDTH   [UIScreen mainScreen].bounds.size.width/375
 #define FIT_HEIGHT  [UIScreen mainScreen].bounds.size.height/667
-#define placeholderFailImage [UIImage imageNamed:@"商品-首页.png"]
+#define placeholderFailImage [YYImage imageWithColor:[ZMColor colorWithHexString:@"#ECECEC"]]
 
 
 #define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -58,9 +60,9 @@
 
 /** API */
 /** 发现-推荐 */
-#define HttpImageURLPre                    @"http://gacha.nosdn.127.net/"
-#define HttpImageURLSuffixSquare(format)   @"?imageView&enlarge=1&quality=75&thumbnail=750y750&type="format
-#define HttpImageURLSuffixScanle(width,height,format)           @"?imageView&enlarge=1&quality=75&thumbnail="width@"y"height@"type="format
+#define HttpImageURLPre                    @"https://gacha.nosdn.127.net/"
+#define HttpImageURLSuffixSquare            @"?imageView&enlarge=1&quality=75&thumbnail=750y750&type="
+#define HttpImageURLSuffixScanle(width,height)           @"?imageView&enlarge=1&quality=75&thumbnail="width@"y"height@"&type="
 
 #define BaseURL                            @"https://api.gacha.163.com/api/v1"
 #define DiscoveryRecommendInfo             BaseURL@"/discovery"

@@ -8,14 +8,15 @@
 
 #import "YYTableViewCell.h"
 #import "ZMTopicModel.h"
+#import "ZMImageView.h"
 
 @interface ZMDiscoverRecommendHotTopicCell : YYTableViewCell
 
 @property (nonatomic, strong) UIView        *mainView;
-@property (nonatomic, strong) UIImageView   *bigImageView;
-@property (nonatomic, strong) UIImageView   *leftImageView;
-@property (nonatomic, strong) UIImageView   *rightImageView;
-@property (nonatomic, strong) ZMTopicModel  *model;
+@property (nonatomic, strong) ZMImageView   *bigImageView;
+@property (nonatomic, strong) ZMImageView   *leftImageView;
+@property (nonatomic, strong) ZMImageView   *rightImageView;
 
+- (void)setupUI:(NSArray *)hotTopicArray;
 
 @end
