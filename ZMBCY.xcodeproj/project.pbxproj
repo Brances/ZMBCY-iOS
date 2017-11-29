@@ -47,8 +47,6 @@
 		407B3DA01FC7C48700E422E2 /* ZMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3D9F1FC7C48700E422E2 /* ZMBaseModel.m */; };
 		407B3DA31FC7C4CC00E422E2 /* NSArray+ZMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3DA21FC7C4CC00E422E2 /* NSArray+ZMAdd.m */; };
 		407B3DA61FC7C8CC00E422E2 /* ZMHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3DA51FC7C8CC00E422E2 /* ZMHomeModel.m */; };
-		407B3DA91FC7EBCB00E422E2 /* ZMPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3DA81FC7EBCB00E422E2 /* ZMPostModel.m */; };
-		407B3DAC1FC7EC7B00E422E2 /* ZMPostDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3DAB1FC7EC7B00E422E2 /* ZMPostDetailModel.m */; };
 		407B3DB71FC800B000E422E2 /* ZMTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3DB61FC800B000E422E2 /* ZMTopicViewController.m */; };
 		407B3DBA1FC800BD00E422E2 /* ZMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3DB91FC800BD00E422E2 /* ZMMessageViewController.m */; };
 		407B3DBE1FC8011D00E422E2 /* like.caf in Resources */ = {isa = PBXBuildFile; fileRef = 407B3DBD1FC8011D00E422E2 /* like.caf */; };
@@ -157,10 +155,6 @@
 		407B3DA21FC7C4CC00E422E2 /* NSArray+ZMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ZMAdd.m"; sourceTree = "<group>"; };
 		407B3DA41FC7C8CC00E422E2 /* ZMHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMHomeModel.h; sourceTree = "<group>"; };
 		407B3DA51FC7C8CC00E422E2 /* ZMHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMHomeModel.m; sourceTree = "<group>"; };
-		407B3DA71FC7EBCB00E422E2 /* ZMPostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPostModel.h; sourceTree = "<group>"; };
-		407B3DA81FC7EBCB00E422E2 /* ZMPostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPostModel.m; sourceTree = "<group>"; };
-		407B3DAA1FC7EC7B00E422E2 /* ZMPostDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPostDetailModel.h; sourceTree = "<group>"; };
-		407B3DAB1FC7EC7B00E422E2 /* ZMPostDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPostDetailModel.m; sourceTree = "<group>"; };
 		407B3DB51FC800B000E422E2 /* ZMTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicViewController.h; sourceTree = "<group>"; };
 		407B3DB61FC800B000E422E2 /* ZMTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicViewController.m; sourceTree = "<group>"; };
 		407B3DB81FC800BD00E422E2 /* ZMMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMMessageViewController.h; sourceTree = "<group>"; };
@@ -481,10 +475,6 @@
 			children = (
 				407B3D9E1FC7C48700E422E2 /* ZMBaseModel.h */,
 				407B3D9F1FC7C48700E422E2 /* ZMBaseModel.m */,
-				407B3DA71FC7EBCB00E422E2 /* ZMPostModel.h */,
-				407B3DA81FC7EBCB00E422E2 /* ZMPostModel.m */,
-				407B3DAA1FC7EC7B00E422E2 /* ZMPostDetailModel.h */,
-				407B3DAB1FC7EC7B00E422E2 /* ZMPostDetailModel.m */,
 				401FF5C31FCD5785006590D8 /* ZMAuthorModel.h */,
 				401FF5C41FCD5785006590D8 /* ZMAuthorModel.m */,
 			);
@@ -791,7 +781,6 @@
 				407B3D941FC7BA8300E422E2 /* ZMMineViewController.m in Sources */,
 				400FA4D71FC7AFD20015335E /* YYTableView.m in Sources */,
 				35D04AC31FC717F400CE082F /* ZMColor.m in Sources */,
-				407B3DA91FC7EBCB00E422E2 /* ZMPostModel.m in Sources */,
 				401FF5C51FCD5785006590D8 /* ZMAuthorModel.m in Sources */,
 				407B3DA61FC7C8CC00E422E2 /* ZMHomeModel.m in Sources */,
 				401FF5B21FCD005A006590D8 /* ZMImageView.m in Sources */,
@@ -809,7 +798,6 @@
 				407B3DB71FC800B000E422E2 /* ZMTopicViewController.m in Sources */,
 				354505FD1FCA85CF00F68D34 /* ZMNetworkHelper.m in Sources */,
 				407B3DBA1FC800BD00E422E2 /* ZMMessageViewController.m in Sources */,
-				407B3DAC1FC7EC7B00E422E2 /* ZMPostDetailModel.m in Sources */,
 				401FF5CF1FCD6C56006590D8 /* XRWaterfallLayout.m in Sources */,
 				407B3DA01FC7C48700E422E2 /* ZMBaseModel.m in Sources */,
 				407B3D8B1FC7BA3400E422E2 /* ZMDiscoverViewController.m in Sources */,

@@ -12,8 +12,8 @@
 
 @interface ZMWaterFlowLayout : UICollectionViewLayout
 
-@property (nonatomic ,weak) id<WaterFlowLayoutDelegate> delegate;
-
+@property (nonatomic, weak) id<WaterFlowLayoutDelegate> delegate;
+@property (nonatomic, copy) void(^updateHeight)(CGFloat);
 @end
 
 @protocol WaterFlowLayoutDelegate <NSObject>

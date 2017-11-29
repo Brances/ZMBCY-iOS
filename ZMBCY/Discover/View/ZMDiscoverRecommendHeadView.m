@@ -8,6 +8,19 @@
 
 #import "ZMDiscoverRecommendHeadView.h"
 
+@interface ZMDiscoverRecommendHeadView()
+
+/** 容器 */
+@property (nonatomic, strong)UIView       *mainView;
+/** 图标 */
+@property (nonatomic, strong)UIImageView  *iconImageView;
+/** 文字 */
+@property (nonatomic, strong)UILabel      *titleLabel;
+/** 布局按钮 */
+@property (nonatomic, strong) UIButton    *styleButton;
+
+@end
+
 @implementation ZMDiscoverRecommendHeadView
 
 - (instancetype)init{
@@ -64,6 +77,43 @@
         }];
     }
     return _titleLabel;
+}
+
+- (UIButton *)styleButton{
+    if (!_styleButton) {
+        _styleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _styleButton.titleLabel.font = [UIFont systemFontOfSize:15];
+        [_styleButton setTitleColor:[ZMColor blackColor] forState:UIControlStateNormal];
+        [_styleButton setTitleColor:[ZMColor blackColor] forState:UIControlStateSelected];
+        [_styleButton setTitle:@"单列" forState:UIControlStateNormal];
+        [_styleButton setTitle:@"双列" forState:UIControlStateSelected];
+        [_styleButton addTarget:self action:@selector(clickChange:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.mainView addSubview:_styleButton];
+        [_styleButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-5);
+            make.width.mas_equalTo(60);
+            make.height.mas_equalTo(30);
+            make.centerY.mas_equalTo(self.mainView);
+        }];
+    }
+    return _styleButton;
+}
+
+- (void)setIsShow:(BOOL)isShow{
+    if (isShow) {
+        self.styleButton.hidden = NO;
+    }else{
+        self.styleButton.hidden = YES;
+    }
+}
+
+#pragma mark - 切换布局
+- (void)clickChange:(UIButton *)btn{
+    btn.selected = !btn.selected;
+    if (self.changeStyleBlock) {
+        self.changeStyleBlock(btn.selected);
+    }
 }
 
 - (void)setupUI:(NSString *)text{

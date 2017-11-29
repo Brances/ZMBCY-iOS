@@ -17,11 +17,11 @@
 @property (nonatomic, copy) NSString    *imageSuffix;
 /** 宽度 */
 @property (nonatomic, assign) CGFloat   width;
-/* 实际宽度px */
+/* 实际宽度 * 2px */
 @property (nonatomic, assign) CGFloat   realWidth;
 /** 高度 */
 @property (nonatomic, assign) CGFloat   height;
-/* 实际高度px */
+/* 实际高度 * 2px */
 @property (nonatomic, assign) CGFloat   realHeight;
 /** size */
 @property (nonatomic, assign) CGFloat   size;
@@ -44,5 +44,18 @@
 /** 作者信息 */
 @property (nonatomic, strong) ZMAuthorModel *author;
 
+
+@end
+
+@interface ZMHotRecommendListModel : ZMBaseModel
+
+/** 是否还可以加载更多 */
+@property (nonatomic, assign) BOOL          hasMore;
+/** endPicId */
+@property (nonatomic, copy) NSString        *endPicId;
+/** endCosId */
+@property (nonatomic, copy) NSString        *endCosId;
+/** 热推model */
+@property (nonatomic, strong) NSMutableArray  *data;
 
 @end

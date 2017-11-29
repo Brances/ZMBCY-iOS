@@ -9,6 +9,7 @@
 #import "ZMBaseModel.h"
 #import "ZMTopicModel.h"
 #import "ZMCircleModel.h"
+#import "ZMHotRecommendModel.h"
 
 @interface ZMRecommendModel : ZMBaseModel
 
@@ -18,7 +19,7 @@
 @property (nonatomic, strong) NSMutableArray *hotTopicArray;
 /** 热门圈子 */
 @property (nonatomic, strong) NSMutableArray *hotCircleArray;
-/** 热推 */
-@property (nonatomic, strong) NSMutableArray *recommendList;
+/** 热推ListModel */
+@property (nonatomic, strong) ZMHotRecommendListModel *recommendListModel;
 
 @end

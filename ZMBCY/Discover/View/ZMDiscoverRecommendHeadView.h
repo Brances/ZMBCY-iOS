@@ -10,12 +10,10 @@
 
 @interface ZMDiscoverRecommendHeadView : UIView
 
-/** 容器 */
-@property (nonatomic, strong)UIView       *mainView;
-/** 图标 */
-@property (nonatomic, strong)UIImageView  *iconImageView;
-/** 文字 */
-@property (nonatomic, strong)UILabel      *titleLabel;
+/** 是否显示布局按钮 */
+@property (nonatomic, assign) BOOL      isShow;
+/** 切换布局block yes为单列 */
+@property (nonatomic, copy) void(^changeStyleBlock)(BOOL);
 
 - (void) setupUI:(NSString *)text;
 

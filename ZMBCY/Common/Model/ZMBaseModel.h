@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 /** 数据类型，决定CELL的布局 */
-typedef NS_ENUM(NSInteger,otypeData){
-    otypeDataNormal = 0, //(post)
-    otypeDataGoods,
+typedef NS_ENUM(NSInteger,itemStyle){
+    itemStyleDouble = 0, //(post)
+    itemStyleSingle
 };
 
 typedef NS_ENUM(NSInteger,imageType){

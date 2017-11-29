@@ -8,7 +8,7 @@
 
 #import "ZMDiscoverRecommendHotRecommCell.h"
 
-@interface ZMDiscoverRecommendHotRecommCell()<UICollectionViewDataSource,WaterFlowLayoutDelegate,XRWaterfallLayoutDelegate>
+@interface ZMDiscoverRecommendHotRecommCell()<UICollectionViewDataSource,WaterFlowLayoutDelegate>
 
 /** 瀑布流*/
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -19,27 +19,20 @@
 
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
-         ZMWaterFlowLayout *layout = [[ZMWaterFlowLayout alloc]init];
+        ZMWaterFlowLayout *layout = [[ZMWaterFlowLayout alloc]init];
+        WEAKSELF;
+        layout.updateHeight = ^(CGFloat height){
+            if (height != weakSelf.cacheHeight && self.updateCellHeight) {
+                weakSelf.cacheHeight = height;
+                weakSelf.updateCellHeight(height);
+            }
+        };
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) collectionViewLayout:layout];
-        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.backgroundColor = [ZMColor appGraySpaceColor];
         _collectionView.dataSource = self;
         [_collectionView registerClass:[ZMDiscoverRecommendHotRecommCellWater class] forCellWithReuseIdentifier:@"water"];
         layout.delegate = self;
         [self.contentView addSubview:_collectionView];
-        
-        
-//        //创建瀑布流布局
-//        XRWaterfallLayout *waterfall = [XRWaterfallLayout waterFallLayoutWithColumnCount:2];
-//        //或者一次性设置
-//        [waterfall setColumnSpacing:2 rowSpacing:2 sectionInset:UIEdgeInsetsMake(2, 0, 2, 0)];
-//        //设置代理，实现代理方法
-//        waterfall.delegate = self;
-//        
-//        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)collectionViewLayout:waterfall];
-//        self.collectionView.backgroundColor = [UIColor whiteColor];
-//        self.collectionView.dataSource = self;
-//        [_collectionView registerClass:[ZMDiscoverRecommendHotRecommCellWater class] forCellWithReuseIdentifier:@"water"];
-//        [self.contentView addSubview:_collectionView];
     }
     return _collectionView;
 }
@@ -47,13 +40,14 @@
 - (void)setDataArray:(NSArray *)dataArray{
     if (!dataArray.count) return;
     _dataArray = dataArray;
-    [self collectionView];
-    self.height = kScreenHeight;
-    WEAKSELF;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [weakSelf.collectionView reloadData];
-    });
     
+    if (self.collectionView.height != self.cacheHeight || self.needUpdate) {
+        self.collectionView.height = self.cacheHeight;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+            self.needUpdate = NO;
+        });
+    }
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -67,35 +61,45 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ZMDiscoverRecommendHotRecommCellWater *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"water" forIndexPath:indexPath];
-    
     cell.model = self.dataArray[indexPath.item];
-    
     return cell;
-}
-
-//根据item的宽度与indexPath计算每一个item的高度
-- (CGFloat)waterfallLayout:(XRWaterfallLayout *)waterfallLayout itemHeightForWidth:(CGFloat)itemWidth atIndexPath:(NSIndexPath *)indexPath {
-    //根据图片的原始尺寸，及显示宽度，等比例缩放来计算显示高度
-    ZMHotRecommendModel *image = self.dataArray[indexPath.item];
-    return image.height / image.width * itemWidth;
 }
 
 #pragma mark - WaterFlowLayoutDelegate
 - (CGFloat)WaterFlowLayout:(ZMWaterFlowLayout *)WaterFlowLayout heightForRowAtIndexPath:(NSInteger )index itemWidth:(CGFloat)itemWidth{
     ZMHotRecommendModel *model = self.dataArray[index];
-    
-    return model.realHeight;
+    if (self.style) {
+        return model.realHeight;
+    }
+    return model.realHeight / 2;
 }
 - (CGFloat)columnCountInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
+    if (self.style) {
+        return 1;
+    }
     return 2;
 }
 - (CGFloat)columnMarginInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
+    if (self.style) {
+        return 0;
+    }
     return 2;
 }
 
 - (CGFloat)rowMarginInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
+    if (self.style) {
+        return 10;
+    }
     return 2;
 }
+
+- (UIEdgeInsets)edgeInsetsInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
+    if (self.style) {
+        return UIEdgeInsetsMake(2, 0, 2, 0);
+    }
+    return UIEdgeInsetsMake(0, 0, 5, 0);
+}
+
 
 @end
 
@@ -115,8 +119,6 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
-        self.layer.borderColor = [ZMColor appNavTitleGrayColor].CGColor;
-        self.layer.borderWidth = 1;
     }
     return self;
 }
@@ -124,7 +126,7 @@
 - (void)setModel:(ZMHotRecommendModel *)model{
     if (!model) return;
     _model = model;
-    NSString *string = [NSString stringWithFormat:@"%@%@?imageView&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=%@",HttpImageURLPre,model.imgId,model.width,model.height,model.imageSuffix];
+    NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=%@",HttpImageURLPre,model.imgId,model.realWidth,model.realHeight,@"webp"];
     [self.thumbImageView setAnimationLoadingImage:[NSURL URLWithString:string] placeholder:placeholderFailImage];
     
 }

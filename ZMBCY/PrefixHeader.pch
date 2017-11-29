@@ -61,12 +61,14 @@
 /** API */
 /** 发现-推荐 */
 #define HttpImageURLPre                    @"https://gacha.nosdn.127.net/"
-#define HttpImageURLSuffixSquare            @"?imageView&enlarge=1&quality=75&thumbnail=750y750&type="
+#define HttpImageURLSuffixSquare           @"?imageView&enlarge=1&quality=75&thumbnail=750y750&type="
 #define HttpImageURLSuffixScanle(width,height)           @"?imageView&enlarge=1&quality=75&thumbnail="width@"y"height@"&type="
 
 #define BaseURL                            @"https://api.gacha.163.com/api/v1"
+/** 发现 - 推荐 */
 #define DiscoveryRecommendInfo             BaseURL@"/discovery"
-
+/** 发现 - 热推更多 */
+#define DiscoveryNextNewRecommend          BaseURL@"/discover/nextNewRecommend"
 
 
 #endif

@@ -17,6 +17,9 @@
 
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, assign) CGFloat cacheHeight;
+@property (nonatomic, assign) BOOL    needUpdate;
+@property (nonatomic, copy) void(^updateCellHeight)(CGFloat);
+@property (nonatomic, assign) itemStyle style;
 
 @end
 

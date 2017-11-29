@@ -161,6 +161,10 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
     //            maxColumnHeight = columnHeight;
     //        }
     //    }
+    if (self.updateHeight) {
+        self.updateHeight(self.contentHeight + self.edgeInsets.bottom);
+    }
+    
     return CGSizeMake(0, self.contentHeight + self.edgeInsets.bottom);
 }
 

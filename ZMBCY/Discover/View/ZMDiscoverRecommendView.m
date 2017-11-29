@@ -22,13 +22,17 @@
 
 @property (nonatomic, strong) ZMDiscoverRecommendHeadView   *hotHeadView;
 @property (nonatomic, strong) ZMDiscoverRecommendHeadView   *hotCircleHeadView;
-//@property (nonatomic, strong) NSMutableArray                *hotTopicArray;
+@property (nonatomic, strong) ZMDiscoverRecommendHeadView   *hotRecommendHeadView;
 @property (nonatomic, strong) ZMRecommendModel              *recommendModel;
+@property (nonatomic, strong) ZMDiscoverRecommendHotRecommCell *cell;
 
 @end
 
 @implementation ZMDiscoverRecommendView
-
+{
+    NSInteger page;
+    itemStyle style;
+}
 - (ZMDiscoverRecommendHeadView *)hotHeadView{
     if (!_hotHeadView) {
         _hotHeadView = [[ZMDiscoverRecommendHeadView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
@@ -43,10 +47,30 @@
     }
     return _hotCircleHeadView;
 }
-
+- (ZMDiscoverRecommendHeadView *)hotRecommendHeadView{
+    if (!_hotRecommendHeadView) {
+        _hotRecommendHeadView = [[ZMDiscoverRecommendHeadView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+        _hotRecommendHeadView.isShow = YES;
+        WEAKSELF;
+        _hotRecommendHeadView.changeStyleBlock = ^(BOOL selected){
+            if (selected) {
+                weakSelf.cell.style = itemStyleSingle;
+                weakSelf.cell.needUpdate = YES;
+                [weakSelf.tableView reloadData];
+            }else{
+                weakSelf.cell.style = itemStyleDouble;
+                weakSelf.cell.needUpdate = YES;
+                [weakSelf.tableView reloadData];
+            }
+        };
+        [_hotRecommendHeadView setupUI:@"GACHA热推"];
+    }
+    return _hotRecommendHeadView;
+}
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
+        page = 1;
         [self setupUI];
     }
     return self;
@@ -65,8 +89,18 @@
     }];
     WEAKSELF;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        page = 1;
         [weakSelf getRecommendData];
-    }];;
+    }];
+//    _tableView.mj_footer = [MJRefreshNormalHeader footerWithRefreshingBlock:^{
+//        page ++;
+//        [weakSelf loadMoreRecommendList];
+//    }];
+    
+    _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        page ++;
+       [weakSelf loadMoreRecommendList];
+    }];
     
     [_tableView.mj_header beginRefreshing];
 }
@@ -102,7 +136,7 @@
         }
         return 55;
     }else if (indexPath.section == 3){
-        return kScreenHeight;
+        return self.cell.cacheHeight;
     }
     return 60;
 }
@@ -112,6 +146,8 @@
         return self.hotHeadView;
     }else if (section == 2){
         return self.hotCircleHeadView;
+    }else if (section == 3){
+        return self.hotRecommendHeadView;
     }
     return nil;
 }
@@ -119,7 +155,7 @@
     return nil;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 1 || section == 2) {
+    if (section == 1 || section == 2 || section == 3) {
         return 40;
     }
     return 0.01;
@@ -165,9 +201,17 @@
         if (!cell) {
             cell = [[ZMDiscoverRecommendHotRecommCell alloc] initWithStyle:0 reuseIdentifier:@"ZMDiscoverRecommendHotRecommCell"];
         }
-        if (self.recommendModel.recommendList.count) {
-            [cell setDataArray:self.recommendModel.recommendList];
+        self.cell = cell;
+        if (self.recommendModel.recommendListModel.data.count) {
+            [cell setDataArray:self.recommendModel.recommendListModel.data];
         }
+        __weak typeof(cell) weakCell = cell;
+        WEAKSELF;
+        cell.updateCellHeight = ^(CGFloat height){
+            weakCell.height = [self tableView:tableView heightForRowAtIndexPath:indexPath];
+            [weakSelf mainQueueUpdateUI];
+        };
+        
         return cell;
     }
     
@@ -199,7 +243,7 @@
 - (void)getRecommendData{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"version"] = @"1511509015";
+    param[@"version"] = @"1511926859732";
     [ZMNetworkHelper requestGETWithRequestURL:DiscoveryRecommendInfo parameters:param success:^(id responseObject) {
         if (responseObject[@"result"] && [responseObject[@"result"][@"discoverInfos"] isKindOfClass:[NSArray class]]) {
             ZMRecommendModel *model = [[ZMRecommendModel alloc] init];
@@ -229,21 +273,27 @@
                 if ([type isEqualToString:@"recommendList"]) {
                     id str = dic[@"data"];
                     id childArray = [str toArrayOrNSDictionary];
-                    for (NSDictionary *hotRecommend in childArray[@"data"]) {
-                        ZMHotRecommendModel *hotModel = [ZMHotRecommendModel modelWithJSON:hotRecommend];
-                        [model.recommendList addObject:hotModel];
-                    }
+                    
+                    ZMHotRecommendListModel *hotListModel = [ZMHotRecommendListModel modelWithJSON:childArray];
+                    model.recommendListModel = hotListModel;
                 }
             }
             
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.recommendModel = model;
+                self.cell.needUpdate = YES;
+                [self.tableView.mj_header endRefreshing];
+                [self.tableView.mj_footer resetNoMoreData];
+                [self.tableView reloadData];
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD showPromptMessage:@"加载缓存数据"];
                 [self.tableView.mj_header endRefreshing];
                 [self.tableView reloadData];
             });
         }
-        
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView.mj_header endRefreshing];
@@ -252,44 +302,47 @@
     }];
 }
 
-#pragma mark - json 字符串转字典或数组
-//-  (id)toArrayOrNSDictionary:(NSString *)jsonString{
-//    NSData *jsonData=[jsonString dataUsingEncoding:NSUTF8StringEncoding];
-//    NSError *error = nil;
-//    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
-//                                                    options:NSJSONReadingAllowFragments
-//                                                      error:nil];
-//    if (jsonObject != nil && error == nil){
-//        return jsonObject;
-//    }
-//    return nil;
-//}
-
-//json格式字符串转字典：
-
-- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+#pragma mark - 加载更多
+- (void)loadMoreRecommendList{
+    if (!self.recommendModel.recommendListModel.hasMore || page > 3) {
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        return;
+    }
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"endCosId"] = self.recommendModel.recommendListModel.endCosId;
+    param[@"endPicId"] = self.recommendModel.recommendListModel.endPicId;
     
-    if (jsonString == nil) {
-        
-        return nil;
-        
-    }
-    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *err;
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
-                         options:NSJSONReadingMutableContainers
-                         error:&err];
-    if(err) {
-        NSLog(@"json解析失败：%@",err);
-        return nil;
-    }
-    return dic;
+    [ZMNetworkHelper requestGETWithRequestURL:DiscoveryNextNewRecommend parameters:param success:^(id responseObject) {
+        if ( [responseObject[@"result"][@"data"] isKindOfClass:[NSArray class]]) {
+            NSArray *data = responseObject[@"result"][@"data"];
+            for (NSDictionary *dic in data) {
+                ZMHotRecommendModel *model = [ZMHotRecommendModel modelWithJSON:dic];
+                [self.recommendModel.recommendListModel.data addObject:model];
+            }
+            self.recommendModel.recommendListModel.hasMore = [responseObject[@"result"][@"hasMore"] boolValue];
+            self.recommendModel.recommendListModel.endPicId = responseObject[@"result"][@"endPicId"];
+            self.recommendModel.recommendListModel.endCosId = responseObject[@"result"][@"endCosId"];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView.mj_footer endRefreshing];
+                self.cell.needUpdate = YES;
+                [self.tableView reloadData];
+            });
+        }
+    } failure:^(NSError *error) {
+        [self.tableView.mj_footer endRefreshing];
+        [MBProgressHUD showPromptMessage:@"加载更多失败"];
+    }];
 }
 
+#pragma mark - 主线程更新
+- (void)mainQueueUpdateUI{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    //[self getRecommendData];
 }
 
 @end
