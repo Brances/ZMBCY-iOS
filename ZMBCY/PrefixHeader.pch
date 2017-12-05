@@ -67,6 +67,8 @@
 #define BaseURL                            @"https://api.gacha.163.com/api/v1"
 /** 发现 - 推荐 */
 #define DiscoveryRecommendInfo             BaseURL@"/discovery"
+/** 发现 - 插画、文章、COS */
+#define DiscoveryInsetInfo                 BaseURL@"/discovery/post" 
 /** 发现 - 热推更多 */
 #define DiscoveryNextNewRecommend          BaseURL@"/discover/nextNewRecommend"
 

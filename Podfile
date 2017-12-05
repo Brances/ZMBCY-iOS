@@ -12,7 +12,7 @@ pod 'MBProgressHUD', '~> 0.9.2'
 pod 'UITableView+FDTemplateLayoutCell_Bell', '~> 1.5.0'
 pod 'Shimmer', '~> 1.0.2'
 pod 'Bugly' #腾讯统计bug
-pod 'SDCycleScrollView'
+#pod 'SDCycleScrollView'
 pod 'FLEX', :configurations => ['Debug'] #网络调试库
 
 

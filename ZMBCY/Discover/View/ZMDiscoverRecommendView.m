@@ -92,11 +92,6 @@
         page = 1;
         [weakSelf getRecommendData];
     }];
-//    _tableView.mj_footer = [MJRefreshNormalHeader footerWithRefreshingBlock:^{
-//        page ++;
-//        [weakSelf loadMoreRecommendList];
-//    }];
-    
     _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         page ++;
        [weakSelf loadMoreRecommendList];
@@ -243,7 +238,11 @@
 - (void)getRecommendData{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"version"] = @"1511926859732";
+    //NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
+    // 1512445654515   1512445477796
+   // param[@"version"] = @"1511926859732";
+    param[@"version"] = [NSString getNowTimeTimestamp];
+    
     [ZMNetworkHelper requestGETWithRequestURL:DiscoveryRecommendInfo parameters:param success:^(id responseObject) {
         if (responseObject[@"result"] && [responseObject[@"result"][@"discoverInfos"] isKindOfClass:[NSArray class]]) {
             ZMRecommendModel *model = [[ZMRecommendModel alloc] init];

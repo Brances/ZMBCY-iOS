@@ -37,6 +37,17 @@
 		401FF5C81FCD59B8006590D8 /* ZMWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 401FF5C71FCD59B8006590D8 /* ZMWaterFlowLayout.m */; };
 		401FF5CB1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 401FF5CA1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m */; };
 		401FF5CF1FCD6C56006590D8 /* XRWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 401FF5CE1FCD6C56006590D8 /* XRWaterfallLayout.m */; };
+		403E1BDC1FD643F9007316AC /* ZMDiscoverInsetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BDB1FD643F9007316AC /* ZMDiscoverInsetView.m */; };
+		403E1BDF1FD66C03007316AC /* ZMWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BDE1FD66C03007316AC /* ZMWorkModel.m */; };
+		403E1BE21FD66E2A007316AC /* ZMWorksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BE11FD66E2A007316AC /* ZMWorksModel.m */; };
+		403E1BE51FD67047007316AC /* ZMInsetHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BE41FD67047007316AC /* ZMInsetHomeModel.m */; };
+		403E1BE81FD680C8007316AC /* ZMDiscoverInsetBannerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BE71FD680C8007316AC /* ZMDiscoverInsetBannerViewCell.m */; };
+		403E1BEC1FD6813F007316AC /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BEA1FD6813F007316AC /* iCarousel.m */; };
+		403E1BF91FD6814C007316AC /* ZMICarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BEE1FD6814C007316AC /* ZMICarouselView.m */; };
+		403E1C071FD69183007316AC /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1C001FD69183007316AC /* TADotView.m */; };
+		403E1C081FD69183007316AC /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1C011FD69183007316AC /* TAPageControl.m */; };
+		403E1C091FD69183007316AC /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1C021FD69183007316AC /* TAAnimatedDotView.m */; };
+		403E1C0A1FD69183007316AC /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1C031FD69183007316AC /* TAAbstractDotView.m */; };
 		407B3D821FC7B55D00E422E2 /* UIView+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 400FA4CE1FC7AF660015335E /* UIView+extension.m */; };
 		407B3D851FC7B88D00E422E2 /* ZMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3D841FC7B88D00E422E2 /* ZMViewController.m */; };
 		407B3D881FC7BA0800E422E2 /* ZMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3D871FC7BA0800E422E2 /* ZMHomeViewController.m */; };
@@ -138,6 +149,28 @@
 		401FF5CA1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverRecommendHotRecommCell.m; sourceTree = "<group>"; };
 		401FF5CD1FCD6C56006590D8 /* XRWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRWaterfallLayout.h; sourceTree = "<group>"; };
 		401FF5CE1FCD6C56006590D8 /* XRWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRWaterfallLayout.m; sourceTree = "<group>"; };
+		403E1BDA1FD643F9007316AC /* ZMDiscoverInsetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverInsetView.h; sourceTree = "<group>"; };
+		403E1BDB1FD643F9007316AC /* ZMDiscoverInsetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverInsetView.m; sourceTree = "<group>"; };
+		403E1BDD1FD66C03007316AC /* ZMWorkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMWorkModel.h; sourceTree = "<group>"; };
+		403E1BDE1FD66C03007316AC /* ZMWorkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMWorkModel.m; sourceTree = "<group>"; };
+		403E1BE01FD66E2A007316AC /* ZMWorksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMWorksModel.h; sourceTree = "<group>"; };
+		403E1BE11FD66E2A007316AC /* ZMWorksModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMWorksModel.m; sourceTree = "<group>"; };
+		403E1BE31FD67047007316AC /* ZMInsetHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMInsetHomeModel.h; sourceTree = "<group>"; };
+		403E1BE41FD67047007316AC /* ZMInsetHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMInsetHomeModel.m; sourceTree = "<group>"; };
+		403E1BE61FD680C8007316AC /* ZMDiscoverInsetBannerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverInsetBannerViewCell.h; sourceTree = "<group>"; };
+		403E1BE71FD680C8007316AC /* ZMDiscoverInsetBannerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverInsetBannerViewCell.m; sourceTree = "<group>"; };
+		403E1BEA1FD6813F007316AC /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		403E1BEB1FD6813F007316AC /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		403E1BEE1FD6814C007316AC /* ZMICarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMICarouselView.m; sourceTree = "<group>"; };
+		403E1BEF1FD6814C007316AC /* ZMICarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMICarouselView.h; sourceTree = "<group>"; };
+		403E1BFF1FD69183007316AC /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		403E1C001FD69183007316AC /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		403E1C011FD69183007316AC /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		403E1C021FD69183007316AC /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		403E1C031FD69183007316AC /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		403E1C041FD69183007316AC /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		403E1C051FD69183007316AC /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		403E1C061FD69183007316AC /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
 		407B3D831FC7B88D00E422E2 /* ZMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMViewController.h; sourceTree = "<group>"; };
 		407B3D841FC7B88D00E422E2 /* ZMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMViewController.m; sourceTree = "<group>"; };
 		407B3D861FC7BA0800E422E2 /* ZMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMHomeViewController.h; sourceTree = "<group>"; };
@@ -326,6 +359,8 @@
 			isa = PBXGroup;
 			children = (
 				407B3DC31FC814F600E422E2 /* SPPageMenu */,
+				403E1BE91FD6813F007316AC /* iCarousel */,
+				403E1BED1FD6814C007316AC /* ZMICarousel */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -408,6 +443,8 @@
 				401FF5BB1FCD2F3F006590D8 /* ZMCircleModel.m */,
 				401FF5C01FCD4519006590D8 /* ZMHotRecommendModel.h */,
 				401FF5C11FCD4519006590D8 /* ZMHotRecommendModel.m */,
+				403E1BE31FD67047007316AC /* ZMInsetHomeModel.h */,
+				403E1BE41FD67047007316AC /* ZMInsetHomeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,6 +470,10 @@
 				401FF5C71FCD59B8006590D8 /* ZMWaterFlowLayout.m */,
 				401FF5C91FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.h */,
 				401FF5CA1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m */,
+				403E1BDA1FD643F9007316AC /* ZMDiscoverInsetView.h */,
+				403E1BDB1FD643F9007316AC /* ZMDiscoverInsetView.m */,
+				403E1BE61FD680C8007316AC /* ZMDiscoverInsetBannerViewCell.h */,
+				403E1BE71FD680C8007316AC /* ZMDiscoverInsetBannerViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -470,6 +511,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		403E1BE91FD6813F007316AC /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				403E1BEA1FD6813F007316AC /* iCarousel.m */,
+				403E1BEB1FD6813F007316AC /* iCarousel.h */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		403E1BED1FD6814C007316AC /* ZMICarousel */ = {
+			isa = PBXGroup;
+			children = (
+				403E1BFE1FD69183007316AC /* PageControl */,
+				403E1BEF1FD6814C007316AC /* ZMICarouselView.h */,
+				403E1BEE1FD6814C007316AC /* ZMICarouselView.m */,
+			);
+			path = ZMICarousel;
+			sourceTree = "<group>";
+		};
+		403E1BFE1FD69183007316AC /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				403E1BFF1FD69183007316AC /* TAAbstractDotView.h */,
+				403E1C001FD69183007316AC /* TADotView.m */,
+				403E1C011FD69183007316AC /* TAPageControl.m */,
+				403E1C021FD69183007316AC /* TAAnimatedDotView.m */,
+				403E1C031FD69183007316AC /* TAAbstractDotView.m */,
+				403E1C041FD69183007316AC /* TADotView.h */,
+				403E1C051FD69183007316AC /* TAAnimatedDotView.h */,
+				403E1C061FD69183007316AC /* TAPageControl.h */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
 		407B3D9D1FC7C43B00E422E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +552,10 @@
 				407B3D9F1FC7C48700E422E2 /* ZMBaseModel.m */,
 				401FF5C31FCD5785006590D8 /* ZMAuthorModel.h */,
 				401FF5C41FCD5785006590D8 /* ZMAuthorModel.m */,
+				403E1BDD1FD66C03007316AC /* ZMWorkModel.h */,
+				403E1BDE1FD66C03007316AC /* ZMWorkModel.m */,
+				403E1BE01FD66E2A007316AC /* ZMWorksModel.h */,
+				403E1BE11FD66E2A007316AC /* ZMWorksModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -772,8 +851,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				403E1C081FD69183007316AC /* TAPageControl.m in Sources */,
 				400CB3581FCBB5A00094F1FE /* ZMTopicModel.m in Sources */,
+				403E1BF91FD6814C007316AC /* ZMICarouselView.m in Sources */,
+				403E1BDF1FD66C03007316AC /* ZMWorkModel.m in Sources */,
 				407B3D881FC7BA0800E422E2 /* ZMHomeViewController.m in Sources */,
+				403E1BE21FD66E2A007316AC /* ZMWorksModel.m in Sources */,
 				3505E3291FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.m in Sources */,
 				407B3D821FC7B55D00E422E2 /* UIView+extension.m in Sources */,
 				35D04AC61FC718F000CE082F /* ZMMainViewController.m in Sources */,
@@ -782,8 +865,10 @@
 				400FA4D71FC7AFD20015335E /* YYTableView.m in Sources */,
 				35D04AC31FC717F400CE082F /* ZMColor.m in Sources */,
 				401FF5C51FCD5785006590D8 /* ZMAuthorModel.m in Sources */,
+				403E1C071FD69183007316AC /* TADotView.m in Sources */,
 				407B3DA61FC7C8CC00E422E2 /* ZMHomeModel.m in Sources */,
 				401FF5B21FCD005A006590D8 /* ZMImageView.m in Sources */,
+				403E1BDC1FD643F9007316AC /* ZMDiscoverInsetView.m in Sources */,
 				401FF5BC1FCD2F3F006590D8 /* ZMCircleModel.m in Sources */,
 				35D04ACD1FC7193E00CE082F /* YYFPSLabel.m in Sources */,
 				35D04ACE1FC7193E00CE082F /* ZMNavView.m in Sources */,
@@ -791,11 +876,13 @@
 				400FA4D21FC7AFAB0015335E /* MBProgressHUD+MJ.m in Sources */,
 				401FF5BF1FCD373B006590D8 /* ZMRecommendModel.m in Sources */,
 				352592FD1FC7051F008165D7 /* ViewController.m in Sources */,
+				403E1C0A1FD69183007316AC /* TAAbstractDotView.m in Sources */,
 				407B3DC61FC814F600E422E2 /* SPPageMenu.m in Sources */,
 				407B3DA31FC7C4CC00E422E2 /* NSArray+ZMAdd.m in Sources */,
 				3505E32D1FCAC31300B9BF72 /* ZMDiscoverRecommendHeadView.m in Sources */,
 				3505E3301FCACBCB00B9BF72 /* ZMDiscoverRecommendHotTopicCell.m in Sources */,
 				407B3DB71FC800B000E422E2 /* ZMTopicViewController.m in Sources */,
+				403E1BEC1FD6813F007316AC /* iCarousel.m in Sources */,
 				354505FD1FCA85CF00F68D34 /* ZMNetworkHelper.m in Sources */,
 				407B3DBA1FC800BD00E422E2 /* ZMMessageViewController.m in Sources */,
 				401FF5CF1FCD6C56006590D8 /* XRWaterfallLayout.m in Sources */,
@@ -805,12 +892,15 @@
 				352592FA1FC7051F008165D7 /* AppDelegate.m in Sources */,
 				352592F71FC7051F008165D7 /* main.m in Sources */,
 				35D04AAE1FC70C5900CE082F /* Foundation+Log.m in Sources */,
+				403E1BE81FD680C8007316AC /* ZMDiscoverInsetBannerViewCell.m in Sources */,
 				35D04ABE1FC717B700CE082F /* BaseNavigationController.m in Sources */,
 				401FF5C21FCD4519006590D8 /* ZMHotRecommendModel.m in Sources */,
 				407B3DC91FC81C9B00E422E2 /* ZMDiscoverRecommendView.m in Sources */,
 				401FF5B51FCD059A006590D8 /* ZMDiscoverRecommendMoreTitleCell.m in Sources */,
 				401FF5B81FCD09F4006590D8 /* ZMDiscoverRecommendCircleCell.m in Sources */,
+				403E1BE51FD67047007316AC /* ZMInsetHomeModel.m in Sources */,
 				401FF5CB1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m in Sources */,
+				403E1C091FD69183007316AC /* TAAnimatedDotView.m in Sources */,
 				407B3D851FC7B88D00E422E2 /* ZMViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

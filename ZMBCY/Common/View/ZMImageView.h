@@ -17,4 +17,13 @@
 
 - (void)setAnimationLoadingImage:(NSURL *)url placeholder:(UIImage *)placeholder;
 
+- (void)setBlurImageView;
+
+@end
+
+@interface ZMMaskImageView : UIImageView
+
+@property (nonatomic, assign) BOOL isShowMask;
+@property (nonatomic, strong) UIView  *maskView;
+
 @end

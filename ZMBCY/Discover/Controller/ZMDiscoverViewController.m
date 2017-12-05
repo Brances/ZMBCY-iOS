@@ -10,7 +10,7 @@
 #import "SPPageMenu.h"
 #import "ViewController.h"
 #import "ZMDiscoverRecommendView.h"
-
+#import "ZMDiscoverInsetView.h"
 
 #define pageMenuH 40
 #define NaviH (kScreenHeight == 812 ? 88 : 64) // 812是iPhoneX的高度
@@ -103,10 +103,33 @@
     if ([table isKindOfClass:[UIView class]]) {
         return;
     }
-    ZMDiscoverRecommendView *view = [[ZMDiscoverRecommendView alloc] initWithFrame:CGRectMake(kScreenWidth * index, 0, kScreenWidth, self.scrollView.height)];
-    [self.scrollView addSubview:view];
-    //将当前视图存到数组中
-    [self.myChildViewControllers replaceObjectAtIndex:index withObject:view];
+   
+    switch (index) {
+        case 0:
+        {
+            ZMDiscoverRecommendView *view = [[ZMDiscoverRecommendView alloc] initWithFrame:CGRectMake(kScreenWidth * index, 0, kScreenWidth, self.scrollView.height)];
+            [self.scrollView addSubview:view];
+            //将当前视图存到数组中
+            [self.myChildViewControllers replaceObjectAtIndex:index withObject:view];
+        }
+            break;
+        case 1:
+        {
+            ZMDiscoverInsetView *view = [[ZMDiscoverInsetView alloc] initWithFrame:CGRectMake(kScreenWidth * index, 0, kScreenWidth, self.scrollView.height)];
+            [self.scrollView addSubview:view];
+            //将当前视图存到数组中
+            [self.myChildViewControllers replaceObjectAtIndex:index withObject:view];
+        }
+        default:
+//        {
+//            ZMDiscoverRecommendView *view = [[ZMDiscoverRecommendView alloc] initWithFrame:CGRectMake(kScreenWidth * index, 0, kScreenWidth, self.scrollView.height)];
+//            [self.scrollView addSubview:view];
+//            //将当前视图存到数组中
+//            [self.myChildViewControllers replaceObjectAtIndex:index withObject:view];
+//        }
+            break;
+    }
+    
     
 }
 

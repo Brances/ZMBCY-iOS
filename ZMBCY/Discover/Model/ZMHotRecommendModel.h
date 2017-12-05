@@ -40,9 +40,11 @@
 /** 是否点赞 */
 @property (nonatomic, assign) BOOL      hasPraise;
 /** 排名 */
-@property (nonatomic, assign) UInt64      top;
+@property (nonatomic, assign) UInt64    top;
 /** 作者信息 */
 @property (nonatomic, strong) ZMAuthorModel *author;
+/** 作品数量 */
+@property (nonatomic, assign) UInt64    wordNum;
 
 
 @end
@@ -59,3 +61,5 @@
 @property (nonatomic, strong) NSMutableArray  *data;
 
 @end
+
+

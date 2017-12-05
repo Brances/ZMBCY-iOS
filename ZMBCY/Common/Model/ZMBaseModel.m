@@ -35,6 +35,11 @@
 
 @implementation NSString(ZMJsonConvert)
 
++ (NSString *)getNowTimeTimestamp{
+     NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
+    return [NSString stringWithFormat:@"%.0f",interval];
+}
+
 - (id)toArrayOrNSDictionary{
     if (![self isKindOfClass:[NSString class]]) {
         NSParameterAssert(@"self is not NSString!");

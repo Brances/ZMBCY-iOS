@@ -10,6 +10,7 @@
 
 @interface ZMImageView ()
 
+@property (nonatomic, strong) UIVisualEffectView        *backVisual;
 @property (nonatomic, strong) CAShapeLayer              *progressLayer;
 @property (nonatomic, strong) UIActivityIndicatorView   *indicator;
 
@@ -127,4 +128,59 @@
     }];
 }
 
+#pragma mark - 设置模糊效果
+- (void)setBlurImageView{
+    //self.userInteractionEnabled = YES;
+    //self.image = [UIImage imageNamed:@"Stars@2x"];
+    self.backVisual = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+    self.backVisual.frame = self.bounds;
+    self.backVisual.alpha = 1.0;
+    [self addSubview:self.backVisual];
+}
+
 @end
+
+
+@interface ZMMaskImageView()
+
+
+
+@end
+
+@implementation ZMMaskImageView
+
+- (UIView *)maskView{
+    if (!_maskView) {
+        _maskView = [[UIView alloc] init];
+        _maskView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        [self addSubview:_maskView];
+        [_maskView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.bottom.mas_equalTo(0);
+        }];
+    }
+    return _maskView;
+}
+
+- (instancetype) initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        self.layer.cornerRadius = 5;
+        self.layer.masksToBounds = YES;
+        //self.backgroundColor = [ZMColor appLightGrayColor];
+        //[self maskView];
+    }
+    return self;
+}
+
+- (void)setIsShowMask:(BOOL)isShowMask{
+    if (isShowMask) {
+        //[];
+        self.maskView.hidden = NO;
+    }else{
+        self.maskView.hidden = YES;
+//        [self.maskView removeFromSuperview];
+//        self.maskView = nil;
+    }
+}
+
+@end
+

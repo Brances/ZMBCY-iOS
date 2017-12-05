@@ -30,7 +30,11 @@ typedef NS_ENUM(NSInteger,imageType){
 
 @interface NSString (ZMJsonConvert)
 
++ (NSString *)getNowTimeTimestamp;
 - (id)toArrayOrNSDictionary;
 #pragma mark - 返回图片格式
 - (NSString *)componentSeparatedByString:(NSString *)string;
+
+
+
 @end
