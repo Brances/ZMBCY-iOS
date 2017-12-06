@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZMDiscoverHeadModel.h"
 
 @interface ZMDiscoverRecommendHeadView : UIView
 
@@ -14,6 +15,8 @@
 @property (nonatomic, assign) BOOL      isShow;
 /** 切换布局block yes为单列 */
 @property (nonatomic, copy) void(^changeStyleBlock)(BOOL);
+/** 头部model */
+@property (nonatomic, strong) ZMDiscoverHeadModel *model;
 
 - (void) setupUI:(NSString *)text;
 

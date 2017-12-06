@@ -19,7 +19,7 @@
 @protocol WaterFlowLayoutDelegate <NSObject>
 
 @required
-- (CGFloat)WaterFlowLayout:(ZMWaterFlowLayout *)WaterFlowLayout heightForRowAtIndexPath:(NSInteger)index itemWidth:(CGFloat)itemWidth;
+- (CGFloat)WaterFlowLayout:(ZMWaterFlowLayout *)WaterFlowLayout heightForRowAtIndexPath:(NSInteger)index itemWidth:(CGFloat)itemWidth indexPath:(NSIndexPath *)indexPath;
 
 @optional
 - (CGFloat)columnCountInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout;

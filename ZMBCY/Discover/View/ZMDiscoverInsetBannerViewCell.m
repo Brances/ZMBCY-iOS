@@ -24,10 +24,10 @@
         self.carouseView.delegate = self;
         self.carouseView.dataSource = self;
         self.carouseView.showPageControl = YES;
-        self.carouseView.pageControlStyle = ZMICarouselPageContolStyleNormal;
+        self.carouseView.pageControlStyle = ZMICarouselPageContolStyleAnimated;
         self.carouseView.currentPageDotColor = [UIColor whiteColor];
         self.carouseView.pageControlAliment = ZMICarouselPageContolAligmentCenter;
-        self.carouseView.autoScroll = NO;
+        self.carouseView.autoScroll = YES;
         self.carouseView.infiniteLoop = YES;
         self.carouseView.pageControlBottomOffset = -5;
         
@@ -42,6 +42,9 @@
         _thumbView = [UIImageView new];
         _thumbView.layer.cornerRadius = 30 * 0.5;
         _thumbView.layer.masksToBounds = YES;
+        _thumbView.layer.borderColor = [ZMColor whiteColor].CGColor;
+        _thumbView.layer.borderWidth = 1;
+        
         [self.contentView addSubview:_thumbView];
         [_thumbView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10);
@@ -55,7 +58,7 @@
 - (UILabel *)nickLabel{
     if (!_nickLabel) {
         _nickLabel = [UILabel new];
-        _nickLabel.font = [UIFont systemFontOfSize:15];
+        _nickLabel.font = [UIFont boldSystemFontOfSize:15];
         _nickLabel.textColor = [ZMColor whiteColor];
         [self.contentView addSubview:_nickLabel];
         [_nickLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,7 +72,7 @@
 - (UILabel *)descLabel{
     if (!_descLabel) {
         _descLabel = [UILabel new];
-        _descLabel.font = [UIFont systemFontOfSize:13];
+        _descLabel.font = [UIFont systemFontOfSize:12];
         _descLabel.textColor = [ZMColor whiteColor];
         [self.contentView addSubview:_descLabel];
         [_descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -101,12 +104,13 @@
 - (UIImageView *)iconView{
     if (!_iconView) {
         _iconView = [UIImageView new];
-        _iconView.image = placeholderFailImage;
+        UIImage *image = [UIImage imageNamed:@"GCDiscovery_banner_star~iphone"];
+        _iconView.image = image;
         [self.contentView addSubview:_iconView];
         [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.remLabel.mas_left).with.offset(-3);
-            make.centerY.mas_equalTo(self.remLabel);
-            make.size.mas_equalTo(CGSizeMake(10, 10));
+            make.right.mas_equalTo(self.remLabel.mas_left).with.offset(-5);
+            make.centerY.mas_equalTo(self.remLabel.mas_centerY).with.offset(-1);
+            make.size.mas_equalTo(image.size);
         }];
     }
     return _iconView;
@@ -129,10 +133,9 @@
     [self.carouseView reloadData];
     id model = [self.dataArray safeObjectAtIndex:0];
     if ([model isKindOfClass:[ZMWorksModel class]]) {
-        [self.thumbView setImageWithURL:[NSURL URLWithString:((ZMWorksModel *)model).author.portrait]  placeholder:placeholderFailImage];
+        [self.thumbView setImageWithURL:[NSURL URLWithString:((ZMWorksModel *)model).author.portraitFullUrl]  placeholder:placeholderFailImage];
         self.nickLabel.text = ((ZMWorksModel *)model).author.nickName;
         self.descLabel.text = ((ZMWorksModel *)model).author.signature;
-        //self.remLabel.hidden = NO;
         self.iconView.hidden = NO;
     }
 }
@@ -149,7 +152,7 @@
 - (void)ZMICarouselViews:(iCarousel *)carousel didScrollToIndex:(NSInteger)index{
     id model = [self.dataArray safeObjectAtIndex:index];
     if ([model isKindOfClass:[ZMWorksModel class]]) {
-        [self.thumbView setImageWithURL:[NSURL URLWithString:((ZMWorksModel *)model).author.nickName]  placeholder:placeholderFailImage];
+        [self.thumbView setImageWithURL:[NSURL URLWithString:((ZMWorksModel *)model).author.portraitFullUrl]  placeholder:placeholderFailImage];
         self.nickLabel.text = ((ZMWorksModel *)model).author.nickName;
         self.descLabel.text = ((ZMWorksModel *)model).author.signature;
     }

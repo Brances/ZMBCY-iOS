@@ -119,7 +119,7 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
     
     CGFloat w = (collectionViewW - self.edgeInsets.left - self.edgeInsets.right -(self.columnCount - 1) * self.columnMargin) / self.columnCount;
     
-    CGFloat h = [self.delegate WaterFlowLayout:self heightForRowAtIndexPath:indexPath.item itemWidth:w];
+    CGFloat h = [self.delegate WaterFlowLayout:self heightForRowAtIndexPath:indexPath.item itemWidth:w indexPath:indexPath];
     
     NSInteger destColumn = 0;
     

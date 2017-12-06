@@ -14,6 +14,8 @@
 @property (nonatomic, copy) NSString *uid;
 /** 头像 */
 @property (nonatomic, copy) NSString *portrait;
+/** 头像完整路径 */
+@property (nonatomic, copy) NSString *portraitFullUrl;
 /** 昵称 */
 @property (nonatomic, copy) NSString *nickName;
 /** 等级 */

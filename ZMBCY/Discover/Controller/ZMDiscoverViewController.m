@@ -117,6 +117,16 @@
         {
             ZMDiscoverInsetView *view = [[ZMDiscoverInsetView alloc] initWithFrame:CGRectMake(kScreenWidth * index, 0, kScreenWidth, self.scrollView.height)];
             [self.scrollView addSubview:view];
+            view.pageType = pageViewTypeInset;
+            //将当前视图存到数组中
+            [self.myChildViewControllers replaceObjectAtIndex:index withObject:view];
+        }
+            break;
+        case 3:
+        {
+            ZMDiscoverInsetView *view = [[ZMDiscoverInsetView alloc] initWithFrame:CGRectMake(kScreenWidth * index, 0, kScreenWidth, self.scrollView.height)];
+            [self.scrollView addSubview:view];
+            view.pageType = pageViewTypeCos;
             //将当前视图存到数组中
             [self.myChildViewControllers replaceObjectAtIndex:index withObject:view];
         }

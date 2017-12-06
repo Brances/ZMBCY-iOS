@@ -92,6 +92,9 @@ typedef NS_ENUM(NSInteger, SPItemImagePosition) {
 /** 排列方式 */
 @property (nonatomic, assign) SPPageMenuPermutationWay permutationWay;
 
+/** 是否需要显示跟随样式 */
+@property (nonatomic, assign) BOOL      hideLine;
+
 // 插入item,插入和删除操作时,如果itemIndex超过了了items的个数,则不做任何操作
 - (void)insertItemWithTitle:(nullable NSString *)title atIndex:(NSUInteger)itemIndex animated:(BOOL)animated;
 - (void)insertItemWithImage:(nullable UIImage *)image  atIndex:(NSUInteger)itemIndex animated:(BOOL)animated;

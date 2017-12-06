@@ -14,10 +14,9 @@ typedef NS_ENUM(NSInteger,itemStyle){
     itemStyleSingle
 };
 
-typedef NS_ENUM(NSInteger,imageType){
-    imageTypePng = 0,
-    imageTypeJpeg,
-    imageTypeWebp,
+typedef NS_ENUM(NSInteger,pageViewType){
+    pageViewTypeInset = 0,
+    pageViewTypeCos
 };
 
 @interface ZMBaseModel : NSObject

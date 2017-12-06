@@ -84,10 +84,17 @@
         }
             break;
         case SPItemImagePositionTop: {
-            _imageRatio = _imageRatio == 0.0 ? 2.0/3.0 : _imageRatio;
-            CGFloat imageW = contentRect.size.width;
-            CGFloat imageH = contentRect.size.height * _imageRatio;
-            return CGRectMake(0, 0, imageW, imageH);
+//            _imageRatio = _imageRatio == 0.0 ? 2.0/3.0 : _imageRatio;
+//            CGFloat imageW = contentRect.size.width;
+//            CGFloat imageH = contentRect.size.height * _imageRatio;
+//            return CGRectMake(0, 0, imageW, imageH);
+            
+            CGFloat h = self.height * 0.5;
+            CGFloat w = h;
+            CGFloat x = (self.width - w) * 0.5;
+            CGFloat y = self.height * 0.1;
+            return CGRectMake(x, y, w, h);
+            
         }
             break;
         case SPItemImagePositionRight: {
@@ -127,11 +134,14 @@
         }
             break;
         case SPItemImagePositionTop: {
-            _imageRatio = _imageRatio == 0.0 ? 2.0/3.0 : _imageRatio;
-            CGFloat titleY = contentRect.size.height * _imageRatio;
-            CGFloat titleW = contentRect.size.width;
-            CGFloat titleH = contentRect.size.height - titleY;
-            return CGRectMake(0, titleY, titleW, titleH);
+//            _imageRatio = _imageRatio == 0.0 ? 2.0/3.0 : _imageRatio;
+//            CGFloat titleY = contentRect.size.height * _imageRatio;
+//            CGFloat titleW = contentRect.size.width;
+//            CGFloat titleH = contentRect.size.height - titleY;
+//            return CGRectMake(0, titleY, titleW, titleH);
+            
+            return CGRectMake(0, self.height * 0.6, self.width, self.height * 0.3);
+            
         }
             break;
         case SPItemImagePositionRight: {
@@ -382,6 +392,7 @@
 - (void)setTitle:(NSString *)title image:(UIImage *)image imagePosition:(SPItemImagePosition)imagePosition imageRatio:(CGFloat)ratio forItemIndex:(NSUInteger)itemIndex {
     if (itemIndex < self.buttons.count) {
         SPItem *button = [self.buttons objectAtIndex:itemIndex];
+        button.titleLabel.font = [UIFont systemFontOfSize:13];
         [button setTitle:title forState:UIControlStateNormal];
         [button setImage:image forState:UIControlStateNormal];
         button.imagePosition = imagePosition;
@@ -567,10 +578,24 @@
     [self layoutIfNeeded];
 }
 
+- (void)setHideLine:(BOOL)hideLine{
+    _hideLine = hideLine;
+    if (hideLine) {
+        _dividingLine.hidden = YES;
+        _dividingLine.backgroundColor = [ZMColor clearColor];
+        self.tracker.backgroundColor = [ZMColor clearColor];
+    }
+}
+
 // 按钮点击方法
 - (void)buttonInPageMenuClicked:(SPItem *)sender {
     [self.selectedButton setTitleColor:_unSelectedItemTitleColor forState:UIControlStateNormal];
     [sender setTitleColor:_selectedItemTitleColor forState:UIControlStateNormal];
+    
+    if (self.hideLine) {
+        [self.selectedButton setTitleColor:_unSelectedItemTitleColor forState:UIControlStateNormal];
+        [sender setTitleColor:_unSelectedItemTitleColor forState:UIControlStateNormal];
+    }
     
     CGFloat fromIndex = self.selectedButton ? self.selectedButton.tag-tagBaseValue : sender.tag - tagBaseValue;
     CGFloat toIndex = sender.tag - tagBaseValue;
@@ -590,6 +615,8 @@
     }
     
     self.selectedButton = sender;
+    
+    NSLog(@"当前跟随样式 = %d",self.hideLine);
     
 }
 

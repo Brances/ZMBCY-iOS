@@ -68,11 +68,11 @@
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
-        _titleLabel.font = [UIFont systemFontOfSize:13];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:13];
         _titleLabel.textColor = [ZMColor blackColor];
         [self.mainView addSubview:_titleLabel];
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.iconImageView.mas_right).with.offset(5);
+            make.left.mas_equalTo(self.iconImageView.mas_right).with.offset(8);
             make.centerY.mas_equalTo(self.mainView);
         }];
     }
@@ -85,8 +85,9 @@
         _styleButton.titleLabel.font = [UIFont systemFontOfSize:15];
         [_styleButton setTitleColor:[ZMColor blackColor] forState:UIControlStateNormal];
         [_styleButton setTitleColor:[ZMColor blackColor] forState:UIControlStateSelected];
-        [_styleButton setTitle:@"单列" forState:UIControlStateNormal];
-        [_styleButton setTitle:@"双列" forState:UIControlStateSelected];
+        [_styleButton setImage:[UIImage imageNamed:@"switch_to_double"] forState:UIControlStateNormal];
+        [_styleButton setImage:[UIImage imageNamed:@"switch_to_signal"] forState:UIControlStateSelected];
+        
         [_styleButton addTarget:self action:@selector(clickChange:) forControlEvents:UIControlEventTouchUpInside];
         
         [self.mainView addSubview:_styleButton];
@@ -118,6 +119,14 @@
 
 - (void)setupUI:(NSString *)text{
     self.titleLabel.text = text;
+}
+
+- (void)setModel:(ZMDiscoverHeadModel *)model{
+    if ([model isKindOfClass:[ZMDiscoverHeadModel class]]) {
+        _model = model;
+        self.titleLabel.text = model.title;
+        self.iconImageView.image = model.icon;
+    }
 }
 
 @end

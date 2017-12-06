@@ -266,7 +266,7 @@
 }
 
 - (void)carouselDidScroll:(iCarousel *)carousel{
-    NSLog(@"已经转动索引 = %lu",carousel.currentItemIndex);
+    //NSLog(@"已经转动索引 = %lu",carousel.currentItemIndex);
 }
 
 #pragma mark - 设置透明度

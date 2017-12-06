@@ -10,4 +10,10 @@
 
 @implementation ZMAuthorModel
 
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    NSString *suffix = dic[@"portrait"];
+    self.portraitFullUrl = [NSString stringWithFormat:@"%@%@%@webp",HttpImageURLPre,suffix,HttpImageURLSuffixScanle(@"80", @"80")];
+    return YES;
+}
+
 @end

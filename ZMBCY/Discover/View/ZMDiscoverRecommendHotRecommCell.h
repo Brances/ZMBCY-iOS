@@ -10,6 +10,7 @@
 #import "ZMWaterFlowLayout.h"
 #import "ZMHotRecommendModel.h"
 #import "XRWaterfallLayout.h"
+#import "ZMInsetHomeModel.h"
 
 @class ZMDiscoverRecommendHotRecommCellWater;
 
@@ -27,6 +28,6 @@
 
 @property (nonatomic, strong) ZMImageView           *thumbImageView;
 @property (nonatomic, strong) ZMHotRecommendModel   *model;
-
+@property (nonatomic, strong) ZMHotInsetPostModel   *postModel;
 
 @end

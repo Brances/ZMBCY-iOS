@@ -66,7 +66,7 @@
 }
 
 #pragma mark - WaterFlowLayoutDelegate
-- (CGFloat)WaterFlowLayout:(ZMWaterFlowLayout *)WaterFlowLayout heightForRowAtIndexPath:(NSInteger )index itemWidth:(CGFloat)itemWidth{
+- (CGFloat)WaterFlowLayout:(ZMWaterFlowLayout *)WaterFlowLayout heightForRowAtIndexPath:(NSInteger )index itemWidth:(CGFloat)itemWidth indexPath:(NSIndexPath *)indexPath{
     ZMHotRecommendModel *model = self.dataArray[index];
     if (self.style) {
         return model.realHeight;
@@ -129,6 +129,14 @@
     NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=%@",HttpImageURLPre,model.imgId,model.realWidth,model.realHeight,@"webp"];
     [self.thumbImageView setAnimationLoadingImage:[NSURL URLWithString:string] placeholder:placeholderFailImage];
     
+}
+
+- (void)setPostModel:(ZMHotInsetPostModel *)postModel{
+    if ([postModel isKindOfClass:[ZMHotInsetPostModel class]]) {
+        _postModel = postModel;
+        NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=%@",HttpImageURLPre,postModel.imgId,postModel.realWidth,postModel.realHeight,@"webp"];
+        [self.thumbImageView setAnimationLoadingImage:[NSURL URLWithString:string] placeholder:placeholderFailImage];
+    }
 }
 
 @end

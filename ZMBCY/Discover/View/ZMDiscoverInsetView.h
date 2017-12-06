@@ -10,6 +10,6 @@
 
 @interface ZMDiscoverInsetView : UIView
 
-
+@property (nonatomic, assign)pageViewType pageType;
 
 @end

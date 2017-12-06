@@ -9,38 +9,107 @@
 #import "ZMDiscoverInsetView.h"
 #import "ZMInsetHomeModel.h"
 #import "ZMDiscoverInsetBannerViewCell.h"
+#import "ZMDiscoverInsetHeadViewCell.h"
+#import "ZMDiscoverHeadModel.h"
+#import "ZMDiscoverInsetLayoutHeadViewCell.h"
+//#import "ZMDiscoverRecommendHotRecommCell.h"
+#import "ZMDiscoverInsetWaterCollectionViewCell.h"
 
 @interface ZMDiscoverInsetView()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionView   *collectionView;
 @property (nonatomic, strong) ZMInsetHomeModel   *model;
+@property (nonatomic, strong) NSMutableArray     *headArray;
+@property (nonatomic, strong) ZMDiscoverHeadModel *hotHeadModel;
+@property (nonatomic, strong) ZMDiscoverInsetWaterCollectionViewCell *cell;
 
 @end
 
 @implementation ZMDiscoverInsetView
 {
     CGFloat page;
+    CGFloat pageCount;
+    CGFloat type;
 }
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor redColor];
-        page = 1;
+        page =      1;
+        pageCount = 20;
+        self.headArray = [NSMutableArray new];
+        
+        
+        
+    }
+    
+    return self;
+}
+
+#pragma mark - setter
+- (void)setPageType:(pageViewType)pageType{
+    if (pageType == pageViewTypeInset) {
+        type      = 2 ;
+        //添加头部model
+        for (int i = 0; i < 3; i++) {
+            ZMDiscoverHeadModel *model = [[ZMDiscoverHeadModel alloc] init];
+            if (i == 0) {
+                model.img   = @"illustration_chart";
+                model.title = @"插画榜";
+            }else if (i == 1) {
+                model.img   = @"illustration_hoter";
+                model.title = @"人气画师";
+            }else{
+                model.img   = @"special_G_select";
+                model.title = @"专题精选";
+            }
+            [self.headArray addObject:model];
+        }
+        
+        //热门插画
+        self.hotHeadModel = [[ZMDiscoverHeadModel alloc] init];
+        self.hotHeadModel.title = @"热门插画";
+        self.hotHeadModel.icon  = [YYImage imageNamed:@"hot_illustration_title"];
+        
+        [self setupUI];
+    }else{
+        type      = 3 ;
+        //添加头部model
+        for (int i = 0; i < 2; i++) {
+            ZMDiscoverHeadModel *model = [[ZMDiscoverHeadModel alloc] init];
+            if (i == 0) {
+                model.img   = @"illustration_chart";
+                model.title = @"人气Coser";
+            }else{
+                model.img   = @"special_G_select";
+                model.title = @"专题精选";
+            }
+            [self.headArray addObject:model];
+        }
+        
+        //热门插画
+        self.hotHeadModel = [[ZMDiscoverHeadModel alloc] init];
+        self.hotHeadModel.title = @"热门COS";
+        self.hotHeadModel.icon  = [YYImage imageNamed:@"hot_illustration_title"];
+        
         [self setupUI];
     }
-    return self;
 }
 
 #pragma mark - 设置UI
 - (void)setupUI{
     WEAKSELF;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     //设置CollectionView的属性
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, self.height) collectionViewLayout:flowLayout];
-    self.collectionView.backgroundColor = [ZMColor appLightGrayColor];
+    self.collectionView.backgroundColor = [ZMColor appGraySpaceColor];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView registerClass:[ZMDiscoverInsetBannerViewCell class] forCellWithReuseIdentifier:@"ZMDiscoverInsetBannerViewCell"];
+    [self.collectionView registerClass:[ZMDiscoverInsetHeadViewCell class] forCellWithReuseIdentifier:@"ZMDiscoverInsetHeadViewCell"];
+    [self.collectionView registerClass:[ZMDiscoverInsetLayoutHeadViewCell class] forCellWithReuseIdentifier:@"ZMDiscoverInsetLayoutHeadViewCell"];
+    [self.collectionView registerClass:[ZMDiscoverInsetWaterCollectionViewCell class] forCellWithReuseIdentifier:@"ZMDiscoverInsetWaterCollectionViewCell"];
+    
+    //flowLayout.delegate = self;
     [self addSubview:self.collectionView];
     
     
@@ -48,33 +117,100 @@
         page = 1;
         [weakSelf getInsetData];
     }];
-    [self getInsetData];
+    _collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        page ++;
+        [weakSelf getNextData];
+    }];
+    
+    [self.collectionView.mj_header beginRefreshing];
 }
 #pragma mark - UICollectionViewDataSource and UICollectionViewDelegate
 #pragma mark  设置CollectionView的组数
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    return 4;
 }
 
 #pragma mark - 设置CollectionView每组所包含的个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if (section == 0 || section == 1 || section == 2 || section == 3) {
+        return 1;
+    }
     return 1;
 }
 
 #pragma mark - 设置CollectionCell的内容
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identify = @"ZMDiscoverInsetBannerViewCell";
-    ZMDiscoverInsetBannerViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
-    if (_model.remAccounts.count) {
-        [cell setDataArray:self.model.remAccounts];
-    }
     
+    if (indexPath.section == 0) {
+        static NSString *identify = @"ZMDiscoverInsetBannerViewCell";
+        ZMDiscoverInsetBannerViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
+        if (_model.remAccounts.count) {
+            [cell setDataArray:self.model.remAccounts];
+        }
+        
+        return cell;
+    }else if(indexPath.section == 1){
+        static NSString *identify = @"ZMDiscoverInsetHeadViewCell";
+        ZMDiscoverInsetHeadViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
+        if (_headArray.count) {
+            [cell setDataArray:_headArray];
+        }
+        
+        return cell;
+    }else if (indexPath.section == 2){
+        static NSString *identify = @"ZMDiscoverInsetLayoutHeadViewCell";
+        ZMDiscoverInsetLayoutHeadViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
+        if (_hotHeadModel) {
+            cell.model = _hotHeadModel;
+        }
+        WEAKSELF;
+        cell.headView.changeStyleBlock = ^(BOOL select){
+            if (select) {
+                weakSelf.cell.style = itemStyleSingle;
+            }else{
+                 weakSelf.cell.style = itemStyleDouble;
+            }
+            weakSelf.cell.needUpdate = YES;
+            [weakSelf.collectionView reloadData];
+        };
+        
+        return cell;
+    }
+
+    static NSString *identify = @"ZMDiscoverInsetWaterCollectionViewCell";
+    ZMDiscoverInsetWaterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
+    self.cell = cell;
+    if (self.model.channelPost.posts.count) {
+        [cell setDataArray:self.model.channelPost.posts];
+    }
+    __weak typeof(cell) weakCell = cell;
+    WEAKSELF;
+    cell.updateCellHeight = ^(CGFloat height){
+        weakCell.height = height;
+        [weakSelf mainQueueUpdateUI];
+    };
     return cell;
+    
+    
+}
+#pragma mark - 主线程更新
+- (void)mainQueueUpdateUI{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView reloadData];
+    });
 }
 
 #pragma mark - 每个cell的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(kScreenWidth, 260 + 80);
+    if (indexPath.section == 0) {
+        return CGSizeMake(kScreenWidth, 260 + 80);
+    }else if (indexPath.section == 1){
+         return CGSizeMake(kScreenWidth, 70);
+    }else if (indexPath.section == 2){
+        return CGSizeMake(kScreenWidth, 40);
+    }
+    
+    return CGSizeMake(kScreenWidth, self.cell.cacheHeight?self.cell.height:200);
 }
 #pragma mark - section的margin
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
@@ -85,13 +221,12 @@
     NSLog(@"---------------------%ld",indexPath.row);
 }
 
-
 #pragma mark - 获取插画数据
 - (void)getInsetData{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"version"] = [NSString getNowTimeTimestamp];
-    param[@"type"] = @"2";
+    param[@"type"] = @(type);
     
     [MBProgressHUD showMessage:@"正在加载数据中..." toView:self];
     WEAKSELF;
@@ -110,7 +245,43 @@
             });
         }
     } failure:^(NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:weakSelf animated:YES];
         [MBProgressHUD showPromptMessage:@"网络错误"];
+    }];
+    
+}
+
+#pragma mark - 获取下一页插画数据
+- (void)getNextData{
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"lastId"] =    self.model.channelPost.lastId;
+    param[@"pageCount"] = @(pageCount);
+    param[@"type"] = @(type);
+    
+    //这里为了节省性能，暂时只加载5页吧，没找到优化的方法
+    if (page > 4) {
+         [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+        return;
+    }
+    
+    [ZMNetworkHelper requestGETWithRequestURL:DiscoveryInsetNextPopularPosts parameters:param success:^(id responseObject) {
+        
+        if ([responseObject[@"result"][@"posts"] isKindOfClass:[NSArray class]]) {
+            NSArray *data = responseObject[@"result"][@"posts"];
+            for (NSDictionary *dic in data) {
+                ZMHotInsetPostModel *model = [ZMHotInsetPostModel modelWithJSON:dic];
+                [self.model.channelPost.posts addObject:model];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.collectionView.mj_footer endRefreshing];
+                self.cell.needUpdate = YES;
+                [self.collectionView reloadData];
+            });
+        }
+        
+    } failure:^(NSError *error) {
+        [self.collectionView.mj_footer endRefreshing];
+        [MBProgressHUD showPromptMessage:@"加载更多失败"];
     }];
     
 }
