@@ -23,9 +23,7 @@
 }
 
 - (void)modifyLines:(NSArray *)lines fromText:(NSAttributedString *)text inContainer:(YYTextContainer *)container {
-    //CGFloat ascent = _font.ascender;
-    //CGFloat ascent = _font.pointSize * 0.86;
-    CGFloat ascent = _font.pointSize * 1.0;
+    CGFloat ascent = _font.pointSize * 0.86;
     CGFloat lineHeight = _font.pointSize * _lineHeightMultiple;
     for (YYTextLine *line in lines) {
         CGPoint position = line.position;
@@ -47,11 +45,8 @@
     if (lineCount == 0) return 0;
     //    CGFloat ascent = _font.ascender;
     //    CGFloat descent = -_font.descender;
-    //CGFloat ascent = _font.pointSize * 0.86;
-    CGFloat ascent = _font.pointSize * 1.0;
-    
-    //CGFloat descent = _font.pointSize * 0.14;
-    CGFloat descent = _font.pointSize;
+    CGFloat ascent = _font.pointSize * 0.86;
+    CGFloat descent = _font.pointSize * 0.14;
     CGFloat lineHeight = _font.pointSize * _lineHeightMultiple;
     return _paddingTop + _paddingBottom + ascent + descent + (lineCount - 1) * lineHeight;
 }
@@ -74,6 +69,7 @@
 
 - (void)_layout {
     _marginTop = 10;
+    _titleHeight = 0;
     _textHeight = 0;
     _marginBottom = 10;
     
@@ -103,12 +99,20 @@
     }
     NSMutableAttributedString *titleText = [[NSMutableAttributedString alloc] initWithString:titleStr];
     titleText.color = [ZMColor blackColor];
-    titleText.font = [UIFont boldSystemFontOfSize:15];
+    titleText.font = [UIFont systemFontOfSize:15];
     titleText.lineBreakMode = NSLineBreakByCharWrapping;
     
-    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth -10 - 90 - 10 - 10, 9999)];
-    container.maximumNumberOfRows = 1;
-     _titleTextLayout = [YYTextLayout layoutWithContainer:container text:titleText];
+    WBTextLinePositionModifier *modifier = [WBTextLinePositionModifier new];
+    modifier.font = [UIFont fontWithName:@"Heiti SC" size:15];
+    modifier.paddingTop = 0;
+    modifier.paddingBottom = 0;
+    
+    YYTextContainer *container = [YYTextContainer new];
+    container.size = CGSizeMake(kScreenWidth -10 - 90 - 10 - 10, HUGE);
+    container.linePositionModifier = modifier;
+    container.maximumNumberOfRows = 2;
+    _titleTextLayout = [YYTextLayout layoutWithContainer:container text:titleText];
+    _titleHeight = [modifier heightForLineCount:_titleTextLayout.rowCount];
 }
 //计算文章浏览次数
 - (void)layoutVisit{
@@ -155,10 +159,12 @@
 - (void)layoutText{
     _textHeight = 0;
     _textLayout = nil;
-     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:_article.summary];
-     if (text.length == 0) return;
+    //NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:_article.summary];
+    NSMutableAttributedString *text = [self _textWithStatus:_article fontSize:15 textColor:[ZMColor appSubColor]];
+    
+    if (text.length == 0) return;
     WBTextLinePositionModifier *modifier = [WBTextLinePositionModifier new];
-    modifier.font = [UIFont systemFontOfSize:15];
+    modifier.font = [UIFont fontWithName:@"Heiti SC" size:15];
     modifier.paddingTop = 10;
     modifier.paddingBottom = 10;
     
@@ -169,6 +175,13 @@
     
     _textLayout = [YYTextLayout layoutWithContainer:container text:text];
     if (!_textLayout) return;
+    
+    //超过五行 截断 2个字 显示省略号
+    if (_textLayout.rowCount == 5) {
+        [text replaceCharactersInRange:NSMakeRange(_textLayout.visibleRange.length - 1, text.length - _textLayout.visibleRange.length - 1) withString:@"..."];
+        _textLayout = [YYTextLayout layoutWithContainer:container text:text];
+        NSLog(@"超过五行");
+    }
     
     _textHeight = [modifier heightForLineCount:_textLayout.rowCount];
 }
@@ -191,51 +204,8 @@
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:string];
     text.font = font;
     text.color = textColor;
-    
+    text.lineBreakMode = NSLineBreakByCharWrapping;
     return text;
-}
-
-
-- (NSAttributedString *)_attachmentWithFontSize:(CGFloat)fontSize image:(UIImage *)image shrink:(BOOL)shrink {
-    
-    //    CGFloat ascent = YYEmojiGetAscentWithFontSize(fontSize);
-    //    CGFloat descent = YYEmojiGetDescentWithFontSize(fontSize);
-    //    CGRect bounding = YYEmojiGetGlyphBoundingRectWithFontSize(fontSize);
-    
-    // Heiti SC 字体。。
-    CGFloat ascent = fontSize * 0.86;
-    CGFloat descent = fontSize * 0.14;
-    CGRect bounding = CGRectMake(0, -0.14 * fontSize, fontSize, fontSize);
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(ascent - (bounding.size.height + bounding.origin.y), 0, descent + bounding.origin.y, 0);
-    
-    YYTextRunDelegate *delegate = [YYTextRunDelegate new];
-    delegate.ascent = ascent;
-    delegate.descent = descent;
-    delegate.width = bounding.size.width;
-    
-    YYTextAttachment *attachment = [YYTextAttachment new];
-    attachment.contentMode = UIViewContentModeScaleAspectFit;
-    attachment.contentInsets = contentInsets;
-    attachment.content = image;
-    
-    if (shrink) {
-        // 缩小~
-        CGFloat scale = 1 / 10.0;
-        contentInsets.top += fontSize * scale;
-        contentInsets.bottom += fontSize * scale;
-        contentInsets.left += fontSize * scale;
-        contentInsets.right += fontSize * scale;
-        contentInsets = UIEdgeInsetPixelFloor(contentInsets);
-        attachment.contentInsets = contentInsets;
-    }
-    
-    NSMutableAttributedString *atr = [[NSMutableAttributedString alloc] initWithString:YYTextAttachmentToken];
-    [atr setTextAttachment:attachment range:NSMakeRange(0, atr.length)];
-    CTRunDelegateRef ctDelegate = delegate.CTRunDelegate;
-    [atr setRunDelegate:ctDelegate range:NSMakeRange(0, atr.length)];
-    if (ctDelegate) CFRelease(ctDelegate);
-    
-    return atr;
 }
 
 

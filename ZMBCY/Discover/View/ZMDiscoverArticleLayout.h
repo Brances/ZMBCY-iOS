@@ -20,7 +20,7 @@
 //以下是布局结果
 // 顶部留白
 @property (nonatomic, assign) CGFloat       marginTop; //顶部灰色留白
-
+@property (nonatomic, assign) CGFloat       titleHeight;
 @property (nonatomic, strong) YYTextLayout *titleTextLayout; //文章标题
 @property (nonatomic, strong) YYTextLayout *visitTextLayout;//浏览次数
 @property (nonatomic, strong) YYTextLayout *wordNumTextLayout; //字数统计

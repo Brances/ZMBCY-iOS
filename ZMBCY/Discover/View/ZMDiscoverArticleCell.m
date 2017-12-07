@@ -39,13 +39,23 @@
     [_thumbImage.superview layoutIfNeeded];
     //标题
     _titleLabel = [YYLabel new];
-    _titleLabel.font  = [UIFont boldSystemFontOfSize:15];
-    _titleLabel.textColor = [ZMColor blackColor];
+    _titleLabel.left = CGRectGetMaxX(_thumbImage.frame) + 10;
+    _titleLabel.width = kScreenWidth - 20 - CGRectGetMaxX(_thumbImage.frame) - 10;
+    _titleLabel.textVerticalAlignment = YYTextVerticalAlignmentCenter;
+    _titleLabel.displaysAsynchronously = YES;
+    _titleLabel.ignoreCommonProperties = YES;
+    _titleLabel.fadeOnAsynchronouslyDisplay = NO;
+    _titleLabel.fadeOnHighlight = NO;
     [_mainView addSubview:_titleLabel];
-    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_thumbImage.mas_right).with.offset(10);
-        make.top.mas_equalTo(_thumbImage.mas_top);
-    }];
+    
+//    _titleLabel.font  = [UIFont boldSystemFontOfSize:15];
+//    _titleLabel.textColor = [ZMColor blackColor];
+//    
+//    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(_thumbImage.mas_right).with.offset(10);
+//        make.right.mas_equalTo(-20);
+//        make.top.mas_equalTo(_thumbImage.mas_top);
+//    }];
     //更多按钮
     _moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _moreButton.layer.borderColor = [ZMColor appMainColor].CGColor;
@@ -82,6 +92,7 @@
     }];
     //正文
     _contentLabel = [YYLabel new];
+    _contentLabel.numberOfLines = 0;
     _contentLabel.left = 10;
     _contentLabel.width = kScreenWidth - 20;
     _contentLabel.textVerticalAlignment = YYTextVerticalAlignmentTop;
@@ -103,9 +114,15 @@
     self.titleLabel.text = layout.article.title;
     self.visitLabel.text = [NSString stringWithFormat:@"浏览%@次",layout.article.visit];
     self.wordNumLabel.text = [NSString stringWithFormat:@"连载%@字",[[NSNumber numberWithLongLong:layout.article.wordNum] stringValue]];
+    _titleLabel.top = CGRectGetMinY(_thumbImage.frame);
+    _titleLabel.height = layout.titleHeight;
+    _titleLabel.textLayout = layout.titleTextLayout;
+    
     _contentLabel.top = CGRectGetMaxY(_thumbImage.frame);
     _contentLabel.height = layout.textHeight;
     _contentLabel.textLayout = layout.textLayout;
+    _contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    //NSRange *rang = layout.textLayout.visibleRange.length;
     
 }
 

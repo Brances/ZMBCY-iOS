@@ -216,9 +216,12 @@
             for (NSDictionary *dic in data) {
                 ZMDiscoverArticleModel *model = [ZMDiscoverArticleModel modelWithJSON:dic];
                 [self.model.channelPost.posts addObject:model];
+                
+                ZMDiscoverArticleLayout *layout = [[ZMDiscoverArticleLayout alloc] initWithStatus:model];
+                [self.layouts addObject:layout];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView.mj_header endRefreshing];
+                [self.tableView.mj_footer endRefreshing];
                 [self.tableView reloadData];
             });
         }
