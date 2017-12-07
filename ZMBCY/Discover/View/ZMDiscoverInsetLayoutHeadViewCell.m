@@ -32,14 +32,6 @@
 - (void)setModel:(ZMDiscoverHeadModel *)model{
     _model = model;
     self.headView.isShow = YES;
-    WEAKSELF;
-//    self.headView.changeStyleBlock = ^(BOOL selected){
-//        if (selected) {
-//            NSLog(@"选中");
-//        }else{
-//             NSLog(@"未选中");
-//        }
-//    };
     self.headView.model = model;
 }
 

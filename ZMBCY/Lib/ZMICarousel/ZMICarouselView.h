@@ -50,16 +50,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZMICarouselView : UIView
 
+/** 主视图 */
+@property (nonatomic, strong) iCarousel         *carousel;
 //////////////////////  滚动控制API //////////////////////
 
 /** 自动滚动间隔时间,默认2s */
 @property (nonatomic, assign) CGFloat autoScrollTimeInterval;
-
 /** 是否无限循环,默认Yes */
-@property (nonatomic,assign) BOOL infiniteLoop;
-
+@property (nonatomic, assign) BOOL infiniteLoop;
 /** 是否自动滚动,默认Yes */
-@property (nonatomic,assign) BOOL autoScroll;
+@property (nonatomic, assign) BOOL autoScroll;
+/** 是否显示底部图片遮罩 */
+@property (nonatomic, assign) BOOL showBgMask;
 
 @property (nonatomic, weak) id<ZMICarouselViewDelegate>     delegate;
 @property (nonatomic, weak) id<ZMICarouselViewDataSource>   dataSource;

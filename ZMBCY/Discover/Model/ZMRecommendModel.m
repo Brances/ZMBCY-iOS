@@ -27,10 +27,5 @@
     }
     return _hotCircleArray;
 }
-//- (NSMutableArray *)recommendList{
-//    if (!_recommendList) {
-//        _recommendList = [NSMutableArray new];
-//    }
-//    return _recommendList;
-//}
+
 @end

@@ -4,7 +4,7 @@
 //
 //  Created by Brance on 2017/12/5.
 //  Copyright © 2017年 Brance. All rights reserved.
-//  插画
+//  插画和COS公用
 
 #import <UIKit/UIKit.h>
 

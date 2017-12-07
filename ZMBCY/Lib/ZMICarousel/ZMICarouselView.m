@@ -26,9 +26,8 @@
     }_dataSourceFlags;
 }
 
-
-@property (nonatomic, strong) iCarousel         *carousel;
 @property (nonatomic, strong) ZMImageView       *blurImageView;
+@property (nonatomic, strong) UIView            *blurMaskView;
 @property (nonatomic, strong) NSArray           *imagePathsGroup;
 @property (nonatomic, weak) NSTimer             *timer;
 @property (nonatomic, assign) NSInteger         totalItemsCount;
@@ -152,7 +151,6 @@
     if (self.pageControlStyle != ZMICarouselPageContolStyleAnimated) {
         self.pageControlStyle = ZMICarouselPageContolStyleAnimated;
     }
-    
     [self setCustomPageControlDotImage:pageDotImage isCurrentPageDot:NO];
 }
 #pragma mark - 设置控制点图片 - private
@@ -166,6 +164,26 @@
         } else {
             pageControl.dotImage = image;
         }
+    }
+}
+#pragma mark - 背景图片遮罩
+- (UIView *)blurMaskView{
+    if (!_blurMaskView) {
+        _blurMaskView = [UIView new];
+        _blurMaskView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        [self.blurImageView addSubview:_blurMaskView];
+        [_blurMaskView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.bottom.mas_equalTo(0);
+        }];
+    }
+    return _blurMaskView;
+}
+#pragma mark - 是否显示遮罩
+- (void)setShowBgMask:(BOOL)showBgMask{
+    if (showBgMask) {
+        self.blurMaskView.hidden = NO;
+    }else{
+        self.blurMaskView.hidden = YES;
     }
 }
 
@@ -195,17 +213,17 @@
 
 - (void)setupMainView{
     
-    ZMWorksModel *work = self.imagePathsGroup[0];
+    NSString *work = self.imagePathsGroup[0];
     //第一张作品
-    NSString *firstImg = ((ZMWorkModel *)[work.work safeObjectAtIndex:0]).fullUrl;
+    //NSString *firstImg = ((ZMWorkModel *)[work.work safeObjectAtIndex:0]).fullUrl;
     self.blurImageView = [[ZMImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     [self.blurImageView setBlurImageView];
     
-    [self.blurImageView setImageWithURL:[NSURL URLWithString:firstImg] placeholder:placeholderFailImage];
+    [self.blurImageView setImageWithURL:[NSURL URLWithString:work] placeholder:placeholderFailImage];
     
     [self addSubview:self.blurImageView];
     
-    self.carousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, 80, self.frame.size.width, self.frame.size.height - 80 - 20)];
+    self.carousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, 80 * FIT_HEIGHT, self.frame.size.width, (self.frame.size.height - 80 - 20) * FIT_HEIGHT)];
     self.carousel.type = iCarouselTypeCustom;
     self.carousel.delegate =    self;
     self.carousel.dataSource =  self;
@@ -231,14 +249,14 @@
 }
 
 - (UIView *)carousel:(iCarousel * __nonnull)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view{
-    ZMWorksModel *work = self.imagePathsGroup[index];
-    NSString *firstImg = ((ZMWorkModel *)[work.work safeObjectAtIndex:0]).fullUrl;
+    NSString *work = self.imagePathsGroup[index];
+    //NSString *firstImg = ((ZMWorkModel *)[work.work safeObjectAtIndex:0]).fullUrl;
     if (view == nil) {
-        view = [[ZMMaskImageView alloc] initWithFrame:CGRectMake(0, 0, 180,  carousel.height)];
+        view = [[ZMMaskImageView alloc] initWithFrame:CGRectMake(0, 0, 180 * FIT_WIDTH,  carousel.height)];
     }
-    ZMMaskImageView *imageView = [[ZMMaskImageView alloc] initWithFrame:CGRectMake(0, 0, 180, carousel.height)];
+    ZMMaskImageView *imageView = [[ZMMaskImageView alloc] initWithFrame:CGRectMake(0, 0, 180 * FIT_WIDTH, carousel.height)];
     //imageView.isShowMask = YES;
-    [self setupImageWithURL:imageView url:firstImg];
+    [self setupImageWithURL:imageView url:work];
     [self setupViewAlpha];
     [view addSubview:imageView];
     return view;
@@ -258,10 +276,10 @@
     if (self.carousel.scrollOffset == self.imagePathsGroup.count) {
         self.carousel.scrollOffset = self.imagePathsGroup.count - 1;
     }
-    ZMWorksModel *work = self.imagePathsGroup[(NSInteger)self.carousel.scrollOffset];
+    NSString *work = self.imagePathsGroup[(NSInteger)self.carousel.scrollOffset];
     //第一张作品
-     NSString *firstImg = ((ZMWorkModel *)[work.work safeObjectAtIndex:0]).fullUrl;
-    [self setupImageWithURL:self.blurImageView url:firstImg];
+    //NSString *firstImg = ((ZMWorkModel *)[work.work safeObjectAtIndex:0]).fullUrl;
+    [self setupImageWithURL:self.blurImageView url:work];
     
 }
 
@@ -276,11 +294,9 @@
     for (UIView *view in visibleItemViews) {
         if (![view isKindOfClass:[ZMMaskImageView class]]) continue;
         if ([view isEqual:currenView]) {
-            //view.alpha = 1.0;
             ((ZMMaskImageView *)view).isShowMask = NO;
             
         }else{
-            //view.alpha = 0.3;
             ((ZMMaskImageView *)view).isShowMask = YES;
         }
     }

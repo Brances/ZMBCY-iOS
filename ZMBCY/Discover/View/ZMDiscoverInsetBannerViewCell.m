@@ -116,6 +116,13 @@
     return _iconView;
 }
 
+- (NSMutableArray *)imagesArray{
+    if (!_imagesArray) {
+        _imagesArray = [NSMutableArray new];
+    }
+    return _imagesArray;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [ZMColor appLightGrayColor];
@@ -123,13 +130,14 @@
     return self;
 }
 
-- (void)setupUI{
-    
-}
-
 - (void)setDataArray:(NSMutableArray *)dataArray{
     if (!dataArray.count) return;
     _dataArray = dataArray;
+    [self.imagesArray removeAllObjects];
+    for (ZMWorksModel *model in dataArray) {
+        NSString *url = ((ZMWorkModel *)[model.work safeObjectAtIndex:0]).fullUrl;
+        [self.imagesArray addObject:url];
+    }
     [self.carouseView reloadData];
     id model = [self.dataArray safeObjectAtIndex:0];
     if ([model isKindOfClass:[ZMWorksModel class]]) {
@@ -142,7 +150,7 @@
 
 #pragma mark - ZMICarouselViewDataSource
 - (NSArray *)numberOfItemsInZMICarouselView{
-    return self.dataArray;
+    return self.imagesArray;
 }
 #pragma mark - ZMICarouselViewDelegate optional
 - (void)ZMICarouselView:(ZMICarouselView *)carousel didSelectItemAtIndex:(NSInteger)index{

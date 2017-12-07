@@ -71,7 +71,7 @@
 #define DiscoveryNextNewRecommend          BaseURL@"/discover/nextNewRecommend"
 /** 发现 - 插画、文章、COS */
 #define DiscoveryInsetInfo                 BaseURL@"/discovery/post"
-/** 发现 - 插画 - 热推更多 */
+/** 发现 - 插画、文章、COS - 下一页 */
 #define DiscoveryInsetNextPopularPosts     BaseURL@"/discover/nextPopularPosts"
 
 

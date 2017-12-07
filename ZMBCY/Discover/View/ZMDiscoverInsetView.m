@@ -12,7 +12,6 @@
 #import "ZMDiscoverInsetHeadViewCell.h"
 #import "ZMDiscoverHeadModel.h"
 #import "ZMDiscoverInsetLayoutHeadViewCell.h"
-//#import "ZMDiscoverRecommendHotRecommCell.h"
 #import "ZMDiscoverInsetWaterCollectionViewCell.h"
 
 @interface ZMDiscoverInsetView()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -37,15 +36,13 @@
         page =      1;
         pageCount = 20;
         self.headArray = [NSMutableArray new];
-        
-        
-        
     }
     
     return self;
 }
 
 #pragma mark - setter
+
 - (void)setPageType:(pageViewType)pageType{
     if (pageType == pageViewTypeInset) {
         type      = 2 ;
@@ -203,7 +200,7 @@
 #pragma mark - 每个cell的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return CGSizeMake(kScreenWidth, 260 + 80);
+        return CGSizeMake(kScreenWidth,340 * FIT_HEIGHT);
     }else if (indexPath.section == 1){
          return CGSizeMake(kScreenWidth, 70);
     }else if (indexPath.section == 2){

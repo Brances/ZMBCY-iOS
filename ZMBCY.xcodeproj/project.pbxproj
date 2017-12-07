@@ -37,7 +37,6 @@
 		400E3E5A1FD7F44800340296 /* ill_cos_liked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 400E3E571FD7F44800340296 /* ill_cos_liked@2x.png */; };
 		400E3E5D1FD7F58F00340296 /* switch_to_double@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 400E3E5B1FD7F58F00340296 /* switch_to_double@2x.png */; };
 		400E3E5E1FD7F58F00340296 /* switch_to_signal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 400E3E5C1FD7F58F00340296 /* switch_to_signal@2x.png */; };
-		400E3E611FD7FDF200340296 /* ZMDiscoverCosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 400E3E601FD7FDF200340296 /* ZMDiscoverCosView.m */; };
 		400FA4D21FC7AFAB0015335E /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 400FA4D11FC7AFAB0015335E /* MBProgressHUD+MJ.m */; };
 		400FA4D71FC7AFD20015335E /* YYTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 400FA4D41FC7AFD20015335E /* YYTableView.m */; };
 		400FA4D81FC7AFD20015335E /* YYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 400FA4D61FC7AFD20015335E /* YYTableViewCell.m */; };
@@ -51,6 +50,15 @@
 		401FF5C81FCD59B8006590D8 /* ZMWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 401FF5C71FCD59B8006590D8 /* ZMWaterFlowLayout.m */; };
 		401FF5CB1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 401FF5CA1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m */; };
 		401FF5CF1FCD6C56006590D8 /* XRWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 401FF5CE1FCD6C56006590D8 /* XRWaterfallLayout.m */; };
+		4033AF041FD8D18400400099 /* ZMDiscoverArticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4033AF031FD8D18400400099 /* ZMDiscoverArticleView.m */; };
+		4033AF071FD8D29900400099 /* ZMDiscoverArticleBannerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4033AF061FD8D29900400099 /* ZMDiscoverArticleBannerViewCell.m */; };
+		4033AF0A1FD8D69200400099 /* ZMDiscoverArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4033AF091FD8D69200400099 /* ZMDiscoverArticleModel.m */; };
+		4033AF0D1FD8D8ED00400099 /* ZMTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4033AF0C1FD8D8ED00400099 /* ZMTagModel.m */; };
+		4033AF101FD8DB7F00400099 /* ZMArticleHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4033AF0F1FD8DB7F00400099 /* ZMArticleHomeModel.m */; };
+		4033AF121FD91C9900400099 /* discovery_feature_cell_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4033AF111FD91C9900400099 /* discovery_feature_cell_mask@2x.png */; };
+		4033AF151FD91EF300400099 /* ZMDiscoverArticleHeadViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4033AF141FD91EF300400099 /* ZMDiscoverArticleHeadViewCell.m */; };
+		4033AF181FD92FD500400099 /* ZMDiscoverArticleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4033AF171FD92FD500400099 /* ZMDiscoverArticleLayout.m */; };
+		4033AF1B1FD9447900400099 /* ZMDiscoverArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4033AF1A1FD9447900400099 /* ZMDiscoverArticleCell.m */; };
 		403E1BDC1FD643F9007316AC /* ZMDiscoverInsetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BDB1FD643F9007316AC /* ZMDiscoverInsetView.m */; };
 		403E1BDF1FD66C03007316AC /* ZMWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BDE1FD66C03007316AC /* ZMWorkModel.m */; };
 		403E1BE21FD66E2A007316AC /* ZMWorksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BE11FD66E2A007316AC /* ZMWorksModel.m */; };
@@ -152,8 +160,6 @@
 		400E3E571FD7F44800340296 /* ill_cos_liked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ill_cos_liked@2x.png"; sourceTree = "<group>"; };
 		400E3E5B1FD7F58F00340296 /* switch_to_double@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch_to_double@2x.png"; sourceTree = "<group>"; };
 		400E3E5C1FD7F58F00340296 /* switch_to_signal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch_to_signal@2x.png"; sourceTree = "<group>"; };
-		400E3E5F1FD7FDF200340296 /* ZMDiscoverCosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverCosView.h; sourceTree = "<group>"; };
-		400E3E601FD7FDF200340296 /* ZMDiscoverCosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverCosView.m; sourceTree = "<group>"; };
 		400FA4CD1FC7AF660015335E /* UIView+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extension.h"; sourceTree = "<group>"; };
 		400FA4CE1FC7AF660015335E /* UIView+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+extension.m"; sourceTree = "<group>"; };
 		400FA4D01FC7AFAB0015335E /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
@@ -182,6 +188,23 @@
 		401FF5CA1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverRecommendHotRecommCell.m; sourceTree = "<group>"; };
 		401FF5CD1FCD6C56006590D8 /* XRWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRWaterfallLayout.h; sourceTree = "<group>"; };
 		401FF5CE1FCD6C56006590D8 /* XRWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRWaterfallLayout.m; sourceTree = "<group>"; };
+		4033AF021FD8D18400400099 /* ZMDiscoverArticleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverArticleView.h; sourceTree = "<group>"; };
+		4033AF031FD8D18400400099 /* ZMDiscoverArticleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverArticleView.m; sourceTree = "<group>"; };
+		4033AF051FD8D29900400099 /* ZMDiscoverArticleBannerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverArticleBannerViewCell.h; sourceTree = "<group>"; };
+		4033AF061FD8D29900400099 /* ZMDiscoverArticleBannerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverArticleBannerViewCell.m; sourceTree = "<group>"; };
+		4033AF081FD8D69200400099 /* ZMDiscoverArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverArticleModel.h; sourceTree = "<group>"; };
+		4033AF091FD8D69200400099 /* ZMDiscoverArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverArticleModel.m; sourceTree = "<group>"; };
+		4033AF0B1FD8D8ED00400099 /* ZMTagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTagModel.h; sourceTree = "<group>"; };
+		4033AF0C1FD8D8ED00400099 /* ZMTagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTagModel.m; sourceTree = "<group>"; };
+		4033AF0E1FD8DB7F00400099 /* ZMArticleHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMArticleHomeModel.h; sourceTree = "<group>"; };
+		4033AF0F1FD8DB7F00400099 /* ZMArticleHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMArticleHomeModel.m; sourceTree = "<group>"; };
+		4033AF111FD91C9900400099 /* discovery_feature_cell_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discovery_feature_cell_mask@2x.png"; sourceTree = "<group>"; };
+		4033AF131FD91EF300400099 /* ZMDiscoverArticleHeadViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverArticleHeadViewCell.h; sourceTree = "<group>"; };
+		4033AF141FD91EF300400099 /* ZMDiscoverArticleHeadViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverArticleHeadViewCell.m; sourceTree = "<group>"; };
+		4033AF161FD92FD500400099 /* ZMDiscoverArticleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverArticleLayout.h; sourceTree = "<group>"; };
+		4033AF171FD92FD500400099 /* ZMDiscoverArticleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverArticleLayout.m; sourceTree = "<group>"; };
+		4033AF191FD9447900400099 /* ZMDiscoverArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverArticleCell.h; sourceTree = "<group>"; };
+		4033AF1A1FD9447900400099 /* ZMDiscoverArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverArticleCell.m; sourceTree = "<group>"; };
 		403E1BDA1FD643F9007316AC /* ZMDiscoverInsetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverInsetView.h; sourceTree = "<group>"; };
 		403E1BDB1FD643F9007316AC /* ZMDiscoverInsetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDiscoverInsetView.m; sourceTree = "<group>"; };
 		403E1BDD1FD66C03007316AC /* ZMWorkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMWorkModel.h; sourceTree = "<group>"; };
@@ -480,6 +503,10 @@
 				403E1BE41FD67047007316AC /* ZMInsetHomeModel.m */,
 				400E3E4D1FD7BB7600340296 /* ZMDiscoverHeadModel.h */,
 				400E3E4E1FD7BB7600340296 /* ZMDiscoverHeadModel.m */,
+				4033AF081FD8D69200400099 /* ZMDiscoverArticleModel.h */,
+				4033AF091FD8D69200400099 /* ZMDiscoverArticleModel.m */,
+				4033AF0E1FD8DB7F00400099 /* ZMArticleHomeModel.h */,
+				4033AF0F1FD8DB7F00400099 /* ZMArticleHomeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -515,8 +542,16 @@
 				400E3E4B1FD7BB0C00340296 /* ZMDiscoverInsetLayoutHeadViewCell.m */,
 				400E3E501FD7E0AA00340296 /* ZMDiscoverInsetWaterCollectionViewCell.h */,
 				400E3E511FD7E0AA00340296 /* ZMDiscoverInsetWaterCollectionViewCell.m */,
-				400E3E5F1FD7FDF200340296 /* ZMDiscoverCosView.h */,
-				400E3E601FD7FDF200340296 /* ZMDiscoverCosView.m */,
+				4033AF021FD8D18400400099 /* ZMDiscoverArticleView.h */,
+				4033AF031FD8D18400400099 /* ZMDiscoverArticleView.m */,
+				4033AF051FD8D29900400099 /* ZMDiscoverArticleBannerViewCell.h */,
+				4033AF061FD8D29900400099 /* ZMDiscoverArticleBannerViewCell.m */,
+				4033AF131FD91EF300400099 /* ZMDiscoverArticleHeadViewCell.h */,
+				4033AF141FD91EF300400099 /* ZMDiscoverArticleHeadViewCell.m */,
+				4033AF161FD92FD500400099 /* ZMDiscoverArticleLayout.h */,
+				4033AF171FD92FD500400099 /* ZMDiscoverArticleLayout.m */,
+				4033AF191FD9447900400099 /* ZMDiscoverArticleCell.h */,
+				4033AF1A1FD9447900400099 /* ZMDiscoverArticleCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -599,6 +634,8 @@
 				403E1BDE1FD66C03007316AC /* ZMWorkModel.m */,
 				403E1BE01FD66E2A007316AC /* ZMWorksModel.h */,
 				403E1BE11FD66E2A007316AC /* ZMWorksModel.m */,
+				4033AF0B1FD8D8ED00400099 /* ZMTagModel.h */,
+				4033AF0C1FD8D8ED00400099 /* ZMTagModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -682,6 +719,7 @@
 				400E3E571FD7F44800340296 /* ill_cos_liked@2x.png */,
 				400E3E5B1FD7F58F00340296 /* switch_to_double@2x.png */,
 				400E3E5C1FD7F58F00340296 /* switch_to_signal@2x.png */,
+				4033AF111FD91C9900400099 /* discovery_feature_cell_mask@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -823,6 +861,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4033AF121FD91C9900400099 /* discovery_feature_cell_mask@2x.png in Resources */,
 				400E3E3D1FD7845400340296 /* Assets.xcassets in Resources */,
 				400E3E5A1FD7F44800340296 /* ill_cos_liked@2x.png in Resources */,
 				400E3E591FD7F44800340296 /* ill_cos_like@2x.png in Resources */,
@@ -916,6 +955,7 @@
 				400CB3581FCBB5A00094F1FE /* ZMTopicModel.m in Sources */,
 				403E1BF91FD6814C007316AC /* ZMICarouselView.m in Sources */,
 				403E1BDF1FD66C03007316AC /* ZMWorkModel.m in Sources */,
+				4033AF0A1FD8D69200400099 /* ZMDiscoverArticleModel.m in Sources */,
 				407B3D881FC7BA0800E422E2 /* ZMHomeViewController.m in Sources */,
 				403E1BE21FD66E2A007316AC /* ZMWorksModel.m in Sources */,
 				3505E3291FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.m in Sources */,
@@ -929,15 +969,19 @@
 				403E1C071FD69183007316AC /* TADotView.m in Sources */,
 				407B3DA61FC7C8CC00E422E2 /* ZMHomeModel.m in Sources */,
 				401FF5B21FCD005A006590D8 /* ZMImageView.m in Sources */,
+				4033AF1B1FD9447900400099 /* ZMDiscoverArticleCell.m in Sources */,
 				403E1BDC1FD643F9007316AC /* ZMDiscoverInsetView.m in Sources */,
 				401FF5BC1FCD2F3F006590D8 /* ZMCircleModel.m in Sources */,
 				35D04ACD1FC7193E00CE082F /* YYFPSLabel.m in Sources */,
 				35D04ACE1FC7193E00CE082F /* ZMNavView.m in Sources */,
 				407B3D971FC7BD4400E422E2 /* AppDelegate+Extend.m in Sources */,
+				4033AF151FD91EF300400099 /* ZMDiscoverArticleHeadViewCell.m in Sources */,
 				400FA4D21FC7AFAB0015335E /* MBProgressHUD+MJ.m in Sources */,
 				401FF5BF1FCD373B006590D8 /* ZMRecommendModel.m in Sources */,
 				352592FD1FC7051F008165D7 /* ViewController.m in Sources */,
+				4033AF071FD8D29900400099 /* ZMDiscoverArticleBannerViewCell.m in Sources */,
 				403E1C0A1FD69183007316AC /* TAAbstractDotView.m in Sources */,
+				4033AF101FD8DB7F00400099 /* ZMArticleHomeModel.m in Sources */,
 				407B3DC61FC814F600E422E2 /* SPPageMenu.m in Sources */,
 				407B3DA31FC7C4CC00E422E2 /* NSArray+ZMAdd.m in Sources */,
 				400E3E521FD7E0AA00340296 /* ZMDiscoverInsetWaterCollectionViewCell.m in Sources */,
@@ -948,10 +992,11 @@
 				354505FD1FCA85CF00F68D34 /* ZMNetworkHelper.m in Sources */,
 				400E3E4F1FD7BB7600340296 /* ZMDiscoverHeadModel.m in Sources */,
 				407B3DBA1FC800BD00E422E2 /* ZMMessageViewController.m in Sources */,
-				400E3E611FD7FDF200340296 /* ZMDiscoverCosView.m in Sources */,
 				400E3E431FD79C8200340296 /* ZMDiscoverInsetHeadViewCell.m in Sources */,
 				401FF5CF1FCD6C56006590D8 /* XRWaterfallLayout.m in Sources */,
+				4033AF181FD92FD500400099 /* ZMDiscoverArticleLayout.m in Sources */,
 				407B3DA01FC7C48700E422E2 /* ZMBaseModel.m in Sources */,
+				4033AF0D1FD8D8ED00400099 /* ZMTagModel.m in Sources */,
 				407B3D8B1FC7BA3400E422E2 /* ZMDiscoverViewController.m in Sources */,
 				401FF5C81FCD59B8006590D8 /* ZMWaterFlowLayout.m in Sources */,
 				352592FA1FC7051F008165D7 /* AppDelegate.m in Sources */,
@@ -968,6 +1013,7 @@
 				401FF5CB1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m in Sources */,
 				403E1C091FD69183007316AC /* TAAnimatedDotView.m in Sources */,
 				407B3D851FC7B88D00E422E2 /* ZMViewController.m in Sources */,
+				4033AF041FD8D18400400099 /* ZMDiscoverArticleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,6 @@
 
 @implementation ZMHotRecommendModel
 
-
-
 - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
     NSString *suffix = dic[@"imgId"];
     if (![suffix isKindOfClass:[NSString class]]) return NO;

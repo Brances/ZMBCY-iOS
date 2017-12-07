@@ -1,17 +1,17 @@
 //
-//  ZMDiscoverInsetBannerViewCellCollectionViewCell.h
+//  ZMDiscoverArticleBannerViewCell.h
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/5.
+//  Created by ZOMAKE on 2017/12/7.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "YYTableViewCell.h"
 
-@interface ZMDiscoverInsetBannerViewCell : UICollectionViewCell
+@interface ZMDiscoverArticleBannerViewCell : YYTableViewCell
 
-/** model集合 */
-@property (nonatomic, strong) NSMutableArray *dataArray;
+/** model 集合 */
+@property (nonatomic, strong) NSArray        *dataArray;
 /** 图片集合 */
 @property (nonatomic, strong) NSMutableArray *imagesArray;
 @property (nonatomic, strong) UIImageView    *thumbView;
