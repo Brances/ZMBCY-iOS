@@ -33,7 +33,8 @@ typedef NS_ENUM(NSInteger,pageViewType){
 - (id)toArrayOrNSDictionary;
 #pragma mark - 返回图片格式
 - (NSString *)componentSeparatedByString:(NSString *)string;
-
+//计算文字宽度
++ (CGFloat)getTitleWidth:(NSString *)title withFontSize:(CGFloat)size;
 
 
 @end

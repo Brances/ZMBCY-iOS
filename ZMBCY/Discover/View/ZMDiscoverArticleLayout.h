@@ -22,20 +22,21 @@
 @property (nonatomic, assign) CGFloat       marginTop; //顶部灰色留白
 @property (nonatomic, assign) CGFloat       titleHeight;
 @property (nonatomic, strong) YYTextLayout *titleTextLayout; //文章标题
+@property (nonatomic, assign) CGFloat       visitHeight;      //浏览次数高度
 @property (nonatomic, strong) YYTextLayout *visitTextLayout;//浏览次数
+@property (nonatomic, assign) CGFloat       wordNumHeight;   //连载字数高度
 @property (nonatomic, strong) YYTextLayout *wordNumTextLayout; //字数统计
 
 // 文本内容
-@property (nonatomic, assign) CGFloat textHeight;       //文本高度(包括下方留白)
+@property (nonatomic, assign) CGFloat       textHeight;       //文本高度(包括下方留白)
 @property (nonatomic, strong) YYTextLayout *textLayout; //文本
 
-//个人资料
+//标签高度
+@property (nonatomic, assign) CGFloat       tagHeight;
+//个人资料高度
 @property (nonatomic, assign) CGFloat       profileHeight;
-@property (nonatomic, strong) YYTextLayout *nameTextLayout;
-
 // 下边留白
 @property (nonatomic, assign) CGFloat marginBottom; //下边留白
-
 // 总高度
 @property (nonatomic, assign) CGFloat height;
 

@@ -12,5 +12,7 @@
 
 @property (nonatomic, copy) NSString     *tagName;
 @property (nonatomic, copy) NSString     *tagID;
+/** 此属性作为文章第一个标签的背景图片url */
+@property (nonatomic, copy) NSString     *thumb;
 
 @end

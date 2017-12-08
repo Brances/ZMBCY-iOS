@@ -68,13 +68,15 @@
         self.hotHeadModel.icon  = [YYImage imageNamed:@"hot_illustration_title"];
         
         [self setupUI];
+        
+        
     }else{
         type      = 3 ;
         //添加头部model
         for (int i = 0; i < 2; i++) {
             ZMDiscoverHeadModel *model = [[ZMDiscoverHeadModel alloc] init];
             if (i == 0) {
-                model.img   = @"illustration_chart";
+                model.img   = @"hot_coser";
                 model.title = @"人气Coser";
             }else{
                 model.img   = @"special_G_select";
@@ -89,6 +91,8 @@
         self.hotHeadModel.icon  = [YYImage imageNamed:@"hot_illustration_title"];
         
         [self setupUI];
+        
+        
     }
 }
 
@@ -105,10 +109,9 @@
     [self.collectionView registerClass:[ZMDiscoverInsetHeadViewCell class] forCellWithReuseIdentifier:@"ZMDiscoverInsetHeadViewCell"];
     [self.collectionView registerClass:[ZMDiscoverInsetLayoutHeadViewCell class] forCellWithReuseIdentifier:@"ZMDiscoverInsetLayoutHeadViewCell"];
     [self.collectionView registerClass:[ZMDiscoverInsetWaterCollectionViewCell class] forCellWithReuseIdentifier:@"ZMDiscoverInsetWaterCollectionViewCell"];
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"placeholer"];
     
-    //flowLayout.delegate = self;
     [self addSubview:self.collectionView];
-    
     
     _collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         page = 1;
@@ -119,7 +122,9 @@
         [weakSelf getNextData];
     }];
     
-    [self.collectionView.mj_header beginRefreshing];
+    [ZMLoadingView showLoadingInView:self];
+    [self getInsetData];
+    
 }
 #pragma mark - UICollectionViewDataSource and UICollectionViewDelegate
 #pragma mark  设置CollectionView的组数
@@ -129,6 +134,7 @@
 
 #pragma mark - 设置CollectionView每组所包含的个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if (!_model) return 0;
     if (section == 0 || section == 1 || section == 2 || section == 3) {
         return 1;
     }
@@ -137,6 +143,12 @@
 
 #pragma mark - 设置CollectionCell的内容
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (!_model) {
+        UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"placeholer" forIndexPath:indexPath];
+        cell.backgroundColor = [ZMColor appGraySpaceColor];
+        return cell;
+    }
     
     if (indexPath.section == 0) {
         static NSString *identify = @"ZMDiscoverInsetBannerViewCell";
@@ -225,16 +237,17 @@
     param[@"version"] = [NSString getNowTimeTimestamp];
     param[@"type"] = @(type);
     
-    [MBProgressHUD showMessage:@"正在加载数据中..." toView:self];
+    //[MBProgressHUD showMessage:@"正在加载数据中..." toView:self];
     WEAKSELF;
     [ZMNetworkHelper requestGETWithRequestURL:DiscoveryInsetInfo parameters:param success:^(id responseObject) {
-        [MBProgressHUD hideAllHUDsForView:weakSelf animated:YES];
+        //[MBProgressHUD hideAllHUDsForView:weakSelf animated:YES];
         if (responseObject[@"result"] && [responseObject[@"result"] isKindOfClass:[NSDictionary class]]) {
             ZMInsetHomeModel *model = [ZMInsetHomeModel modelWithJSON:responseObject[@"result"]];
             //self.model = model;
             NSLog(@"当前model = %@",model);
             
             dispatch_async(dispatch_get_main_queue(), ^{
+                [ZMLoadingView hideLoadingForView:weakSelf];
                 self.model = model;
                 [self.collectionView.mj_header endRefreshing];
                 [self.collectionView.mj_footer resetNoMoreData];
@@ -242,10 +255,17 @@
             });
         }
     } failure:^(NSError *error) {
-        [MBProgressHUD hideAllHUDsForView:weakSelf animated:YES];
-        [MBProgressHUD showPromptMessage:@"网络错误"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD showPromptMessage:@"网络错误"];
+            [weakSelf.collectionView.mj_header endRefreshing];
+            [ZMLoadingView hideLoadingForView:weakSelf];
+            if (!weakSelf.model) {
+                [ZMLoadFailedView showLoadFailedInView:weakSelf topEdge:0 retryHandle:^{
+                    [weakSelf getInsetData];
+                }];
+            }
+        });
     }];
-    
 }
 
 #pragma mark - 获取下一页插画数据
@@ -260,7 +280,6 @@
          [self.collectionView.mj_footer endRefreshingWithNoMoreData];
         return;
     }
-    
     [ZMNetworkHelper requestGETWithRequestURL:DiscoveryInsetNextPopularPosts parameters:param success:^(id responseObject) {
         
         if ([responseObject[@"result"][@"posts"] isKindOfClass:[NSArray class]]) {

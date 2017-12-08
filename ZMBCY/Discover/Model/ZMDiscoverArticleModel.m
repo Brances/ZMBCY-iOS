@@ -44,7 +44,19 @@
         }];
         self.tag = tagMuString;
     };
-    
+    //手动添加第一个标签值,把用户ID 作为tagID
+    if ([dic[@"circleName"] isKindOfClass:[NSString class]] && ((NSString *)dic[@"circleName"]).length) {
+        ZMTagModel *model = [[ZMTagModel alloc] init];
+        model.tagName = dic[@"circleName"];
+        model.tagID = self.author.uid;
+        model.thumb = [NSString stringWithFormat:@"%@%@?imageView&quality=75&thumbnail=200y200&type=webp",HttpImageURLPre,dic[@"circlePic"]];
+        if (self.tags.count) {
+            [self.tags insertObject:model atIndex:0];
+        }else{
+            self.tags = [NSMutableArray new];
+            [self.tags addObject:model];
+        }
+    }
     return YES;
 }
 

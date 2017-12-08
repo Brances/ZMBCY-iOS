@@ -31,7 +31,7 @@
 @property (nonatomic, copy) NSString        *circleName;
 /** 圈子ID */
 @property (nonatomic, copy) NSString        *circleId;
-/** 圈子图片 */
+/** 第一个标签图片 */
 @property (nonatomic, copy) NSString        *circlePic;
 /** banner图片后缀 */
 @property (nonatomic, copy) NSString        *circleImage;
@@ -46,7 +46,7 @@
 /** banner标题 */
 @property (nonatomic, copy) NSString        *title;
 /** 标签集合 */
-@property (nonatomic, strong) NSArray<ZMTagModel *>  *tags;
+@property (nonatomic, strong) NSMutableArray<ZMTagModel *>  *tags;
 /** 标签集合值 = circleName + tagName */
 @property (nonatomic, copy) NSString        *tag;
 

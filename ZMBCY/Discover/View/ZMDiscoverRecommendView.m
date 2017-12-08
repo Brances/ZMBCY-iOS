@@ -72,6 +72,7 @@
         self.backgroundColor = [UIColor whiteColor];
         page = 1;
         [self setupUI];
+        [ZMLoadingView showLoadingInView:self];
     }
     return self;
 }
@@ -105,6 +106,7 @@
     return 4;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (!_recommendModel) return 0;
     if (section == 0) {
         return 1;
     }else if (section == 1){
@@ -117,6 +119,7 @@
     return 1;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (!_recommendModel) return 0;
     if (indexPath.section == 0) {
         return 119 * FIT_WIDTH;
     }else if(indexPath.section == 1){
@@ -137,6 +140,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (!_recommendModel) return nil;
     if (section == 1) {
         return self.hotHeadView;
     }else if (section == 2){
@@ -150,6 +154,7 @@
     return nil;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (!_recommendModel) return 0.01;
     if (section == 1 || section == 2 || section == 3) {
         return 40;
     }
@@ -160,14 +165,14 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0 && _recommendModel) {
         ZMDiscoverRecommendBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"banner"];
         if (!cell) {
             cell = [[ZMDiscoverRecommendBannerCell alloc] initWithStyle:0 reuseIdentifier:@"banner"];
         }
         [cell setupUI:@"http://gacha.nosdn.127.net/70c9f7f731f84747b4b22cfe2675f6f4.png?imageView&thumbnail=1150y366&type=png&enlarge=1&quality=100&axis=0"];
         return cell;
-    }else if (indexPath.section == 1){
+    }else if (indexPath.section == 1 && _recommendModel){
         if (indexPath.row == 0) {
             ZMDiscoverRecommendHotTopicCell *cell =[tableView dequeueReusableCellWithIdentifier:@"hotTopic"];
             if (!cell) {
@@ -178,7 +183,7 @@
             }
             return cell;
         }
-    }else if (indexPath.section == 2){
+    }else if (indexPath.section == 2 && _recommendModel){
         if (indexPath.row == 0) {
             ZMDiscoverRecommendCircleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CircleCell"];
             if (!cell) {
@@ -191,7 +196,7 @@
             return cell;
         }
         
-    }else if (indexPath.section == 3){
+    }else if (indexPath.section == 3 && _recommendModel){
         ZMDiscoverRecommendHotRecommCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZMDiscoverRecommendHotRecommCell"];
         if (!cell) {
             cell = [[ZMDiscoverRecommendHotRecommCell alloc] initWithStyle:0 reuseIdentifier:@"ZMDiscoverRecommendHotRecommCell"];
@@ -210,7 +215,7 @@
         return cell;
     }
     
-    if (indexPath.row == 1 && (indexPath.section == 1 || indexPath.section == 2)) {
+    if (indexPath.row == 1  && (indexPath.section == 1 || indexPath.section == 2) && _recommendModel) {
         ZMDiscoverRecommendMoreTitleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"more"];
         if (!cell) {
             cell = [[ZMDiscoverRecommendMoreTitleCell alloc] initWithStyle:0 reuseIdentifier:@"more"];
@@ -236,7 +241,7 @@
 
 #pragma mark - 请求数据
 - (void)getRecommendData{
-    
+    WEAKSELF;
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     //NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
     // 1512445654515   1512445477796
@@ -280,20 +285,33 @@
             
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.recommendModel = model;
-                self.cell.needUpdate = YES;
-                [self.tableView.mj_header endRefreshing];
-                [self.tableView.mj_footer resetNoMoreData];
-                [self.tableView reloadData];
+                [ZMLoadingView hideLoadingForView:weakSelf];
+                weakSelf.recommendModel = model;
+                weakSelf.cell.needUpdate = YES;
+                [weakSelf.tableView.mj_header endRefreshing];
+                [weakSelf.tableView.mj_footer resetNoMoreData];
+                [weakSelf.tableView reloadData];
             });
         }else{
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD showPromptMessage:@"加载缓存数据"];
-                [self.tableView.mj_header endRefreshing];
-                [self.tableView reloadData];
+                [weakSelf.tableView.mj_header endRefreshing];
+                [weakSelf.tableView reloadData];
             });
         }
     } failure:^(NSError *error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD showPromptMessage:@"网络错误"];
+            [weakSelf.tableView.mj_header endRefreshing];
+            [ZMLoadingView hideLoadingForView:weakSelf];
+            if (!_recommendModel) {
+                [ZMLoadFailedView showLoadFailedInView:weakSelf topEdge:0 retryHandle:^{
+                    [weakSelf getRecommendData];
+                }];
+            }
+        });
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView.mj_header endRefreshing];
             [self.tableView reloadData];

@@ -71,7 +71,10 @@
     _marginTop = 10;
     _titleHeight = 0;
     _textHeight = 0;
-    _marginBottom = 10;
+    _tagHeight = 30 + 10;
+    _profileHeight = 45;
+    //10px边距 + 5px 灰色间距
+    _marginBottom = 15;
     
     // 文本排版，计算布局
     [self layoutTitle];
@@ -81,8 +84,10 @@
     // 计算高度
     _height = 0;
     _height += _marginTop;
-    _height += 110;
+    _height += 110 * FIT_HEIGHT;
     _height += _textHeight;
+    _height += _tagHeight;
+    _height += _profileHeight;
     _height += _marginBottom;
     
 }
@@ -99,16 +104,16 @@
     }
     NSMutableAttributedString *titleText = [[NSMutableAttributedString alloc] initWithString:titleStr];
     titleText.color = [ZMColor blackColor];
-    titleText.font = [UIFont systemFontOfSize:15];
+    titleText.font = [UIFont boldSystemFontOfSize:15];
     titleText.lineBreakMode = NSLineBreakByCharWrapping;
     
     WBTextLinePositionModifier *modifier = [WBTextLinePositionModifier new];
-    modifier.font = [UIFont fontWithName:@"Heiti SC" size:15];
-    modifier.paddingTop = 0;
-    modifier.paddingBottom = 0;
+    modifier.font = [UIFont boldSystemFontOfSize:15];
+    modifier.paddingTop = 5;
+    modifier.paddingBottom = 10;
     
     YYTextContainer *container = [YYTextContainer new];
-    container.size = CGSizeMake(kScreenWidth -10 - 90 - 10 - 10, HUGE);
+    container.size = CGSizeMake(kScreenWidth - 10 - 90 * FIT_WIDTH - 10 - 10, HUGE);
     container.linePositionModifier = modifier;
     container.maximumNumberOfRows = 2;
     _titleTextLayout = [YYTextLayout layoutWithContainer:container text:titleText];
@@ -131,6 +136,13 @@
     YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth, 9999)];
     container.maximumNumberOfRows = 1;
     _visitTextLayout = [YYTextLayout layoutWithContainer:container text:visitText];
+    //visitHeight
+    WBTextLinePositionModifier *modifier = [WBTextLinePositionModifier new];
+    modifier.font = [UIFont boldSystemFontOfSize:12];
+    modifier.paddingTop = 2;
+    modifier.paddingBottom = 2;
+    
+    _visitHeight = [modifier heightForLineCount:_visitTextLayout.rowCount];
     
 }
 
@@ -152,33 +164,45 @@
     YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth, 9999)];
     container.maximumNumberOfRows = 1;
     _wordNumTextLayout = [YYTextLayout layoutWithContainer:container text:wordText];
-    
+    WBTextLinePositionModifier *modifier = [WBTextLinePositionModifier new];
+    modifier.font = [UIFont boldSystemFontOfSize:12];
+    modifier.paddingTop = 2;
+    modifier.paddingBottom = 2;
+    //wordNumHeight
+    _wordNumHeight = [modifier heightForLineCount:_wordNumTextLayout.rowCount];
 }
 
 //计算正文内容
 - (void)layoutText{
     _textHeight = 0;
     _textLayout = nil;
-    //NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:_article.summary];
-    NSMutableAttributedString *text = [self _textWithStatus:_article fontSize:15 textColor:[ZMColor appSubColor]];
+    NSMutableAttributedString *text = [self _textWithStatus:_article fontSize:15 textColor:[ZMColor appSupportColor]];
     
     if (text.length == 0) return;
     WBTextLinePositionModifier *modifier = [WBTextLinePositionModifier new];
     modifier.font = [UIFont fontWithName:@"Heiti SC" size:15];
     modifier.paddingTop = 10;
-    modifier.paddingBottom = 10;
+    modifier.paddingBottom = 5;
     
     YYTextContainer *container = [YYTextContainer new];
-    container.size = CGSizeMake(kScreenWidth - 20, HUGE);
+    container.size = CGSizeMake(kScreenWidth - 30, HUGE);
     container.linePositionModifier = modifier;
     container.maximumNumberOfRows = 5;
     
     _textLayout = [YYTextLayout layoutWithContainer:container text:text];
     if (!_textLayout) return;
     
-    //超过五行 截断 2个字 显示省略号
+    //超过五行 截断 显示省略号
     if (_textLayout.rowCount == 5) {
-        [text replaceCharactersInRange:NSMakeRange(_textLayout.visibleRange.length - 1, text.length - _textLayout.visibleRange.length - 1) withString:@"..."];
+        //可见字符串长度
+        NSInteger visible = _textLayout.visibleRange.length;
+        //总长度
+        NSInteger sum = text.length;
+        //若未有超出屏幕的字符则直接返回
+        if (sum - 1 <= visible) {
+            return;
+        }
+        [text replaceCharactersInRange:NSMakeRange(visible - 1, sum - visible + 1) withString:@"..."];
         _textLayout = [YYTextLayout layoutWithContainer:container text:text];
         NSLog(@"超过五行");
     }

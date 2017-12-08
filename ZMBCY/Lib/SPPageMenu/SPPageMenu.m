@@ -616,8 +616,6 @@
     
     self.selectedButton = sender;
     
-    NSLog(@"当前跟随样式 = %d",self.hideLine);
-    
 }
 
 // 点击button让itemScrollView发生偏移

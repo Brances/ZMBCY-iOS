@@ -71,4 +71,8 @@
     return @"png";
 }
 
++ (CGFloat)getTitleWidth:(NSString *)title withFontSize:(CGFloat)size{
+    return ceil([title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:size]}].width);
+}
+
 @end
