@@ -38,17 +38,15 @@
 
 @interface SPItem : UIButton
 
-@property (nonatomic, assign) CGFloat imageRatio;
-@property (nonatomic, assign) SPItemImagePosition imagePosition;
+@property (nonatomic, assign) CGFloat               imageRatio;
+@property (nonatomic, assign) SPItemImagePosition   imagePosition;
+
 @end
 
 @implementation SPItem
 
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        
         [self initialize];
     }
     return self;
@@ -56,9 +54,7 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        
         [self initialize];
-        
     }
     return self;
 }
@@ -201,6 +197,7 @@
 @end
 
 @interface SPPageMenu()
+
 @property (nonatomic, assign) SPPageMenuTrackerStyle trackerStyle;
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) UIImageView *tracker;
@@ -225,10 +222,10 @@
 @property (nonatomic, assign) CGFloat endR;
 @property (nonatomic, assign) CGFloat endG;
 @property (nonatomic, assign) CGFloat endB;
+
 @end
 
 @implementation SPPageMenu
-
 
 #pragma mark - public
 
@@ -251,24 +248,18 @@
 - (void)setItems:(NSArray *)items selectedItemIndex:(NSUInteger)selectedItemIndex {
     _items = items.copy;
     _selectedItemIndex = selectedItemIndex;
-    
     self.insert = NO;
-    
     for (int i = 0; i < items.count; i++) {
         id object = items[i];
-        
         NSAssert([object isKindOfClass:[NSString class]] || [object isKindOfClass:[UIImage class]], @"items中的元素只能是NSString或UIImage类型");
         [self addButton:i object:object animated:NO];
     }
-
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    
     if (self.buttons.count) {
         // 默认选中selectedItemIndex对应的按钮
         SPItem *selectedButton = [self.buttons objectAtIndex:selectedItemIndex];
         [self buttonInPageMenuClicked:selectedButton];
-        
         if (self.trackerStyle == SPPageMenuTrackerStyleTextZoom) {
             [selectedButton setTitleColor:_selectedItemTitleColor forState:UIControlStateNormal];
             selectedButton.transform = CGAffineTransformMakeScale(1+maxTextScale, 1+maxTextScale);
@@ -871,7 +862,6 @@
 - (void)setBridgeScrollView:(UIScrollView *)bridgeScrollView {
     _bridgeScrollView = bridgeScrollView;
     if (bridgeScrollView) {
-        
         [bridgeScrollView addObserver:self forKeyPath:scrollViewContentOffset options:NSKeyValueObservingOptionNew context:nil];
     } else {
         NSLog(@"你传了一个空的scrollView");

@@ -2,14 +2,13 @@
 //  ZMDiscoverRecommendHotRecommCell.h
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/11/28.
+//  Created by Brance on 2017/11/28.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
 #import "YYTableViewCell.h"
 #import "ZMWaterFlowLayout.h"
 #import "ZMHotRecommendModel.h"
-#import "XRWaterfallLayout.h"
 #import "ZMInsetHomeModel.h"
 
 @class ZMDiscoverRecommendHotRecommCellWater;

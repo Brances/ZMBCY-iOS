@@ -2,7 +2,7 @@
 //  ZMDiscoverArticleBannerModel.m
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/7.
+//  Created by Brance on 2017/12/7.
 //  Copyright © 2017年 Brance. All rights reserved.
 //  
 

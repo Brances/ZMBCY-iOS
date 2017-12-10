@@ -2,7 +2,7 @@
 //  ZMDiscoverRecommendHotRecommCell.m
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/11/28.
+//  Created by Brance on 2017/11/28.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
@@ -68,33 +68,33 @@
 #pragma mark - WaterFlowLayoutDelegate
 - (CGFloat)WaterFlowLayout:(ZMWaterFlowLayout *)WaterFlowLayout heightForRowAtIndexPath:(NSInteger )index itemWidth:(CGFloat)itemWidth indexPath:(NSIndexPath *)indexPath{
     ZMHotRecommendModel *model = self.dataArray[index];
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return model.realHeight;
     }
     return model.realHeight / 2;
 }
 - (CGFloat)columnCountInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return 1;
     }
     return 2;
 }
 - (CGFloat)columnMarginInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return 0;
     }
     return 2;
 }
 
 - (CGFloat)rowMarginInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return 10;
     }
     return 2;
 }
 
 - (UIEdgeInsets)edgeInsetsInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return UIEdgeInsetsMake(2, 0, 2, 0);
     }
     return UIEdgeInsetsMake(0, 0, 5, 0);
@@ -126,7 +126,7 @@
 - (void)setModel:(ZMHotRecommendModel *)model{
     if (!model) return;
     _model = model;
-    NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=%@",HttpImageURLPre,model.imgId,model.realWidth,model.realHeight,@"webp"];
+    NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=webp",HttpImageURLPre,model.imgId,model.realWidth,model.realHeight];
     [self.thumbImageView setAnimationLoadingImage:[NSURL URLWithString:string] placeholder:placeholderFailImage];
     
 }
@@ -134,7 +134,7 @@
 - (void)setPostModel:(ZMHotInsetPostModel *)postModel{
     if ([postModel isKindOfClass:[ZMHotInsetPostModel class]]) {
         _postModel = postModel;
-        NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=%@",HttpImageURLPre,postModel.imgId,postModel.realWidth,postModel.realHeight,@"webp"];
+        NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=webp",HttpImageURLPre,postModel.imgId,postModel.realWidth,postModel.realHeight];
         [self.thumbImageView setAnimationLoadingImage:[NSURL URLWithString:string] placeholder:placeholderFailImage];
     }
 }

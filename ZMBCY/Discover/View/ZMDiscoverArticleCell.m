@@ -2,7 +2,7 @@
 //  ZMDiscoverArticleCell.m
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/7.
+//  Created by Brance on 2017/12/7.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
@@ -102,7 +102,6 @@
             weakSelf.layout.article.hasPraise = !selected;
         }
     };
-    //_profileView.size = CGSizeMake(kScreenWidth, 35);
     _profileView.left = 0;
     _profileView.backgroundColor = [ZMColor whiteColor];
     [_mainView addSubview:_profileView];
@@ -112,7 +111,7 @@
 
 - (void)setLayout:(ZMDiscoverArticleLayout *)layout{
     _layout = layout;
-    _mainView.height = layout.height;
+    _mainView.height = layout.height - 5;
     
     _thumbImage.top = layout.marginTop;
     
