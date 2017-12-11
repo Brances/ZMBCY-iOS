@@ -86,7 +86,7 @@
             make.bottom.mas_equalTo(0);
         }];
         WEAKSELF;
-        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _tableView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
             page = 1;
             [weakSelf getArticleData];
         }];

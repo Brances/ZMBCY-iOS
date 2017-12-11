@@ -13,6 +13,10 @@
 /** 容器 */
 @property (nonatomic, strong) UIView    *mainView;
 /** 标题 */
-@property (nonatomic, strong) UILabel   *titleLabel;
+@property (nonatomic, strong) UILabel   *nameLabel;
+/** 更多icon */
+@property (nonatomic, strong) UIImageView *iconView;
+
+-(void)setNameText:(NSString *)text;
 
 @end

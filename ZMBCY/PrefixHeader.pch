@@ -34,6 +34,7 @@
 #import "ZMNetworkHelper.h"
 #import "ZMLoadingView.h"
 #import "ZMLoadFailedView.h"
+#import "ZMCustomGifHeader.h"
 
 #endif
 

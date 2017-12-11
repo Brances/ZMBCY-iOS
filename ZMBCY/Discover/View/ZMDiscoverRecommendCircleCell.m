@@ -34,7 +34,6 @@
         _bottomV = [[UIView alloc]init];
         [self.contentView addSubview:_bottomV];
         [_bottomV mas_makeConstraints:^(MASConstraintMaker *make) {
-            //make.edges.insets(UIEdgeInsetsMake(0, 0, 0, 0));
             make.left.right.top.bottom.mas_equalTo(0);
         }];
     }

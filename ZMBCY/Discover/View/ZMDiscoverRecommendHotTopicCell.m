@@ -65,10 +65,6 @@
     [self.bigImageView setAnimationLoadingImage:[NSURL URLWithString:bigCover] placeholder:placeholderFailImage];
     [self.leftImageView setAnimationLoadingImage:[NSURL URLWithString:leftCover] placeholder:placeholderFailImage];
     [self.rightImageView setAnimationLoadingImage:[NSURL URLWithString:rightCover] placeholder:placeholderFailImage];
-    
-//    [self.bigImageView setImageWithURL:[NSURL URLWithString:bigCover] placeholder:placeholderFailImage];
-//    [self.leftImageView setImageWithURL:[NSURL URLWithString:leftCover] placeholder:placeholderFailImage];
-//    [self.rightImageView setImageWithURL:[NSURL URLWithString:rightCover] placeholder:placeholderFailImage];
 }
 
 @end

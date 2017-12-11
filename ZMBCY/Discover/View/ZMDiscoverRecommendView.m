@@ -36,14 +36,21 @@
 - (ZMDiscoverRecommendHeadView *)hotHeadView{
     if (!_hotHeadView) {
         _hotHeadView = [[ZMDiscoverRecommendHeadView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
-        [_hotHeadView setupUI:@"热门专题"];
+        ZMDiscoverHeadModel *HeadModel = [[ZMDiscoverHeadModel alloc] init];
+        HeadModel.title = @"热门专题";
+        HeadModel.icon  = [YYImage imageNamed:@"discovery_icon_glist~iphone"];
+        _hotHeadView.model = HeadModel;
     }
     return _hotHeadView;
 }
 - (ZMDiscoverRecommendHeadView *)hotCircleHeadView{
     if (!_hotCircleHeadView) {
         _hotCircleHeadView = [[ZMDiscoverRecommendHeadView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
-        [_hotCircleHeadView setupUI:@"热门圈子"];
+       
+        ZMDiscoverHeadModel *HeadModel = [[ZMDiscoverHeadModel alloc] init];
+        HeadModel.title = @"热门圈子";
+        HeadModel.icon  = [YYImage imageNamed:@"discovery_icon_circle~iphone"];
+        _hotCircleHeadView.model = HeadModel;
     }
     return _hotCircleHeadView;
 }
@@ -63,7 +70,10 @@
                 [weakSelf.tableView reloadData];
             }
         };
-        [_hotRecommendHeadView setupUI:@"GACHA热推"];
+        ZMDiscoverHeadModel *HeadModel = [[ZMDiscoverHeadModel alloc] init];
+        HeadModel.title = @"GACHA热推";
+        HeadModel.icon  = [YYImage imageNamed:@"hot_illustration_title"];
+        _hotRecommendHeadView.model = HeadModel;
     }
     return _hotRecommendHeadView;
 }
@@ -89,10 +99,12 @@
         make.bottom.mas_equalTo(0);
     }];
     WEAKSELF;
-    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    _tableView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
         page = 1;
         [weakSelf getRecommendData];
     }];
+
+    
     _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         page ++;
        [weakSelf loadMoreRecommendList];
@@ -221,9 +233,9 @@
             cell = [[ZMDiscoverRecommendMoreTitleCell alloc] initWithStyle:0 reuseIdentifier:@"more"];
         }
         if (indexPath.section == 1) {
-            cell.titleLabel.text = @"查看更多专题";
+            cell.nameLabel.text = @"查看更多专题";
         }else if (indexPath.section == 2){
-            cell.titleLabel.text = @"更多热门圈子";
+            cell.nameLabel.text = @"更多热门圈子";
         }
         
         return cell;

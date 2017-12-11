@@ -92,7 +92,7 @@
         
         [self.mainView addSubview:_styleButton];
         [_styleButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(-5);
+            make.right.mas_equalTo(-0);
             make.width.mas_equalTo(60);
             make.height.mas_equalTo(30);
             make.centerY.mas_equalTo(self.mainView);

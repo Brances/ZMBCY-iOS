@@ -113,7 +113,7 @@
     
     [self addSubview:self.collectionView];
     
-    _collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    _collectionView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
         page = 1;
         [weakSelf getInsetData];
     }];
