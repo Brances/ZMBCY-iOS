@@ -24,6 +24,7 @@
 #import <FBShimmeringView.h>
 #import <MBProgressHUD.h>
 
+#import "SPPageMenu.h"
 #import "ZMImageView.h"
 #import "ZMBaseModel.h"
 #import "UIView+extension.h"
@@ -35,6 +36,7 @@
 #import "ZMLoadingView.h"
 #import "ZMLoadFailedView.h"
 #import "ZMCustomGifHeader.h"
+#import "UINavigationBar+Awesome.h"
 
 #endif
 
@@ -56,6 +58,9 @@
 #define KStatusBarHeight (kDevice_Is_iPhoneX ? 24.f:0.f)
 #define KStatusBarMargin (kDevice_Is_iPhoneX ? 22.f:0.f)
 #define KTabBarHeight    (kDevice_Is_iPhoneX ? 34.f:0.f)
+
+#define pageMenuH 40
+#define NaviH (kScreenHeight == 812 ? 88 : 64) // 812是iPhoneX的高度
 
 #define WEAKSELF __weak typeof(self) weakSelf = self
 /** __block 可以修改局部变量 */

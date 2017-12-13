@@ -13,8 +13,6 @@
 #import "ZMDiscoverInsetView.h"
 #import "ZMDiscoverArticleView.h"
 
-#define pageMenuH 40
-#define NaviH (kScreenHeight == 812 ? 88 : 64) // 812是iPhoneX的高度
 
 @interface ZMDiscoverViewController ()<SPPageMenuDelegate, UIScrollViewDelegate>
 
@@ -22,8 +20,6 @@
 @property (nonatomic, weak) SPPageMenu         *pageMenu;
 @property (nonatomic, weak) UIScrollView       *scrollView;
 @property (nonatomic, strong) NSMutableArray   *myChildViewControllers;
-
-
 
 @end
 
@@ -34,19 +30,30 @@
     self.navigationItem.title = @"发现";
     [self setupMenu];
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [self.navigationController.navigationBar lt_setElementsAlpha:0.5];
+}
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.scrollView.delegate = nil;
+}
 - (void)setupMenu{
     self.dataArr = @[@"推荐",@"插画",@"文章",@"COS"];
     // trackerStyle:跟踪器的样式
     SPPageMenu *pageMenu = [SPPageMenu pageMenuWithFrame:CGRectMake(0, 64 + KStatusBarHeight, kScreenWidth, pageMenuH) trackerStyle:SPPageMenuTrackerStyleLineAttachment];
     pageMenu.permutationWay = SPPageMenuPermutationWayNotScrollEqualWidths;
-    pageMenu.selectedItemTitleColor =   [ZMColor appMainColor];
+    pageMenu.selectedItemTitleColor =   [ZMColor blackColor];
     pageMenu.unSelectedItemTitleColor = [ZMColor appSupportColor];
     // 传递数组，默认选中第1个
     [pageMenu setItems:self.dataArr selectedItemIndex:0];
     // 设置代理
     pageMenu.delegate = self;
     [self.view addSubview:pageMenu];
+    [self.view bringSubviewToFront:pageMenu];
     _pageMenu = pageMenu;
     
     for (NSInteger index = 0; index < self.dataArr.count; index++) {
@@ -57,9 +64,12 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NaviH+pageMenuH, kScreenWidth, kScreenHeight - NaviH - pageMenuH - self.tabBarController.tabBar.height)];
     scrollView.delegate = self;
     scrollView.pagingEnabled = YES;
+    //scrollView.contentInset = UIEdgeInsetsMake(CGRectGetMaxY(_pageMenu.frame), 0, 0, 0);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.scrollsToTop = NO;
     [self.view addSubview:scrollView];
+    
+    [self.view sendSubviewToBack:scrollView];
     _scrollView = scrollView;
     
     // 这一行赋值，可实现pageMenu的跟踪器时刻跟随scrollView滑动的效果

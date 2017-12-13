@@ -23,23 +23,10 @@
     //设置背景颜色
     self.view.backgroundColor = [UIColor whiteColor];
     //设置状态栏颜色
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
 }
 
-/** 自定义顶部导航栏 */
-- (void)setupNavView{
-    
-    ZMNavView *navView = [[ZMNavView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 64 +KStatusBarHeight)];
-    navView.backgroundColor = [ZMColor whiteColor];
-    self.navView = navView;
-    [self.view addSubview:navView];
-    
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
-}
 /** 接收到系统的内存警告时 */
 - (void)didReceiveMemoryWarning{
     

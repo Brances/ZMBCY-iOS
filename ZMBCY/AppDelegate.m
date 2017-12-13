@@ -25,9 +25,10 @@
     self.mainViewController = vc;
     self.mainViewController.selectedIndex = 1;
     self.window.rootViewController = vc;
-    [self.window makeKeyAndVisible];
+   
     [self customizeInterface];
     
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

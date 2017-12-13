@@ -14,6 +14,7 @@
 #import "ZMDiscoverRecommendCircleCell.h"
 #import "ZMDiscoverRecommendHotRecommCell.h"
 
+#import "ZMDiscoverBannerTopModel.h"
 #import "ZMTopicModel.h"
 #import "ZMRecommendModel.h"
 #import "ZMHotRecommendModel.h"
@@ -177,12 +178,12 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 0 && _recommendModel) {
+    if (indexPath.section == 0 && _recommendModel.bannerArray.count) {
         ZMDiscoverRecommendBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"banner"];
         if (!cell) {
             cell = [[ZMDiscoverRecommendBannerCell alloc] initWithStyle:0 reuseIdentifier:@"banner"];
         }
-        [cell setupUI:@"http://gacha.nosdn.127.net/70c9f7f731f84747b4b22cfe2675f6f4.png?imageView&thumbnail=1150y366&type=png&enlarge=1&quality=100&axis=0"];
+        cell.model = [_recommendModel.bannerArray safeObjectAtIndex:0];
         return cell;
     }else if (indexPath.section == 1 && _recommendModel){
         if (indexPath.row == 0) {
@@ -255,9 +256,6 @@
 - (void)getRecommendData{
     WEAKSELF;
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    //NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
-    // 1512445654515   1512445477796
-   // param[@"version"] = @"1511926859732";
     param[@"version"] = [NSString getNowTimeTimestamp];
     
     [ZMNetworkHelper requestGETWithRequestURL:DiscoveryRecommendInfo parameters:param success:^(id responseObject) {
@@ -266,9 +264,22 @@
             NSArray *discoverInfos = responseObject[@"result"][@"discoverInfos"];
             for (NSDictionary *dic in discoverInfos) {
                 NSString *type = dic[@"itemType"];
+                
+                //banner
+                if ([type isEqualToString:@"banner"]) {
+                    //尝试转换为数组
+                    id str = dic[@"data"];
+                    id childArray = [str toArrayOrNSDictionary];
+                    for (NSDictionary *banner in childArray) {
+                        ZMDiscoverBannerTopModel *bannerModel = [ZMDiscoverBannerTopModel modelWithJSON:banner];
+                        [model.bannerArray addObject:bannerModel];
+                    }
+                }
+                
+                
                 //热门专题
                 if ([type isEqualToString:@"hotGList"]) {
-                    //尝试转换为NSString
+                    //尝试转换为数组
                     id str = dic[@"data"];
                     id childArray = [str toArrayOrNSDictionary];
                     for (NSDictionary *hot in childArray) {

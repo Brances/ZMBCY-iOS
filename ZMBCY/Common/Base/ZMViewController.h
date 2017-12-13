@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZMNavView.h"
 
 @interface ZMViewController : UIViewController
 
-@property (nonatomic, strong) ZMNavView *navView;
-- (void)setupNavView;
+
 @end

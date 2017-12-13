@@ -30,6 +30,7 @@
             }
         };
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) collectionViewLayout:layout];
+        _collectionView.userInteractionEnabled = YES;
         _collectionView.backgroundColor = [ZMColor appGraySpaceColor];
         _collectionView.dataSource = self;
         [_collectionView registerClass:[ZMDiscoverRecommendHotRecommCellWater class] forCellWithReuseIdentifier:@"water"];
@@ -55,6 +56,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [ZMColor appLightGrayColor];
+        self.collectionView.userInteractionEnabled = YES;
     }
     return self;
 }
@@ -64,40 +66,41 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ZMDiscoverRecommendHotRecommCellWater *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"water" forIndexPath:indexPath];
-    cell.postModel = self.dataArray[indexPath.item];
+    [cell setupUIWithPost:self.style model:self.dataArray[indexPath.item]];
+    
     return cell;
 }
 
 #pragma mark - WaterFlowLayoutDelegate
 - (CGFloat)WaterFlowLayout:(ZMWaterFlowLayout *)WaterFlowLayout heightForRowAtIndexPath:(NSInteger )index itemWidth:(CGFloat)itemWidth indexPath:(NSIndexPath *)indexPath{
     ZMHotInsetPostModel *model = self.dataArray[index];
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return model.realHeight;
     }
     return model.realHeight / 2;
 }
 - (CGFloat)columnCountInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return 1;
     }
     return 2;
 }
 - (CGFloat)columnMarginInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return 0;
     }
     return 2;
 }
 
 - (CGFloat)rowMarginInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return 10;
     }
     return 2;
 }
 
 - (UIEdgeInsets)edgeInsetsInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
-    if (self.style) {
+    if (self.style == itemStyleSingle) {
         return UIEdgeInsetsMake(0, 0, 2, 0);
     }
     return UIEdgeInsetsMake(0, 0, 5, 0);

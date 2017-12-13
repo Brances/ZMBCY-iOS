@@ -37,12 +37,10 @@
         pageCount = 20;
         self.headArray = [NSMutableArray new];
     }
-    
     return self;
 }
 
 #pragma mark - setter
-
 - (void)setPageType:(pageViewType)pageType{
     if (pageType == pageViewTypeInset) {
         type      = 2 ;
@@ -66,11 +64,8 @@
         self.hotHeadModel = [[ZMDiscoverHeadModel alloc] init];
         self.hotHeadModel.title = @"热门插画";
         self.hotHeadModel.icon  = [YYImage imageNamed:@"hot_illustration_title"];
-        
         [self setupUI];
-        
-        
-    }else{
+   }else{
         type      = 3 ;
         //添加头部model
         for (int i = 0; i < 2; i++) {
@@ -92,7 +87,6 @@
         
         [self setupUI];
         
-        
     }
 }
 
@@ -101,7 +95,8 @@
     WEAKSELF;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     //设置CollectionView的属性
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, self.height) collectionViewLayout:flowLayout];
+    //self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, self.height) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [ZMColor appGraySpaceColor];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -112,6 +107,10 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"placeholer"];
     
     [self addSubview:self.collectionView];
+    
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.bottom.mas_equalTo(0);
+    }];
     
     _collectionView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
         page = 1;
@@ -144,13 +143,7 @@
 #pragma mark - 设置CollectionCell的内容
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (!_model) {
-        UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"placeholer" forIndexPath:indexPath];
-        cell.backgroundColor = [ZMColor appGraySpaceColor];
-        return cell;
-    }
-    
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0 && _model) {
         static NSString *identify = @"ZMDiscoverInsetBannerViewCell";
         ZMDiscoverInsetBannerViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
         if (_model.remAccounts.count) {
@@ -158,7 +151,7 @@
         }
         
         return cell;
-    }else if(indexPath.section == 1){
+    }else if(indexPath.section == 1 && _model){
         static NSString *identify = @"ZMDiscoverInsetHeadViewCell";
         ZMDiscoverInsetHeadViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
         if (_headArray.count) {
@@ -166,7 +159,7 @@
         }
         
         return cell;
-    }else if (indexPath.section == 2){
+    }else if (indexPath.section == 2 && _model){
         static NSString *identify = @"ZMDiscoverInsetLayoutHeadViewCell";
         ZMDiscoverInsetLayoutHeadViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
         if (_hotHeadModel) {
@@ -184,20 +177,22 @@
         };
         
         return cell;
+    }else if (indexPath.section == 3 && _model){
+        static NSString *identify = @"ZMDiscoverInsetWaterCollectionViewCell";
+        ZMDiscoverInsetWaterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
+        self.cell = cell;
+        [cell setDataArray:self.model.channelPost.posts];
+        __weak typeof(cell) weakCell = cell;
+        WEAKSELF;
+        cell.updateCellHeight = ^(CGFloat height){
+            weakCell.height = height;
+            [weakSelf mainQueueUpdateUI];
+        };
+        return cell;
     }
 
-    static NSString *identify = @"ZMDiscoverInsetWaterCollectionViewCell";
-    ZMDiscoverInsetWaterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
-    self.cell = cell;
-    if (self.model.channelPost.posts.count) {
-        [cell setDataArray:self.model.channelPost.posts];
-    }
-    __weak typeof(cell) weakCell = cell;
-    WEAKSELF;
-    cell.updateCellHeight = ^(CGFloat height){
-        weakCell.height = height;
-        [weakSelf mainQueueUpdateUI];
-    };
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"placeholer" forIndexPath:indexPath];
+    cell.backgroundColor = [ZMColor appGraySpaceColor];
     return cell;
     
     
@@ -211,6 +206,7 @@
 
 #pragma mark - 每个cell的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (!_model) return CGSizeMake(0, 0);
     if (indexPath.section == 0) {
         return CGSizeMake(kScreenWidth,340 * FIT_HEIGHT);
     }else if (indexPath.section == 1){
@@ -219,16 +215,16 @@
         return CGSizeMake(kScreenWidth, 40);
     }
     
-    return CGSizeMake(kScreenWidth, self.cell.cacheHeight?self.cell.height:200);
+    return CGSizeMake(kScreenWidth, self.cell.cacheHeight ? self.cell.height : 200);
 }
 #pragma mark - section的margin
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 #pragma mark  点击CollectionView触发事件
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"---------------------%ld",indexPath.row);
-}
+//-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+//    NSLog(@"---------------------%ld",indexPath.row);
+//}
 
 #pragma mark - 获取插画数据
 - (void)getInsetData{
@@ -237,21 +233,19 @@
     param[@"version"] = [NSString getNowTimeTimestamp];
     param[@"type"] = @(type);
     
-    //[MBProgressHUD showMessage:@"正在加载数据中..." toView:self];
     WEAKSELF;
     [ZMNetworkHelper requestGETWithRequestURL:DiscoveryInsetInfo parameters:param success:^(id responseObject) {
         //[MBProgressHUD hideAllHUDsForView:weakSelf animated:YES];
         if (responseObject[@"result"] && [responseObject[@"result"] isKindOfClass:[NSDictionary class]]) {
             ZMInsetHomeModel *model = [ZMInsetHomeModel modelWithJSON:responseObject[@"result"]];
-            //self.model = model;
             NSLog(@"当前model = %@",model);
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [ZMLoadingView hideLoadingForView:weakSelf];
-                self.model = model;
-                [self.collectionView.mj_header endRefreshing];
-                [self.collectionView.mj_footer resetNoMoreData];
-                [self.collectionView reloadData];
+                weakSelf.model = model;
+                [weakSelf.collectionView.mj_header endRefreshing];
+                [weakSelf.collectionView.mj_footer resetNoMoreData];
+                weakSelf.cell.needUpdate = YES;
+                [weakSelf.collectionView reloadData];
             });
         }
     } failure:^(NSError *error) {

@@ -14,5 +14,4 @@
 @property (nonatomic, weak) SPPageMenu         *pageMenu;
 @property (nonatomic, strong) NSArray          *dataArray;
 
-
 @end
