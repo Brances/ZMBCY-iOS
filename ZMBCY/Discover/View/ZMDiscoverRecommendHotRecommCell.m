@@ -7,6 +7,7 @@
 //
 
 #import "ZMDiscoverRecommendHotRecommCell.h"
+#import "ZMRankingListModel.h"
 
 @interface ZMDiscoverRecommendHotRecommCell()<UICollectionViewDataSource,WaterFlowLayoutDelegate>
 
@@ -70,7 +71,7 @@
 - (CGFloat)WaterFlowLayout:(ZMWaterFlowLayout *)WaterFlowLayout heightForRowAtIndexPath:(NSInteger )index itemWidth:(CGFloat)itemWidth indexPath:(NSIndexPath *)indexPath{
     ZMHotRecommendModel *model = self.dataArray[index];
     if (self.style == itemStyleSingle) {
-        return model.realHeight;
+        return model.realHeight + 40;
     }
     return model.realHeight / 2;
 }
@@ -149,8 +150,8 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
-        [self view];
-        [self profileView];
+//        [self view];
+//        [self profileView];
     }
     return self;
 }
@@ -189,47 +190,67 @@
         self.profileView.nameLabel.text = model.author.nickName;
         
     }
-    NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=webp",HttpImageURLPre,model.imgId,model.realWidth,model.realHeight];
+    NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=webp",HttpImageURLPre,model.imgId,model.realWidth,model.realHeight + 40];
     [self.view.thumbImageView setAnimationLoadingImage:[NSURL URLWithString:string] placeholder:placeholderFailImage];
     
 }
 
-- (void)setupUIWithPost:(itemStyle)style model:(ZMHotInsetPostModel *)model{
+- (void)setupUIWithPost:(itemStyle)style model:(id)model{
+    //插画
     if ([model isKindOfClass:[ZMHotInsetPostModel class]]) {
-        _postModel = model;
-        self.profileView.praiseButton.selected = model.hasPraise;
+        ZMHotInsetPostModel *insetPost = model;
+        //_postModel = model;
+        self.profileView.praiseButton.selected = insetPost.hasPraise;
         self.profileView.praiseBlock = ^(BOOL selected){
-            model.hasPraise = selected;
+            insetPost.hasPraise = selected;
             NSLog(@"点赞 = %d",selected);
         };
-        if (model.no == 1) {
+        if (insetPost.no == 1) {
             self.view.topImageView.hidden = NO;
         }else{
             self.view.topImageView.hidden = YES;
         }
         //单行
         if (style == itemStyleSingle) {
-            if (model.no == 1) {
+            if (insetPost.no == 1) {
                 self.view.topButton.hidden = NO;
             }
             self.view.bottomShadow.hidden = NO;
             
             self.profileView.backgroundColor = [ZMColor clearColor];
-            [self.profileView.thumbImageView setImageWithURL:[NSURL URLWithString:model.author.portraitFullUrl] placeholder:placeholderAvatarImage];
+            [self.profileView.thumbImageView setImageWithURL:[NSURL URLWithString:insetPost.author.portraitFullUrl] placeholder:placeholderAvatarImage];
             self.profileView.nameLabel.textColor = [ZMColor whiteColor];
-            self.profileView.nameLabel.text = model.author.nickName;
+            self.profileView.nameLabel.text = insetPost.author.nickName;
         }else{
             self.profileView.hidden = NO;
             self.profileView.backgroundColor = [ZMColor whiteColor];
             self.view.topButton.hidden = YES;
             self.view.bottomShadow.hidden = YES;
-            
+            UIImage *image = [UIImage imageNamed:@"discovery_search_user"];
+            //ill_cos_author discovery_search_user
             self.profileView.thumbImageView.image = [UIImage imageNamed:@"discovery_search_user"];
+            [self.profileView.thumbImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(image.size);
+            }];
             self.profileView.nameLabel.textColor = [ZMColor blackColor];
-            self.profileView.nameLabel.text = model.author.nickName;
-            
+            self.profileView.nameLabel.text = insetPost.author.nickName;
+            NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=webp",HttpImageURLPre,insetPost.imgId,insetPost.realWidth,insetPost.realHeight];
+            [self.view.thumbImageView setAnimationLoadingImage:[NSURL URLWithString:string] placeholder:placeholderFailImage];
         }
-        NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=webp",HttpImageURLPre,model.imgId,model.realWidth,model.realHeight];
+        
+    }else if([model isKindOfClass:[ZMRankingModel class]]){
+        ZMRankingModel *rankModel = model;
+        self.profileView.praiseButton.selected = rankModel.hasSupport;
+        
+        self.profileView.praiseBlock = ^(BOOL selected){
+            rankModel.hasSupport = selected;
+            NSLog(@"点赞 = %d",selected);
+        };
+        self.profileView.backgroundColor = [ZMColor whiteColor];
+        self.profileView.nameLabel.textColor = [ZMColor blackColor];
+        self.profileView.nameLabel.text = rankModel.author.nickName;
+        [self.profileView.thumbImageView setImageWithURL:[NSURL URLWithString:rankModel.author.portraitFullUrl] placeholder:placeholderAvatarImage];
+        NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis_5_5&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=webp",HttpImageURLPre,rankModel.imageInfo.imageId,rankModel.imageInfo.realWidth,rankModel.imageInfo.realHeight];
         [self.view.thumbImageView setAnimationLoadingImage:[NSURL URLWithString:string] placeholder:placeholderFailImage];
     }
 }
@@ -242,7 +263,7 @@
 - (UIView *)mainView{
     if (!_mainView) {
         _mainView = [UIView new];
-        _mainView.userInteractionEnabled = YES;
+        _mainView.layer.masksToBounds = YES;
         [self addSubview:_mainView];
         [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.bottom.mas_equalTo(0);
@@ -331,7 +352,6 @@
 - (UIView *)mainView{
     if (!_mainView) {
         _mainView = [UIView new];
-        _mainView.userInteractionEnabled = YES;
         [self addSubview:_mainView];
         [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.bottom.mas_equalTo(0);
@@ -344,17 +364,18 @@
 
 - (UIImageView *)thumbImageView{
     if (!_thumbImageView) {
-        _thumbImageView = [[ZMImageView alloc] init];
-        _thumbImageView.userInteractionEnabled = YES;
+        _thumbImageView = [[UIImageView alloc] init];
         _thumbImageView.layer.masksToBounds = YES;
-        _thumbImageView.size = CGSizeMake(20, 20);
-        _thumbImageView.layer.cornerRadius = _thumbImageView.size.width * 0.5;
+        _thumbImageView.contentMode = UIViewContentModeScaleAspectFit;
+        UIImage *image = [UIImage imageNamed:@"discovery_search_user"];
+        //_thumbImageView.size = CGSizeMake(20, 20);
+        _thumbImageView.layer.cornerRadius = (image.size.width+5) * 0.5;
         [self.mainView addSubview:_thumbImageView];
         [self.mainView sendSubviewToBack:_thumbImageView];
         [_thumbImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(12);
             make.centerY.mas_equalTo(self.mainView);
-            make.size.mas_equalTo(_thumbImageView.size);
+            make.size.mas_equalTo(CGSizeMake(image.size.width+5, image.size.width+5));
         }];
         [_thumbImageView.superview layoutIfNeeded];
     }

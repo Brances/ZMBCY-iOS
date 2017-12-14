@@ -27,15 +27,15 @@
 @interface ZMDiscoverRecommendHotRecommCellWater : UICollectionViewCell
 
 /** 容器 */
-@property (nonatomic, strong) UIView                *mainView;
-@property (nonatomic, strong) ZMDiscoverRecommendHotRecommCellWaterView *view;
-@property (nonatomic, strong) ZMDiscoverRecommendProfileView            *profileView;
+@property (nonatomic, strong) UIView                                        *mainView;
+@property (nonatomic, strong) ZMDiscoverRecommendHotRecommCellWaterView     *view;
+@property (nonatomic, strong) ZMDiscoverRecommendProfileView                *profileView;
 @property (nonatomic, strong) ZMHotRecommendModel   *model;
-@property (nonatomic, strong) ZMHotInsetPostModel   *postModel;
+//@property (nonatomic, strong) ZMHotInsetPostModel   *postModel;
 
 #pragma mark - 根据布局来确定UI
 - (void)setupUIWithRecommend:(itemStyle)style model:(ZMHotRecommendModel *)model;
-- (void)setupUIWithPost:(itemStyle)style model:(ZMHotInsetPostModel *)model;
+- (void)setupUIWithPost:(itemStyle)style model:(id)model;
 
 @end
 

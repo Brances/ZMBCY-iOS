@@ -187,6 +187,14 @@
 		403E1C091FD69183007316AC /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1C021FD69183007316AC /* TAAnimatedDotView.m */; };
 		403E1C0A1FD69183007316AC /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1C031FD69183007316AC /* TAAbstractDotView.m */; };
 		405239381FDF8243007C8759 /* pic_number_tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405239371FDF8243007C8759 /* pic_number_tag@2x.png */; };
+		407757411FE22A150082A212 /* ZMRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757401FE22A150082A212 /* ZMRankView.m */; };
+		407757441FE22AA40082A212 /* NSString+ZMNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757431FE22AA40082A212 /* NSString+ZMNSString.m */; };
+		407757471FE244620082A212 /* ZMPictureMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757461FE244620082A212 /* ZMPictureMetadata.m */; };
+		4077574A1FE2483B0082A212 /* ZMRankingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757491FE2483B0082A212 /* ZMRankingListModel.m */; };
+		4077574D1FE25C1A0082A212 /* ZMRankTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4077574C1FE25C190082A212 /* ZMRankTopCollectionViewCell.m */; };
+		407757501FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4077574F1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m */; };
+		407757541FE288B00082A212 /* ZMPopBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757531FE288B00082A212 /* ZMPopBaseView.m */; };
+		407757581FE2898B0082A212 /* ZMStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757571FE2898B0082A212 /* ZMStringPickerView.m */; };
 		407B3D821FC7B55D00E422E2 /* UIView+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 400FA4CE1FC7AF660015335E /* UIView+extension.m */; };
 		407B3D851FC7B88D00E422E2 /* ZMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3D841FC7B88D00E422E2 /* ZMViewController.m */; };
 		407B3D881FC7BA0800E422E2 /* ZMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407B3D871FC7BA0800E422E2 /* ZMHomeViewController.m */; };
@@ -468,6 +476,22 @@
 		403E1C051FD69183007316AC /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
 		403E1C061FD69183007316AC /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
 		405239371FDF8243007C8759 /* pic_number_tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_number_tag@2x.png"; sourceTree = "<group>"; };
+		4077573F1FE22A150082A212 /* ZMRankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankView.h; sourceTree = "<group>"; };
+		407757401FE22A150082A212 /* ZMRankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankView.m; sourceTree = "<group>"; };
+		407757421FE22AA40082A212 /* NSString+ZMNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZMNSString.h"; sourceTree = "<group>"; };
+		407757431FE22AA40082A212 /* NSString+ZMNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZMNSString.m"; sourceTree = "<group>"; };
+		407757451FE244620082A212 /* ZMPictureMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPictureMetadata.h; sourceTree = "<group>"; };
+		407757461FE244620082A212 /* ZMPictureMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPictureMetadata.m; sourceTree = "<group>"; };
+		407757481FE2483B0082A212 /* ZMRankingListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankingListModel.h; sourceTree = "<group>"; };
+		407757491FE2483B0082A212 /* ZMRankingListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankingListModel.m; sourceTree = "<group>"; };
+		4077574B1FE25C190082A212 /* ZMRankTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankTopCollectionViewCell.h; sourceTree = "<group>"; };
+		4077574C1FE25C190082A212 /* ZMRankTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankTopCollectionViewCell.m; sourceTree = "<group>"; };
+		4077574E1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankWaterCollectionViewCell.h; sourceTree = "<group>"; };
+		4077574F1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankWaterCollectionViewCell.m; sourceTree = "<group>"; };
+		407757521FE288B00082A212 /* ZMPopBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPopBaseView.h; sourceTree = "<group>"; };
+		407757531FE288B00082A212 /* ZMPopBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPopBaseView.m; sourceTree = "<group>"; };
+		407757561FE2898B0082A212 /* ZMStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMStringPickerView.h; sourceTree = "<group>"; };
+		407757571FE2898B0082A212 /* ZMStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMStringPickerView.m; sourceTree = "<group>"; };
 		407B3D831FC7B88D00E422E2 /* ZMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMViewController.h; sourceTree = "<group>"; };
 		407B3D841FC7B88D00E422E2 /* ZMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMViewController.m; sourceTree = "<group>"; };
 		407B3D861FC7BA0800E422E2 /* ZMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMHomeViewController.h; sourceTree = "<group>"; };
@@ -620,6 +644,8 @@
 				35D04AC51FC718F000CE082F /* ZMMainViewController.m */,
 				407B3D831FC7B88D00E422E2 /* ZMViewController.h */,
 				407B3D841FC7B88D00E422E2 /* ZMViewController.m */,
+				407757521FE288B00082A212 /* ZMPopBaseView.h */,
+				407757531FE288B00082A212 /* ZMPopBaseView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -674,6 +700,7 @@
 				403E1BE91FD6813F007316AC /* iCarousel */,
 				403E1BED1FD6814C007316AC /* ZMICarousel */,
 				40058DDA1FE1098700AB0FCA /* LTNavigationBar */,
+				407757551FE289580082A212 /* ZMDatePicker */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -687,6 +714,8 @@
 				400FA4D11FC7AFAB0015335E /* MBProgressHUD+MJ.m */,
 				407B3DA11FC7C4CC00E422E2 /* NSArray+ZMAdd.h */,
 				407B3DA21FC7C4CC00E422E2 /* NSArray+ZMAdd.m */,
+				407757421FE22AA40082A212 /* NSString+ZMNSString.h */,
+				407757431FE22AA40082A212 /* NSString+ZMNSString.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -768,6 +797,8 @@
 				4033AF091FD8D69200400099 /* ZMDiscoverArticleModel.m */,
 				4033AF0E1FD8DB7F00400099 /* ZMArticleHomeModel.h */,
 				4033AF0F1FD8DB7F00400099 /* ZMArticleHomeModel.m */,
+				407757481FE2483B0082A212 /* ZMRankingListModel.h */,
+				407757491FE2483B0082A212 /* ZMRankingListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -815,6 +846,12 @@
 				4025FBD11FDA393C0077EF5A /* ZMDiscoverArticleTagView.m */,
 				4025FBD31FDA5E0C0077EF5A /* ZMDiscoverArticleProfileView.h */,
 				4025FBD41FDA5E0C0077EF5A /* ZMDiscoverArticleProfileView.m */,
+				4077573F1FE22A150082A212 /* ZMRankView.h */,
+				407757401FE22A150082A212 /* ZMRankView.m */,
+				4077574B1FE25C190082A212 /* ZMRankTopCollectionViewCell.h */,
+				4077574C1FE25C190082A212 /* ZMRankTopCollectionViewCell.m */,
+				4077574E1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.h */,
+				4077574F1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -886,6 +923,15 @@
 			path = PageControl;
 			sourceTree = "<group>";
 		};
+		407757551FE289580082A212 /* ZMDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				407757561FE2898B0082A212 /* ZMStringPickerView.h */,
+				407757571FE2898B0082A212 /* ZMStringPickerView.m */,
+			);
+			path = ZMDatePicker;
+			sourceTree = "<group>";
+		};
 		407B3D9D1FC7C43B00E422E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -899,6 +945,8 @@
 				403E1BE11FD66E2A007316AC /* ZMWorksModel.m */,
 				4033AF0B1FD8D8ED00400099 /* ZMTagModel.h */,
 				4033AF0C1FD8D8ED00400099 /* ZMTagModel.m */,
+				407757451FE244620082A212 /* ZMPictureMetadata.h */,
+				407757461FE244620082A212 /* ZMPictureMetadata.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1444,8 +1492,10 @@
 				3505E3291FCABAB900B9BF72 /* ZMDiscoverRecommendBannerCell.m in Sources */,
 				407B3D821FC7B55D00E422E2 /* UIView+extension.m in Sources */,
 				35D04AC61FC718F000CE082F /* ZMMainViewController.m in Sources */,
+				407757471FE244620082A212 /* ZMPictureMetadata.m in Sources */,
 				400FA4D81FC7AFD20015335E /* YYTableViewCell.m in Sources */,
 				407B3D941FC7BA8300E422E2 /* ZMMineViewController.m in Sources */,
+				407757411FE22A150082A212 /* ZMRankView.m in Sources */,
 				400FA4D71FC7AFD20015335E /* YYTableView.m in Sources */,
 				35D04AC31FC717F400CE082F /* ZMColor.m in Sources */,
 				401FF5C51FCD5785006590D8 /* ZMAuthorModel.m in Sources */,
@@ -1467,6 +1517,8 @@
 				4033AF071FD8D29900400099 /* ZMDiscoverArticleBannerViewCell.m in Sources */,
 				403E1C0A1FD69183007316AC /* TAAbstractDotView.m in Sources */,
 				4033AF101FD8DB7F00400099 /* ZMArticleHomeModel.m in Sources */,
+				4077574D1FE25C1A0082A212 /* ZMRankTopCollectionViewCell.m in Sources */,
+				407757441FE22AA40082A212 /* NSString+ZMNSString.m in Sources */,
 				407B3DC61FC814F600E422E2 /* SPPageMenu.m in Sources */,
 				407B3DA31FC7C4CC00E422E2 /* NSArray+ZMAdd.m in Sources */,
 				400E3E521FD7E0AA00340296 /* ZMDiscoverInsetWaterCollectionViewCell.m in Sources */,
@@ -1480,6 +1532,7 @@
 				407B3DBA1FC800BD00E422E2 /* ZMMessageViewController.m in Sources */,
 				400E3E431FD79C8200340296 /* ZMDiscoverInsetHeadViewCell.m in Sources */,
 				4025FBDF1FDA6CA00077EF5A /* ZMLoadingView.m in Sources */,
+				407757581FE2898B0082A212 /* ZMStringPickerView.m in Sources */,
 				4033AF181FD92FD500400099 /* ZMDiscoverArticleLayout.m in Sources */,
 				407B3DA01FC7C48700E422E2 /* ZMBaseModel.m in Sources */,
 				4033AF0D1FD8D8ED00400099 /* ZMTagModel.m in Sources */,
@@ -1489,10 +1542,12 @@
 				40058DDD1FE1098700AB0FCA /* UINavigationBar+Awesome.m in Sources */,
 				352592FA1FC7051F008165D7 /* AppDelegate.m in Sources */,
 				352592F71FC7051F008165D7 /* main.m in Sources */,
+				407757501FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m in Sources */,
 				40058DEF1FE1340100AB0FCA /* ZMRankViewController.m in Sources */,
 				35D04AAE1FC70C5900CE082F /* Foundation+Log.m in Sources */,
 				400E3E4C1FD7BB0C00340296 /* ZMDiscoverInsetLayoutHeadViewCell.m in Sources */,
 				403E1BE81FD680C8007316AC /* ZMDiscoverInsetBannerViewCell.m in Sources */,
+				407757541FE288B00082A212 /* ZMPopBaseView.m in Sources */,
 				35D04ABE1FC717B700CE082F /* BaseNavigationController.m in Sources */,
 				401FF5C21FCD4519006590D8 /* ZMHotRecommendModel.m in Sources */,
 				407B3DC91FC81C9B00E422E2 /* ZMDiscoverRecommendView.m in Sources */,
@@ -1502,6 +1557,7 @@
 				403B9D001FDE689400F73449 /* ZMCustomGifHeader.m in Sources */,
 				401FF5CB1FCD5BC2006590D8 /* ZMDiscoverRecommendHotRecommCell.m in Sources */,
 				403E1C091FD69183007316AC /* TAAnimatedDotView.m in Sources */,
+				4077574A1FE2483B0082A212 /* ZMRankingListModel.m in Sources */,
 				407B3D851FC7B88D00E422E2 /* ZMViewController.m in Sources */,
 				4033AF041FD8D18400400099 /* ZMDiscoverArticleView.m in Sources */,
 			);

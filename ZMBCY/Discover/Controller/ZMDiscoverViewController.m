@@ -95,7 +95,7 @@
     } else {
         [self.scrollView setContentOffset:CGPointMake(kScreenWidth * toIndex, 0) animated:YES];
     }
-    if (self.myChildViewControllers.count <= toIndex) {return;}
+    if (self.myChildViewControllers.count <= toIndex) return;
     
     //获取索引对应的视图
     [self setupView:toIndex];
@@ -152,8 +152,6 @@
         default:
             break;
     }
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

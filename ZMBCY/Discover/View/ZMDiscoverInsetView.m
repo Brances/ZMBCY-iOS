@@ -64,7 +64,7 @@
         self.hotHeadModel = [[ZMDiscoverHeadModel alloc] init];
         self.hotHeadModel.title = @"热门插画";
         self.hotHeadModel.icon  = [YYImage imageNamed:@"hot_illustration_title"];
-        [self setupUI];
+        
    }else{
         type      = 3 ;
         //添加头部model
@@ -84,18 +84,14 @@
         self.hotHeadModel = [[ZMDiscoverHeadModel alloc] init];
         self.hotHeadModel.title = @"热门COS";
         self.hotHeadModel.icon  = [YYImage imageNamed:@"hot_illustration_title"];
-        
-        [self setupUI];
-        
     }
+    [self setupUI];
 }
 
 #pragma mark - 设置UI
 - (void)setupUI{
     WEAKSELF;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    //设置CollectionView的属性
-    //self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, self.height) collectionViewLayout:flowLayout];
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [ZMColor appGraySpaceColor];
     self.collectionView.delegate = self;
@@ -215,7 +211,7 @@
         return CGSizeMake(kScreenWidth, 40);
     }
     
-    return CGSizeMake(kScreenWidth, self.cell.cacheHeight ? self.cell.height : 200);
+    return CGSizeMake(kScreenWidth, self.cell.cacheHeight ? self.cell.height : kScreenHeight);
 }
 #pragma mark - section的margin
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{

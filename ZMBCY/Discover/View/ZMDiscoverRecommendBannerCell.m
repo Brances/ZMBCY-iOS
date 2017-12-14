@@ -52,6 +52,7 @@
 - (UIView *)mainView{
     if (!_mainView) {
         _mainView = [UIView new];
+        _mainView.layer.masksToBounds = YES;
         _mainView.backgroundColor = [ZMColor appGraySpaceColor];
         [self addSubview:_mainView];
         [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -78,6 +79,7 @@
 - (UIImageView *)leftImageView{
     if (!_leftImageView) {
         _leftImageView = [UIImageView new];
+        
         UIImage *image = [UIImage imageNamed:@"discovery_banner_icon~iphone"];
         _leftImageView.image = image;
         [self.mainView addSubview:_leftImageView];

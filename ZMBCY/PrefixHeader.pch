@@ -32,6 +32,7 @@
 #import "YYTableView.h"
 #import "YYTableViewCell.h"
 #import "NSArray+ZMAdd.h"
+#import "NSString+ZMNSString.h"
 #import "ZMNetworkHelper.h"
 #import "ZMLoadingView.h"
 #import "ZMLoadFailedView.h"
@@ -61,6 +62,8 @@
 
 #define pageMenuH 40
 #define NaviH (kScreenHeight == 812 ? 88 : 64) // 812是iPhoneX的高度
+#define KWaterSpace 3.0
+
 
 #define WEAKSELF __weak typeof(self) weakSelf = self
 /** __block 可以修改局部变量 */
@@ -81,7 +84,7 @@
 #define DiscoveryInsetInfo                 BaseURL@"/discovery/post"
 /** 发现 - 插画、文章、COS - 下一页 */
 #define DiscoveryInsetNextPopularPosts     BaseURL@"/discover/nextPopularPosts"
-
-
+/** 发现 - 排行 */
+#define DiscoveryRankingList               BaseURL@"/rankingList"
 
 #endif
