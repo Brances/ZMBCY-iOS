@@ -16,6 +16,7 @@
 		352593101FC70520008165D7 /* ZMBCYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3525930F1FC70520008165D7 /* ZMBCYTests.m */; };
 		3525931B1FC70520008165D7 /* ZMBCYUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3525931A1FC70520008165D7 /* ZMBCYUITests.m */; };
 		354505FD1FCA85CF00F68D34 /* ZMNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 354505FC1FCA85CF00F68D34 /* ZMNetworkHelper.m */; };
+		3552BD331FE4205A006BE8C6 /* all.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3552BD321FE4205A006BE8C6 /* all.gif */; };
 		35D04AAE1FC70C5900CE082F /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D04AAD1FC70C5900CE082F /* Foundation+Log.m */; };
 		35D04ABE1FC717B700CE082F /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D04ABC1FC717B700CE082F /* BaseNavigationController.m */; };
 		35D04AC31FC717F400CE082F /* ZMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D04AC21FC717F400CE082F /* ZMColor.m */; };
@@ -273,6 +274,7 @@
 		3525931C1FC70520008165D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		354505FB1FCA85CF00F68D34 /* ZMNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMNetworkHelper.h; sourceTree = "<group>"; };
 		354505FC1FCA85CF00F68D34 /* ZMNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMNetworkHelper.m; sourceTree = "<group>"; };
+		3552BD321FE4205A006BE8C6 /* all.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = all.gif; sourceTree = "<group>"; };
 		35D04AAA1FC706C300CE082F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		35D04AAD1FC70C5900CE082F /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		35D04ABB1FC717B700CE082F /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -1220,6 +1222,7 @@
 				40F45CBB1FE3DC13004FCBFB /* 推荐A.png */,
 				40F45CBC1FE3DC13004FCBFB /* 文章C.png */,
 				40F45CBD1FE3DC13004FCBFB /* COSD.png */,
+				3552BD321FE4205A006BE8C6 /* all.gif */,
 			);
 			path = preview;
 			sourceTree = "<group>";
@@ -1456,6 +1459,7 @@
 				4025FBAA1FDA2BF20077EF5A /* discovery_search_trash@2x.png in Resources */,
 				403B9D1F1FDE6CFC00F73449 /* loading_0001@2x.png in Resources */,
 				403B9D261FDE6CFC00F73449 /* loading_0008@2x.png in Resources */,
+				3552BD331FE4205A006BE8C6 /* all.gif in Resources */,
 				403B9D131FDE6C7600F73449 /* loading_07@2x.png in Resources */,
 				40F45CC11FE3DC14004FCBFB /* 文章C.png in Resources */,
 				40058DE91FE11AB100AB0FCA /* discovery_banner_gradient~iphone@2x.png in Resources */,
