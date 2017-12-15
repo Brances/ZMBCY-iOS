@@ -12,3 +12,5 @@
 # Requirements 要求
 * iOS 7+
 * Xcode 8+
+### License
+ZMBCY-iOS is provided under the MIT license. See LICENSE file for details.
