@@ -9,9 +9,9 @@
 ![image](https://github.com/Brances/ZMBCY-iOS/blob/master/ZMBCY/preview/%E6%8E%A8%E8%8D%90A.png)![image](https://github.com/Brances/ZMBCY-iOS/blob/master/ZMBCY/preview/%E6%8F%92%E7%94%BBB.png)
 ![image](https://github.com/Brances/ZMBCY-iOS/blob/master/ZMBCY/preview/%E6%96%87%E7%AB%A0C.png)![image](https://github.com/Brances/ZMBCY-iOS/blob/master/ZMBCY/preview/COSD.png)
 ![image](https://github.com/Brances/ZMBCY-iOS/blob/master/ZMBCY/preview/%E6%8E%92%E8%A1%8C%E6%A6%9CE.png)
-# Requirements 要求
+# 项目要求
 * iOS 7+
-* Xcode 8+
+* Xcode 7+
 ### License
 ZMBCY-iOS 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
 ## 最后
