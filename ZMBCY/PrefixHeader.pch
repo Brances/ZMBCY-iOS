@@ -37,6 +37,7 @@
 #import "ZMLoadingView.h"
 #import "ZMLoadFailedView.h"
 #import "ZMCustomGifHeader.h"
+#import "ZMCustomGifFooter.h"
 #import "UINavigationBar+Awesome.h"
 
 #endif

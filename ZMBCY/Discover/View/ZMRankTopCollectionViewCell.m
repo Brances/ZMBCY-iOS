@@ -2,7 +2,7 @@
 //  ZMRankTopCollectionViewCell.m
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/14.
+//  Created by Brance on 2017/12/14.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
@@ -61,8 +61,14 @@
 
 - (void)setModel:(ZMRankingModel *)model{
     _model = model;
+    //kScreenWidth * model.imageInfo.height / model.imageInfo.width
+    //https://gacha.nosdn.127.net/6c0a51fd9bf4432b88968f43911b7d21.jpg?imageView&axis=5_0&enlarge=1&quality=75&thumbnail=750y1000&type=webp
+    CGFloat width = kScreenWidth * 2;
+    CGFloat height = kScreenWidth * 2 * model.imageInfo.height / model.imageInfo.width;
     
-    [self.view.thumbImageView setImageWithURL:[NSURL URLWithString:model.imageInfo.fullUrl] placeholder:placeholderFailImage];
+    NSString *string = [NSString stringWithFormat:@"%@%@?imageView&axis=5_0&enlarge=1&quality=75&thumbnail=%.0fy%.0f&type=webp",HttpImageURLPre,model.imageInfo.imageId,width,height];
+    // string model.imageInfo.fullUrl
+    [self.view.thumbImageView setImageWithURL:[NSURL URLWithString:string] placeholder:placeholderFailImage];
     [self.profileView.thumbImageView setImageWithURL:[NSURL URLWithString:model.author.portraitFullUrl] placeholder:placeholderAvatarImage];
     self.profileView.nameLabel.text = model.author.nickName;
     self.profileView.nameLabel.textColor = [ZMColor blackColor];
@@ -91,23 +97,46 @@
         _nameLabel = [UILabel new];
         _nameLabel.userInteractionEnabled = YES;
         _nameLabel.font = [UIFont systemFontOfSize:15];
-        _nameLabel.textColor = [ZMColor appSubColor];
+        _nameLabel.textColor = [ZMColor appSupportColor];
         [self.contentView addSubview:_nameLabel];
         [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(self.contentView);
             make.left.mas_equalTo(12);
         }];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickNameLabel:)];
+        [_nameLabel addGestureRecognizer:tap];
     }
     return _nameLabel;
+}
+
+- (UIImageView *)arrowView{
+    if (!_arrowView) {
+        _arrowView = [UIImageView new];
+        UIImage *image = [UIImage imageNamed:@"topic_ground_allList_back"];
+        _arrowView.image = image;
+        [self.contentView addSubview:_arrowView];
+        [_arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(image.size.width * 0.5, image.size.height * 0.5));
+            make.left.mas_equalTo(self.nameLabel.mas_right).with.offset(5);
+            make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        }];
+    }
+    return _arrowView;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [ZMColor appGraySpaceColor];
+        [self arrowView];
     }
     return self;
 }
 
+- (void)clickNameLabel:(UITapGestureRecognizer *)tap{
+    if (self.clickChangeDateBlock && self.nameLabel.text.length) {
+        self.clickChangeDateBlock(self.nameLabel.text);
+    }
+}
 
 @end
 

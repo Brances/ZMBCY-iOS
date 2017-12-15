@@ -85,7 +85,7 @@
     }else if ([model isKindOfClass:[ZMRankingModel class]]){
         ZMRankingModel *rankModel = model;
         if (self.style == itemStyleSingle) {
-            return rankModel.imageInfo.realHeight;
+            return rankModel.imageInfo.realHeight + 40;
         }
         return rankModel.imageInfo.realHeight / 2;
     }

@@ -2,8 +2,8 @@
 //  ZMPopBaseView.h
 //  Inklego
 //
-//  Created by ZOMAKE on 2017/11/21.
-//  Copyright © 2017年 ZOMAKE. All rights reserved.
+//  Created by Brance on 2017/11/21.
+//  Copyright © 2017年 Brance. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

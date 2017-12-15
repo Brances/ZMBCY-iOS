@@ -2,7 +2,7 @@
 //  ZMRankView.m
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/14.
+//  Created by Brance on 2017/12/14.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
@@ -10,6 +10,7 @@
 #import "ZMRankingListModel.h"
 #import "ZMRankTopCollectionViewCell.h"
 #import "ZMDiscoverInsetWaterCollectionViewCell.h"
+#import "ZMStringPickerView.h"
 
 @interface ZMRankView()<UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -66,7 +67,7 @@
         limit = 10;
         [weakSelf getRankData];
     }];
-    _collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+    _collectionView.mj_footer = [ZMCustomGifFooter footerWithRefreshingBlock:^{
         offset += 10;
         limit += 10;
         [weakSelf getNextData];
@@ -92,8 +93,7 @@
     if (!_model) return 0;
     if (section == 0) {
         return 1;
-    }
-    if (section == 1 && _model.rankings.count > 2) {
+    }else if (section == 1 && _model.rankings.count > 2) {
         return 3;
     }else if (section == 2 && _model.rankings.count - 3){
         return 1;
@@ -103,10 +103,23 @@
 
 #pragma mark - 设置CollectionCell的内容
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    WEAKSELF;
     if (indexPath.section == 0 && _model) {
         static NSString *identifier = @"ZMRankTopDateTitleCollectionViewCell";
         ZMRankTopDateTitleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
         cell.nameLabel.text = currenMark;
+        __weak typeof(cell) weakCell = cell;
+        cell.clickChangeDateBlock = ^(NSString *selectStr){
+            [ZMStringPickerView showStringPickerWithTitle:@"" dataSource:weakSelf.model.rankingArray defaultSelValue:selectStr isAutoSelect:NO resultBlock:^(id selectValue) {
+                NSLog(@"点击了选中字符串 = %@",selectValue);
+                currenMark = selectValue;
+                weakCell.nameLabel.text = selectValue;
+                //刷新数据源
+                offset = 0;
+                limit = 10;
+                [weakSelf getRankData];
+            }];
+        };
         return cell;
     }
     if (indexPath.section == 1 && _model) {
@@ -120,7 +133,6 @@
         self.cell = cell;
         [cell setDataArray:self.model.rankOvers];
         __weak typeof(cell) weakCell = cell;
-        WEAKSELF;
         cell.updateCellHeight = ^(CGFloat height){
             weakCell.height = height;
             [weakSelf mainQueueUpdateUI];
@@ -135,17 +147,21 @@
 }
 #pragma mark - 每个cell的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    //if (!_model) return CGSizeMake(0, 0);
+    if (!_model) return CGSizeMake(0, 0);
     if(indexPath.section == 0){
-        return CGSizeMake(kScreenWidth,40);
+        return CGSizeMake(kScreenWidth,45);
     }else if (indexPath.section == 1) {
-        return CGSizeMake(kScreenWidth,kScreenWidth+40+5);
+        ZMRankingModel *model = [self.model.rankings safeObjectAtIndex:indexPath.row];
+        CGFloat height = kScreenWidth * model.imageInfo.height / model.imageInfo.width + 40;
+        height = height > kScreenWidth * 1.4 ? kScreenWidth * 1.4 : height;
+        
+        return CGSizeMake(kScreenWidth,height);
     }
     return CGSizeMake(kScreenWidth, self.cell.cacheHeight ? self.cell.height : kScreenHeight);
 }
 #pragma mark - section的margin
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    if (section == 1) {
+    if (section == 2) {
         return UIEdgeInsetsMake(5, 0, 0, 0);
     }
     return UIEdgeInsetsMake(0, 0, 0, 0);

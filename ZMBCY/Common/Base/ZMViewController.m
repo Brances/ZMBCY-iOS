@@ -23,7 +23,7 @@
     //设置背景颜色
     self.view.backgroundColor = [UIColor whiteColor];
     //设置状态栏颜色
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
 }
 

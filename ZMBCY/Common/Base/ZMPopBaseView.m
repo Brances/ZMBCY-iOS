@@ -2,8 +2,8 @@
 //  ZMPopBaseView.m
 //  Inklego
 //
-//  Created by ZOMAKE on 2017/11/21.
-//  Copyright © 2017年 ZOMAKE. All rights reserved.
+//  Created by Brance on 2017/11/21.
+//  Copyright © 2017年 Brance. All rights reserved.
 //
 
 #import "ZMPopBaseView.h"
@@ -36,7 +36,7 @@
 - (UIView *)backgroundView {
     if (!_backgroundView) {
         _backgroundView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-        _backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.20];
+        _backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
         _backgroundView.userInteractionEnabled = YES;
         UITapGestureRecognizer *myTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapBackgroundView:)];
         [_backgroundView addGestureRecognizer:myTap];
@@ -68,12 +68,12 @@
         _leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _leftBtn.frame = CGRectMake(5, 8, 60, 28);
         _leftBtn.backgroundColor = [UIColor clearColor];
-        _leftBtn.layer.cornerRadius = 6.0f;
-        _leftBtn.layer.borderColor = [ZMColor appMainColor].CGColor;
-        _leftBtn.layer.borderWidth = 1.0f;
+//        _leftBtn.layer.cornerRadius = 6.0f;
+//        _leftBtn.layer.borderColor = [ZMColor appMainColor].CGColor;
+//        _leftBtn.layer.borderWidth = 1.0f;
         _leftBtn.layer.masksToBounds = YES;
         _leftBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
-        [_leftBtn setTitleColor:[ZMColor blackColor] forState:UIControlStateNormal];
+        [_leftBtn setTitleColor:[ZMColor appSupportColor] forState:UIControlStateNormal];
         [_leftBtn setTitle:@"取消" forState:UIControlStateNormal];
         [_leftBtn addTarget:self action:@selector(clickLeftBtn) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -85,8 +85,6 @@
     if (!_rightBtn) {
         _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _rightBtn.frame = CGRectMake(kScreenWidth - 65, 8, 60, 28);
-        _rightBtn.backgroundColor = [ZMColor appMainColor];
-        _rightBtn.layer.cornerRadius = 6.0f;
         _rightBtn.layer.masksToBounds = YES;
         _rightBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         [_rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

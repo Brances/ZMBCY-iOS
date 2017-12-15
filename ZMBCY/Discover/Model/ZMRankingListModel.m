@@ -2,14 +2,19 @@
 //  ZMRankingListModel.m
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/14.
+//  Created by Brance on 2017/12/14.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
 #import "ZMRankingListModel.h"
 
 @implementation ZMRankingListModel
-
+- (NSMutableArray *)rankingArray{
+    if (!_rankingArray) {
+        _rankingArray = [NSMutableArray new];
+    }
+    return _rankingArray;
+}
 - (NSMutableArray *)rankOvers{
     if (!_rankOvers) {
         _rankOvers = [NSMutableArray new];
@@ -32,6 +37,10 @@
         self.type = trendTypeMonth;
     }else{
         self.type = trendTypeDay;
+    }
+    //排行榜日期集合
+    for (NSDictionary *rankDic in [self arrDispose:dic[@"rankingMarks"]]) {
+        [self.rankingArray addObject:[self dispose:rankDic[@"markShow"]]];
     }
     
     return YES;

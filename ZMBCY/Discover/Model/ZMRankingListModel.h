@@ -2,7 +2,7 @@
 //  ZMRankingListModel.h
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/14.
+//  Created by Brance on 2017/12/14.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
@@ -19,8 +19,10 @@
 @property (nonatomic, assign) trendType     type;
 /** 当前标记日期 */
 @property (nonatomic, copy) NSString        *currentMarkShow;
-/** 日期集合 */
+/** 排行榜日期model集合 */
 @property (nonatomic, strong) NSArray<ZMRankingMarkModel *>    *rankingMarks;
+/** 排行榜日期字符串集合 */
+@property (nonatomic, strong) NSMutableArray                   *rankingArray;
 /** 帖子集合包括前三 */
 @property (nonatomic, strong) NSMutableArray<ZMRankingModel *> *rankings;
 /** 去除前三的帖子集合 */
