@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)
 
 # 项目进度
-  目前只完成了发现（推荐、插画、文章、COS、排行榜）部分功能，数据接口全部由青花瓷抓取
+  本项目全部由纯代码编写，目前只完成了发现（推荐、插画、文章、COS、排行榜）部分功能，数据接口全部由青花瓷抓取，本项目仅供学习参考，不得用于商业目的
 
 ## 部分功能演示图
 ![image](https://github.com/Brances/ZMBCY-iOS/blob/master/ZMBCY/preview/%E6%8E%A8%E8%8D%90A.png)![image](https://github.com/Brances/ZMBCY-iOS/blob/master/ZMBCY/preview/%E6%8F%92%E7%94%BBB.png)
@@ -13,4 +13,6 @@
 * iOS 7+
 * Xcode 8+
 ### License
-ZMBCY-iOS is provided under the MIT license. See LICENSE file for details.
+ZMBCY-iOS 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
+## 最后
+欢迎大佬们 [star](https://github.com/Brances/ZMBCY-iOS)
