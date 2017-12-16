@@ -33,7 +33,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    [self.navigationController.navigationBar lt_setElementsAlpha:0.5];
+    //[self.navigationController.navigationBar lt_setElementsAlpha:0.5];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

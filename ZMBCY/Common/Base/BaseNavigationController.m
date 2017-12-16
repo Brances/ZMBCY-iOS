@@ -24,10 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //藏旧
-    [self hideBorderInView:self.navigationBar];
-    //添新
-    [self.navigationBar addSubview:self.bottomNavLine];
+//    //藏旧
+//    [self hideBorderInView:self.navigationBar];
+//    //添新
+//    [self.navigationBar addSubview:self.bottomNavLine];
     
 }
 
