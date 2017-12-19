@@ -16,112 +16,132 @@
 
 @implementation ZMNavView
 
+- (UIView *)mainView{
+    if (!_mainView) {
+        _mainView = [UIView new];
+        _mainView.backgroundColor = [ZMColor clearColor];
+        [self addSubview:_mainView];
+        [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.bottom.mas_equalTo(0);
+        }];
+        [_mainView.superview layoutIfNeeded];
+    }
+    return _mainView;
+}
+
+- (UIButton *)leftButton{
+    if (!_leftButton) {
+        _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _leftButton.titleLabel.font = [UIFont systemFontOfSize:15];
+        _leftButton.adjustsImageWhenHighlighted = NO;
+        _leftButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        [_leftButton setTitleColor:[ZMColor blackColor] forState:UIControlStateNormal];
+        [self.mainView addSubview:_leftButton];
+        [_leftButton addTarget:self action:@selector(clickLeftButton) forControlEvents:UIControlEventTouchUpInside];
+        [_leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.width.mas_equalTo(50);
+            make.height.mas_equalTo(40);
+            make.centerY.mas_equalTo(self.mainView.mas_centerY).with.offset(KStatusBarMargin+10);
+        }];
+    }
+    return _leftButton;
+}
+
+-(UIButton *)rightButton{
+    if (!_rightButton) {
+        //右边按钮
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        rightButton.titleLabel.font = [UIFont systemFontOfSize:15];
+        rightButton.adjustsImageWhenHighlighted = NO;
+        [rightButton setTitleColor:[ZMColor blackColor] forState:UIControlStateNormal];
+        [self.mainView addSubview:rightButton];
+        self.rightButton = rightButton;
+        [_rightButton addTarget:self action:@selector(clickRightButton) forControlEvents:UIControlEventTouchUpInside];
+        [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-5);
+            make.width.mas_equalTo(50);
+            make.height.mas_equalTo(40);
+            make.centerY.mas_equalTo(self.leftButton);
+        }];
+        [self.rightButton.superview layoutIfNeeded];
+    }
+    return _rightButton;
+}
+
+-(UIButton *)centerButton{
+    if (!_centerButton) {
+        //中间按钮
+        UIButton *centerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        centerButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+        [centerButton setTitleColor:[ZMColor blackColor] forState:UIControlStateNormal];
+        centerButton.adjustsImageWhenHighlighted = NO;
+        [self.mainView addSubview:centerButton];
+        self.centerButton = centerButton;
+        [_centerButton addTarget:self action:@selector(clickCenterButton) forControlEvents:UIControlEventTouchUpInside];
+        [self.centerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(self.mas_centerX);
+            make.height.mas_equalTo(self.leftButton.mas_height);
+            make.width.mas_equalTo(kScreenWidth - (self.rightButton.width + 38) * 2);
+            make.centerY.mas_equalTo(self.leftButton);
+        }];
+        [self.centerButton.superview layoutIfNeeded];
+    }
+    return _centerButton;
+}
+
+-(UILabel *)lineLabel{
+    if (!_lineLabel) {
+        //底部分割线
+        UILabel *lineLabel = [[UILabel alloc] init];
+        lineLabel.backgroundColor = [ZMColor colorWithHexString:@"0xDCDCDC" alpha:1.0];
+        self.lineLabel = lineLabel;
+        [self.mainView addSubview:lineLabel];
+        [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.mas_equalTo(0);
+            make.height.mas_equalTo(0.5);
+        }];
+        [self.mainView bringSubviewToFront:lineLabel];
+    }
+    return _lineLabel;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame{
-    
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [ZMColor whiteColor];
         [self setupUI];
     }
     return self;
-    
 }
 
 /**
  *  UI 界面
  */
 - (void)setupUI{
-    
-    UIView *mainView = [[UIView alloc] init];
-    mainView.frame = self.bounds;
-    mainView.backgroundColor = [ZMColor clearColor];
-    [self addSubview:mainView];
-    
-    UIColor *textColor = [ZMColor blackColor];
-    
-    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftButton.size = CGSizeMake(26 * 2, self.height - 20);
-    leftButton.left = 0;
-    leftButton.centerY = self.centerY + KStatusBarMargin;
-    [leftButton setTitleColor:textColor forState:UIControlStateNormal];
-    [mainView addSubview:leftButton];
-    
-    
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    rightButton.size = CGSizeMake(88, self.height - 20);
-    rightButton.x = kScreenWidth - rightButton.width;
-    //rightButton.y = 20;
-    rightButton.centerY = self.centerY + KStatusBarMargin;
-    rightButton.titleEdgeInsets = UIEdgeInsetsMake(0, 26, 0, 0);
-    rightButton.imageEdgeInsets = UIEdgeInsetsMake(0, 26, 0, 0);
-    
-    [rightButton setTitleColor:textColor forState:UIControlStateNormal];
-    [mainView addSubview:rightButton];
-    
-    self.rightButton = rightButton;
-    self.leftButton = leftButton;
-//    self.leftTwoButton = leftTwoButton;
-    
-    //中间文本
-    YYLabel *centerLabel = [[YYLabel alloc]init];
-    centerLabel.size = CGSizeMake(kScreenWidth - rightButton.width * 2, self.height - 20);
-    centerLabel.centerY = self.centerY + KStatusBarMargin;
-    centerLabel.centerX = kScreenWidth/2.f;
-    centerLabel.textAlignment = NSTextAlignmentCenter;
-    centerLabel.font = [UIFont systemFontOfSize:16];
-    centerLabel.textColor = [ZMColor appNavTitleGrayColor];
-    self.centerLabel = centerLabel;
-    [mainView addSubview:centerLabel];
-    
-    //中间按钮
-    UIButton *centerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    centerButton.size = CGSizeMake(kScreenWidth - rightButton.width * 2, self.height - 20);
-    centerButton.centerY = self.centerY + KStatusBarMargin;
-    centerButton.centerX = kScreenWidth / 2.f;
-    centerButton.titleLabel.font = [UIFont systemFontOfSize:16];
-    [centerButton setTitleColor:textColor forState:UIControlStateNormal];
-    self.centerButton = centerButton;
-    
-    [mainView addSubview:centerButton];
-    
-    //右边文字
-    UILabel *rightLabel = [[UILabel alloc] init];
-    rightLabel.frame = rightButton.frame;
-    rightLabel.width = rightButton.width - 26;
-    rightLabel.textColor = textColor;
-    rightLabel.font = [UIFont systemFontOfSize:16];
-    rightLabel.textAlignment = NSTextAlignmentRight;
-    
-    [mainView addSubview:rightLabel];
-    
-    self.rightLabel = rightLabel;
- 
-    //底部分割线
-    UILabel *lineLabel = [[UILabel alloc] init];
-    lineLabel.frame = CGRectMake(0, self.height - 0.5, kScreenWidth, 0.5);
-    lineLabel.backgroundColor = [ZMColor colorWithRed:155 withGreen:155 withBlue:155 withAlpha:1];
-    self.lineLabel = lineLabel;
-    [mainView addSubview:lineLabel];
-    
-    centerButton.adjustsImageWhenHighlighted = NO;
-    rightButton.adjustsImageWhenHighlighted = NO;
-    leftButton.adjustsImageWhenHighlighted = NO;
-
+    [self lineLabel];
 }
 
-- (void)setIsHaveLineLabel:(BOOL)isHaveLineLabel{
-    
-    _isHaveLineLabel = isHaveLineLabel;
-    
-    self.lineLabel.hidden = !isHaveLineLabel;
-    
+- (void)setShowBottomLabel:(BOOL)showBottomLabel{
+    self.lineLabel.hidden = !showBottomLabel;
 }
 
-//设置白色背景
-- (void)setIsWhite:(BOOL)isWhite{
-    _isWhite = isWhite;
-    if (_isWhite) {
-        self.lineLabel.backgroundColor = [ZMColor whiteColor];
+#pragma mark - private
+- (void)clickLeftButton{
+    [self.viewController.navigationController popViewControllerAnimated:YES];
+    if (self.leftButtonBlock) {
+        self.leftButtonBlock();
     }
 }
 
+- (void)clickCenterButton{
+    if (self.cenTerButtonBlock) {
+        self.cenTerButtonBlock();
+    }
+}
+
+- (void)clickRightButton{
+    if (self.rightButtonBlock) {
+        self.rightButtonBlock();
+    }
+}
 @end

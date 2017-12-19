@@ -22,11 +22,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"排行榜";
     self.rankViewControllers = [NSMutableArray new];
+    [self setupNavView];
     [self setupUI];
 }
-
+- (void)setupNavView{
+    [super setupNavView];
+    WEAKSELF;
+    [self.navView.leftButton setImage:backArrowIcon forState:UIControlStateNormal];
+    [self.navView.centerButton setTitle:@"排行榜" forState:UIControlStateNormal];
+}
 - (void)setupUI{
     
     self.dataArray = @[@"日榜",@"周榜",@"月榜"];

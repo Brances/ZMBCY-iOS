@@ -14,6 +14,6 @@ pod 'Shimmer', '~> 1.0.2'
 pod 'Bugly' #腾讯统计bug
 #pod 'SDCycleScrollView'
 pod 'FLEX', :configurations => ['Debug'] #网络调试库
-
+#pod 'JZNavigationExtension'
 
 end

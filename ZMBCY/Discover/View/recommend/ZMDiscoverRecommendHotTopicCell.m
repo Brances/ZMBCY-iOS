@@ -8,6 +8,7 @@
 
 #import "ZMDiscoverRecommendHotTopicCell.h"
 #import "ZMDiscoverArticleLayout.h"
+#import "ZMTopicDetailViewController.h"
 
 @implementation ZMDiscoverRecommendHotTopicCell
 
@@ -30,6 +31,12 @@
     }];
     
     _bigImageView = [[ZMDiscoverRecommendHotTopicCellView alloc] init];
+    _bigImageView.tag = 0;
+    WEAKSELF;
+    _bigImageView.clickBlock = ^(){
+        [weakSelf clickJumpTopic:weakSelf.bigImageView.tag];
+    };
+    
     [_mainView addSubview:_bigImageView];
     [_bigImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.mas_equalTo(0);
@@ -37,6 +44,10 @@
     }];
     
     _leftImageView = [[ZMDiscoverRecommendHotTopicCellView alloc] init];
+    _leftImageView.tag = 1;
+    _leftImageView.clickBlock = ^(){
+        [weakSelf clickJumpTopic:weakSelf.leftImageView.tag];
+    };
     [_mainView addSubview:_leftImageView];
     [_leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
@@ -45,6 +56,10 @@
     }];
     
     _rightImageView = [[ZMDiscoverRecommendHotTopicCellView alloc] init];
+    _rightImageView.tag = 2;
+    _rightImageView.clickBlock = ^(){
+        [weakSelf clickJumpTopic:weakSelf.rightImageView.tag];
+    };
     [_mainView addSubview:_rightImageView];
     [_rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(0);
@@ -56,6 +71,7 @@
 
 - (void)setupUI:(NSArray *)hotTopicArray{
     if (!hotTopicArray.count) return;
+    _hotArray = hotTopicArray;
     NSString *bigCover = [NSString stringWithFormat:@"%@%@%@%@",HttpImageURLPre,((ZMTopicModel *)[hotTopicArray safeObjectAtIndex:0]).cover,HttpImageURLSuffixScanle(@"750", @"380"),((ZMTopicModel *)[hotTopicArray safeObjectAtIndex:0]).imageSuffix];
     NSString *leftCover = [NSString stringWithFormat:@"%@%@%@%@",HttpImageURLPre,((ZMTopicModel *)[hotTopicArray safeObjectAtIndex:1]).cover,HttpImageURLSuffixSquare,((ZMTopicModel *)[hotTopicArray safeObjectAtIndex:1]).imageSuffix];
     NSString *rightCover = [NSString stringWithFormat:@"%@%@%@%@",HttpImageURLPre,((ZMTopicModel *)[hotTopicArray safeObjectAtIndex:2]).cover,HttpImageURLSuffixSquare,((ZMTopicModel *)[hotTopicArray safeObjectAtIndex:2]).imageSuffix];
@@ -89,7 +105,15 @@
     self.bigImageView.dayLabel.text = [arr safeObjectAtIndex:1];
     
     [self.bigImageView setupCornerRadiusWithDay];
+    
+}
 
+
+#pragma mark - 跳转专题
+- (void)clickJumpTopic:(NSInteger)index{
+    ZMTopicDetailViewController *vc = [[ZMTopicDetailViewController alloc] init];
+    vc.uid = ((ZMTopicModel *)[_hotArray safeObjectAtIndex:index]).uid;
+    [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 
 @end
@@ -100,6 +124,9 @@
 - (UIView *)mainView{
     if (!_mainView) {
         _mainView = [UIView new];
+        _mainView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickImage:)];
+        [_mainView addGestureRecognizer:tap];
         _mainView.backgroundColor = [ZMColor whiteColor];
         [self addSubview:_mainView];
         [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -247,6 +274,14 @@
     dayLayer.path = dayPath.CGPath;
     self.dayLabel.layer.mask  = dayLayer;
     
+}
+
+#pragma mark - 点击事件
+- (void)clickImage:(UITapGestureRecognizer *)tap{
+    if (self.clickBlock) {
+        self.clickBlock();
+    }
+    //NSLog(@"点击了");
 }
 
 @end

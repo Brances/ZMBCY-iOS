@@ -7,12 +7,28 @@
 //
 
 #import "ZMViewController.h"
+#import "ZMNavView.h"
+
 #if DEBUG
 #import "FLEXManager.h"
 #endif
 
-
 @implementation ZMViewController
+
+-(ZMNavView *)navView{
+    if (!_navView) {
+        ZMNavView *navView = [[ZMNavView alloc] init];
+        [self.view addSubview:navView];
+        navView.backgroundColor = [ZMColor whiteColor];
+        self.navView = navView;
+        [self.navView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.mas_equalTo(0);
+            make.height.mas_equalTo(64 + KStatusBarHeight);
+        }];
+        [self.navView.superview layoutIfNeeded];
+    }
+    return _navView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,12 +38,15 @@
     }
     //设置背景颜色
     self.view.backgroundColor = [UIColor whiteColor];
-    //设置状态栏颜色
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    
+    //隐藏自带的导航栏
+    self.navigationController.navigationBar.hidden = YES;
+}
+#pragma mark - 加载自定义导航
+- (void)setupNavView{
+    [self navView];
 }
 
-/** 接收到系统的内存警告时 */
+#pragma mark - 接收到系统的内存警告时
 - (void)didReceiveMemoryWarning{
     
     [super didReceiveMemoryWarning];

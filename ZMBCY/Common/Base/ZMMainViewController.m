@@ -68,6 +68,7 @@
     childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:childVc];
+
     //设置item按钮
     nav.tabBarItem = [[UITabBarItem alloc]initWithTitle:title image:[[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:selectedImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
@@ -78,8 +79,6 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[ZMColor appMainColor],NSFontAttributeName:[UIFont systemFontOfSize:10]} forState:UIControlStateSelected];
     
     [nav.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -2)];
-    //nav.tabBarItem.imageInsets = UIEdgeInsetsMake(-2, 0, 2, 0);
-    //nav.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     
     // 添加子控制器
     [self addChildViewController:nav];

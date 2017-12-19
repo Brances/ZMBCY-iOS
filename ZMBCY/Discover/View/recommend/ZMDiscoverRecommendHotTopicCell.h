@@ -17,6 +17,7 @@
 @property (nonatomic, strong) ZMDiscoverRecommendHotTopicCellView   *bigImageView;
 @property (nonatomic, strong) ZMDiscoverRecommendHotTopicCellView   *leftImageView;
 @property (nonatomic, strong) ZMDiscoverRecommendHotTopicCellView   *rightImageView;
+@property (nonatomic, strong) NSArray                               *hotArray;
 
 - (void)setupUI:(NSArray *)hotTopicArray;
 
@@ -35,6 +36,8 @@
 
 @property (nonatomic, strong) UILabel       *nameLabel;
 @property (nonatomic, strong) UILabel       *descLabel;
+
+@property (nonatomic, copy) void (^ clickBlock)();
 
 #pragma mark - 设置圆角
 - (void)setupCornerRadiusWithDay;

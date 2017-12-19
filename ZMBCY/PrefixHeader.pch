@@ -38,7 +38,9 @@
 #import "ZMLoadFailedView.h"
 #import "ZMCustomGifHeader.h"
 #import "ZMCustomGifFooter.h"
-#import "UINavigationBar+Awesome.h"
+//#import "UINavigationBar+Awesome.h"
+//#import "WRNavigationBar.h"
+//#import <JZNavigationExtension/JZNavigationExtension.h>
 
 #endif
 
@@ -54,6 +56,8 @@
 #define placeholderFailImage [YYImage imageWithColor:[ZMColor colorWithHexString:@"#ECECEC"]]
 //default_avatar
 #define placeholderAvatarImage [UIImage imageNamed:@"default_avatar"]
+#define backArrowIcon          [UIImage imageNamed:@"navigation_back"]
+#define backArrowWhiteIcon     [UIImage imageNamed:@"navigation_back_white"]
 
 #define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
@@ -64,6 +68,7 @@
 #define pageMenuH 40
 #define NaviH (kScreenHeight == 812 ? 88 : 64) // 812是iPhoneX的高度
 #define KWaterSpace 3.0
+
 
 
 #define WEAKSELF __weak typeof(self) weakSelf = self
@@ -77,6 +82,8 @@
 #define HttpImageURLSuffixScanle(width,height)           @"?imageView&enlarge=1&quality=75&thumbnail="width@"y"height@"&type="
 
 #define BaseURL                            @"https://api.gacha.163.com/api/v1"
+#define BaseURLV2                          @"https://api.gacha.163.com/api/v2"
+
 /** 发现 - 推荐 */
 #define DiscoveryRecommendInfo             BaseURL@"/discovery"
 /** 发现 - 热推更多 */
@@ -87,5 +94,11 @@
 #define DiscoveryInsetNextPopularPosts     BaseURL@"/discover/nextPopularPosts"
 /** 发现 - 排行 */
 #define DiscoveryRankingList               BaseURL@"/rankingList"
+/** 发现 - 专题详情信息 */
+#define DiscoverTopicCollectInfo           BaseURL@"/collect/info"
+/** 发现 - 专题用户信息 */
+#define DiscoverTopicUserInfo              BaseURL@"/user/detailInfo"
+/** 发现 - 专题帖子列表 */
+#define DiscoverTopicSublist               BaseURLV2@"/collect/sublist"
 
 #endif

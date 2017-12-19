@@ -23,20 +23,20 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64) style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+    //[self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.tableView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > NAVBAR_CHANGE_POINT) {
-        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
-    } else {
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
-    }
+//    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+//    CGFloat offsetY = scrollView.contentOffset.y;
+//    if (offsetY > NAVBAR_CHANGE_POINT) {
+//        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
+//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+//    } else {
+//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
+//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -51,7 +51,7 @@
 {
     [super viewWillDisappear:animated];
     self.tableView.delegate = nil;
-    [self.navigationController.navigationBar lt_reset];
+    //[self.navigationController.navigationBar lt_reset];
 }
 
 #pragma mark UITableViewDatasource

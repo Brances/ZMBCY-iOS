@@ -27,19 +27,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"发现";
+    //self.navigationItem.title = @"发现";
+    [self setupNavView];
     [self setupMenu];
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
-    //[self.navigationController.navigationBar lt_setElementsAlpha:0.5];
+- (void)setupNavView{
+    [super setupNavView];
+    [self.navView.centerButton setTitle:@"发现" forState:UIControlStateNormal];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.scrollView.delegate = nil;
 }
 - (void)setupMenu{
     self.dataArr = @[@"推荐",@"插画",@"文章",@"COS"];
@@ -111,6 +113,7 @@
 #pragma mark - 初始化视图
 - (void)setupView:(NSInteger)index{
     id table = [self.myChildViewControllers safeObjectAtIndex:index];
+    //避免重复创建视图
     if ([table isKindOfClass:[UIView class]]) {
         return;
     }
