@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Bugly/Bugly.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

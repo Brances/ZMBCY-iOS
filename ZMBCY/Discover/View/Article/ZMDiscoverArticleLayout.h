@@ -36,9 +36,9 @@
 //个人资料高度
 @property (nonatomic, assign) CGFloat       profileHeight;
 // 下边留白
-@property (nonatomic, assign) CGFloat marginBottom; //下边留白
+@property (nonatomic, assign) CGFloat       marginBottom; //下边留白
 // 总高度
-@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, assign) CGFloat       height;
 
 @end
 

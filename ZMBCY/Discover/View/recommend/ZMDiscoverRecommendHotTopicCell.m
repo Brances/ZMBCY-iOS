@@ -281,7 +281,6 @@
     if (self.clickBlock) {
         self.clickBlock();
     }
-    //NSLog(@"点击了");
 }
 
 @end

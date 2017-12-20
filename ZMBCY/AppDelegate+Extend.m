@@ -25,14 +25,8 @@
     [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
     [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
     [[UITabBar appearance] setShadowImage:[UIImage imageWithColor:[ZMColor colorWithHexString:@"0xf5f5f5"]]];
-//
-//    [[UIBarButtonItem appearance] setTintColor:[ZMColor blackColor]];
-    
-//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-//    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1]];
-//    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-//                                                           [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont systemFontOfSize:21], NSFontAttributeName, nil]];
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    //腾讯bugly
+    [Bugly startWithAppId:@"df13c9a39f"];
     
 }
 

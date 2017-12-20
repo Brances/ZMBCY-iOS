@@ -31,7 +31,6 @@
 @property (nonatomic, strong) ZMDiscoverRecommendHotRecommCellWaterView     *view;
 @property (nonatomic, strong) ZMDiscoverRecommendProfileView                *profileView;
 @property (nonatomic, strong) ZMHotRecommendModel   *model;
-//@property (nonatomic, strong) ZMHotInsetPostModel   *postModel;
 
 #pragma mark - 根据布局来确定UI
 - (void)setupUIWithRecommend:(itemStyle)style model:(ZMHotRecommendModel *)model;

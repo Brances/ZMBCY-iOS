@@ -11,10 +11,10 @@
 
 @interface ZMDiscoverArticleTagView : UIView
 
-@property (nonatomic,strong) NSMutableArray *btnArray;
-@property (nonatomic,strong) UIScrollView   *scrollView;
+@property (nonatomic,strong) NSMutableArray         *btnArray;
+@property (nonatomic,strong) UIScrollView           *scrollView;
 @property (nonatomic,strong) NSArray<ZMTagModel *>  *baseArray;
-@property (nonatomic,strong) UIButton       *lastBTN;
+@property (nonatomic,strong) UIButton               *lastBTN;
 
 - (void)setSpecificationButton:(NSArray *)contents;
 

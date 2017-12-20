@@ -35,4 +35,6 @@
 /** 关系 */
 @property (nonatomic, assign) int           relationType;
 
+
+
 @end

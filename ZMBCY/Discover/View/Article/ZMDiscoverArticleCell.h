@@ -28,10 +28,10 @@
 /** 阅读更多 */
 @property (nonatomic, strong) UIButton      *moreButton;
 /** 滚动标签 */
-@property (nonatomic, strong) ZMDiscoverArticleTagView  *tagView;
+@property (nonatomic, strong) ZMDiscoverArticleTagView       *tagView;
 /** 用户资料及点赞 */
 @property (nonatomic, strong) ZMDiscoverArticleProfileView   *profileView;
 
-@property (nonatomic, strong) ZMDiscoverArticleLayout *layout;
+@property (nonatomic, strong) ZMDiscoverArticleLayout        *layout;
 
 @end

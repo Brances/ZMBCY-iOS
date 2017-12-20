@@ -24,6 +24,11 @@ typedef NS_ENUM(NSInteger,trendType){
     trendTypeMonth          //月榜
 };
 
+typedef NS_ENUM(NSInteger,subjectSate){
+    subjectSateNormal = 0,   //默认帖子是显示状态
+    subjectSateDelete        //帖子已被删除
+};
+
 @interface ZMBaseModel : NSObject
 
 - (NSString *)dispose:(id)data;
