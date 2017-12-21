@@ -29,6 +29,11 @@ typedef NS_ENUM(NSInteger,subjectSate){
     subjectSateDelete        //帖子已被删除
 };
 
+typedef NS_ENUM(NSInteger,subjectType){
+    subjectTypeNormal = 0,   //默认帖子是图片类型
+    subjectTypeArticle       //文章
+};
+
 @interface ZMBaseModel : NSObject
 
 - (NSString *)dispose:(id)data;

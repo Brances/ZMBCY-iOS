@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZMNavView.h"
 
 @interface ZMTopicDetailView : UIView
 
 @property (nonatomic, copy) NSString    *uid;
+@property (nonatomic, strong) ZMNavView    *nav;
 
 @end

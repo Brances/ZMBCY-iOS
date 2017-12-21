@@ -87,6 +87,11 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.mas_equalTo(0);
     }];
+    WEAKSELF;
+    self.tableView.mj_footer = [ZMCustomGifFooter footerWithRefreshingBlock:^{
+        [weakSelf getNextData];
+    }];
+    
 }
 
 #pragma mark - UITableViewDataSource UITableViewDelegate
@@ -156,14 +161,26 @@
 }
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGPoint point = scrollView.contentOffset;
-    if (point.y < 0) {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    NSLog(@"下拉位置 = %.2f",offsetY);
+    if (offsetY < 0) {
         CGRect rects =  self.headView.mainView.frame;
-        rects.origin.y = point.y;
-        rects.size.height = ABS(point.y) + kHEIGHT;
-        NSLog(@"下拉高度 = %.2f",rects.size.height);
+        rects.origin.y = offsetY;
+        rects.size.height = ABS(offsetY) + kHEIGHT;
         self.headView.mainView.frame = rects;
     }
+    if (offsetY >= kHEIGHT - 64) {
+        [self.nav.centerButton setTitle:_topicModel.collect_name forState:UIControlStateNormal];
+        [self.nav.centerButton setTitleColor:[ZMColor whiteColor] forState:UIControlStateNormal];
+    }else if (offsetY > 0 && offsetY <kHEIGHT){
+        [self.nav.centerButton setTitle:@"" forState:UIControlStateNormal];
+    }
+    CGFloat minAlphaOffset = 64;
+    CGFloat maxAlphaOffset = kHEIGHT - 64;
+    CGFloat offset = scrollView.contentOffset.y;
+    CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
+    self.nav.backgroundColor = [ZMColor colorWithHexString:@"#00DA8C" alpha:alpha];
+    NSLog(@"透明度变化 = %.2f",alpha);
 }
 
 #pragma mark - 队列组
@@ -201,6 +218,7 @@
         param[@"count"] = @(count);
         [ZMNetworkHelper requestGETWithRequestURL:DiscoverTopicSublist parameters:param success:^(id responseObject) {
             if ([responseObject[@"result"] isKindOfClass:[NSArray class]]) {
+                [weakSelf.subjectArray removeAllObjects];
                 NSArray *subArray = responseObject[@"result"];
                 for (NSDictionary *subDic in subArray) {
                     ZMTopicDetailSubjectModel *subModel = [ZMTopicDetailSubjectModel modelWithJSON:subDic];
@@ -218,6 +236,37 @@
         [ZMLoadingView hideLoadingForView:self];
         [self.tableView reloadData];
     });
+}
+
+#pragma mark - 下一页数据
+- (void)getNextData{
+    WEAKSELF;
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"id"] = _uid;
+    param[@"count"] = @(count);
+    param[@"offset"] = ((ZMTopicDetailSubjectModel *)[self.subjectArray lastObject]).post_id;
+    
+    [ZMNetworkHelper requestGETWithRequestURL:DiscoverTopicSublist parameters:param success:^(id responseObject) {
+        if ([responseObject[@"result"] isKindOfClass:[NSArray class]]) {
+            NSArray *subArray = responseObject[@"result"];
+            for (NSDictionary *subDic in subArray) {
+                ZMTopicDetailSubjectModel *subModel = [ZMTopicDetailSubjectModel modelWithJSON:subDic];
+                [weakSelf.subjectArray addObject:subModel];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (subArray.count < count) {
+                    [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+                }else{
+                    [weakSelf.tableView.mj_footer endRefreshing];
+                }
+                weakSelf.cell.needUpdate = YES;
+                [weakSelf.tableView reloadData];
+            });
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD showPromptMessage:@"网络异常"];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    }];
 }
 
 #pragma mark - 主线程更新

@@ -25,6 +25,7 @@
 - (void)setupUI{
     [self setupNavView];
     self.mainView = [[ZMTopicDetailView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    self.mainView.nav = self.navView;
     self.mainView.uid = self.uid;
     [self.view insertSubview:self.mainView belowSubview:self.navView];
 }
@@ -34,6 +35,7 @@
     self.navView.backgroundColor = [ZMColor clearColor];
     self.navView.showBottomLabel = NO;
     [self.navView.leftButton setImage:backArrowWhiteIcon forState:UIControlStateNormal];
+    [self.navView.rightButton setImage:[UIImage imageNamed:@"myCollection_share~iphone"] forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
