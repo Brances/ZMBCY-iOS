@@ -130,8 +130,6 @@
 
 #pragma mark - 设置模糊效果
 - (void)setBlurImageView{
-    //self.userInteractionEnabled = YES;
-    //self.image = [UIImage imageNamed:@"Stars@2x"];
     self.backVisual = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
     self.backVisual.frame = self.bounds;
     self.backVisual.alpha = 1.0;
@@ -142,8 +140,6 @@
 
 
 @interface ZMMaskImageView()
-
-
 
 @end
 
@@ -165,21 +161,12 @@
     if (self = [super initWithFrame:frame]) {
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
-        //self.backgroundColor = [ZMColor appLightGrayColor];
-        //[self maskView];
     }
     return self;
 }
 
 - (void)setIsShowMask:(BOOL)isShowMask{
-    if (isShowMask) {
-        //[];
-        self.maskView.hidden = NO;
-    }else{
-        self.maskView.hidden = YES;
-//        [self.maskView removeFromSuperview];
-//        self.maskView = nil;
-    }
+    self.maskView.hidden = !isShowMask;
 }
 
 @end

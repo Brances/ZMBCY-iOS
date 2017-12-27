@@ -99,4 +99,14 @@
 /** 发现 - 专题帖子列表 */
 #define DiscoverTopicSublist               BaseURLV2@"/collect/sublist"
 
+/** 帖子详情 */
+#define PostDetailInfo                     BaseURL@"/post/V2"
+/** 喜欢这个帖子相关的人 */
+#define PostSupportUsersList               BaseURL@"/post/supportUsers"
+/** 帖子热评 */
+#define PostHotcommentsList                BaseURL@"/post/hotcomments"
+/** 帖子评论分页 */
+#define PostCommentsList                   BaseURL@"/post/comments"
+
+
 #endif

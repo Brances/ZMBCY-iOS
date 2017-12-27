@@ -24,10 +24,15 @@
 
 - (void)setupUI{
     [self setupNavView];
-    self.mainView = [[ZMTopicDetailView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    self.mainView = [[ZMTopicDetailView alloc] initWithFrame:CGRectZero];
+    [self.view insertSubview:self.mainView belowSubview:self.navView];
+    [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(self.view.mas_bottom).with.offset(-KTabBarHeight);
+    }];
+    [self.mainView.superview layoutIfNeeded];
     self.mainView.nav = self.navView;
     self.mainView.uid = self.uid;
-    [self.view insertSubview:self.mainView belowSubview:self.navView];
 }
 
 - (void)setupNavView{

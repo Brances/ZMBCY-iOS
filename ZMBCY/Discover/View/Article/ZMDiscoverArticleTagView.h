@@ -16,6 +16,9 @@
 @property (nonatomic,strong) NSArray<ZMTagModel *>  *baseArray;
 @property (nonatomic,strong) UIButton               *lastBTN;
 
+#pragma mark - 设置文章数据
 - (void)setSpecificationButton:(NSArray *)contents;
+
+- (void)setPostButton:(NSArray *)contents;
 
 @end

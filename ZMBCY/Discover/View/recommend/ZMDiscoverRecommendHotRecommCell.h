@@ -43,6 +43,8 @@
 
 /** 容器 */
 @property (nonatomic, strong) UIView                *mainView;
+/** 点击 */
+@property (nonatomic, copy) void(^clickMainView)();
 /** 封面图 */
 @property (nonatomic, strong) ZMImageView           *thumbImageView;
 /** top1 专属 icon */

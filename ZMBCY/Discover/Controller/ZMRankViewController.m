@@ -28,12 +28,10 @@
 }
 - (void)setupNavView{
     [super setupNavView];
-    WEAKSELF;
     [self.navView.leftButton setImage:backArrowIcon forState:UIControlStateNormal];
     [self.navView.centerButton setTitle:@"排行榜" forState:UIControlStateNormal];
 }
 - (void)setupUI{
-    
     self.dataArray = @[@"日榜",@"周榜",@"月榜"];
     SPPageMenu *pageMenu = [SPPageMenu pageMenuWithFrame:CGRectMake(0, 64 + KStatusBarHeight, kScreenWidth, pageMenuH) trackerStyle:SPPageMenuTrackerStyleLineAttachment];
     pageMenu.permutationWay = SPPageMenuPermutationWayNotScrollEqualWidths;
@@ -102,7 +100,7 @@
         case 0:
         {
             ZMRankView *view = [[ZMRankView alloc] initWithFrame:CGRectMake(kScreenWidth * index, 0, kScreenWidth, self.scrollView.height)];
-            view.backgroundColor = [UIColor redColor];
+            view.backgroundColor = [UIColor whiteColor];
             view.trendType = trendTypeDay;
             [self.scrollView addSubview:view];
             //将当前视图存到数组中
@@ -112,7 +110,7 @@
         case 1:
         {
             ZMRankView *view = [[ZMRankView alloc] initWithFrame:CGRectMake(kScreenWidth * index, 0, kScreenWidth, self.scrollView.height)];
-            view.backgroundColor = [UIColor blueColor];
+            view.backgroundColor = [UIColor whiteColor];
             view.trendType = trendTypeWeek;
             [self.scrollView addSubview:view];
             //将当前视图存到数组中
@@ -123,7 +121,7 @@
         {
             ZMRankView *view = [[ZMRankView alloc] initWithFrame:CGRectMake(kScreenWidth * index, 0, kScreenWidth, self.scrollView.height)];
             view.trendType = trendTypeMonth;
-            view.backgroundColor = [UIColor grayColor];
+            view.backgroundColor = [UIColor whiteColor];
             [self.scrollView addSubview:view];
             //将当前视图存到数组中
             [self.rankViewControllers replaceObjectAtIndex:index withObject:view];
@@ -132,7 +130,6 @@
         default:
             break;
     }
-    
     
 }
 

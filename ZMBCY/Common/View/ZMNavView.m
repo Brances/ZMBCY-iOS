@@ -42,7 +42,7 @@
             make.left.mas_equalTo(0);
             make.width.mas_equalTo(50);
             make.height.mas_equalTo(40);
-            make.centerY.mas_equalTo(self.mainView.mas_centerY).with.offset(KStatusBarMargin+10);
+            make.centerY.mas_equalTo(self.mainView.mas_centerY).with.offset((KStatusBarMargin+20)/2);
         }];
     }
     return _leftButton;

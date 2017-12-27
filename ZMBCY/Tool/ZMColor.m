@@ -97,5 +97,11 @@
 + (UIColor *)appLightGrayColor{
     return [self colorWithHexString:@"#D2D2D2" alpha:1.0f];
 }
++ (UIColor *)appSubBlueColor{
+    return [self colorWithHexString:@"#7EC1FB" alpha:1.0f];
+}
++ (UIColor *)appBottomLineColor{
+    return [self colorWithHexString:@"#DCDCDC" alpha:1.0f];
+}
 
 @end

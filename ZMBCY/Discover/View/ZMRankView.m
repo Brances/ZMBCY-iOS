@@ -59,7 +59,8 @@
     [self addSubview:self.collectionView];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.bottom.mas_equalTo(0);
+        make.left.top.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(self.mas_bottom).with.offset(-KTabBarHeight);
     }];
     WEAKSELF;
     _collectionView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
@@ -263,7 +264,6 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section{
                 self.cell.needUpdate = YES;
                 [weakSelf.collectionView reloadData];
             });
-            
         }
     } failure:^(NSError *error) {
         [MBProgressHUD showPromptMessage:@"网络错误"];

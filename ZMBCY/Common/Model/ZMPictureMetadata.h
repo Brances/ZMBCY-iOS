@@ -15,10 +15,10 @@
 @property (nonatomic, copy) NSString            *fullUrl;
 @property (nonatomic, assign) CGFloat            width;
 /* 实际宽度 * 2px */
-@property (nonatomic, assign) CGFloat           realWidth;
+@property (nonatomic, assign) CGFloat            realWidth;
 @property (nonatomic, assign) CGFloat            height;
 /* 实际高度 * 2px */
-@property (nonatomic, assign) CGFloat           realHeight;
+@property (nonatomic, assign) CGFloat            realHeight;
 @property (nonatomic, assign) CGFloat            size;
 
 @end

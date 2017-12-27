@@ -215,7 +215,6 @@
     
     NSString *work = self.imagePathsGroup[0];
     //第一张作品
-    //NSString *firstImg = ((ZMWorkModel *)[work.work safeObjectAtIndex:0]).fullUrl;
     self.blurImageView = [[ZMImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     [self.blurImageView setBlurImageView];
     
@@ -223,12 +222,11 @@
     
     [self addSubview:self.blurImageView];
     
-    self.carousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, 80 * FIT_HEIGHT, self.frame.size.width, (self.frame.size.height - 80 - 20) * FIT_HEIGHT)];
+    self.carousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, 80, self.frame.size.width, (self.frame.size.height - 80 - 20))];
     self.carousel.type = iCarouselTypeCustom;
     self.carousel.delegate =    self;
     self.carousel.dataSource =  self;
     self.carousel.pagingEnabled = YES;
-    //self.carousel.currentItemView.alpha = 1.0f;
     
     [self addSubview:self.carousel];
     
@@ -250,12 +248,10 @@
 
 - (UIView *)carousel:(iCarousel * __nonnull)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view{
     NSString *work = self.imagePathsGroup[index];
-    //NSString *firstImg = ((ZMWorkModel *)[work.work safeObjectAtIndex:0]).fullUrl;
     if (view == nil) {
-        view = [[ZMMaskImageView alloc] initWithFrame:CGRectMake(0, 0, 180 * FIT_WIDTH,  carousel.height)];
+        view = [[ZMMaskImageView alloc] initWithFrame:CGRectMake(0, 0, 180 ,  carousel.height)];
     }
-    ZMMaskImageView *imageView = [[ZMMaskImageView alloc] initWithFrame:CGRectMake(0, 0, 180 * FIT_WIDTH, carousel.height)];
-    //imageView.isShowMask = YES;
+    ZMMaskImageView *imageView = [[ZMMaskImageView alloc] initWithFrame:CGRectMake(0, 0, 180, carousel.height)];
     [self setupImageWithURL:imageView url:work];
     [self setupViewAlpha];
     [view addSubview:imageView];
@@ -278,7 +274,6 @@
     }
     NSString *work = self.imagePathsGroup[(NSInteger)self.carousel.scrollOffset];
     //第一张作品
-    //NSString *firstImg = ((ZMWorkModel *)[work.work safeObjectAtIndex:0]).fullUrl;
     [self setupImageWithURL:self.blurImageView url:work];
     
 }
@@ -295,7 +290,6 @@
         if (![view isKindOfClass:[ZMMaskImageView class]]) continue;
         if ([view isEqual:currenView]) {
             ((ZMMaskImageView *)view).isShowMask = NO;
-            
         }else{
             ((ZMMaskImageView *)view).isShowMask = YES;
         }

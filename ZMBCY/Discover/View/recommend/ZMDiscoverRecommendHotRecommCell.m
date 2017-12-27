@@ -8,6 +8,8 @@
 
 #import "ZMDiscoverRecommendHotRecommCell.h"
 #import "ZMRankingListModel.h"
+#import "ZMRankViewController.h"
+#import "ZMPostDetailViewController.h"
 
 @interface ZMDiscoverRecommendHotRecommCell()<UICollectionViewDataSource,WaterFlowLayoutDelegate>
 
@@ -41,7 +43,6 @@
 - (void)setDataArray:(NSArray *)dataArray{
     if (!dataArray.count) return;
     _dataArray = dataArray;
-    
     if (self.collectionView.height != self.cacheHeight || self.needUpdate) {
         self.collectionView.height = self.cacheHeight;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -63,6 +64,18 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ZMDiscoverRecommendHotRecommCellWater *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"water" forIndexPath:indexPath];
     [cell setupUIWithRecommend:self.style model:self.dataArray[indexPath.item]];
+    WEAKSELF;
+    __weak typeof(cell) weakCell = cell;
+    cell.view.clickMainView = ^{
+        if (weakCell.model.top == 1) {
+            ZMRankViewController *vc = [[ZMRankViewController alloc] init];
+            [weakSelf.viewController.navigationController pushViewController:vc animated:YES];
+        }else{
+            ZMPostDetailViewController *vc = [[ZMPostDetailViewController alloc] init];
+            vc.postId = weakCell.model.postId;
+            [weakSelf.viewController.navigationController pushViewController:vc animated:YES];
+        }
+    };
     
     return cell;
 }
@@ -277,6 +290,9 @@
 - (UIView *)mainView{
     if (!_mainView) {
         _mainView = [UIView new];
+        _mainView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *ger = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickMainViewBlock)];
+        [_mainView addGestureRecognizer:ger];
         _mainView.layer.masksToBounds = YES;
         [self addSubview:_mainView];
         [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -356,6 +372,13 @@
         self.backgroundColor = [UIColor whiteColor];
     }
     return self;
+}
+
+#pragma mark - private
+- (void)clickMainViewBlock{
+    if (self.clickMainView) {
+        self.clickMainView();
+    }
 }
 
 @end

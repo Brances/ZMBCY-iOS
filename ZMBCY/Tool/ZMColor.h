@@ -42,4 +42,10 @@
 /** 设计师标签 #D2D2D2 */
 + (UIColor *)appLightGrayColor;
 
+/** 辅助蓝色 #7EC1FB */
++ (UIColor *)appSubBlueColor;
+
+/** 分割线颜色 #DCDCDC */
++ (UIColor *)appBottomLineColor;
+
 @end

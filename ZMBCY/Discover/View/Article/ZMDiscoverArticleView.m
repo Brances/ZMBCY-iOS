@@ -130,7 +130,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (!_model) return 0;
     if (indexPath.section == 0) {
-        return 340 * FIT_HEIGHT;
+        return 340;
     }else if (indexPath.section == 1){
         return 70;
     }

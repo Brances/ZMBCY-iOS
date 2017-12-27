@@ -36,6 +36,7 @@
     return self;
 }
 
+#pragma mark - 设置数据
 - (void)setSpecificationButton:(NSArray *)contents{
     self.baseArray = contents;
     [self.btnArray removeAllObjects];
@@ -109,5 +110,60 @@
     
 }
 
+#pragma mark - 设置帖子按钮数据
+- (void)setPostButton:(NSArray *)contents{
+    self.baseArray = contents;
+    [self.btnArray removeAllObjects];
+    WEAKSELF;
+    NSInteger count = contents.count;
+    [self.scrollView removeAllSubviews];
+    UIButton *lastBtn;
+    for (NSInteger i=0; i < count; i++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.scrollView addSubview:btn];
+        ZMTagModel *model = [contents safeObjectAtIndex:i];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.mas_equalTo(weakSelf.mas_centerY).with.offset(0);
+            make.height.mas_equalTo(25);
+            if (lastBtn) {
+                make.left.mas_equalTo(lastBtn.mas_right).offset(20);
+            }else{
+                make.left.mas_equalTo(self.scrollView.mas_left).offset(0);
+            }
+            if (model.tagName.length == 1) {
+                make.width.mas_equalTo(32);
+            }else{
+                if (i == 0) {
+                    make.width.mas_equalTo([NSString getTitleWidth:model.tagName withFontSize:13] + 40);
+                }else{
+                    make.width.mas_equalTo([NSString getTitleWidth:model.tagName withFontSize:13] + 30);
+                }
+            }
+            if (i == count-1) {
+                make.right.mas_equalTo(self.scrollView.mas_right).offset(-20);
+            }
+        }];
+        [btn.superview layoutIfNeeded];
+        btn.tag = i;
+        [btn addTarget:self action:@selector(specificationBtn:) forControlEvents:UIControlEventTouchUpInside];
+        btn.titleLabel.font = [UIFont systemFontOfSize:13];
+        [btn setTitleColor:[ZMColor appSupportColor] forState:UIControlStateNormal];
+        [btn setTitle:model.tagName forState:UIControlStateNormal];
+        btn.layer.masksToBounds = YES;
+        lastBtn = btn;
+        
+        UIImage *image = [UIImage imageNamed:@"circle_tag_n"];
+        CGFloat top = 0; // 顶端盖高度
+        CGFloat bottom = 0 ; // 底端盖高度
+        CGFloat left = image.size.width * 0.6; // 左端盖宽度
+        CGFloat right = 5; // 右端盖宽度
+        UIEdgeInsets insets = UIEdgeInsetsMake(top, left, bottom, right);
+        image = [image resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+        [btn setBackgroundImage:image forState:UIControlStateNormal];
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, -5);
+        btn.adjustsImageWhenHighlighted = NO;
+        [self.btnArray addObject:btn];
+    }
+}
 
 @end

@@ -20,7 +20,8 @@
 
 - (ZMICarouselView *)carouseView{
     if (!_carouseView) {
-        _carouseView = [ZMICarouselView icarouselViewWithFrame:CGRectMake(0, 0, kScreenWidth, self.height)];
+        _carouseView = [ZMICarouselView icarouselViewWithFrame:CGRectMake(0, 0, self.width, self.height)];
+        //_carouseView = [ZMICarouselView icarouselViewWithFrame:CGRectZero];
         self.carouseView.delegate = self;
         self.carouseView.dataSource = self;
         self.carouseView.showPageControl = YES;
@@ -164,6 +165,12 @@
         self.nickLabel.text = ((ZMWorksModel *)model).author.nickName;
         self.descLabel.text = ((ZMWorksModel *)model).author.signature;
     }
+}
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    
+   // [_carouseView reloadData];
 }
 
 @end
