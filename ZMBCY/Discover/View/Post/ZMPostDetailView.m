@@ -9,13 +9,16 @@
 #import "ZMPostDetailView.h"
 #import "ZMPostDetailModel.h"
 #import "ZMPostDetailPraiseAuthorModel.h"
+#import "ZMCommentModel.h"
 #import "ZMPostDetailViewCell.h"
+#import "ZMCommentCell.h"
 
 @interface ZMPostDetailView()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) YYTableView       *tableView;
 @property (nonatomic, strong) ZMPostDetailModel *model;
-//@property (nonatomic, strong) NSMutableArray    *praiseArray;
+@property (nonatomic, strong) NSMutableArray    *commentArray;
+@property (nonatomic, strong) UIView            *commentHeaderView;
 
 @end
 
@@ -24,9 +27,29 @@
     CGFloat page;
 }
 
+- (UIView *)commentHeaderView{
+    if (!_commentHeaderView) {
+        
+        _commentHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
+        _commentHeaderView.backgroundColor = [ZMColor appGraySpaceColor];
+        UIImageView *topLine = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.5)];
+        topLine.image = [YYImage imageWithColor:[ZMColor appBottomLineColor]];
+        [_commentHeaderView addSubview:topLine];
+        
+        ZMPostDetailViewHeaderView *view = [[ZMPostDetailViewHeaderView alloc] initWithFrame:CGRectMake(0, 9, kScreenWidth, 50)];
+        ZMDiscoverHeadModel *HeadModel = [[ZMDiscoverHeadModel alloc] init];
+        HeadModel.title = @"全部评论";
+        HeadModel.icon  = [YYImage imageNamed:@"postDetaial_section_icon~iphone"];
+        view.model = HeadModel;
+        view.titleLabel.textColor = [ZMColor appSupportColor];
+        [_commentHeaderView addSubview:view];
+    }
+    return _commentHeaderView;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        page = 1;
+        page = 0;
         self.backgroundColor = [ZMColor appGraySpaceColor];
     }
     return self;
@@ -34,7 +57,7 @@
 
 - (void)setPostId:(NSString *)postId{
     _postId = postId;
-    //_praiseArray = [NSMutableArray new];
+    _commentArray = [NSMutableArray new];
     [self setupUI];
     [ZMLoadingView showLoadingInView:self];
     [self getPostDetailData];
@@ -43,7 +66,7 @@
 
 - (void)setupUI{
     
-    _tableView = [[YYTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    _tableView = [[YYTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate =   self;
     [self addSubview:_tableView];
@@ -64,11 +87,13 @@
 
 #pragma mark - UITableViewDataSource and UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 6;
+    return 7;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 3) {
         return 2;
+    }else if (section == 6){
+        return _commentArray.count;
     }
     return 1;
 }
@@ -90,17 +115,25 @@
         return 65;
     }else if (indexPath.section == 5 && _model.relatedPosts.count){
         return 10 + 50 + [_model.relatedPosts firstObject].cover.realHeight + 15;
+    }else if (indexPath.section == 6 && _commentArray.count){
+        return ((ZMCommentModel *)[self.commentArray safeObjectAtIndex:indexPath.row]).height;
     }
     return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section == 6 && _commentArray.count) {
+        return self.commentHeaderView;
+    }
     return nil;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     return nil;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 6 && _commentArray.count) {
+        return 50;
+    }
     return 0.01;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -154,6 +187,13 @@
         cell.width = kScreenWidth;
         cell.model = self.model;
         return cell;
+    }else if (indexPath.section == 6 && _commentArray.count){
+        ZMCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZMCommentCell"];
+        if (!cell) {
+            cell = [[ZMCommentCell alloc] initWithStyle:0 reuseIdentifier:@"ZMCommentCell"];
+        }
+        cell.model = (ZMCommentModel *)[self.commentArray safeObjectAtIndex:indexPath.row];
+        return cell;
     }
     
     YYTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -174,6 +214,7 @@
             ZMPostDetailModel *model = [ZMPostDetailModel modelWithJSON:responseObject[@"result"]];
             weakSelf.model = model;
             [weakSelf getPostPraiseListData];
+            [weakSelf getCommentListData];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [ZMLoadingView hideLoadingForView:weakSelf];
                 [weakSelf.tableView reloadData];
@@ -204,6 +245,31 @@
                 weakSelf.model.supportArray = temp;
                 [weakSelf.tableView reloadData];
             });
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD showPromptMessage:@"网络错误"];
+    }];
+    
+}
+
+#pragma mark - 评论列表
+- (void)getCommentListData{
+    WEAKSELF;
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"postID"] = _postId;
+    param[@"commentCount"] = @"10";
+    param[@"dir"] = @(page);
+    
+    [ZMNetworkHelper requestGETWithRequestURL:PostCommentsList parameters:param success:^(id responseObject) {
+         if ([responseObject[@"result"] isKindOfClass:[NSArray class]]) {
+             NSArray *result = responseObject[@"result"];
+             for (NSDictionary *dic in result) {
+                 ZMCommentModel *model = [ZMCommentModel modelWithJSON:dic];
+                 [weakSelf.commentArray addObject:model];
+             }
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [weakSelf.tableView reloadData];
+             });
         }
     } failure:^(NSError *error) {
         [MBProgressHUD showPromptMessage:@"网络错误"];

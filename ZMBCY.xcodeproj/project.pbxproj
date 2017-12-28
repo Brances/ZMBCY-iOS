@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3520CC961FF52D8F00254418 /* ZMCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520CC951FF52D8F00254418 /* ZMCommentModel.m */; };
+		3520CC991FF5316F00254418 /* ZMCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520CC981FF5316F00254418 /* ZMCommentCell.m */; };
 		352592F71FC7051F008165D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 352592F61FC7051F008165D7 /* main.m */; };
 		352592FA1FC7051F008165D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 352592F91FC7051F008165D7 /* AppDelegate.m */; };
 		352592FD1FC7051F008165D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 352592FC1FC7051F008165D7 /* ViewController.m */; };
@@ -319,6 +321,10 @@
 
 /* Begin PBXFileReference section */
 		145093B9279C04AD454CDE5E /* Pods-ZMBCY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZMBCY.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZMBCY/Pods-ZMBCY.release.xcconfig"; sourceTree = "<group>"; };
+		3520CC941FF52D8F00254418 /* ZMCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMCommentModel.h; sourceTree = "<group>"; };
+		3520CC951FF52D8F00254418 /* ZMCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMCommentModel.m; sourceTree = "<group>"; };
+		3520CC971FF5316F00254418 /* ZMCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMCommentCell.h; sourceTree = "<group>"; };
+		3520CC981FF5316F00254418 /* ZMCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMCommentCell.m; sourceTree = "<group>"; };
 		352592F21FC7051F008165D7 /* ZMBCY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMBCY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		352592F61FC7051F008165D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		352592F81FC7051F008165D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1007,6 +1013,8 @@
 				40CD824F1FF22D1000EB2270 /* ZMRelatedPostModel.m */,
 				402F3AAB1FF4AA4700C171FE /* ZMPostDetailPraiseAuthorModel.h */,
 				402F3AAC1FF4AA4700C171FE /* ZMPostDetailPraiseAuthorModel.m */,
+				3520CC941FF52D8F00254418 /* ZMCommentModel.h */,
+				3520CC951FF52D8F00254418 /* ZMCommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1469,6 +1477,8 @@
 				40CD82491FF2260600EB2270 /* ZMPostDetailView.m */,
 				40CD82541FF239C900EB2270 /* ZMPostDetailViewCell.h */,
 				40CD82551FF239C900EB2270 /* ZMPostDetailViewCell.m */,
+				3520CC971FF5316F00254418 /* ZMCommentCell.h */,
+				3520CC981FF5316F00254418 /* ZMCommentCell.m */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1934,6 +1944,7 @@
 				4077574D1FE25C1A0082A212 /* ZMRankTopCollectionViewCell.m in Sources */,
 				407757441FE22AA40082A212 /* NSString+ZMNSString.m in Sources */,
 				407B3DC61FC814F600E422E2 /* SPPageMenu.m in Sources */,
+				3520CC961FF52D8F00254418 /* ZMCommentModel.m in Sources */,
 				407B3DA31FC7C4CC00E422E2 /* NSArray+ZMAdd.m in Sources */,
 				407B3DB71FC800B000E422E2 /* ZMTopicViewController.m in Sources */,
 				402F3AAD1FF4AA4700C171FE /* ZMPostDetailPraiseAuthorModel.m in Sources */,
@@ -1947,6 +1958,7 @@
 				407757581FE2898B0082A212 /* ZMStringPickerView.m in Sources */,
 				407B3DA01FC7C48700E422E2 /* ZMBaseModel.m in Sources */,
 				40AC7FB91FE912AB0027B358 /* ZMDiscoverArticleCell.m in Sources */,
+				3520CC991FF5316F00254418 /* ZMCommentCell.m in Sources */,
 				4030716A1FEA3941001BB6E1 /* ZMTopicDetailSubjectCell.m in Sources */,
 				4033AF0D1FD8D8ED00400099 /* ZMTagModel.m in Sources */,
 				407B3D8B1FC7BA3400E422E2 /* ZMDiscoverViewController.m in Sources */,

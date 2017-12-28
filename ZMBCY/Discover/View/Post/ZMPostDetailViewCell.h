@@ -93,13 +93,14 @@
 
 @end
 
+//头部 - 猜你喜欢、全部评论、最热评论
 @interface ZMPostDetailViewHeaderView : UIView
 
 @property (nonatomic, strong) UIView        *mainView;
 /** 图标 */
-@property (nonatomic, strong)UIImageView    *iconImageView;
+@property (nonatomic, strong) UIImageView    *iconImageView;
 /** 文字 */
-@property (nonatomic, strong)UILabel        *titleLabel;
+@property (nonatomic, strong) UILabel        *titleLabel;
 /** 头部model */
 @property (nonatomic, strong) ZMDiscoverHeadModel *model;
 

@@ -394,13 +394,12 @@
                 }];
                 [image.superview layoutIfNeeded];
                 self.marginLeft = self.marginLeft + image.size.width + 8;
+                ZMPostDetailPraiseAuthorModel *author = [model.supportArray safeObjectAtIndex:i-1];
+                [image setImageWithURL:[NSURL URLWithString:author.avatarFullUrl] placeholder:placeholderAvatarImage];
             }
-            ZMPostDetailPraiseAuthorModel *author = [model.supportArray safeObjectAtIndex:i-1];
-            [image setImageWithURL:[NSURL URLWithString:author.avatarFullUrl] placeholder:placeholderAvatarImage];
         }
     }
 }
-
 
 @end
 
@@ -417,7 +416,6 @@
     }
     return _topLineImageView;
 }
-
 
 - (UIView *)mainView{
     if (!_mainView) {
@@ -514,16 +512,11 @@
                     }];
                 }
                 self.marginLeft = self.marginLeft + image.size.width + 8;
+                NSString *imageURL = [model.relatedPosts objectAtIndex:i-1].cover.fullUrl;
+                [image setImageWithURL:[NSURL URLWithString:imageURL] placeholder:placeholderAvatarImage];
             }
-            NSString *imageURL = [model.relatedPosts objectAtIndex:i-1].cover.fullUrl;
-            [image setImageWithURL:[NSURL URLWithString:imageURL] placeholder:placeholderAvatarImage];
         }
     }
-}
-
-- (void)layoutSubviews{
-    [super layoutSubviews];
-    
 }
 
 @end
