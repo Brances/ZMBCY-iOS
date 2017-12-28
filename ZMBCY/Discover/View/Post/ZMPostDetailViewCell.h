@@ -2,17 +2,17 @@
 //  ZMPostDetailViewCell.h
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/26.
+//  Created by Brance on 2017/12/26.
 //  Copyright © 2017年 Brance. All rights reserved.
 //  帖子
 
 #import "YYTableViewCell.h"
 #import "ZMPostDetailModel.h"
 #import "ZMDiscoverArticleTagView.h"
+#import "ZMPostDetailPraiseAuthorModel.h"
+#import "ZMDiscoverHeadModel.h"
 
 @interface ZMPostDetailViewCell : YYTableViewCell
-
-
 
 @end
 
@@ -63,6 +63,47 @@
 //点赞的人
 @interface ZMPostDetailViewPraiseCell : YYTableViewCell
 
+@property (nonatomic, strong) UIView        *mainView;
+/** 喜欢人数 */
+@property (nonatomic, strong) UILabel       *praiseLabel;
+/** 右边箭头 */
+@property (nonatomic, strong) UIImageView   *arrowImageView;
+/** 分割线 */
+@property (nonatomic, strong) UIImageView   *topLineImageView;
+/** 用来统计图片左边距 */
+@property (nonatomic, assign) CGFloat       marginLeft;
 
+@property (nonatomic, strong) ZMPostDetailModel   *model;
 
 @end
+
+//猜你喜欢
+@class ZMPostDetailViewHeaderView;
+@interface ZMPostDetailViewRelatedPostsCell : YYTableViewCell
+
+@property (nonatomic, strong) UIView                            *mainView;
+@property (nonatomic, strong) UIScrollView                      *scrollView;
+/** 分割线 */
+@property (nonatomic, strong) UIImageView                       *topLineImageView;
+@property (nonatomic, strong) ZMPostDetailViewHeaderView        *headerView;
+/** 用来统计图片左边距 */
+@property (nonatomic, assign) CGFloat                           marginLeft;
+
+@property (nonatomic, strong) ZMPostDetailModel                 *model;
+
+@end
+
+@interface ZMPostDetailViewHeaderView : UIView
+
+@property (nonatomic, strong) UIView        *mainView;
+/** 图标 */
+@property (nonatomic, strong)UIImageView    *iconImageView;
+/** 文字 */
+@property (nonatomic, strong)UILabel        *titleLabel;
+/** 头部model */
+@property (nonatomic, strong) ZMDiscoverHeadModel *model;
+
+@end
+
+
+

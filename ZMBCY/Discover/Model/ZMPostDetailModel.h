@@ -2,7 +2,7 @@
 //  ZMPostDetailModel.h
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/26.
+//  Created by Brance on 2017/12/26.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
@@ -10,6 +10,7 @@
 #import "ZMTagModel.h"
 #import "ZMPictureMetadata.h"
 #import "ZMRelatedPostModel.h"
+#import "ZMPostDetailPraiseAuthorModel.h"
 
 @interface ZMPostDetailModel : ZMBaseModel
 
@@ -31,6 +32,8 @@
 @property (nonatomic, assign) NSInteger     commentCount;
 /** 点赞数量 */
 @property (nonatomic, assign) NSInteger     supportCount;
+/** 点赞的人集合 */
+@property (nonatomic, strong) NSArray<ZMPostDetailPraiseAuthorModel *>  *supportArray;
 /** 订阅数量？ */
 @property (nonatomic, assign) NSInteger     subCount;
 /** 图片名称集合 */

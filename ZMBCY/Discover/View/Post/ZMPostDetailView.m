@@ -2,18 +2,20 @@
 //  ZMPostDetailView.m
 //  ZMBCY
 //
-//  Created by ZOMAKE on 2017/12/26.
+//  Created by Brance on 2017/12/26.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
 #import "ZMPostDetailView.h"
 #import "ZMPostDetailModel.h"
+#import "ZMPostDetailPraiseAuthorModel.h"
 #import "ZMPostDetailViewCell.h"
 
 @interface ZMPostDetailView()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) YYTableView       *tableView;
 @property (nonatomic, strong) ZMPostDetailModel *model;
+//@property (nonatomic, strong) NSMutableArray    *praiseArray;
 
 @end
 
@@ -32,8 +34,11 @@
 
 - (void)setPostId:(NSString *)postId{
     _postId = postId;
+    //_praiseArray = [NSMutableArray new];
     [self setupUI];
     [ZMLoadingView showLoadingInView:self];
+    [self getPostDetailData];
+    
 }
 
 - (void)setupUI{
@@ -46,7 +51,7 @@
         make.left.right.top.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
     }];
-    WEAKSELF;
+    //WEAKSELF;
     
 //    _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
 //        page ++;
@@ -54,12 +59,12 @@
 //    }];
     
     //[_tableView.mj_header beginRefreshing];
-    [self getPostDetailData];
+    
 }
 
 #pragma mark - UITableViewDataSource and UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return 6;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 3) {
@@ -81,8 +86,12 @@
             return 60;
         }
         return 0;
+    }else if (indexPath.section == 4 && _model.supportArray.count){
+        return 65;
+    }else if (indexPath.section == 5 && _model.relatedPosts.count){
+        return 10 + 50 + [_model.relatedPosts firstObject].cover.realHeight + 15;
     }
-    return 10;
+    return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -127,6 +136,24 @@
         }
         cell.model = self.model;
         return cell;
+    }else if (indexPath.section == 4 && _model.supportArray.count){
+        ZMPostDetailViewPraiseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZMPostDetailViewPraiseCell"];
+        if (!cell) {
+            cell = [[ZMPostDetailViewPraiseCell alloc] initWithStyle:0 reuseIdentifier:@"ZMPostDetailViewPraiseCell"];
+        }
+        cell.height = [self tableView:tableView heightForRowAtIndexPath:indexPath];
+        cell.width = kScreenWidth;
+        cell.model = _model;
+        return cell;
+    }else if (indexPath.section == 5 && _model.relatedPosts.count){
+        ZMPostDetailViewRelatedPostsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZMPostDetailViewRelatedPostsCell"];
+        if (!cell) {
+            cell = [[ZMPostDetailViewRelatedPostsCell alloc] initWithStyle:0 reuseIdentifier:@"ZMPostDetailViewRelatedPostsCell"];
+        }
+        cell.height = [self tableView:tableView heightForRowAtIndexPath:indexPath];
+        cell.width = kScreenWidth;
+        cell.model = self.model;
+        return cell;
     }
     
     YYTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -145,7 +172,8 @@
     [ZMNetworkHelper requestGETWithRequestURL:PostDetailInfo parameters:param success:^(id responseObject) {
         if ([responseObject[@"result"] isKindOfClass:[NSDictionary class]]) {
             ZMPostDetailModel *model = [ZMPostDetailModel modelWithJSON:responseObject[@"result"]];
-            self.model = model;
+            weakSelf.model = model;
+            [weakSelf getPostPraiseListData];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [ZMLoadingView hideLoadingForView:weakSelf];
                 [weakSelf.tableView reloadData];
@@ -153,6 +181,32 @@
         }
     } failure:^(NSError *error) {
         [ZMLoadingView hideLoadingForView:weakSelf];
+    }];
+    
+}
+
+#pragma mark - 喜欢这个帖子的人的列表
+- (void)getPostPraiseListData{
+    WEAKSELF;
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"postId"] = _postId;
+    param[@"limit"] = @"10";
+    param[@"offset"] = @"0";
+    [ZMNetworkHelper requestGETWithRequestURL:PostSupportUsersList parameters:param success:^(id responseObject) {
+        if ([responseObject[@"result"] isKindOfClass:[NSArray class]]) {
+            NSArray *result = responseObject[@"result"];
+            NSMutableArray  *temp = [NSMutableArray new];
+            for (NSDictionary *dic in result) {
+                ZMPostDetailPraiseAuthorModel *model = [ZMPostDetailPraiseAuthorModel modelWithJSON:dic];
+                [temp addObject:model];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.model.supportArray = temp;
+                [weakSelf.tableView reloadData];
+            });
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD showPromptMessage:@"网络错误"];
     }];
     
 }

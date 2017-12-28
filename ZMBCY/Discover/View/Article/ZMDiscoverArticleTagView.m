@@ -128,7 +128,7 @@
             if (lastBtn) {
                 make.left.mas_equalTo(lastBtn.mas_right).offset(20);
             }else{
-                make.left.mas_equalTo(self.scrollView.mas_left).offset(0);
+                make.left.mas_equalTo(self.scrollView.mas_left).offset(12);
             }
             if (model.tagName.length == 1) {
                 make.width.mas_equalTo(32);
