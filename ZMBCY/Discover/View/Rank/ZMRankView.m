@@ -11,6 +11,7 @@
 #import "ZMRankTopCollectionViewCell.h"
 #import "ZMDiscoverInsetWaterCollectionViewCell.h"
 #import "ZMStringPickerView.h"
+#import "ZMPostDetailViewController.h"
 
 @interface ZMRankView()<UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -127,6 +128,13 @@
         static NSString *identifier = @"ZMRankTopCollectionViewCell";
         ZMRankTopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
         cell.model = [self.model.rankings safeObjectAtIndex:indexPath.row];
+        WEAKSELF;
+         __weak typeof(cell) weakCell = cell;
+        cell.view.clickMainView = ^{
+            ZMPostDetailViewController *vc = [[ZMPostDetailViewController alloc] init];
+            vc.postId = weakCell.model.pid;
+            [weakSelf.viewController.navigationController pushViewController:vc animated:YES];
+        };
         return cell;
     }else if (indexPath.section == 2 && _model.rankOvers.count){
         static NSString *identify = @"ZMDiscoverInsetWaterCollectionViewCell";
@@ -242,7 +250,6 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     }
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"limit"] = @(limit);
-    //param[@"mark"] = currenMark;
     param[@"mark"] = [self getFormatDate:currenMark];
     param[@"type"] = @(type);
     param[@"offset"] = @(offset);

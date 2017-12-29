@@ -169,9 +169,9 @@
         _nameLabel.displaysAsynchronously = YES;
         _nameLabel.ignoreCommonProperties = YES;
         _nameLabel.fadeOnAsynchronouslyDisplay = NO;
-        _nameLabel.x = 10;
+        _nameLabel.x = KMarginLeft;
         _nameLabel.y = 0;
-        _nameLabel.width = kScreenWidth - 20;
+        _nameLabel.width = kScreenWidth - KMarginLeft * 2;
         [self.mainView addSubview:_nameLabel];
     }
     return _nameLabel;
@@ -513,7 +513,7 @@
                 }
                 self.marginLeft = self.marginLeft + image.size.width + 8;
                 NSString *imageURL = [model.relatedPosts objectAtIndex:i-1].cover.fullUrl;
-                [image setImageWithURL:[NSURL URLWithString:imageURL] placeholder:placeholderAvatarImage];
+                [image setImageWithURL:[NSURL URLWithString:imageURL] placeholder:placeholderFailImage];
             }
         }
     }

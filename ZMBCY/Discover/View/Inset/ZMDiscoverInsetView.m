@@ -117,7 +117,7 @@
         [weakSelf getNextData];
     }];
     
-    [ZMLoadingView showLoadingInView:self];
+    
     [self getInsetData];
     
 }
@@ -211,7 +211,7 @@
         return CGSizeMake(kScreenWidth, 40);
     }
     
-    return CGSizeMake(kScreenWidth, self.cell.cacheHeight ? self.cell.height : kScreenHeight);
+    return CGSizeMake(kScreenWidth, self.cell.cacheHeight ? self.cell.height : kScreenHeight * 4);
 }
 #pragma mark - section的margin
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
@@ -228,10 +228,11 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"version"] = [NSString getNowTimeTimestamp];
     param[@"type"] = @(type);
-    
+    if (!_model) {
+        [ZMLoadingView showLoadingInView:self];
+    }
     WEAKSELF;
     [ZMNetworkHelper requestGETWithRequestURL:DiscoveryInsetInfo parameters:param success:^(id responseObject) {
-        //[MBProgressHUD hideAllHUDsForView:weakSelf animated:YES];
         if (responseObject[@"result"] && [responseObject[@"result"] isKindOfClass:[NSDictionary class]]) {
             ZMInsetHomeModel *model = [ZMInsetHomeModel modelWithJSON:responseObject[@"result"]];
             NSLog(@"当前model = %@",model);

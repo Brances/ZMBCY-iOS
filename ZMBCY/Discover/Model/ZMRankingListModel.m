@@ -55,10 +55,10 @@
 
 @implementation ZMRankingModel
 
-+ (NSDictionary *)modelContainerPropertyGenericClass {
++ (NSDictionary *)modelCustomPropertyMapper{
     return @{
-             @"uid" : @"id"
-            };
+             @"pid":@"id"
+             };
 }
 
 @end

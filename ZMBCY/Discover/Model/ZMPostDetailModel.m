@@ -61,7 +61,7 @@
     wordText.font = [UIFont systemFontOfSize:15];
     wordText.lineBreakMode = NSLineBreakByCharWrapping;
     wordText.lineSpacing = 8;
-    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth - 20, 9999)];
+    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth - KMarginLeft * 2, 9999)];
     _richTextLayout = [YYTextLayout layoutWithContainer:container text:wordText];
     WBTextLinePositionModifier *modifier = [WBTextLinePositionModifier new];
     modifier.font = [UIFont systemFontOfSize:15];

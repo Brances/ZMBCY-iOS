@@ -2,7 +2,7 @@
 //  ZMCommentModel.h
 //  ZMBCY
 //
-//  Created by 卢洋 on 2017/12/28.
+//  Created by Brance on 2017/12/28.
 //  Copyright © 2017年 Brance. All rights reserved.
 //  评论
 
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString        *content;
 /** 喜欢数量 */
 @property (nonatomic, assign) NSInteger     likeCount;
-/** 喜欢数量 */
+/** 是否喜欢 */
 @property (nonatomic, assign) BOOL          hasLiked;
 /** 评论时间 */
 @property (nonatomic, assign) long long     createTime;

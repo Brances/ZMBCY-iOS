@@ -10,6 +10,8 @@
 #import "ZMWaterFlowLayout.h"
 #import "ZMDiscoverRecommendHotRecommCell.h"
 #import "ZMRankingListModel.h"
+#import "ZMRankViewController.h"
+#import "ZMPostDetailViewController.h"
 
 @interface ZMDiscoverInsetWaterCollectionViewCell()<UICollectionViewDataSource,WaterFlowLayoutDelegate>
 
@@ -68,6 +70,26 @@
     ZMDiscoverRecommendHotRecommCellWater *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"water" forIndexPath:indexPath];
     //插画
     [cell setupUIWithPost:self.style model:self.dataArray[indexPath.item]];
+    WEAKSELF;
+    cell.view.clickMainView = ^{
+        id typeModel = [self.dataArray safeObjectAtIndex:indexPath.item];
+        
+        //判断是插画或者排行榜
+        if ([typeModel isKindOfClass:[ZMHotInsetPostModel class]]) {
+            if (((ZMHotInsetPostModel *)typeModel).no == 1) {
+                ZMRankViewController *vc = [[ZMRankViewController alloc] init];
+                [weakSelf.viewController.navigationController pushViewController:vc animated:YES];
+            }else{
+                ZMPostDetailViewController *vc = [[ZMPostDetailViewController alloc] init];
+                vc.postId = ((ZMHotInsetPostModel *)typeModel).postId;
+                [weakSelf.viewController.navigationController pushViewController:vc animated:YES];
+            }
+        }else if ([typeModel isKindOfClass:[ZMRankingModel class]]){
+                ZMPostDetailViewController *vc = [[ZMPostDetailViewController alloc] init];
+                vc.postId = ((ZMRankingModel *)typeModel).pid;
+                [weakSelf.viewController.navigationController pushViewController:vc animated:YES];
+        }
+    };
     
     return cell;
 }

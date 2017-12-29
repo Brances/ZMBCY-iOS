@@ -149,10 +149,8 @@
 		402F3AA91FF4A1E500C171FE /* GCPageControl_indicator~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 402F3AA51FF4A1E500C171FE /* GCPageControl_indicator~iphone.png */; };
 		402F3AAA1FF4A1E500C171FE /* GCPageControl_indicator~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 402F3AA61FF4A1E500C171FE /* GCPageControl_indicator~iphone@2x.png */; };
 		402F3AAD1FF4AA4700C171FE /* ZMPostDetailPraiseAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402F3AAC1FF4AA4700C171FE /* ZMPostDetailPraiseAuthorModel.m */; };
-		403071601FE9FFBC001BB6E1 /* ZMTopicDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4030715F1FE9FFBC001BB6E1 /* ZMTopicDetailHeaderView.m */; };
 		403071631FEA0EEE001BB6E1 /* ZMTopicDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403071621FEA0EEE001BB6E1 /* ZMTopicDetailModel.m */; };
 		403071661FEA31C4001BB6E1 /* ZMTopicDetailSubjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403071651FEA31C4001BB6E1 /* ZMTopicDetailSubjectModel.m */; };
-		4030716A1FEA3941001BB6E1 /* ZMTopicDetailSubjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 403071691FEA3941001BB6E1 /* ZMTopicDetailSubjectCell.m */; };
 		403071721FEA3EDD001BB6E1 /* favorite_0_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4030716E1FEA3EDD001BB6E1 /* favorite_0_s@2x.png */; };
 		403071731FEA3EDD001BB6E1 /* favorite_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4030716F1FEA3EDD001BB6E1 /* favorite_0@2x.png */; };
 		403071741FEA3EDD001BB6E1 /* feed_large_post_item_nil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403071701FEA3EDD001BB6E1 /* feed_large_post_item_nil@2x.png */; };
@@ -165,7 +163,6 @@
 		403071831FEA4024001BB6E1 /* GCGList_postNumIcon~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4030717F1FEA4024001BB6E1 /* GCGList_postNumIcon~iphone@2x.png */; };
 		403071841FEA4024001BB6E1 /* GCGList_visitIcon~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 403071801FEA4024001BB6E1 /* GCGList_visitIcon~iphone.png */; };
 		403071851FEA4024001BB6E1 /* GCGList_visitIcon~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403071811FEA4024001BB6E1 /* GCGList_visitIcon~iphone@2x.png */; };
-		403071881FEA4705001BB6E1 /* ZMTopicDetailOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403071871FEA4705001BB6E1 /* ZMTopicDetailOperationView.m */; };
 		4030718B1FEA66D4001BB6E1 /* myCollection_deletePic~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 403071891FEA66D4001BB6E1 /* myCollection_deletePic~iphone.png */; };
 		4030718C1FEA66D4001BB6E1 /* myCollection_deletePic~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4030718A1FEA66D4001BB6E1 /* myCollection_deletePic~iphone@2x.png */; };
 		4033AF0A1FD8D69200400099 /* ZMDiscoverArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4033AF091FD8D69200400099 /* ZMDiscoverArticleModel.m */; };
@@ -203,6 +200,24 @@
 		403B9D391FDE862F00F73449 /* discovery_icon_jump~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 403B9D371FDE862F00F73449 /* discovery_icon_jump~iphone.png */; };
 		403B9D3A1FDE862F00F73449 /* discovery_icon_jump~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403B9D381FDE862F00F73449 /* discovery_icon_jump~iphone@2x.png */; };
 		403B9D401FDE942500F73449 /* glist_name_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403B9D3F1FDE942500F73449 /* glist_name_bg@2x.png */; };
+		403D6B291FF5FE7300E337D2 /* search_love@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B271FF5FE7300E337D2 /* search_love@2x.png */; };
+		403D6B2A1FF5FE7300E337D2 /* search_loved@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B281FF5FE7300E337D2 /* search_loved@2x.png */; };
+		403D6B2F1FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B2B1FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone.png */; };
+		403D6B301FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B2C1FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone@2x.png */; };
+		403D6B311FF5FFD300E337D2 /* postDetail_comment_supported~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B2D1FF5FFD300E337D2 /* postDetail_comment_supported~iphone.png */; };
+		403D6B321FF5FFD300E337D2 /* postDetail_comment_supported~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B2E1FF5FFD300E337D2 /* postDetail_comment_supported~iphone@2x.png */; };
+		403D6B351FF60D3F00E337D2 /* ZMPostDetailBottomToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403D6B341FF60D3F00E337D2 /* ZMPostDetailBottomToolView.m */; };
+		403D6B381FF6104900E337D2 /* postDetail_collect~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B361FF6104900E337D2 /* postDetail_collect~iphone.png */; };
+		403D6B391FF6104900E337D2 /* postDetail_collect~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B371FF6104900E337D2 /* postDetail_collect~iphone@2x.png */; };
+		403D6B3C1FF610A900E337D2 /* postDetail_support~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B3A1FF610A900E337D2 /* postDetail_support~iphone.png */; };
+		403D6B3D1FF610A900E337D2 /* postDetail_support~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B3B1FF610A900E337D2 /* postDetail_support~iphone@2x.png */; };
+		403D6B471FF6424800E337D2 /* ZMTopicDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403D6B411FF6424800E337D2 /* ZMTopicDetailView.m */; };
+		403D6B481FF6424800E337D2 /* ZMTopicDetailOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403D6B431FF6424800E337D2 /* ZMTopicDetailOperationView.m */; };
+		403D6B491FF6424800E337D2 /* ZMTopicDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403D6B441FF6424800E337D2 /* ZMTopicDetailHeaderView.m */; };
+		403D6B4A1FF6424800E337D2 /* ZMTopicDetailSubjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 403D6B451FF6424800E337D2 /* ZMTopicDetailSubjectCell.m */; };
+		403D6B501FF642A800E337D2 /* ZMRankTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 403D6B4C1FF642A800E337D2 /* ZMRankTopCollectionViewCell.m */; };
+		403D6B511FF642A800E337D2 /* ZMRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403D6B4D1FF642A800E337D2 /* ZMRankView.m */; };
+		403D6B531FF6464600E337D2 /* 帖子详情.gif in Resources */ = {isa = PBXBuildFile; fileRef = 403D6B521FF6464600E337D2 /* 帖子详情.gif */; };
 		403E1BDF1FD66C03007316AC /* ZMWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BDE1FD66C03007316AC /* ZMWorkModel.m */; };
 		403E1BE21FD66E2A007316AC /* ZMWorksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BE11FD66E2A007316AC /* ZMWorksModel.m */; };
 		403E1BE51FD67047007316AC /* ZMInsetHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 403E1BE41FD67047007316AC /* ZMInsetHomeModel.m */; };
@@ -222,13 +237,9 @@
 		4052A6231FE79BB20073F770 /* GList_top_right~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4052A61F1FE79BB20073F770 /* GList_top_right~iphone.png */; };
 		4052A6241FE79BB20073F770 /* GList_top_right~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4052A6201FE79BB20073F770 /* GList_top_right~iphone@2x.png */; };
 		4052A6281FE7A2B10073F770 /* ZMTopicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4052A6271FE7A2B10073F770 /* ZMTopicDetailViewController.m */; };
-		4052A62B1FE7A2E40073F770 /* ZMTopicDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4052A62A1FE7A2E40073F770 /* ZMTopicDetailView.m */; };
-		407757411FE22A150082A212 /* ZMRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757401FE22A150082A212 /* ZMRankView.m */; };
 		407757441FE22AA40082A212 /* NSString+ZMNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757431FE22AA40082A212 /* NSString+ZMNSString.m */; };
 		407757471FE244620082A212 /* ZMPictureMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757461FE244620082A212 /* ZMPictureMetadata.m */; };
 		4077574A1FE2483B0082A212 /* ZMRankingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757491FE2483B0082A212 /* ZMRankingListModel.m */; };
-		4077574D1FE25C1A0082A212 /* ZMRankTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4077574C1FE25C190082A212 /* ZMRankTopCollectionViewCell.m */; };
-		407757501FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4077574F1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m */; };
 		407757541FE288B00082A212 /* ZMPopBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757531FE288B00082A212 /* ZMPopBaseView.m */; };
 		407757581FE2898B0082A212 /* ZMStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757571FE2898B0082A212 /* ZMStringPickerView.m */; };
 		407B3D821FC7B55D00E422E2 /* UIView+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 400FA4CE1FC7AF660015335E /* UIView+extension.m */; };
@@ -500,14 +511,10 @@
 		402F3AA61FF4A1E500C171FE /* GCPageControl_indicator~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GCPageControl_indicator~iphone@2x.png"; sourceTree = "<group>"; };
 		402F3AAB1FF4AA4700C171FE /* ZMPostDetailPraiseAuthorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPostDetailPraiseAuthorModel.h; sourceTree = "<group>"; };
 		402F3AAC1FF4AA4700C171FE /* ZMPostDetailPraiseAuthorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPostDetailPraiseAuthorModel.m; sourceTree = "<group>"; };
-		4030715E1FE9FFBC001BB6E1 /* ZMTopicDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailHeaderView.h; sourceTree = "<group>"; };
-		4030715F1FE9FFBC001BB6E1 /* ZMTopicDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailHeaderView.m; sourceTree = "<group>"; };
 		403071611FEA0EEE001BB6E1 /* ZMTopicDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailModel.h; sourceTree = "<group>"; };
 		403071621FEA0EEE001BB6E1 /* ZMTopicDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailModel.m; sourceTree = "<group>"; };
 		403071641FEA31C4001BB6E1 /* ZMTopicDetailSubjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailSubjectModel.h; sourceTree = "<group>"; };
 		403071651FEA31C4001BB6E1 /* ZMTopicDetailSubjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailSubjectModel.m; sourceTree = "<group>"; };
-		403071681FEA3941001BB6E1 /* ZMTopicDetailSubjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailSubjectCell.h; sourceTree = "<group>"; };
-		403071691FEA3941001BB6E1 /* ZMTopicDetailSubjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailSubjectCell.m; sourceTree = "<group>"; };
 		4030716E1FEA3EDD001BB6E1 /* favorite_0_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite_0_s@2x.png"; sourceTree = "<group>"; };
 		4030716F1FEA3EDD001BB6E1 /* favorite_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite_0@2x.png"; sourceTree = "<group>"; };
 		403071701FEA3EDD001BB6E1 /* feed_large_post_item_nil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feed_large_post_item_nil@2x.png"; sourceTree = "<group>"; };
@@ -520,8 +527,6 @@
 		4030717F1FEA4024001BB6E1 /* GCGList_postNumIcon~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GCGList_postNumIcon~iphone@2x.png"; sourceTree = "<group>"; };
 		403071801FEA4024001BB6E1 /* GCGList_visitIcon~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GCGList_visitIcon~iphone.png"; sourceTree = "<group>"; };
 		403071811FEA4024001BB6E1 /* GCGList_visitIcon~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GCGList_visitIcon~iphone@2x.png"; sourceTree = "<group>"; };
-		403071861FEA4705001BB6E1 /* ZMTopicDetailOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailOperationView.h; sourceTree = "<group>"; };
-		403071871FEA4705001BB6E1 /* ZMTopicDetailOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailOperationView.m; sourceTree = "<group>"; };
 		403071891FEA66D4001BB6E1 /* myCollection_deletePic~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myCollection_deletePic~iphone.png"; sourceTree = "<group>"; };
 		4030718A1FEA66D4001BB6E1 /* myCollection_deletePic~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myCollection_deletePic~iphone@2x.png"; sourceTree = "<group>"; };
 		4033AF081FD8D69200400099 /* ZMDiscoverArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDiscoverArticleModel.h; sourceTree = "<group>"; };
@@ -563,6 +568,31 @@
 		403B9D371FDE862F00F73449 /* discovery_icon_jump~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discovery_icon_jump~iphone.png"; sourceTree = "<group>"; };
 		403B9D381FDE862F00F73449 /* discovery_icon_jump~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discovery_icon_jump~iphone@2x.png"; sourceTree = "<group>"; };
 		403B9D3F1FDE942500F73449 /* glist_name_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glist_name_bg@2x.png"; sourceTree = "<group>"; };
+		403D6B271FF5FE7300E337D2 /* search_love@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_love@2x.png"; sourceTree = "<group>"; };
+		403D6B281FF5FE7300E337D2 /* search_loved@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_loved@2x.png"; sourceTree = "<group>"; };
+		403D6B2B1FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_comment_notSupport~iphone.png"; sourceTree = "<group>"; };
+		403D6B2C1FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_comment_notSupport~iphone@2x.png"; sourceTree = "<group>"; };
+		403D6B2D1FF5FFD300E337D2 /* postDetail_comment_supported~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_comment_supported~iphone.png"; sourceTree = "<group>"; };
+		403D6B2E1FF5FFD300E337D2 /* postDetail_comment_supported~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_comment_supported~iphone@2x.png"; sourceTree = "<group>"; };
+		403D6B331FF60D3F00E337D2 /* ZMPostDetailBottomToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPostDetailBottomToolView.h; sourceTree = "<group>"; };
+		403D6B341FF60D3F00E337D2 /* ZMPostDetailBottomToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPostDetailBottomToolView.m; sourceTree = "<group>"; };
+		403D6B361FF6104900E337D2 /* postDetail_collect~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_collect~iphone.png"; sourceTree = "<group>"; };
+		403D6B371FF6104900E337D2 /* postDetail_collect~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_collect~iphone@2x.png"; sourceTree = "<group>"; };
+		403D6B3A1FF610A900E337D2 /* postDetail_support~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_support~iphone.png"; sourceTree = "<group>"; };
+		403D6B3B1FF610A900E337D2 /* postDetail_support~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_support~iphone@2x.png"; sourceTree = "<group>"; };
+		403D6B3F1FF6424800E337D2 /* ZMTopicDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailHeaderView.h; sourceTree = "<group>"; };
+		403D6B401FF6424800E337D2 /* ZMTopicDetailOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailOperationView.h; sourceTree = "<group>"; };
+		403D6B411FF6424800E337D2 /* ZMTopicDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailView.m; sourceTree = "<group>"; };
+		403D6B421FF6424800E337D2 /* ZMTopicDetailSubjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailSubjectCell.h; sourceTree = "<group>"; };
+		403D6B431FF6424800E337D2 /* ZMTopicDetailOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailOperationView.m; sourceTree = "<group>"; };
+		403D6B441FF6424800E337D2 /* ZMTopicDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailHeaderView.m; sourceTree = "<group>"; };
+		403D6B451FF6424800E337D2 /* ZMTopicDetailSubjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailSubjectCell.m; sourceTree = "<group>"; };
+		403D6B461FF6424800E337D2 /* ZMTopicDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailView.h; sourceTree = "<group>"; };
+		403D6B4C1FF642A800E337D2 /* ZMRankTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankTopCollectionViewCell.m; sourceTree = "<group>"; };
+		403D6B4D1FF642A800E337D2 /* ZMRankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankView.m; sourceTree = "<group>"; };
+		403D6B4E1FF642A800E337D2 /* ZMRankTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankTopCollectionViewCell.h; sourceTree = "<group>"; };
+		403D6B4F1FF642A800E337D2 /* ZMRankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankView.h; sourceTree = "<group>"; };
+		403D6B521FF6464600E337D2 /* 帖子详情.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "帖子详情.gif"; sourceTree = "<group>"; };
 		403E1BDD1FD66C03007316AC /* ZMWorkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMWorkModel.h; sourceTree = "<group>"; };
 		403E1BDE1FD66C03007316AC /* ZMWorkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMWorkModel.m; sourceTree = "<group>"; };
 		403E1BE01FD66E2A007316AC /* ZMWorksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMWorksModel.h; sourceTree = "<group>"; };
@@ -592,20 +622,12 @@
 		4052A6201FE79BB20073F770 /* GList_top_right~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GList_top_right~iphone@2x.png"; sourceTree = "<group>"; };
 		4052A6261FE7A2B10073F770 /* ZMTopicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailViewController.h; sourceTree = "<group>"; };
 		4052A6271FE7A2B10073F770 /* ZMTopicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailViewController.m; sourceTree = "<group>"; };
-		4052A6291FE7A2E40073F770 /* ZMTopicDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailView.h; sourceTree = "<group>"; };
-		4052A62A1FE7A2E40073F770 /* ZMTopicDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailView.m; sourceTree = "<group>"; };
-		4077573F1FE22A150082A212 /* ZMRankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankView.h; sourceTree = "<group>"; };
-		407757401FE22A150082A212 /* ZMRankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankView.m; sourceTree = "<group>"; };
 		407757421FE22AA40082A212 /* NSString+ZMNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZMNSString.h"; sourceTree = "<group>"; };
 		407757431FE22AA40082A212 /* NSString+ZMNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZMNSString.m"; sourceTree = "<group>"; };
 		407757451FE244620082A212 /* ZMPictureMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPictureMetadata.h; sourceTree = "<group>"; };
 		407757461FE244620082A212 /* ZMPictureMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPictureMetadata.m; sourceTree = "<group>"; };
 		407757481FE2483B0082A212 /* ZMRankingListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankingListModel.h; sourceTree = "<group>"; };
 		407757491FE2483B0082A212 /* ZMRankingListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankingListModel.m; sourceTree = "<group>"; };
-		4077574B1FE25C190082A212 /* ZMRankTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankTopCollectionViewCell.h; sourceTree = "<group>"; };
-		4077574C1FE25C190082A212 /* ZMRankTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankTopCollectionViewCell.m; sourceTree = "<group>"; };
-		4077574E1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRankWaterCollectionViewCell.h; sourceTree = "<group>"; };
-		4077574F1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRankWaterCollectionViewCell.m; sourceTree = "<group>"; };
 		407757521FE288B00082A212 /* ZMPopBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPopBaseView.h; sourceTree = "<group>"; };
 		407757531FE288B00082A212 /* ZMPopBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPopBaseView.m; sourceTree = "<group>"; };
 		407757561FE2898B0082A212 /* ZMStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMStringPickerView.h; sourceTree = "<group>"; };
@@ -1025,23 +1047,11 @@
 				40AC7F7E1FE911320027B358 /* Recommend */,
 				40AC7F941FE912660027B358 /* Inset */,
 				40AC7FA41FE912AB0027B358 /* Article */,
+				403D6B3E1FF6424800E337D2 /* Topic */,
+				403D6B4B1FF642A800E337D2 /* Rank */,
 				40CD82341FF224B600EB2270 /* Post */,
 				401FF5C61FCD59B8006590D8 /* ZMWaterFlowLayout.h */,
 				401FF5C71FCD59B8006590D8 /* ZMWaterFlowLayout.m */,
-				4077573F1FE22A150082A212 /* ZMRankView.h */,
-				407757401FE22A150082A212 /* ZMRankView.m */,
-				4077574B1FE25C190082A212 /* ZMRankTopCollectionViewCell.h */,
-				4077574C1FE25C190082A212 /* ZMRankTopCollectionViewCell.m */,
-				4077574E1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.h */,
-				4077574F1FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m */,
-				4052A6291FE7A2E40073F770 /* ZMTopicDetailView.h */,
-				4052A62A1FE7A2E40073F770 /* ZMTopicDetailView.m */,
-				4030715E1FE9FFBC001BB6E1 /* ZMTopicDetailHeaderView.h */,
-				4030715F1FE9FFBC001BB6E1 /* ZMTopicDetailHeaderView.m */,
-				403071861FEA4705001BB6E1 /* ZMTopicDetailOperationView.h */,
-				403071871FEA4705001BB6E1 /* ZMTopicDetailOperationView.m */,
-				403071681FEA3941001BB6E1 /* ZMTopicDetailSubjectCell.h */,
-				403071691FEA3941001BB6E1 /* ZMTopicDetailSubjectCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1077,6 +1087,32 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		403D6B3E1FF6424800E337D2 /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				403D6B3F1FF6424800E337D2 /* ZMTopicDetailHeaderView.h */,
+				403D6B401FF6424800E337D2 /* ZMTopicDetailOperationView.h */,
+				403D6B411FF6424800E337D2 /* ZMTopicDetailView.m */,
+				403D6B421FF6424800E337D2 /* ZMTopicDetailSubjectCell.h */,
+				403D6B431FF6424800E337D2 /* ZMTopicDetailOperationView.m */,
+				403D6B441FF6424800E337D2 /* ZMTopicDetailHeaderView.m */,
+				403D6B451FF6424800E337D2 /* ZMTopicDetailSubjectCell.m */,
+				403D6B461FF6424800E337D2 /* ZMTopicDetailView.h */,
+			);
+			path = Topic;
+			sourceTree = "<group>";
+		};
+		403D6B4B1FF642A800E337D2 /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				403D6B4C1FF642A800E337D2 /* ZMRankTopCollectionViewCell.m */,
+				403D6B4D1FF642A800E337D2 /* ZMRankView.m */,
+				403D6B4E1FF642A800E337D2 /* ZMRankTopCollectionViewCell.h */,
+				403D6B4F1FF642A800E337D2 /* ZMRankView.h */,
+			);
+			path = Rank;
 			sourceTree = "<group>";
 		};
 		403E1BE91FD6813F007316AC /* iCarousel */ = {
@@ -1389,14 +1425,24 @@
 				4011F3B41FF3AE1A00F4AB0A /* postDetail_recommendIcon~iphone@2x.png */,
 				4011F3BB1FF3AE6900F4AB0A /* postDetail_collect_default~iphone.png */,
 				4011F3BC1FF3AE6900F4AB0A /* postDetail_collect_default~iphone@2x.png */,
+				403D6B361FF6104900E337D2 /* postDetail_collect~iphone.png */,
+				403D6B371FF6104900E337D2 /* postDetail_collect~iphone@2x.png */,
 				4011F3BF1FF3AEB100F4AB0A /* postDetail_support_default_bg~iphone.png */,
 				4011F3C01FF3AEB100F4AB0A /* postDetail_support_default_bg~iphone@2x.png */,
 				4011F3C11FF3AEB100F4AB0A /* postDetail_support_default~iphone.png */,
 				4011F3C21FF3AEB100F4AB0A /* postDetail_support_default~iphone@2x.png */,
+				403D6B3A1FF610A900E337D2 /* postDetail_support~iphone.png */,
+				403D6B3B1FF610A900E337D2 /* postDetail_support~iphone@2x.png */,
 				4011F3C71FF3AF8200F4AB0A /* postDetail_section_hotCommentIcon~iphone.png */,
 				4011F3C81FF3AF8200F4AB0A /* postDetail_section_hotCommentIcon~iphone@2x.png */,
 				402F3A9F1FF4A1A900C171FE /* postDetail_arrow~iphone.png */,
 				402F3AA01FF4A1A900C171FE /* postDetail_arrow~iphone@2x.png */,
+				403D6B271FF5FE7300E337D2 /* search_love@2x.png */,
+				403D6B281FF5FE7300E337D2 /* search_loved@2x.png */,
+				403D6B2B1FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone.png */,
+				403D6B2C1FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone@2x.png */,
+				403D6B2D1FF5FFD300E337D2 /* postDetail_comment_supported~iphone.png */,
+				403D6B2E1FF5FFD300E337D2 /* postDetail_comment_supported~iphone@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1435,6 +1481,8 @@
 		40AC7F941FE912660027B358 /* Inset */ = {
 			isa = PBXGroup;
 			children = (
+				40AC7F9D1FE912660027B358 /* ZMDiscoverInsetView.h */,
+				40AC7F991FE912660027B358 /* ZMDiscoverInsetView.m */,
 				40AC7F9C1FE912660027B358 /* ZMDiscoverInsetBannerViewCell.h */,
 				40AC7F971FE912660027B358 /* ZMDiscoverInsetBannerViewCell.m */,
 				40AC7F9B1FE912660027B358 /* ZMDiscoverInsetHeadViewCell.h */,
@@ -1443,8 +1491,6 @@
 				40AC7F961FE912660027B358 /* ZMDiscoverInsetWaterCollectionViewCell.m */,
 				40AC7F981FE912660027B358 /* ZMDiscoverInsetLayoutHeadViewCell.h */,
 				40AC7F9E1FE912660027B358 /* ZMDiscoverInsetLayoutHeadViewCell.m */,
-				40AC7F9D1FE912660027B358 /* ZMDiscoverInsetView.h */,
-				40AC7F991FE912660027B358 /* ZMDiscoverInsetView.m */,
 			);
 			path = Inset;
 			sourceTree = "<group>";
@@ -1452,6 +1498,8 @@
 		40AC7FA41FE912AB0027B358 /* Article */ = {
 			isa = PBXGroup;
 			children = (
+				40AC7FA91FE912AB0027B358 /* ZMDiscoverArticleView.h */,
+				40AC7FAF1FE912AB0027B358 /* ZMDiscoverArticleView.m */,
 				40AC7FA61FE912AB0027B358 /* ZMDiscoverArticleTagView.h */,
 				40AC7FAD1FE912AB0027B358 /* ZMDiscoverArticleTagView.m */,
 				40AC7FA71FE912AB0027B358 /* ZMDiscoverArticleProfileView.h */,
@@ -1462,8 +1510,6 @@
 				40AC7FB11FE912AB0027B358 /* ZMDiscoverArticleHeadViewCell.m */,
 				40AC7FA51FE912AB0027B358 /* ZMDiscoverArticleLayout.h */,
 				40AC7FAE1FE912AB0027B358 /* ZMDiscoverArticleLayout.m */,
-				40AC7FA91FE912AB0027B358 /* ZMDiscoverArticleView.h */,
-				40AC7FAF1FE912AB0027B358 /* ZMDiscoverArticleView.m */,
 				40AC7FAA1FE912AB0027B358 /* ZMDiscoverArticleCell.h */,
 				40AC7FB21FE912AB0027B358 /* ZMDiscoverArticleCell.m */,
 			);
@@ -1479,6 +1525,8 @@
 				40CD82551FF239C900EB2270 /* ZMPostDetailViewCell.m */,
 				3520CC971FF5316F00254418 /* ZMCommentCell.h */,
 				3520CC981FF5316F00254418 /* ZMCommentCell.m */,
+				403D6B331FF60D3F00E337D2 /* ZMPostDetailBottomToolView.h */,
+				403D6B341FF60D3F00E337D2 /* ZMPostDetailBottomToolView.m */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1492,6 +1540,7 @@
 				40F45CBC1FE3DC13004FCBFB /* 文章C.png */,
 				40F45CBD1FE3DC13004FCBFB /* COSD.png */,
 				3552BD321FE4205A006BE8C6 /* all.gif */,
+				403D6B521FF6464600E337D2 /* 帖子详情.gif */,
 			);
 			path = preview;
 			sourceTree = "<group>";
@@ -1631,9 +1680,12 @@
 				4025FB8F1FDA2B7D0077EF5A /* default_avatar@2x.png in Resources */,
 				403B9D3A1FDE862F00F73449 /* discovery_icon_jump~iphone@2x.png in Resources */,
 				4025FC321FDA732E0077EF5A /* loadingcai2new0016@2x.png in Resources */,
+				403D6B2A1FF5FE7300E337D2 /* search_loved@2x.png in Resources */,
 				40F45C951FE3A214004FCBFB /* pull_refresh_bottom_0004@2x.png in Resources */,
+				403D6B2F1FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone.png in Resources */,
 				4011F3CA1FF3AF8200F4AB0A /* postDetail_section_hotCommentIcon~iphone@2x.png in Resources */,
 				404093991FEB4EBA0038E030 /* myCollection_ShieldPic~iphone.png in Resources */,
+				403D6B291FF5FE7300E337D2 /* search_love@2x.png in Resources */,
 				4011F3BD1FF3AE6900F4AB0A /* postDetail_collect_default~iphone.png in Resources */,
 				404093981FEB4EBA0038E030 /* myCollection_share~iphone@2x.png in Resources */,
 				4025FBA61FDA2BF20077EF5A /* discovery_search_circle@2x.png in Resources */,
@@ -1666,6 +1718,7 @@
 				4040939A1FEB4EBA0038E030 /* myCollection_ShieldPic~iphone@2x.png in Resources */,
 				4025FC2B1FDA732E0077EF5A /* loadingcai2new009@2x.png in Resources */,
 				40CD82421FF225C200EB2270 /* postDetail_more~iphone.png in Resources */,
+				403D6B381FF6104900E337D2 /* postDetail_collect~iphone.png in Resources */,
 				402F3AA81FF4A1E500C171FE /* GCPageControl_currentPic~iphone@2x.png in Resources */,
 				403B9D321FDE858700F73449 /* discovery_icon_circle~iphone@2x.png in Resources */,
 				40F45C9B1FE3A214004FCBFB /* pull_refresh_bottom_00010@2x.png in Resources */,
@@ -1681,6 +1734,8 @@
 				4025FB771FDA2AF80077EF5A /* circle_tag_bg@2x.png in Resources */,
 				400E3E5E1FD7F58F00340296 /* switch_to_signal@2x.png in Resources */,
 				4025FB751FDA2AEB0077EF5A /* circle_tag_edit@2x.png in Resources */,
+				403D6B311FF5FFD300E337D2 /* postDetail_comment_supported~iphone.png in Resources */,
+				403D6B3D1FF610A900E337D2 /* postDetail_support~iphone@2x.png in Resources */,
 				4025FC2F1FDA732E0077EF5A /* loadingcai2new0013@2x.png in Resources */,
 				4025FC2A1FDA732E0077EF5A /* loadingcai2new008@2x.png in Resources */,
 				403B9D101FDE6C7600F73449 /* loading_04@2x.png in Resources */,
@@ -1735,10 +1790,13 @@
 				4025FC271FDA732E0077EF5A /* loadingcai2new005@2x.png in Resources */,
 				4011F3BA1FF3AE3100F4AB0A /* postDetaial_section_icon~iphone@2x.png in Resources */,
 				403B9D351FDE858700F73449 /* discovery_icon_glist~iphone.png in Resources */,
+				403D6B531FF6464600E337D2 /* 帖子详情.gif in Resources */,
 				4025FBCF1FDA2D480077EF5A /* hot_coser@2x.png in Resources */,
 				403B9D0C1FDE6C7600F73449 /* loading_00@2x.png in Resources */,
 				4025FBC61FDA2CC60077EF5A /* serial_bottom@2x.png in Resources */,
 				4025FBC91FDA2CC60077EF5A /* serial_cover_default_image_2@2x.jpg in Resources */,
+				403D6B3C1FF610A900E337D2 /* postDetail_support~iphone.png in Resources */,
+				403D6B391FF6104900E337D2 /* postDetail_collect~iphone@2x.png in Resources */,
 				403B9D151FDE6C7600F73449 /* loading_09@2x.png in Resources */,
 				403B9D241FDE6CFC00F73449 /* loading_0006@2x.png in Resources */,
 				4025FBA81FDA2BF20077EF5A /* discovery_search_delete@2x.png in Resources */,
@@ -1748,6 +1806,7 @@
 				402F3AAA1FF4A1E500C171FE /* GCPageControl_indicator~iphone@2x.png in Resources */,
 				4025FB971FDA2B9E0077EF5A /* discovery_corwn_third@2x.png in Resources */,
 				403B9D331FDE858700F73449 /* discovery_icon_dada~iphone.png in Resources */,
+				403D6B321FF5FFD300E337D2 /* postDetail_comment_supported~iphone@2x.png in Resources */,
 				403B9D251FDE6CFC00F73449 /* loading_0007@2x.png in Resources */,
 				40CD82411FF225C200EB2270 /* postDetail_more_h~iphone@2x.png in Resources */,
 				4025FB911FDA2B8C0077EF5A /* discovery_copyLink@2x.png in Resources */,
@@ -1816,6 +1875,7 @@
 				4025FC361FDA732E0077EF5A /* loadingcai2new0020@2x.png in Resources */,
 				4025FB7D1FDA2B150077EF5A /* circle_tag_n@2x.png in Resources */,
 				4025FBBA1FDA2C1B0077EF5A /* discovery_top_titlle@2x.png in Resources */,
+				403D6B301FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone@2x.png in Resources */,
 				403071831FEA4024001BB6E1 /* GCGList_postNumIcon~iphone@2x.png in Resources */,
 				403B9D311FDE858700F73449 /* discovery_icon_circle~iphone.png in Resources */,
 			);
@@ -1905,8 +1965,9 @@
 				403E1BDF1FD66C03007316AC /* ZMWorkModel.m in Sources */,
 				40AC7F9F1FE912660027B358 /* ZMDiscoverInsetHeadViewCell.m in Sources */,
 				40AC7FB31FE912AB0027B358 /* ZMDiscoverArticleBannerViewCell.m in Sources */,
-				4052A62B1FE7A2E40073F770 /* ZMTopicDetailView.m in Sources */,
 				4033AF0A1FD8D69200400099 /* ZMDiscoverArticleModel.m in Sources */,
+				403D6B481FF6424800E337D2 /* ZMTopicDetailOperationView.m in Sources */,
+				403D6B511FF642A800E337D2 /* ZMRankView.m in Sources */,
 				407B3D881FC7BA0800E422E2 /* ZMHomeViewController.m in Sources */,
 				40CD82501FF22D1000EB2270 /* ZMRelatedPostModel.m in Sources */,
 				403E1BE21FD66E2A007316AC /* ZMWorksModel.m in Sources */,
@@ -1915,7 +1976,6 @@
 				407757471FE244620082A212 /* ZMPictureMetadata.m in Sources */,
 				400FA4D81FC7AFD20015335E /* YYTableViewCell.m in Sources */,
 				407B3D941FC7BA8300E422E2 /* ZMMineViewController.m in Sources */,
-				407757411FE22A150082A212 /* ZMRankView.m in Sources */,
 				400FA4D71FC7AFD20015335E /* YYTableView.m in Sources */,
 				35D04AC31FC717F400CE082F /* ZMColor.m in Sources */,
 				40AC7FB51FE912AB0027B358 /* ZMDiscoverArticleTagView.m in Sources */,
@@ -1933,6 +1993,7 @@
 				35D04ACD1FC7193E00CE082F /* YYFPSLabel.m in Sources */,
 				403071661FEA31C4001BB6E1 /* ZMTopicDetailSubjectModel.m in Sources */,
 				40AC7F8E1FE9119A0027B358 /* ZMDiscoverRecommendHeadView.m in Sources */,
+				403D6B351FF60D3F00E337D2 /* ZMPostDetailBottomToolView.m in Sources */,
 				35D04ACE1FC7193E00CE082F /* ZMNavView.m in Sources */,
 				407B3D971FC7BD4400E422E2 /* AppDelegate+Extend.m in Sources */,
 				400FA4D21FC7AFAB0015335E /* MBProgressHUD+MJ.m in Sources */,
@@ -1941,7 +2002,6 @@
 				403E1C0A1FD69183007316AC /* TAAbstractDotView.m in Sources */,
 				4033AF101FD8DB7F00400099 /* ZMArticleHomeModel.m in Sources */,
 				403071631FEA0EEE001BB6E1 /* ZMTopicDetailModel.m in Sources */,
-				4077574D1FE25C1A0082A212 /* ZMRankTopCollectionViewCell.m in Sources */,
 				407757441FE22AA40082A212 /* NSString+ZMNSString.m in Sources */,
 				407B3DC61FC814F600E422E2 /* SPPageMenu.m in Sources */,
 				3520CC961FF52D8F00254418 /* ZMCommentModel.m in Sources */,
@@ -1956,10 +2016,10 @@
 				407B3DBA1FC800BD00E422E2 /* ZMMessageViewController.m in Sources */,
 				4025FBDF1FDA6CA00077EF5A /* ZMLoadingView.m in Sources */,
 				407757581FE2898B0082A212 /* ZMStringPickerView.m in Sources */,
+				403D6B491FF6424800E337D2 /* ZMTopicDetailHeaderView.m in Sources */,
 				407B3DA01FC7C48700E422E2 /* ZMBaseModel.m in Sources */,
 				40AC7FB91FE912AB0027B358 /* ZMDiscoverArticleCell.m in Sources */,
 				3520CC991FF5316F00254418 /* ZMCommentCell.m in Sources */,
-				4030716A1FEA3941001BB6E1 /* ZMTopicDetailSubjectCell.m in Sources */,
 				4033AF0D1FD8D8ED00400099 /* ZMTagModel.m in Sources */,
 				407B3D8B1FC7BA3400E422E2 /* ZMDiscoverViewController.m in Sources */,
 				40CD824D1FF228C000EB2270 /* ZMPostDetailModel.m in Sources */,
@@ -1971,24 +2031,24 @@
 				40058DDD1FE1098700AB0FCA /* UINavigationBar+Awesome.m in Sources */,
 				352592FA1FC7051F008165D7 /* AppDelegate.m in Sources */,
 				352592F71FC7051F008165D7 /* main.m in Sources */,
-				403071881FEA4705001BB6E1 /* ZMTopicDetailOperationView.m in Sources */,
 				40AC7FB71FE912AB0027B358 /* ZMDiscoverArticleView.m in Sources */,
-				407757501FE2675B0082A212 /* ZMRankWaterCollectionViewCell.m in Sources */,
 				40058DEF1FE1340100AB0FCA /* ZMRankViewController.m in Sources */,
 				35D04AAE1FC70C5900CE082F /* Foundation+Log.m in Sources */,
 				407757541FE288B00082A212 /* ZMPopBaseView.m in Sources */,
 				35D04ABE1FC717B700CE082F /* BaseNavigationController.m in Sources */,
 				401FF5C21FCD4519006590D8 /* ZMHotRecommendModel.m in Sources */,
+				403D6B4A1FF6424800E337D2 /* ZMTopicDetailSubjectCell.m in Sources */,
 				40AC7F901FE9119A0027B358 /* ZMDiscoverRecommendMoreTitleCell.m in Sources */,
 				403E1BE51FD67047007316AC /* ZMInsetHomeModel.m in Sources */,
+				403D6B471FF6424800E337D2 /* ZMTopicDetailView.m in Sources */,
 				40AC7FA01FE912660027B358 /* ZMDiscoverInsetWaterCollectionViewCell.m in Sources */,
 				40AC7FA11FE912660027B358 /* ZMDiscoverInsetBannerViewCell.m in Sources */,
 				40CD824A1FF2260600EB2270 /* ZMPostDetailView.m in Sources */,
+				403D6B501FF642A800E337D2 /* ZMRankTopCollectionViewCell.m in Sources */,
 				403B9D001FDE689400F73449 /* ZMCustomGifHeader.m in Sources */,
 				403E1C091FD69183007316AC /* TAAnimatedDotView.m in Sources */,
 				4077574A1FE2483B0082A212 /* ZMRankingListModel.m in Sources */,
 				407B3D851FC7B88D00E422E2 /* ZMViewController.m in Sources */,
-				403071601FE9FFBC001BB6E1 /* ZMTopicDetailHeaderView.m in Sources */,
 				40AC7FA31FE912660027B358 /* ZMDiscoverInsetLayoutHeadViewCell.m in Sources */,
 				40AC7FB41FE912AB0027B358 /* ZMDiscoverArticleProfileView.m in Sources */,
 			);

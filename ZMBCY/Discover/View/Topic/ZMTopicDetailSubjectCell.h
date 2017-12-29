@@ -25,6 +25,8 @@
 
 /** 容器 */
 @property (nonatomic, strong) UIView                                *mainView;
+/** 点击 */
+@property (nonatomic, copy) void(^clickMainView)();
 /** 图片 */
 @property (nonatomic, strong) ZMImageView                           *coverImageView;
 /** 已删除图片，遇到一个奇怪的bug,只能再添加一个视图 */

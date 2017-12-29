@@ -2,7 +2,7 @@
 //  ZMCommentModel.m
 //  ZMBCY
 //
-//  Created by 卢洋 on 2017/12/28.
+//  Created by Brance on 2017/12/28.
 //  Copyright © 2017年 Brance. All rights reserved.
 //
 
@@ -11,6 +11,12 @@
 #import "ZMDiscoverArticleLayout.h"
 
 @implementation ZMCommentModel
+
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"cid":@"id"
+             };
+}
 
 - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
     NSString *suffix = [self dispose:dic[@"avatarID"]];
@@ -42,7 +48,7 @@
     wordText.font = [UIFont systemFontOfSize:15];
     wordText.lineBreakMode = NSLineBreakByCharWrapping;
     wordText.lineSpacing = 8;
-    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth - 20, 9999)];
+    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth - 52 - 20, 9999)];
     _contentLayout = [YYTextLayout layoutWithContainer:container text:wordText];
     WBTextLinePositionModifier *modifier = [WBTextLinePositionModifier new];
     modifier.font = [UIFont systemFontOfSize:15];

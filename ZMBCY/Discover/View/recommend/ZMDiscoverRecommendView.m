@@ -83,7 +83,7 @@
         self.backgroundColor = [UIColor whiteColor];
         page = 1;
         [self setupUI];
-        [ZMLoadingView showLoadingInView:self];
+        //[ZMLoadingView showLoadingInView:self];
     }
     return self;
 }
@@ -111,7 +111,8 @@
        [weakSelf loadMoreRecommendList];
     }];
     
-    [_tableView.mj_header beginRefreshing];
+    //[_tableView.mj_header beginRefreshing];
+    [self getRecommendData];
 }
 
 #pragma mark - UITableViewDataSource and UITableViewDelegate
@@ -257,7 +258,9 @@
     WEAKSELF;
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"version"] = [NSString getNowTimeTimestamp];
-    
+    if (!_recommendModel) {
+        [ZMLoadingView showLoadingInView:self];;
+    }
     [ZMNetworkHelper requestGETWithRequestURL:DiscoveryRecommendInfo parameters:param success:^(id responseObject) {
         if (responseObject[@"result"] && [responseObject[@"result"][@"discoverInfos"] isKindOfClass:[NSArray class]]) {
             ZMRecommendModel *model = [[ZMRecommendModel alloc] init];
@@ -308,7 +311,7 @@
             
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZMLoadingView hideLoadingForView:weakSelf];
+                [ZMLoadingView hideAllLoadingForView:weakSelf];
                 weakSelf.recommendModel = model;
                 weakSelf.cell.needUpdate = YES;
                 [weakSelf.tableView.mj_header endRefreshing];

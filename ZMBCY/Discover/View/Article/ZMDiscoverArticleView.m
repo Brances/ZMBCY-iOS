@@ -69,7 +69,6 @@
         self.topicModel.icon  = [YYImage imageNamed:@"hot_illustration_title"];
         
         [self tableView];
-        [ZMLoadingView showLoadingInView:self];
         [self getArticleData];
     }
     return self;
@@ -183,9 +182,10 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"type"] = @"1";
     param[@"version"] = [NSString getNowTimeTimestamp];
-
+    if (!_model) {
+        [ZMLoadingView showLoadingInView:self];
+    }
     [ZMNetworkHelper requestGETWithRequestURL:DiscoveryInsetInfo parameters:param success:^(id responseObject) {
-        //[MBProgressHUD hideAllHUDsForView:self animated:YES];
         if ([responseObject[@"result"] isKindOfClass:[NSDictionary class]]) {
             ZMArticleHomeModel *model = [ZMArticleHomeModel modelWithJSON:responseObject[@"result"]];
             [self.layouts removeAllObjects];

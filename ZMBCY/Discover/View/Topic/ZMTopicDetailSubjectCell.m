@@ -7,6 +7,7 @@
 //
 
 #import "ZMTopicDetailSubjectCell.h"
+#import "ZMPostDetailViewController.h"
 
 @interface ZMTopicDetailSubjectCell()<UICollectionViewDataSource,WaterFlowLayoutDelegate>
 
@@ -61,6 +62,20 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ZMTopicDetailSubjectCellView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ZMTopicDetailSubjectCellView" forIndexPath:indexPath];
     [cell setupUIWithStyle:self.style model:[self.dataArray safeObjectAtIndex:indexPath.item]];
+    
+    WEAKSELF;
+    __weak typeof(cell) weakCell = cell;
+    cell.clickMainView = ^{
+        //判断帖子是否删除
+        if (weakCell.model.subjectState == subjectSateDelete) {
+            [MBProgressHUD showPromptMessage:@"帖子不见啦~"];
+        }else{
+            ZMPostDetailViewController *vc = [[ZMPostDetailViewController alloc] init];
+            vc.postId = weakCell.model.post_id;
+            [weakSelf.viewController.navigationController pushViewController:vc animated:YES];
+        }
+    };
+    
     return cell;
 }
 
@@ -116,6 +131,10 @@
         _mainView.layer.cornerRadius = 3;
         _mainView.clipsToBounds = YES;
         [self.contentView addSubview:_mainView];
+        _mainView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *ger = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickMainViewBlock)];
+        [_mainView addGestureRecognizer:ger];
+        
         [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.bottom.mas_equalTo(0);
         }];
@@ -307,6 +326,12 @@
     }
 }
 
+#pragma mark - private
+- (void)clickMainViewBlock{
+    if (self.clickMainView) {
+        self.clickMainView();
+    }
+}
 
 @end
 

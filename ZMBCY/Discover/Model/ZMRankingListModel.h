@@ -44,7 +44,7 @@
 @interface ZMRankingModel : ZMBaseModel
 
 /** 帖子ID */
-@property (nonatomic, copy) NSString        *uid;
+@property (nonatomic, copy) NSString        *pid;
 /** 图片信息 */
 @property (nonatomic, strong) ZMPictureMetadata *imageInfo;
 /** 图片ID */
