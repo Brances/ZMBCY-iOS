@@ -237,6 +237,16 @@
 		4052A6231FE79BB20073F770 /* GList_top_right~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4052A61F1FE79BB20073F770 /* GList_top_right~iphone.png */; };
 		4052A6241FE79BB20073F770 /* GList_top_right~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4052A6201FE79BB20073F770 /* GList_top_right~iphone@2x.png */; };
 		4052A6281FE7A2B10073F770 /* ZMTopicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4052A6271FE7A2B10073F770 /* ZMTopicDetailViewController.m */; };
+		4055123B1FFF6B370051FCC0 /* news_feed_visitor_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055123A1FFF6B370051FCC0 /* news_feed_visitor_login@2x.png */; };
+		405512421FFF6BC10051FCC0 /* ZMHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 405512411FFF6BC10051FCC0 /* ZMHomeView.m */; };
+		405512491FFF73910051FCC0 /* ZMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405512481FFF73910051FCC0 /* ZMLoginViewController.m */; };
+		4055124C1FFF73A70051FCC0 /* ZMLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4055124B1FFF73A70051FCC0 /* ZMLoginView.m */; };
+		405512501FFF76C80051FCC0 /* login_bg_640X960@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055124D1FFF76C80051FCC0 /* login_bg_640X960@2x.png */; };
+		405512511FFF76C80051FCC0 /* login_bg_640X1136@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055124E1FFF76C80051FCC0 /* login_bg_640X1136@2x.png */; };
+		405512521FFF76C80051FCC0 /* login_bg_750X1334@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055124F1FFF76C80051FCC0 /* login_bg_750X1334@2x.png */; };
+		405512541FFF79950051FCC0 /* login_alert_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512531FFF79950051FCC0 /* login_alert_cancel@2x.png */; };
+		405512571FFF7DF30051FCC0 /* postDetail_close~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512551FFF7DF30051FCC0 /* postDetail_close~iphone.png */; };
+		405512581FFF7DF30051FCC0 /* postDetail_close~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512561FFF7DF30051FCC0 /* postDetail_close~iphone@2x.png */; };
 		407757441FE22AA40082A212 /* NSString+ZMNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757431FE22AA40082A212 /* NSString+ZMNSString.m */; };
 		407757471FE244620082A212 /* ZMPictureMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757461FE244620082A212 /* ZMPictureMetadata.m */; };
 		4077574A1FE2483B0082A212 /* ZMRankingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757491FE2483B0082A212 /* ZMRankingListModel.m */; };
@@ -622,6 +632,19 @@
 		4052A6201FE79BB20073F770 /* GList_top_right~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GList_top_right~iphone@2x.png"; sourceTree = "<group>"; };
 		4052A6261FE7A2B10073F770 /* ZMTopicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTopicDetailViewController.h; sourceTree = "<group>"; };
 		4052A6271FE7A2B10073F770 /* ZMTopicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTopicDetailViewController.m; sourceTree = "<group>"; };
+		4055123A1FFF6B370051FCC0 /* news_feed_visitor_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_feed_visitor_login@2x.png"; sourceTree = "<group>"; };
+		405512401FFF6BC10051FCC0 /* ZMHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMHomeView.h; sourceTree = "<group>"; };
+		405512411FFF6BC10051FCC0 /* ZMHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMHomeView.m; sourceTree = "<group>"; };
+		405512471FFF73910051FCC0 /* ZMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMLoginViewController.h; sourceTree = "<group>"; };
+		405512481FFF73910051FCC0 /* ZMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMLoginViewController.m; sourceTree = "<group>"; };
+		4055124A1FFF73A70051FCC0 /* ZMLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMLoginView.h; sourceTree = "<group>"; };
+		4055124B1FFF73A70051FCC0 /* ZMLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMLoginView.m; sourceTree = "<group>"; };
+		4055124D1FFF76C80051FCC0 /* login_bg_640X960@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg_640X960@2x.png"; sourceTree = "<group>"; };
+		4055124E1FFF76C80051FCC0 /* login_bg_640X1136@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg_640X1136@2x.png"; sourceTree = "<group>"; };
+		4055124F1FFF76C80051FCC0 /* login_bg_750X1334@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg_750X1334@2x.png"; sourceTree = "<group>"; };
+		405512531FFF79950051FCC0 /* login_alert_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_alert_cancel@2x.png"; sourceTree = "<group>"; };
+		405512551FFF7DF30051FCC0 /* postDetail_close~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_close~iphone.png"; sourceTree = "<group>"; };
+		405512561FFF7DF30051FCC0 /* postDetail_close~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_close~iphone@2x.png"; sourceTree = "<group>"; };
 		407757421FE22AA40082A212 /* NSString+ZMNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZMNSString.h"; sourceTree = "<group>"; };
 		407757431FE22AA40082A212 /* NSString+ZMNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZMNSString.m"; sourceTree = "<group>"; };
 		407757451FE244620082A212 /* ZMPictureMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPictureMetadata.h; sourceTree = "<group>"; };
@@ -802,6 +825,7 @@
 				407B3DAD1FC8007900E422E2 /* Topic */,
 				407B3DB11FC8008C00E422E2 /* Message */,
 				400FA4E91FC7B14E0015335E /* Mine */,
+				405512431FFF73700051FCC0 /* Login */,
 				352592F81FC7051F008165D7 /* AppDelegate.h */,
 				352592F91FC7051F008165D7 /* AppDelegate.m */,
 				407B3D951FC7BD4400E422E2 /* AppDelegate+Extend.h */,
@@ -946,7 +970,7 @@
 			isa = PBXGroup;
 			children = (
 				400FA4DB1FC7B0720015335E /* Model */,
-				400FA4DC1FC7B0720015335E /* View */,
+				4055123F1FFF6BB80051FCC0 /* View */,
 				400FA4DA1FC7B0720015335E /* Controller */,
 			);
 			path = Home;
@@ -968,13 +992,6 @@
 				407B3DA51FC7C8CC00E422E2 /* ZMHomeModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		400FA4DC1FC7B0720015335E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		400FA4DD1FC7B0B40015335E /* Discover */ = {
@@ -1092,14 +1109,14 @@
 		403D6B3E1FF6424800E337D2 /* Topic */ = {
 			isa = PBXGroup;
 			children = (
-				403D6B3F1FF6424800E337D2 /* ZMTopicDetailHeaderView.h */,
-				403D6B401FF6424800E337D2 /* ZMTopicDetailOperationView.h */,
-				403D6B411FF6424800E337D2 /* ZMTopicDetailView.m */,
-				403D6B421FF6424800E337D2 /* ZMTopicDetailSubjectCell.h */,
-				403D6B431FF6424800E337D2 /* ZMTopicDetailOperationView.m */,
-				403D6B441FF6424800E337D2 /* ZMTopicDetailHeaderView.m */,
-				403D6B451FF6424800E337D2 /* ZMTopicDetailSubjectCell.m */,
 				403D6B461FF6424800E337D2 /* ZMTopicDetailView.h */,
+				403D6B411FF6424800E337D2 /* ZMTopicDetailView.m */,
+				403D6B401FF6424800E337D2 /* ZMTopicDetailOperationView.h */,
+				403D6B431FF6424800E337D2 /* ZMTopicDetailOperationView.m */,
+				403D6B421FF6424800E337D2 /* ZMTopicDetailSubjectCell.h */,
+				403D6B451FF6424800E337D2 /* ZMTopicDetailSubjectCell.m */,
+				403D6B3F1FF6424800E337D2 /* ZMTopicDetailHeaderView.h */,
+				403D6B441FF6424800E337D2 /* ZMTopicDetailHeaderView.m */,
 			);
 			path = Topic;
 			sourceTree = "<group>";
@@ -1107,10 +1124,10 @@
 		403D6B4B1FF642A800E337D2 /* Rank */ = {
 			isa = PBXGroup;
 			children = (
-				403D6B4C1FF642A800E337D2 /* ZMRankTopCollectionViewCell.m */,
+				403D6B4F1FF642A800E337D2 /* ZMRankView.h */,
 				403D6B4D1FF642A800E337D2 /* ZMRankView.m */,
 				403D6B4E1FF642A800E337D2 /* ZMRankTopCollectionViewCell.h */,
-				403D6B4F1FF642A800E337D2 /* ZMRankView.h */,
+				403D6B4C1FF642A800E337D2 /* ZMRankTopCollectionViewCell.m */,
 			);
 			path = Rank;
 			sourceTree = "<group>";
@@ -1147,6 +1164,50 @@
 				403E1C061FD69183007316AC /* TAPageControl.h */,
 			);
 			path = PageControl;
+			sourceTree = "<group>";
+		};
+		4055123F1FFF6BB80051FCC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				405512401FFF6BC10051FCC0 /* ZMHomeView.h */,
+				405512411FFF6BC10051FCC0 /* ZMHomeView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		405512431FFF73700051FCC0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				405512451FFF73700051FCC0 /* Model */,
+				405512461FFF73700051FCC0 /* View */,
+				405512441FFF73700051FCC0 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		405512441FFF73700051FCC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				405512471FFF73910051FCC0 /* ZMLoginViewController.h */,
+				405512481FFF73910051FCC0 /* ZMLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		405512451FFF73700051FCC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		405512461FFF73700051FCC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4055124A1FFF73A70051FCC0 /* ZMLoginView.h */,
+				4055124B1FFF73A70051FCC0 /* ZMLoginView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		407757551FE289580082A212 /* ZMDatePicker */ = {
@@ -1443,6 +1504,13 @@
 				403D6B2C1FF5FFD300E337D2 /* postDetail_comment_notSupport~iphone@2x.png */,
 				403D6B2D1FF5FFD300E337D2 /* postDetail_comment_supported~iphone.png */,
 				403D6B2E1FF5FFD300E337D2 /* postDetail_comment_supported~iphone@2x.png */,
+				4055123A1FFF6B370051FCC0 /* news_feed_visitor_login@2x.png */,
+				4055124D1FFF76C80051FCC0 /* login_bg_640X960@2x.png */,
+				4055124E1FFF76C80051FCC0 /* login_bg_640X1136@2x.png */,
+				4055124F1FFF76C80051FCC0 /* login_bg_750X1334@2x.png */,
+				405512531FFF79950051FCC0 /* login_alert_cancel@2x.png */,
+				405512551FFF7DF30051FCC0 /* postDetail_close~iphone.png */,
+				405512561FFF7DF30051FCC0 /* postDetail_close~iphone@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1745,6 +1813,7 @@
 				4025FC371FDA732E0077EF5A /* loadingcai2new0021@2x.png in Resources */,
 				403B9D391FDE862F00F73449 /* discovery_icon_jump~iphone.png in Resources */,
 				403B9D291FDE83D200F73449 /* dicover_hotRecommend_icon~iphone.png in Resources */,
+				4055123B1FFF6B370051FCC0 /* news_feed_visitor_login@2x.png in Resources */,
 				4025FC3A1FDA732E0077EF5A /* loadingcai2new0024@2x.png in Resources */,
 				4025FC291FDA732E0077EF5A /* loadingcai2new007@2x.png in Resources */,
 				403B9D0F1FDE6C7600F73449 /* loading_03@2x.png in Resources */,
@@ -1769,6 +1838,7 @@
 				4025FB951FDA2B9E0077EF5A /* discovery_corwn_first@2x.png in Resources */,
 				403071731FEA3EDD001BB6E1 /* favorite_0@2x.png in Resources */,
 				40F45C9D1FE3A214004FCBFB /* pull_refresh_bottom_00012@2x.png in Resources */,
+				405512541FFF79950051FCC0 /* login_alert_cancel@2x.png in Resources */,
 				4030718C1FEA66D4001BB6E1 /* myCollection_deletePic~iphone@2x.png in Resources */,
 				403071751FEA3EDD001BB6E1 /* feed_post_item_nil@2x.jpg in Resources */,
 				4030718B1FEA66D4001BB6E1 /* myCollection_deletePic~iphone.png in Resources */,
@@ -1792,6 +1862,8 @@
 				403B9D351FDE858700F73449 /* discovery_icon_glist~iphone.png in Resources */,
 				403D6B531FF6464600E337D2 /* 帖子详情.gif in Resources */,
 				4025FBCF1FDA2D480077EF5A /* hot_coser@2x.png in Resources */,
+				405512501FFF76C80051FCC0 /* login_bg_640X960@2x.png in Resources */,
+				405512581FFF7DF30051FCC0 /* postDetail_close~iphone@2x.png in Resources */,
 				403B9D0C1FDE6C7600F73449 /* loading_00@2x.png in Resources */,
 				4025FBC61FDA2CC60077EF5A /* serial_bottom@2x.png in Resources */,
 				4025FBC91FDA2CC60077EF5A /* serial_cover_default_image_2@2x.jpg in Resources */,
@@ -1849,6 +1921,7 @@
 				40F45CBE1FE3DC13004FCBFB /* 插画B.png in Resources */,
 				4025FC351FDA732E0077EF5A /* loadingcai2new0019@2x.png in Resources */,
 				4025FB961FDA2B9E0077EF5A /* discovery_corwn_second@2x.png in Resources */,
+				405512511FFF76C80051FCC0 /* login_bg_640X1136@2x.png in Resources */,
 				4030717B1FEA4016001BB6E1 /* GCGList_listFall~iphone@2x.png in Resources */,
 				4030717A1FEA4016001BB6E1 /* GCGList_listFall~iphone.png in Resources */,
 				403071821FEA4024001BB6E1 /* GCGList_postNumIcon~iphone.png in Resources */,
@@ -1860,8 +1933,10 @@
 				40F45C971FE3A214004FCBFB /* pull_refresh_bottom_0006@2x.png in Resources */,
 				4025FBCA1FDA2CC60077EF5A /* serial_cover_default_image_3@2x.jpg in Resources */,
 				40F45CA21FE3A4BF004FCBFB /* bottom_nomore@2x.png in Resources */,
+				405512521FFF76C80051FCC0 /* login_bg_750X1334@2x.png in Resources */,
 				403B9D401FDE942500F73449 /* glist_name_bg@2x.png in Resources */,
 				402F3AA91FF4A1E500C171FE /* GCPageControl_indicator~iphone.png in Resources */,
+				405512571FFF7DF30051FCC0 /* postDetail_close~iphone.png in Resources */,
 				400E3E541FD7F42100340296 /* hot_illustration_title@2x.png in Resources */,
 				4052A6241FE79BB20073F770 /* GList_top_right~iphone@2x.png in Resources */,
 				4025FB731FDA2AC40077EF5A /* circle_switch_settings@2x.png in Resources */,
@@ -1938,6 +2013,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZMBCY/Pods-ZMBCY-resources.sh",
+				"${PODS_ROOT}/AVOSCloud/AVOS/AVOSCloud/AVOSCloud_Art.inc",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1987,6 +2063,7 @@
 				401FF5B21FCD005A006590D8 /* ZMImageView.m in Sources */,
 				40058DEC1FE11C4800AB0FCA /* ZMDiscoverBannerTopModel.m in Sources */,
 				40AC7F811FE911320027B358 /* ZMDiscoverRecommendView.m in Sources */,
+				405512491FFF73910051FCC0 /* ZMLoginViewController.m in Sources */,
 				401FF5BC1FCD2F3F006590D8 /* ZMCircleModel.m in Sources */,
 				40AC7FB61FE912AB0027B358 /* ZMDiscoverArticleLayout.m in Sources */,
 				4011F3AE1FF3762500F4AB0A /* ZMTimeZone.m in Sources */,
@@ -2032,12 +2109,14 @@
 				352592FA1FC7051F008165D7 /* AppDelegate.m in Sources */,
 				352592F71FC7051F008165D7 /* main.m in Sources */,
 				40AC7FB71FE912AB0027B358 /* ZMDiscoverArticleView.m in Sources */,
+				4055124C1FFF73A70051FCC0 /* ZMLoginView.m in Sources */,
 				40058DEF1FE1340100AB0FCA /* ZMRankViewController.m in Sources */,
 				35D04AAE1FC70C5900CE082F /* Foundation+Log.m in Sources */,
 				407757541FE288B00082A212 /* ZMPopBaseView.m in Sources */,
 				35D04ABE1FC717B700CE082F /* BaseNavigationController.m in Sources */,
 				401FF5C21FCD4519006590D8 /* ZMHotRecommendModel.m in Sources */,
 				403D6B4A1FF6424800E337D2 /* ZMTopicDetailSubjectCell.m in Sources */,
+				405512421FFF6BC10051FCC0 /* ZMHomeView.m in Sources */,
 				40AC7F901FE9119A0027B358 /* ZMDiscoverRecommendMoreTitleCell.m in Sources */,
 				403E1BE51FD67047007316AC /* ZMInsetHomeModel.m in Sources */,
 				403D6B471FF6424800E337D2 /* ZMTopicDetailView.m in Sources */,
@@ -2184,7 +2263,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ASSETCATALOG_WARNINGS = NO;
-				DEVELOPMENT_TEAM = P94N2NJ7G4;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = ZMBCY/PrefixHeader.pch;
@@ -2221,8 +2302,10 @@
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/pop\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zomake.ZMBCY;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zomake.ZMBCYS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -2233,7 +2316,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ASSETCATALOG_WARNINGS = NO;
-				DEVELOPMENT_TEAM = P94N2NJ7G4;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = ZMBCY/PrefixHeader.pch;
@@ -2241,8 +2326,10 @@
 				INFOPLIST_FILE = ZMBCY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zomake.ZMBCY;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zomake.ZMBCYS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

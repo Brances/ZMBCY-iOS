@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AppDelegate+Extend.h"
 #import "ZMMainViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface AppDelegate ()
 @property (nonatomic, strong) ZMMainViewController *mainViewController;
@@ -27,6 +28,19 @@
     self.window.rootViewController = vc;
    
     [self customizeInterface];
+    
+    //启用数据存储模块
+    [AVOSCloud setApplicationId:@"NLO5BWz5VCo0I2yI9qbm2cLN-gzGzoHsz" clientKey:@"B5h8sjxK2tTGnCSiVeeNsols"];
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    [AVOSCloud setAllLogsEnabled:YES];
+    
+//    AVObject *testObject = [AVObject objectWithClassName:@"TestObject"];
+//    [testObject setObject:@"bar" forKey:@"foo"];
+//    [testObject save];
+    
+    
+    
     
     [self.window makeKeyAndVisible];
     return YES;

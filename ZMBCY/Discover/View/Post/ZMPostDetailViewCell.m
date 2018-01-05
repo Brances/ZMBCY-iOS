@@ -7,6 +7,7 @@
 //
 
 #import "ZMPostDetailViewCell.h"
+#import "ZMPostDetailViewController.h"
 
 @implementation ZMPostDetailViewCell
 
@@ -486,37 +487,61 @@
         height =  [model.relatedPosts firstObject].cover.realHeight;
         
         for (int i = 1; i <= count; i++) {
-            UIImageView *image = [self viewWithTag:i*10];
-            if (!image) {
-                image = [UIImageView new];
-                image.backgroundColor = [ZMColor appMainColor];
-                image.size = CGSizeMake(width, height);
-                image.layer.masksToBounds = YES;
-                image.layer.cornerRadius = 2;
-                image.tag = i * 10;
-                [self.scrollView addSubview:image];
+            UIImageView *imageView = [self viewWithTag:i*10];
+            if (!imageView) {
+                imageView = [UIImageView new];
+                imageView.userInteractionEnabled = YES;
+                imageView.backgroundColor = [ZMColor appMainColor];
+                imageView.size = CGSizeMake(width, height);
+                imageView.layer.masksToBounds = YES;
+                imageView.layer.cornerRadius = 2;
+                imageView.tag = i * 10;
+                [self.scrollView addSubview:imageView];
                 
                 if (i == 1) {
-                    [image mas_makeConstraints:^(MASConstraintMaker *make) {
+                    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                         make.left.mas_equalTo(12);
                         make.width.mas_equalTo(width);
                         make.height.mas_equalTo(self.scrollView.height);
                         make.centerY.mas_equalTo(self.scrollView);
                     }];
                 }else{
-                    [image mas_makeConstraints:^(MASConstraintMaker *make) {
+                    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                         make.left.mas_equalTo((i-1)*width + 12 + (i-1) * 8);
                         make.width.mas_equalTo(width);
                         make.height.mas_equalTo(self.scrollView.height);
                         make.centerY.mas_equalTo(self.scrollView);
                     }];
                 }
-                self.marginLeft = self.marginLeft + image.size.width + 8;
+                self.marginLeft = self.marginLeft + imageView.size.width + 8;
                 NSString *imageURL = [model.relatedPosts objectAtIndex:i-1].cover.fullUrl;
-                [image setImageWithURL:[NSURL URLWithString:imageURL] placeholder:placeholderFailImage];
+                //[imageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:placeholderFailImage];
+                @weakify(imageView);
+                [imageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:placeholderFailImage options:YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+                    @strongify(imageView);
+                    
+                    NSData *imageData = UIImagePNGRepresentation(image);
+                    YYImageDecoder *decoder = [[YYImageDecoder alloc] initWithScale:[UIScreen mainScreen].scale];
+                    [decoder updateData:imageData final:NO];
+                    YYImageFrame *frame = [decoder frameAtIndex:0 decodeForDisplay:YES];
+                    UIImage *img = [frame.image imageByBlurRadius:1 tintColor:nil tintMode:0 saturation:1 maskImage:nil];
+                    imageView.image = img;
+                }];
+                //添加点击事件
+                UITapGestureRecognizer *ger = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickImage:)];
+                [imageView addGestureRecognizer:ger];
+                
             }
         }
     }
+}
+
+#pragma mark - 图片点击
+- (void)clickImage:(UITapGestureRecognizer *)tap{
+    NSInteger tag = tap.view.tag/10;
+    ZMPostDetailViewController *vc = [[ZMPostDetailViewController alloc] init];
+    vc.postId = ((ZMRelatedPostModel *)[self.model.relatedPosts safeObjectAtIndex:tag - 1]).postId;
+    [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -38,7 +38,7 @@
 #import "ZMLoadFailedView.h"
 #import "ZMCustomGifHeader.h"
 #import "ZMCustomGifFooter.h"
-
+#import <AVOSCloud/AVOSCloud.h>
 
 #endif
 

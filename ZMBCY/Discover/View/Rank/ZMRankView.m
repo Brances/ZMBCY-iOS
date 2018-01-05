@@ -129,7 +129,7 @@
         ZMRankTopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
         cell.model = [self.model.rankings safeObjectAtIndex:indexPath.row];
         WEAKSELF;
-         __weak typeof(cell) weakCell = cell;
+        __weak typeof(cell) weakCell = cell;
         cell.view.clickMainView = ^{
             ZMPostDetailViewController *vc = [[ZMPostDetailViewController alloc] init];
             vc.postId = weakCell.model.pid;

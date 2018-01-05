@@ -14,6 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AVOSCloud (8.0.3)
+  - AVOSCloudIM (8.0.3):
+    - AVOSCloud (= 8.0.3)
+    - AVOSCloudIM/_ARC (= 8.0.3)
+    - AVOSCloudIM/_NOARC (= 8.0.3)
+  - AVOSCloudIM/_ARC (8.0.3):
+    - AVOSCloud (= 8.0.3)
+    - AVOSCloudIM/_NOARC (= 8.0.3)
+  - AVOSCloudIM/_NOARC (8.0.3):
+    - AVOSCloud (= 8.0.3)
   - Bugly (2.4.6)
   - FLEX (2.1.1)
   - Masonry (1.0.2)
@@ -31,6 +41,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - AVOSCloud
+  - AVOSCloudIM
   - Bugly
   - FLEX
   - Masonry (~> 1.0.1)
@@ -44,6 +56,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AVOSCloud: ec8b794941e2c41e52cab9cf148a666ba141038e
+  AVOSCloudIM: 4e351f8d429637a3e19e484abc882df2048add50
   Bugly: 7756e72c59387b0d490f46e83ab458ae94ee7fba
   FLEX: 27b768fcae23a313a1eb115076d429180ca9b472
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -55,6 +69,6 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell_Bell: ee65b057dbbe937bb6764f33d4ca6910d05a0efd
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 399b49557ba997937ddaabe2e531a1d916dade26
+PODFILE CHECKSUM: 8dc85cf6383cbe4975c54234de2108cb087fbb86
 
 COCOAPODS: 1.3.1

@@ -15,6 +15,7 @@
     if (![suffix isKindOfClass:[NSString class]]) return NO;
     self.imageSuffix = [suffix componentSeparatedByString:suffix];
     return YES;
+    return YES;
 }
 
 @end
