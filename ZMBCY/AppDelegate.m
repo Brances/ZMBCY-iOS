@@ -35,17 +35,30 @@
     
     [AVOSCloud setAllLogsEnabled:YES];
     
-//    AVObject *testObject = [AVObject objectWithClassName:@"TestObject"];
-//    [testObject setObject:@"bar" forKey:@"foo"];
-//    [testObject save];
+    //此处加载用户sessionToken
+    [[ZMUserInfo shareUserInfo] loadUserInfoFromSandbox];
     
-    
-    
+    //根据有无sessionToken去登录
+    [self goLogin];
     
     [self.window makeKeyAndVisible];
     return YES;
 }
 
+#pragma mark - 根据sessionToken去登录
+- (void)goLogin{
+    if ([ZMUserInfo shareUserInfo].sessionToken.length) {
+        [AVUser becomeWithSessionTokenInBackground:[ZMUserInfo shareUserInfo].sessionToken block:^(AVUser * _Nullable user, NSError * _Nullable error) {
+            if (user) {
+                //加载用户信息
+                NSLog(@"user = %@",user);
+                [[ZMUserInfo shareUserInfo] loadUserInfo:user];
+                //发送登录成功通知
+                [[NSNotificationCenter defaultCenter] postNotificationName:KLoginStateChangeNotice object:nil];
+            }
+        }];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
    

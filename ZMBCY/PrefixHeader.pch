@@ -23,7 +23,10 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <FBShimmeringView.h>
 #import <MBProgressHUD.h>
+#import <AVOSCloud/AVOSCloud.h>
 
+#import "ZMUserInfo.h"
+#import "ZMHelpUtil.h"
 #import "SPPageMenu.h"
 #import "ZMImageView.h"
 #import "ZMBaseModel.h"
@@ -38,7 +41,8 @@
 #import "ZMLoadFailedView.h"
 #import "ZMCustomGifHeader.h"
 #import "ZMCustomGifFooter.h"
-#import <AVOSCloud/AVOSCloud.h>
+#import "ZMLoginViewController.h"
+#import "ZMRegisterViewController.h"
 
 #endif
 
@@ -70,8 +74,13 @@
 #define KMarginRight    20.0
 
 #define WEAKSELF __weak typeof(self) weakSelf = self
-/** __block 可以修改局部变量 */
 #define BLOCKSELF __block typeof(self)weakSelf = self
+
+/** 通知 */
+/** 登录状态改变（登录退出） */
+#define KLoginStateChangeNotice     @"KLoginStateChangeNotice"
+/** 更新用户资料 */
+#define KUpdateUserInfoNotice       @"KUpdateUserInfoNotice"
 
 /** API */
 /** 发现-推荐 */

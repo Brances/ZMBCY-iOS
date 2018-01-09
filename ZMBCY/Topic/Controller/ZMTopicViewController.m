@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setupNavView];
+}
+
+- (void)setupNavView{
+    [super setupNavView];
+    [self.navView.centerButton setTitle:@"话题" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

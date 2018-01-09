@@ -7,14 +7,11 @@
 //
 
 #import "ZMHomeView.h"
+#import "BaseNavigationController.h"
 #import "ZMLoginViewController.h"
+#import "ZMRegisterViewController.h"
 
 @interface ZMHomeView()
-
-@property (nonatomic, strong) UIImageView       *topImageView;
-@property (nonatomic, strong) UILabel           *tipLabel;
-@property (nonatomic, strong) UIButton          *loginButton;
-@property (nonatomic, strong) UIButton          *registerButton;
 
 
 @end
@@ -68,7 +65,7 @@
         make.height.mas_equalTo(45);
         make.top.mas_equalTo(self.tipLabel.mas_bottom).with.offset(60);
     }];
-    [self.loginButton addTarget:self action:@selector(clickjumpLogin:) forControlEvents:UIControlEventTouchUpInside];
+    [self.loginButton addTarget:self action:@selector(clickLoginButton:) forControlEvents:UIControlEventTouchUpInside];
     
     self.registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.registerButton.layer.cornerRadius = 3;
@@ -87,6 +84,15 @@
         make.height.mas_equalTo(45);
         make.top.mas_equalTo(self.tipLabel.mas_bottom).with.offset(60);
     }];
+    [self.registerButton addTarget:self action:@selector(clickRegisterButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if ([ZMUserInfo shareUserInfo].isLogin) {
+        self.loginButton.hidden = YES;
+        self.registerButton.hidden = YES;
+    }else{
+        self.loginButton.hidden = NO;
+        self.registerButton.hidden = NO;
+    }
     
 }
 
@@ -96,13 +102,32 @@
 }
 
 #pragma mark - 跳转登录
-- (void)clickjumpLogin:(UIButton *)btn{
+- (void)clickLoginButton:(UIButton *)btn{
     btn.enabled = NO;
     ZMLoginViewController *vc = [[ZMLoginViewController alloc] init];
-    [self.viewController presentViewController:vc animated:YES completion:^{
+    //如果登录视图需要push的话就需要包装导航控制器
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vc];
+    [self.viewController presentViewController:nav animated:YES completion:^{
         btn.enabled = YES;
     }];
 }
 
+#pragma mark - 跳转注册
+- (void)clickRegisterButton:(UIButton *)btn{
+    ZMRegisterViewController *vc = [[ZMRegisterViewController alloc] init];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)showUI:(BOOL)isLogin{
+    if (isLogin) {
+        self.loginButton.hidden = YES;
+        self.registerButton.hidden = YES;
+        self.tipLabel.text = [NSString stringWithFormat:@"%@!快开启GACHA之旅~",[ZMUserInfo shareUserInfo].userName];
+    }else{
+        self.loginButton.hidden = NO;
+        self.registerButton.hidden = NO;
+        self.tipLabel.text = [NSString stringWithFormat:@"登录开启GACHA之旅~"];
+    }
+}
 
 @end

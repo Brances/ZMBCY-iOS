@@ -247,6 +247,40 @@
 		405512541FFF79950051FCC0 /* login_alert_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512531FFF79950051FCC0 /* login_alert_cancel@2x.png */; };
 		405512571FFF7DF30051FCC0 /* postDetail_close~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512551FFF7DF30051FCC0 /* postDetail_close~iphone.png */; };
 		405512581FFF7DF30051FCC0 /* postDetail_close~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512561FFF7DF30051FCC0 /* postDetail_close~iphone@2x.png */; };
+		4055125A1FFFBD9C0051FCC0 /* icon_lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512591FFFBD9C0051FCC0 /* icon_lock@2x.png */; };
+		4055125C1FFFBDAE0051FCC0 /* icon_telephone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055125B1FFFBDAE0051FCC0 /* icon_telephone@2x.png */; };
+		4055125E1FFFBDD10051FCC0 /* invite_code_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055125D1FFFBDD10051FCC0 /* invite_code_header@2x.png */; };
+		405512601FFFBDE60051FCC0 /* launch_bottom_gacha_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055125F1FFFBDE60051FCC0 /* launch_bottom_gacha_logo@2x.png */; };
+		405512621FFFBE020051FCC0 /* login_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512611FFFBE020051FCC0 /* login_header@2x.png */; };
+		405512641FFFBE120051FCC0 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512631FFFBE120051FCC0 /* logo.png */; };
+		40551267200059170051FCC0 /* ZMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40551266200059170051FCC0 /* ZMRegisterViewController.m */; };
+		4055126A200059430051FCC0 /* ZMRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40551269200059430051FCC0 /* ZMRegisterView.m */; };
+		4055126E2000671A0051FCC0 /* ZMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4055126D2000671A0051FCC0 /* ZMUserInfo.m */; };
+		40551270200305B20051FCC0 /* personal_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055126F200305B20051FCC0 /* personal_setting@2x.png */; };
+		405512732003060C0051FCC0 /* ZMMineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 405512722003060C0051FCC0 /* ZMMineView.m */; };
+		40551276200308AE0051FCC0 /* ZMMineLoginViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40551275200308AE0051FCC0 /* ZMMineLoginViewCell.m */; };
+		4055127C200343C40051FCC0 /* personal_center_drafts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40551277200343C40051FCC0 /* personal_center_drafts@2x.png */; };
+		4055127D200343C40051FCC0 /* personal_center_GList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40551278200343C40051FCC0 /* personal_center_GList@2x.png */; };
+		4055127E200343C40051FCC0 /* personal_center_yinpin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40551279200343C40051FCC0 /* personal_center_yinpin@2x.png */; };
+		4055127F200343C40051FCC0 /* personal_serial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055127A200343C40051FCC0 /* personal_serial@2x.png */; };
+		40551280200343C40051FCC0 /* personal_subscribe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055127B200343C40051FCC0 /* personal_subscribe@2x.png */; };
+		4055128320034C930051FCC0 /* ZMSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4055128220034C930051FCC0 /* ZMSetupViewController.m */; };
+		4055128620034DAE0051FCC0 /* ZMSetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4055128520034DAE0051FCC0 /* ZMSetupView.m */; };
+		40551289200353630051FCC0 /* ZMSetupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40551288200353630051FCC0 /* ZMSetupViewCell.m */; };
+		4055128C2003587E0051FCC0 /* ZMMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4055128B2003587E0051FCC0 /* ZMMessageView.m */; };
+		4055128E200359F20051FCC0 /* message_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055128D200359F20051FCC0 /* message_like@2x.png */; };
+		40551290200359F90051FCC0 /* message_privateLetter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4055128F200359F90051FCC0 /* message_privateLetter@2x.png */; };
+		40551292200359FF0051FCC0 /* message_announcement@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40551291200359FF0051FCC0 /* message_announcement@2x.png */; };
+		4055129520035B490051FCC0 /* ZMMessageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4055129420035B490051FCC0 /* ZMMessageViewCell.m */; };
+		4055129B200363D40051FCC0 /* ZMProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4055129A200363D40051FCC0 /* ZMProfileViewController.m */; };
+		4055129E200364360051FCC0 /* ZMProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4055129D200364360051FCC0 /* ZMProfileView.m */; };
+		405512A1200364D60051FCC0 /* ZMProfileViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 405512A0200364D60051FCC0 /* ZMProfileViewCell.m */; };
+		405512A32003723C0051FCC0 /* avatar_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512A22003723C0051FCC0 /* avatar_camera@2x.png */; };
+		405512A7200375750051FCC0 /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 405512A6200375750051FCC0 /* UIImage+Common.m */; };
+		405512AA200486820051FCC0 /* ZMHelpUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 405512A9200486820051FCC0 /* ZMHelpUtil.m */; };
+		405512AE2004BDB90051FCC0 /* icon_et@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512AB2004BDB90051FCC0 /* icon_et@2x.png */; };
+		405512AF2004BDB90051FCC0 /* icon_female@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512AC2004BDB90051FCC0 /* icon_female@2x.png */; };
+		405512B02004BDB90051FCC0 /* icon_male@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405512AD2004BDB90051FCC0 /* icon_male@2x.png */; };
 		407757441FE22AA40082A212 /* NSString+ZMNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757431FE22AA40082A212 /* NSString+ZMNSString.m */; };
 		407757471FE244620082A212 /* ZMPictureMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757461FE244620082A212 /* ZMPictureMetadata.m */; };
 		4077574A1FE2483B0082A212 /* ZMRankingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 407757491FE2483B0082A212 /* ZMRankingListModel.m */; };
@@ -645,6 +679,55 @@
 		405512531FFF79950051FCC0 /* login_alert_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_alert_cancel@2x.png"; sourceTree = "<group>"; };
 		405512551FFF7DF30051FCC0 /* postDetail_close~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_close~iphone.png"; sourceTree = "<group>"; };
 		405512561FFF7DF30051FCC0 /* postDetail_close~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postDetail_close~iphone@2x.png"; sourceTree = "<group>"; };
+		405512591FFFBD9C0051FCC0 /* icon_lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_lock@2x.png"; sourceTree = "<group>"; };
+		4055125B1FFFBDAE0051FCC0 /* icon_telephone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_telephone@2x.png"; sourceTree = "<group>"; };
+		4055125D1FFFBDD10051FCC0 /* invite_code_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invite_code_header@2x.png"; sourceTree = "<group>"; };
+		4055125F1FFFBDE60051FCC0 /* launch_bottom_gacha_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_bottom_gacha_logo@2x.png"; sourceTree = "<group>"; };
+		405512611FFFBE020051FCC0 /* login_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_header@2x.png"; sourceTree = "<group>"; };
+		405512631FFFBE120051FCC0 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		40551265200059170051FCC0 /* ZMRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRegisterViewController.h; sourceTree = "<group>"; };
+		40551266200059170051FCC0 /* ZMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRegisterViewController.m; sourceTree = "<group>"; };
+		40551268200059430051FCC0 /* ZMRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMRegisterView.h; sourceTree = "<group>"; };
+		40551269200059430051FCC0 /* ZMRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMRegisterView.m; sourceTree = "<group>"; };
+		4055126C2000671A0051FCC0 /* ZMUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMUserInfo.h; sourceTree = "<group>"; };
+		4055126D2000671A0051FCC0 /* ZMUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMUserInfo.m; sourceTree = "<group>"; };
+		4055126F200305B20051FCC0 /* personal_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "personal_setting@2x.png"; sourceTree = "<group>"; };
+		405512712003060C0051FCC0 /* ZMMineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZMMineView.h; path = ZMBCY/Tool/ZMMineView.h; sourceTree = SOURCE_ROOT; };
+		405512722003060C0051FCC0 /* ZMMineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZMMineView.m; path = ZMBCY/Tool/ZMMineView.m; sourceTree = SOURCE_ROOT; };
+		40551274200308AE0051FCC0 /* ZMMineLoginViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZMMineLoginViewCell.h; path = ZMBCY/Tool/ZMMineLoginViewCell.h; sourceTree = SOURCE_ROOT; };
+		40551275200308AE0051FCC0 /* ZMMineLoginViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZMMineLoginViewCell.m; path = ZMBCY/Tool/ZMMineLoginViewCell.m; sourceTree = SOURCE_ROOT; };
+		40551277200343C40051FCC0 /* personal_center_drafts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "personal_center_drafts@2x.png"; sourceTree = "<group>"; };
+		40551278200343C40051FCC0 /* personal_center_GList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "personal_center_GList@2x.png"; sourceTree = "<group>"; };
+		40551279200343C40051FCC0 /* personal_center_yinpin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "personal_center_yinpin@2x.png"; sourceTree = "<group>"; };
+		4055127A200343C40051FCC0 /* personal_serial@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "personal_serial@2x.png"; sourceTree = "<group>"; };
+		4055127B200343C40051FCC0 /* personal_subscribe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "personal_subscribe@2x.png"; sourceTree = "<group>"; };
+		4055128120034C930051FCC0 /* ZMSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMSetupViewController.h; sourceTree = "<group>"; };
+		4055128220034C930051FCC0 /* ZMSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSetupViewController.m; sourceTree = "<group>"; };
+		4055128420034DAE0051FCC0 /* ZMSetupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZMSetupView.h; path = ZMBCY/Mine/Controller/ZMSetupView.h; sourceTree = SOURCE_ROOT; };
+		4055128520034DAE0051FCC0 /* ZMSetupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZMSetupView.m; path = ZMBCY/Mine/Controller/ZMSetupView.m; sourceTree = SOURCE_ROOT; };
+		40551287200353630051FCC0 /* ZMSetupViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZMSetupViewCell.h; path = ZMBCY/Mine/Controller/ZMSetupViewCell.h; sourceTree = SOURCE_ROOT; };
+		40551288200353630051FCC0 /* ZMSetupViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZMSetupViewCell.m; path = ZMBCY/Mine/Controller/ZMSetupViewCell.m; sourceTree = SOURCE_ROOT; };
+		4055128A2003587E0051FCC0 /* ZMMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZMMessageView.h; path = ZMBCY/Mine/Controller/ZMMessageView.h; sourceTree = SOURCE_ROOT; };
+		4055128B2003587E0051FCC0 /* ZMMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZMMessageView.m; path = ZMBCY/Mine/Controller/ZMMessageView.m; sourceTree = SOURCE_ROOT; };
+		4055128D200359F20051FCC0 /* message_like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message_like@2x.png"; sourceTree = "<group>"; };
+		4055128F200359F90051FCC0 /* message_privateLetter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message_privateLetter@2x.png"; sourceTree = "<group>"; };
+		40551291200359FF0051FCC0 /* message_announcement@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message_announcement@2x.png"; sourceTree = "<group>"; };
+		4055129320035B490051FCC0 /* ZMMessageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZMMessageViewCell.h; path = ZMBCY/Resources/ZMMessageViewCell.h; sourceTree = SOURCE_ROOT; };
+		4055129420035B490051FCC0 /* ZMMessageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZMMessageViewCell.m; path = ZMBCY/Resources/ZMMessageViewCell.m; sourceTree = SOURCE_ROOT; };
+		40551299200363D40051FCC0 /* ZMProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMProfileViewController.h; sourceTree = "<group>"; };
+		4055129A200363D40051FCC0 /* ZMProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMProfileViewController.m; sourceTree = "<group>"; };
+		4055129C200364360051FCC0 /* ZMProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZMProfileView.h; path = ZMBCY/Mine/Controller/ZMProfileView.h; sourceTree = SOURCE_ROOT; };
+		4055129D200364360051FCC0 /* ZMProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZMProfileView.m; path = ZMBCY/Mine/Controller/ZMProfileView.m; sourceTree = SOURCE_ROOT; };
+		4055129F200364D60051FCC0 /* ZMProfileViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZMProfileViewCell.h; path = ZMBCY/Mine/Controller/ZMProfileViewCell.h; sourceTree = SOURCE_ROOT; };
+		405512A0200364D60051FCC0 /* ZMProfileViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZMProfileViewCell.m; path = ZMBCY/Mine/Controller/ZMProfileViewCell.m; sourceTree = SOURCE_ROOT; };
+		405512A22003723C0051FCC0 /* avatar_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_camera@2x.png"; sourceTree = "<group>"; };
+		405512A5200375750051FCC0 /* UIImage+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
+		405512A6200375750051FCC0 /* UIImage+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
+		405512A8200486820051FCC0 /* ZMHelpUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMHelpUtil.h; sourceTree = "<group>"; };
+		405512A9200486820051FCC0 /* ZMHelpUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMHelpUtil.m; sourceTree = "<group>"; };
+		405512AB2004BDB90051FCC0 /* icon_et@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_et@2x.png"; sourceTree = "<group>"; };
+		405512AC2004BDB90051FCC0 /* icon_female@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_female@2x.png"; sourceTree = "<group>"; };
+		405512AD2004BDB90051FCC0 /* icon_male@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_male@2x.png"; sourceTree = "<group>"; };
 		407757421FE22AA40082A212 /* NSString+ZMNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZMNSString.h"; sourceTree = "<group>"; };
 		407757431FE22AA40082A212 /* NSString+ZMNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZMNSString.m"; sourceTree = "<group>"; };
 		407757451FE244620082A212 /* ZMPictureMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPictureMetadata.h; sourceTree = "<group>"; };
@@ -916,6 +999,10 @@
 		35D04ABF1FC717C000CE082F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				4055126C2000671A0051FCC0 /* ZMUserInfo.h */,
+				4055126D2000671A0051FCC0 /* ZMUserInfo.m */,
+				405512A8200486820051FCC0 /* ZMHelpUtil.h */,
+				405512A9200486820051FCC0 /* ZMHelpUtil.m */,
 				35D04AC11FC717F400CE082F /* ZMColor.h */,
 				35D04AC21FC717F400CE082F /* ZMColor.m */,
 				354505FB1FCA85CF00F68D34 /* ZMNetworkHelper.h */,
@@ -962,6 +1049,8 @@
 				407B3DA21FC7C4CC00E422E2 /* NSArray+ZMAdd.m */,
 				407757421FE22AA40082A212 /* NSString+ZMNSString.h */,
 				407757431FE22AA40082A212 /* NSString+ZMNSString.m */,
+				405512A5200375750051FCC0 /* UIImage+Common.h */,
+				405512A6200375750051FCC0 /* UIImage+Common.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1088,6 +1177,10 @@
 			children = (
 				407B3D921FC7BA8300E422E2 /* ZMMineViewController.h */,
 				407B3D931FC7BA8300E422E2 /* ZMMineViewController.m */,
+				4055128120034C930051FCC0 /* ZMSetupViewController.h */,
+				4055128220034C930051FCC0 /* ZMSetupViewController.m */,
+				40551299200363D40051FCC0 /* ZMProfileViewController.h */,
+				4055129A200363D40051FCC0 /* ZMProfileViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1102,6 +1195,18 @@
 		400FA4EC1FC7B14E0015335E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				405512712003060C0051FCC0 /* ZMMineView.h */,
+				405512722003060C0051FCC0 /* ZMMineView.m */,
+				40551274200308AE0051FCC0 /* ZMMineLoginViewCell.h */,
+				40551275200308AE0051FCC0 /* ZMMineLoginViewCell.m */,
+				4055128420034DAE0051FCC0 /* ZMSetupView.h */,
+				4055128520034DAE0051FCC0 /* ZMSetupView.m */,
+				40551287200353630051FCC0 /* ZMSetupViewCell.h */,
+				40551288200353630051FCC0 /* ZMSetupViewCell.m */,
+				4055129C200364360051FCC0 /* ZMProfileView.h */,
+				4055129D200364360051FCC0 /* ZMProfileView.m */,
+				4055129F200364D60051FCC0 /* ZMProfileViewCell.h */,
+				405512A0200364D60051FCC0 /* ZMProfileViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1190,6 +1295,8 @@
 			children = (
 				405512471FFF73910051FCC0 /* ZMLoginViewController.h */,
 				405512481FFF73910051FCC0 /* ZMLoginViewController.m */,
+				40551265200059170051FCC0 /* ZMRegisterViewController.h */,
+				40551266200059170051FCC0 /* ZMRegisterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1206,6 +1313,8 @@
 			children = (
 				4055124A1FFF73A70051FCC0 /* ZMLoginView.h */,
 				4055124B1FFF73A70051FCC0 /* ZMLoginView.m */,
+				40551268200059430051FCC0 /* ZMRegisterView.h */,
+				40551269200059430051FCC0 /* ZMRegisterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1274,9 +1383,9 @@
 		407B3DB11FC8008C00E422E2 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				407B3DB21FC8008C00E422E2 /* Controller */,
 				407B3DB31FC8008C00E422E2 /* Model */,
 				407B3DB41FC8008C00E422E2 /* View */,
+				407B3DB21FC8008C00E422E2 /* Controller */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -1300,6 +1409,10 @@
 		407B3DB41FC8008C00E422E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4055128A2003587E0051FCC0 /* ZMMessageView.h */,
+				4055128B2003587E0051FCC0 /* ZMMessageView.m */,
+				4055129320035B490051FCC0 /* ZMMessageViewCell.h */,
+				4055129420035B490051FCC0 /* ZMMessageViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1307,6 +1420,11 @@
 		407B3DBC1FC8011D00E422E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				40551277200343C40051FCC0 /* personal_center_drafts@2x.png */,
+				40551278200343C40051FCC0 /* personal_center_GList@2x.png */,
+				40551279200343C40051FCC0 /* personal_center_yinpin@2x.png */,
+				4055127A200343C40051FCC0 /* personal_serial@2x.png */,
+				4055127B200343C40051FCC0 /* personal_subscribe@2x.png */,
 				40AC7F7C1FE8F13A0027B358 /* navigation_back_white@2x.png */,
 				40AC7F7A1FE8EC550027B358 /* navigation_back@2x.png */,
 				407B3DBD1FC8011D00E422E2 /* like.caf */,
@@ -1478,7 +1596,6 @@
 				402F3AA61FF4A1E500C171FE /* GCPageControl_indicator~iphone@2x.png */,
 				40CD823E1FF225C200EB2270 /* postDetail_share~iphone.png */,
 				40CD823F1FF225C200EB2270 /* postDetail_share~iphone@2x.png */,
-				4011F3AF1FF3AD9200F4AB0A /* message_comment@2x.png */,
 				4011F3B11FF3ADAD00F4AB0A /* personal_center_mytopic@2x.png */,
 				4011F3B71FF3AE3100F4AB0A /* postDetaial_section_icon~iphone.png */,
 				4011F3B81FF3AE3100F4AB0A /* postDetaial_section_icon~iphone@2x.png */,
@@ -1511,6 +1628,21 @@
 				405512531FFF79950051FCC0 /* login_alert_cancel@2x.png */,
 				405512551FFF7DF30051FCC0 /* postDetail_close~iphone.png */,
 				405512561FFF7DF30051FCC0 /* postDetail_close~iphone@2x.png */,
+				405512611FFFBE020051FCC0 /* login_header@2x.png */,
+				4055125B1FFFBDAE0051FCC0 /* icon_telephone@2x.png */,
+				405512591FFFBD9C0051FCC0 /* icon_lock@2x.png */,
+				4055125D1FFFBDD10051FCC0 /* invite_code_header@2x.png */,
+				4055125F1FFFBDE60051FCC0 /* launch_bottom_gacha_logo@2x.png */,
+				405512631FFFBE120051FCC0 /* logo.png */,
+				4055126F200305B20051FCC0 /* personal_setting@2x.png */,
+				4011F3AF1FF3AD9200F4AB0A /* message_comment@2x.png */,
+				4055128D200359F20051FCC0 /* message_like@2x.png */,
+				4055128F200359F90051FCC0 /* message_privateLetter@2x.png */,
+				40551291200359FF0051FCC0 /* message_announcement@2x.png */,
+				405512A22003723C0051FCC0 /* avatar_camera@2x.png */,
+				405512AB2004BDB90051FCC0 /* icon_et@2x.png */,
+				405512AC2004BDB90051FCC0 /* icon_female@2x.png */,
+				405512AD2004BDB90051FCC0 /* icon_male@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1744,6 +1876,7 @@
 				40058DE41FE11A6B00AB0FCA /* discovery_banner_top1~iphone.png in Resources */,
 				40058DE51FE11A6B00AB0FCA /* discovery_banner_top1~iphone@2x.png in Resources */,
 				4025FB891FDA2B510077EF5A /* collect_to_G_list_create_G@2x.png in Resources */,
+				405512AF2004BDB90051FCC0 /* icon_female@2x.png in Resources */,
 				40F45C941FE3A214004FCBFB /* pull_refresh_bottom_0003@2x.png in Resources */,
 				4025FB8F1FDA2B7D0077EF5A /* default_avatar@2x.png in Resources */,
 				403B9D3A1FDE862F00F73449 /* discovery_icon_jump~iphone@2x.png in Resources */,
@@ -1755,6 +1888,7 @@
 				404093991FEB4EBA0038E030 /* myCollection_ShieldPic~iphone.png in Resources */,
 				403D6B291FF5FE7300E337D2 /* search_love@2x.png in Resources */,
 				4011F3BD1FF3AE6900F4AB0A /* postDetail_collect_default~iphone.png in Resources */,
+				405512601FFFBDE60051FCC0 /* launch_bottom_gacha_logo@2x.png in Resources */,
 				404093981FEB4EBA0038E030 /* myCollection_share~iphone@2x.png in Resources */,
 				4025FBA61FDA2BF20077EF5A /* discovery_search_circle@2x.png in Resources */,
 				4025FC3C1FDA7FD50077EF5A /* webView_error_icon.png in Resources */,
@@ -1764,11 +1898,13 @@
 				405239381FDF8243007C8759 /* pic_number_tag@2x.png in Resources */,
 				4025FC311FDA732E0077EF5A /* loadingcai2new0015@2x.png in Resources */,
 				4011F3BE1FF3AE6900F4AB0A /* postDetail_collect_default~iphone@2x.png in Resources */,
+				405512A32003723C0051FCC0 /* avatar_camera@2x.png in Resources */,
 				40F45C9A1FE3A214004FCBFB /* pull_refresh_bottom_0009@2x.png in Resources */,
 				40058DE21FE11A6B00AB0FCA /* discovery_banner_icon~iphone.png in Resources */,
 				403B9D221FDE6CFC00F73449 /* loading_0004@2x.png in Resources */,
 				40F45C981FE3A214004FCBFB /* pull_refresh_bottom_0007@2x.png in Resources */,
 				4025FB851FDA2B380077EF5A /* circle_tag1_n@2x.png in Resources */,
+				4055127D200343C40051FCC0 /* personal_center_GList@2x.png in Resources */,
 				400E3E3D1FD7845400340296 /* Assets.xcassets in Resources */,
 				4025FBBD1FDA2C1B0077EF5A /* double_line_two@2x.png in Resources */,
 				403B9D161FDE6C7600F73449 /* loading_010@2x.png in Resources */,
@@ -1787,6 +1923,7 @@
 				4025FC2B1FDA732E0077EF5A /* loadingcai2new009@2x.png in Resources */,
 				40CD82421FF225C200EB2270 /* postDetail_more~iphone.png in Resources */,
 				403D6B381FF6104900E337D2 /* postDetail_collect~iphone.png in Resources */,
+				4055128E200359F20051FCC0 /* message_like@2x.png in Resources */,
 				402F3AA81FF4A1E500C171FE /* GCPageControl_currentPic~iphone@2x.png in Resources */,
 				403B9D321FDE858700F73449 /* discovery_icon_circle~iphone@2x.png in Resources */,
 				40F45C9B1FE3A214004FCBFB /* pull_refresh_bottom_00010@2x.png in Resources */,
@@ -1802,6 +1939,7 @@
 				4025FB771FDA2AF80077EF5A /* circle_tag_bg@2x.png in Resources */,
 				400E3E5E1FD7F58F00340296 /* switch_to_signal@2x.png in Resources */,
 				4025FB751FDA2AEB0077EF5A /* circle_tag_edit@2x.png in Resources */,
+				405512641FFFBE120051FCC0 /* logo.png in Resources */,
 				403D6B311FF5FFD300E337D2 /* postDetail_comment_supported~iphone.png in Resources */,
 				403D6B3D1FF610A900E337D2 /* postDetail_support~iphone@2x.png in Resources */,
 				4025FC2F1FDA732E0077EF5A /* loadingcai2new0013@2x.png in Resources */,
@@ -1819,6 +1957,7 @@
 				403B9D0F1FDE6C7600F73449 /* loading_03@2x.png in Resources */,
 				403B9D111FDE6C7600F73449 /* loading_05@2x.png in Resources */,
 				400E3E491FD7A23000340296 /* special_G_select@2x.png in Resources */,
+				4055125C1FFFBDAE0051FCC0 /* icon_telephone@2x.png in Resources */,
 				40F45C921FE3A214004FCBFB /* pull_refresh_bottom_0001@2x.png in Resources */,
 				4011F3B21FF3ADAD00F4AB0A /* personal_center_mytopic@2x.png in Resources */,
 				40F45C851FE3A071004FCBFB /* topic_ground_allList_back@2x.png in Resources */,
@@ -1836,6 +1975,7 @@
 				40058DE31FE11A6B00AB0FCA /* discovery_banner_icon~iphone@2x.png in Resources */,
 				4025FB991FDA2BAA0077EF5A /* discovery_dada_marks@2x.png in Resources */,
 				4025FB951FDA2B9E0077EF5A /* discovery_corwn_first@2x.png in Resources */,
+				405512AE2004BDB90051FCC0 /* icon_et@2x.png in Resources */,
 				403071731FEA3EDD001BB6E1 /* favorite_0@2x.png in Resources */,
 				40F45C9D1FE3A214004FCBFB /* pull_refresh_bottom_00012@2x.png in Resources */,
 				405512541FFF79950051FCC0 /* login_alert_cancel@2x.png in Resources */,
@@ -1848,6 +1988,7 @@
 				4052A6221FE79BB20073F770 /* GList_top_left~iphone@2x.png in Resources */,
 				4030717D1FEA4016001BB6E1 /* GCGList_waterFall~iphone@2x.png in Resources */,
 				4025FB9C1FDA2BD20077EF5A /* discovery_like0@2x.png in Resources */,
+				4055127F200343C40051FCC0 /* personal_serial@2x.png in Resources */,
 				4025FB9F1FDA2BDC0077EF5A /* discovery_safari@2x.png in Resources */,
 				4025FBBC1FDA2C1B0077EF5A /* double_line_three@2x.png in Resources */,
 				4025FB811FDA2B2A0077EF5A /* circle_tag_s@2x.png in Resources */,
@@ -1855,6 +1996,7 @@
 				403B9D0E1FDE6C7600F73449 /* loading_02@2x.png in Resources */,
 				40F45CC21FE3DC14004FCBFB /* COSD.png in Resources */,
 				40CD82441FF225C200EB2270 /* postDetail_share_h~iphone.png in Resources */,
+				4055127C200343C40051FCC0 /* personal_center_drafts@2x.png in Resources */,
 				4025FBBB1FDA2C1B0077EF5A /* double_line_one@2x.png in Resources */,
 				4025FBB91FDA2C1B0077EF5A /* discovery_title4@2x.png in Resources */,
 				4025FC271FDA732E0077EF5A /* loadingcai2new005@2x.png in Resources */,
@@ -1884,14 +2026,18 @@
 				4025FB911FDA2B8C0077EF5A /* discovery_copyLink@2x.png in Resources */,
 				4025FC2C1FDA732E0077EF5A /* loadingcai2new0010@2x.png in Resources */,
 				4025FC261FDA732E0077EF5A /* loadingcai2new004@2x.png in Resources */,
+				4055125E1FFFBDD10051FCC0 /* invite_code_header@2x.png in Resources */,
 				40CD82431FF225C200EB2270 /* postDetail_more~iphone@2x.png in Resources */,
 				4011F3C51FF3AEB100F4AB0A /* postDetail_support_default~iphone.png in Resources */,
 				407B3DBE1FC8011D00E422E2 /* like.caf in Resources */,
 				4011F3B51FF3AE1A00F4AB0A /* postDetail_recommendIcon~iphone.png in Resources */,
 				4025FB871FDA2B3D0077EF5A /* circle_tag1_s@2x.png in Resources */,
+				40551292200359FF0051FCC0 /* message_announcement@2x.png in Resources */,
 				402F3AA11FF4A1A900C171FE /* postDetail_arrow~iphone.png in Resources */,
+				4055125A1FFFBD9C0051FCC0 /* icon_lock@2x.png in Resources */,
 				4025FBCD1FDA2CC60077EF5A /* serial_ongoing@2x.png in Resources */,
 				4025FBAA1FDA2BF20077EF5A /* discovery_search_trash@2x.png in Resources */,
+				4055127E200343C40051FCC0 /* personal_center_yinpin@2x.png in Resources */,
 				403B9D1F1FDE6CFC00F73449 /* loading_0001@2x.png in Resources */,
 				4011F3B61FF3AE1A00F4AB0A /* postDetail_recommendIcon~iphone@2x.png in Resources */,
 				403B9D261FDE6CFC00F73449 /* loading_0008@2x.png in Resources */,
@@ -1909,16 +2055,20 @@
 				403B9D2A1FDE83D200F73449 /* dicover_hotRecommend_icon~iphone@2x.png in Resources */,
 				403B9D211FDE6CFC00F73449 /* loading_0003@2x.png in Resources */,
 				4025FC301FDA732E0077EF5A /* loadingcai2new0014@2x.png in Resources */,
+				405512621FFFBE020051FCC0 /* login_header@2x.png in Resources */,
 				40F45CBF1FE3DC14004FCBFB /* 排行榜E.png in Resources */,
 				40F45C991FE3A214004FCBFB /* pull_refresh_bottom_0008@2x.png in Resources */,
 				400E3E581FD7F44800340296 /* ill_cos_author@2x.png in Resources */,
+				40551290200359F90051FCC0 /* message_privateLetter@2x.png in Resources */,
 				4011F3C91FF3AF8200F4AB0A /* postDetail_section_hotCommentIcon~iphone.png in Resources */,
 				400E3E5D1FD7F58F00340296 /* switch_to_double@2x.png in Resources */,
 				403071741FEA3EDD001BB6E1 /* feed_large_post_item_nil@2x.png in Resources */,
 				40F45C9C1FE3A214004FCBFB /* pull_refresh_bottom_00011@2x.png in Resources */,
 				4025FC391FDA732E0077EF5A /* loadingcai2new0023@2x.png in Resources */,
 				4025FBC71FDA2CC60077EF5A /* serial_cover_default_image_0@2x.jpg in Resources */,
+				40551280200343C40051FCC0 /* personal_subscribe@2x.png in Resources */,
 				40F45CBE1FE3DC13004FCBFB /* 插画B.png in Resources */,
+				405512B02004BDB90051FCC0 /* icon_male@2x.png in Resources */,
 				4025FC351FDA732E0077EF5A /* loadingcai2new0019@2x.png in Resources */,
 				4025FB961FDA2B9E0077EF5A /* discovery_corwn_second@2x.png in Resources */,
 				405512511FFF76C80051FCC0 /* login_bg_640X1136@2x.png in Resources */,
@@ -1937,6 +2087,7 @@
 				403B9D401FDE942500F73449 /* glist_name_bg@2x.png in Resources */,
 				402F3AA91FF4A1E500C171FE /* GCPageControl_indicator~iphone.png in Resources */,
 				405512571FFF7DF30051FCC0 /* postDetail_close~iphone.png in Resources */,
+				40551270200305B20051FCC0 /* personal_setting@2x.png in Resources */,
 				400E3E541FD7F42100340296 /* hot_illustration_title@2x.png in Resources */,
 				4052A6241FE79BB20073F770 /* GList_top_right~iphone@2x.png in Resources */,
 				4025FB731FDA2AC40077EF5A /* circle_switch_settings@2x.png in Resources */,
@@ -2034,6 +2185,7 @@
 			files = (
 				403E1C081FD69183007316AC /* TAPageControl.m in Sources */,
 				40CD82371FF224F400EB2270 /* ZMPostDetailViewController.m in Sources */,
+				40551267200059170051FCC0 /* ZMRegisterViewController.m in Sources */,
 				400CB3581FCBB5A00094F1FE /* ZMTopicModel.m in Sources */,
 				40AC7F8F1FE9119A0027B358 /* ZMDiscoverRecommendHotTopicCell.m in Sources */,
 				403E1BF91FD6814C007316AC /* ZMICarouselView.m in Sources */,
@@ -2045,6 +2197,7 @@
 				403D6B481FF6424800E337D2 /* ZMTopicDetailOperationView.m in Sources */,
 				403D6B511FF642A800E337D2 /* ZMRankView.m in Sources */,
 				407B3D881FC7BA0800E422E2 /* ZMHomeViewController.m in Sources */,
+				405512732003060C0051FCC0 /* ZMMineView.m in Sources */,
 				40CD82501FF22D1000EB2270 /* ZMRelatedPostModel.m in Sources */,
 				403E1BE21FD66E2A007316AC /* ZMWorksModel.m in Sources */,
 				407B3D821FC7B55D00E422E2 /* UIView+extension.m in Sources */,
@@ -2053,13 +2206,16 @@
 				400FA4D81FC7AFD20015335E /* YYTableViewCell.m in Sources */,
 				407B3D941FC7BA8300E422E2 /* ZMMineViewController.m in Sources */,
 				400FA4D71FC7AFD20015335E /* YYTableView.m in Sources */,
+				4055129E200364360051FCC0 /* ZMProfileView.m in Sources */,
 				35D04AC31FC717F400CE082F /* ZMColor.m in Sources */,
 				40AC7FB51FE912AB0027B358 /* ZMDiscoverArticleTagView.m in Sources */,
+				4055128320034C930051FCC0 /* ZMSetupViewController.m in Sources */,
 				401FF5C51FCD5785006590D8 /* ZMAuthorModel.m in Sources */,
 				403E1C071FD69183007316AC /* TADotView.m in Sources */,
 				40AC7F8D1FE9119A0027B358 /* ZMDiscoverRecommendCircleCell.m in Sources */,
 				407B3DA61FC7C8CC00E422E2 /* ZMHomeModel.m in Sources */,
 				40F45CA01FE3A349004FCBFB /* ZMCustomGifFooter.m in Sources */,
+				405512A7200375750051FCC0 /* UIImage+Common.m in Sources */,
 				401FF5B21FCD005A006590D8 /* ZMImageView.m in Sources */,
 				40058DEC1FE11C4800AB0FCA /* ZMDiscoverBannerTopModel.m in Sources */,
 				40AC7F811FE911320027B358 /* ZMDiscoverRecommendView.m in Sources */,
@@ -2068,6 +2224,7 @@
 				40AC7FB61FE912AB0027B358 /* ZMDiscoverArticleLayout.m in Sources */,
 				4011F3AE1FF3762500F4AB0A /* ZMTimeZone.m in Sources */,
 				35D04ACD1FC7193E00CE082F /* YYFPSLabel.m in Sources */,
+				4055129B200363D40051FCC0 /* ZMProfileViewController.m in Sources */,
 				403071661FEA31C4001BB6E1 /* ZMTopicDetailSubjectModel.m in Sources */,
 				40AC7F8E1FE9119A0027B358 /* ZMDiscoverRecommendHeadView.m in Sources */,
 				403D6B351FF60D3F00E337D2 /* ZMPostDetailBottomToolView.m in Sources */,
@@ -2080,22 +2237,27 @@
 				4033AF101FD8DB7F00400099 /* ZMArticleHomeModel.m in Sources */,
 				403071631FEA0EEE001BB6E1 /* ZMTopicDetailModel.m in Sources */,
 				407757441FE22AA40082A212 /* NSString+ZMNSString.m in Sources */,
+				405512A1200364D60051FCC0 /* ZMProfileViewCell.m in Sources */,
+				4055126E2000671A0051FCC0 /* ZMUserInfo.m in Sources */,
 				407B3DC61FC814F600E422E2 /* SPPageMenu.m in Sources */,
 				3520CC961FF52D8F00254418 /* ZMCommentModel.m in Sources */,
 				407B3DA31FC7C4CC00E422E2 /* NSArray+ZMAdd.m in Sources */,
 				407B3DB71FC800B000E422E2 /* ZMTopicViewController.m in Sources */,
 				402F3AAD1FF4AA4700C171FE /* ZMPostDetailPraiseAuthorModel.m in Sources */,
+				4055126A200059430051FCC0 /* ZMRegisterView.m in Sources */,
 				403E1BEC1FD6813F007316AC /* iCarousel.m in Sources */,
 				354505FD1FCA85CF00F68D34 /* ZMNetworkHelper.m in Sources */,
 				400E3E4F1FD7BB7600340296 /* ZMDiscoverHeadModel.m in Sources */,
 				4052A6281FE7A2B10073F770 /* ZMTopicDetailViewController.m in Sources */,
 				40AC7FB81FE912AB0027B358 /* ZMDiscoverArticleHeadViewCell.m in Sources */,
+				4055128620034DAE0051FCC0 /* ZMSetupView.m in Sources */,
 				407B3DBA1FC800BD00E422E2 /* ZMMessageViewController.m in Sources */,
 				4025FBDF1FDA6CA00077EF5A /* ZMLoadingView.m in Sources */,
 				407757581FE2898B0082A212 /* ZMStringPickerView.m in Sources */,
 				403D6B491FF6424800E337D2 /* ZMTopicDetailHeaderView.m in Sources */,
 				407B3DA01FC7C48700E422E2 /* ZMBaseModel.m in Sources */,
 				40AC7FB91FE912AB0027B358 /* ZMDiscoverArticleCell.m in Sources */,
+				4055128C2003587E0051FCC0 /* ZMMessageView.m in Sources */,
 				3520CC991FF5316F00254418 /* ZMCommentCell.m in Sources */,
 				4033AF0D1FD8D8ED00400099 /* ZMTagModel.m in Sources */,
 				407B3D8B1FC7BA3400E422E2 /* ZMDiscoverViewController.m in Sources */,
@@ -2113,17 +2275,21 @@
 				40058DEF1FE1340100AB0FCA /* ZMRankViewController.m in Sources */,
 				35D04AAE1FC70C5900CE082F /* Foundation+Log.m in Sources */,
 				407757541FE288B00082A212 /* ZMPopBaseView.m in Sources */,
+				40551289200353630051FCC0 /* ZMSetupViewCell.m in Sources */,
 				35D04ABE1FC717B700CE082F /* BaseNavigationController.m in Sources */,
 				401FF5C21FCD4519006590D8 /* ZMHotRecommendModel.m in Sources */,
 				403D6B4A1FF6424800E337D2 /* ZMTopicDetailSubjectCell.m in Sources */,
+				40551276200308AE0051FCC0 /* ZMMineLoginViewCell.m in Sources */,
 				405512421FFF6BC10051FCC0 /* ZMHomeView.m in Sources */,
 				40AC7F901FE9119A0027B358 /* ZMDiscoverRecommendMoreTitleCell.m in Sources */,
 				403E1BE51FD67047007316AC /* ZMInsetHomeModel.m in Sources */,
 				403D6B471FF6424800E337D2 /* ZMTopicDetailView.m in Sources */,
+				405512AA200486820051FCC0 /* ZMHelpUtil.m in Sources */,
 				40AC7FA01FE912660027B358 /* ZMDiscoverInsetWaterCollectionViewCell.m in Sources */,
 				40AC7FA11FE912660027B358 /* ZMDiscoverInsetBannerViewCell.m in Sources */,
 				40CD824A1FF2260600EB2270 /* ZMPostDetailView.m in Sources */,
 				403D6B501FF642A800E337D2 /* ZMRankTopCollectionViewCell.m in Sources */,
+				4055129520035B490051FCC0 /* ZMMessageViewCell.m in Sources */,
 				403B9D001FDE689400F73449 /* ZMCustomGifHeader.m in Sources */,
 				403E1C091FD69183007316AC /* TAAnimatedDotView.m in Sources */,
 				4077574A1FE2483B0082A212 /* ZMRankingListModel.m in Sources */,
@@ -2263,9 +2429,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ASSETCATALOG_WARNINGS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ZOMAKE HOLDINGS LIMITED (P94N2NJ7G4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P94N2NJ7G4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = ZMBCY/PrefixHeader.pch;
@@ -2316,9 +2482,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ASSETCATALOG_WARNINGS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ZOMAKE HOLDINGS LIMITED (P94N2NJ7G4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P94N2NJ7G4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = ZMBCY/PrefixHeader.pch;

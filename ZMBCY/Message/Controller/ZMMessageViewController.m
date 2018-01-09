@@ -7,8 +7,11 @@
 //
 
 #import "ZMMessageViewController.h"
+#import "ZMMessageView.h"
 
 @interface ZMMessageViewController ()
+
+@property (nonatomic, strong) ZMMessageView     *mainView;
 
 @end
 
@@ -16,22 +19,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupNavView];
+    [self setupMainView];
+}
+
+- (void)setupNavView{
+    [super setupNavView];
+    [self.navView.centerButton setTitle:@"消息" forState:UIControlStateNormal];
+}
+
+- (void)setupMainView{
+    self.mainView = [[ZMMessageView alloc] initWithFrame:CGRectMake(0, self.navView.height, kScreenWidth, kScreenHeight - KTabBarHeight - self.navView.height)];
+    [self.view addSubview:self.mainView];
+    [self.view insertSubview:self.mainView belowSubview:self.navView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -22,10 +22,18 @@
     [self setupNavView];
     [self setupMainView];
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    if (self.mainView) {
+        [self.mainView showUI:[ZMUserInfo shareUserInfo].isLogin];
+    }
+    
+}
 - (void)setupNavView{
     [super setupNavView];
     [self.navView.centerButton setTitle:@"GACHA" forState:UIControlStateNormal];
+    
 }
 
 - (void)setupMainView{

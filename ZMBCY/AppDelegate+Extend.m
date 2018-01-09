@@ -27,7 +27,10 @@
     [[UITabBar appearance] setShadowImage:[UIImage imageWithColor:[ZMColor colorWithHexString:@"0xf5f5f5"]]];
     //腾讯bugly
     [Bugly startWithAppId:@"df13c9a39f"];
-    
+    //button按键排他性(赞👍)
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 8.0) {
+        [[UIButton appearance] setExclusiveTouch:YES];
+    }
 }
 
 @end

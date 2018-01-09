@@ -13,5 +13,11 @@
 
 @property (nonatomic, strong) ZMNavView    *nav;
 
+@property (nonatomic, strong) UIImageView       *topImageView;
+@property (nonatomic, strong) UILabel           *tipLabel;
+@property (nonatomic, strong) UIButton          *loginButton;
+@property (nonatomic, strong) UIButton          *registerButton;
+
+- (void)showUI:(BOOL)isLogin;
 
 @end
