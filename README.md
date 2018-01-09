@@ -5,6 +5,8 @@
   本项目全部由纯代码编写，目前只完成了发现（推荐、插画、文章、COS、排行榜）部分功能，数据接口全部由青花瓷抓取，本项目仅供学习参考，不得用于商业目的，若有侵权行为，请联系 292692700#qq.com
   
 ## 更新日志
+   • 2018.01.09:增加基于leancloud的登录(默认测试账号：123456  密码：123456)、注册、修改资料、绑定邮箱、上传头像等功能，对后端感兴趣的可以研究下，[leancloud](https://leancloud.cn/docs/leanstorage_guide-objc.html#hash-906270513)  是个好东西。
+   
    • 2017.12.29:增加专题详情和 [帖子详情页面](https://github.com/Brances/ZMBCY-iOS/blob/master/ZMBCY/preview/%E5%B8%96%E5%AD%90%E8%AF%A6%E6%83%85.gif)（该页面UI元素比较多） 
 ## gif演示(图片过大，加载会过慢)
 ![image](https://github.com/Brances/ZMBCY-iOS/blob/master/ZMBCY/preview/all.gif)
