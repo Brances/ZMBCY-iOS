@@ -92,7 +92,7 @@
     if (self.style == itemStyleSingle) {
         return 1;
     }
-    return 2;
+    return 3;
 }
 - (CGFloat)columnMarginInWaterflowLayout:(ZMWaterFlowLayout *)waterflowLayout{
     if (self.style == itemStyleSingle) {

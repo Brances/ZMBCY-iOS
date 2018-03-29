@@ -9,7 +9,7 @@
 #import "ZMWaterFlowLayout.h"
 
 //默认的列数
-static const NSInteger DefaultColumnCpunt = 3;
+static const NSInteger DefaultColumnCount = 3;
 
 //每一列之间的间距
 static const CGFloat DefaultColumnMargin = 10;
@@ -57,7 +57,7 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
     if ([self.delegate respondsToSelector:@selector(columnCountInWaterflowLayout:)]) {
         return [self.delegate columnCountInWaterflowLayout:self];
     } else {
-        return DefaultColumnCpunt;
+        return DefaultColumnCount;
     }
 }
 
@@ -90,7 +90,7 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
     
     //清除之前计算的所有高度，因为刷新的时候回调用这个方法
     [self.columnHeights removeAllObjects];
-    for (NSInteger i = 0; i < DefaultColumnCpunt; i++) {
+    for (NSInteger i = 0; i < self.columnCount; i++) {
         [self.columnHeights addObject:@(self.edgeInsets.top)];
     }
     
